@@ -16,6 +16,8 @@ const GlobalContextProvider = ({ children }) => {
     showProducts: false,
     products: [],
     selectedProduct: null,
+    filteredProducts: [], // Filtrelenmiş ürünleri saklamak için
+ 
     // other properties specific to LeftSales...
   });
 
@@ -37,9 +39,29 @@ const GlobalContextProvider = ({ children }) => {
 
   const handleBarcodeChange = async (event) => {
     const newBarcode = event.target.value;
-    console.log("New barcode:", newBarcode);
-    // Additional logic for handling barcode change...
+    console.log('New barcode:', newBarcode); // Konsola barkod değerini yazdır
+    const filteredProducts = state.products.filter(product => product.barcode === newBarcode);
+    
+    if (filteredProducts.length > 0) {
+      setState(prevState => ({ 
+        ...prevState, 
+        barcode: newBarcode, 
+        filteredProducts: filteredProducts,
+        showCategories: false, // Diğer durumları false olarak ayarla
+        showProducts: false,   // Diğer durumları false olarak ayarla
+        showFilteredProducts: true // Filtrelenmiş ürünler varsa true olarak ayarla
+      }));
+    } else {
+      setState(prevState => ({ 
+        ...prevState, 
+        barcode: newBarcode,
+        showCategories: false, // Diğer durumları false olarak ayarla
+        showProducts: true,   // Ürünleri gösterme durumunu true olarak ayarla
+        showFilteredProducts: false // Filtrelenmiş ürünleri gösterme durumunu false olarak ayarla
+      }));
+    }
   };
+
 
   const handleShowCategories = async () => {
     try {
@@ -53,6 +75,7 @@ const GlobalContextProvider = ({ children }) => {
         categories: data,
         showCategories: true,
         showProducts: false,
+        showFilteredProducts:false
       }));
     } catch (error) {
       console.error("Error fetching categories:", error);
@@ -71,6 +94,7 @@ const GlobalContextProvider = ({ children }) => {
         products: data,
         showCategories: false,
         showProducts: true,
+        showFilteredProducts:false
       });
     } catch (error) {
       console.error('Error fetching products:', error);
@@ -81,6 +105,7 @@ const GlobalContextProvider = ({ children }) => {
     // Sayfa yüklendiğinde ürünleri göster
     handleShowProducts();
   }, []); // Boş bağımlılık dizisi kullanarak yalnızca bir kez çalışmasını sağlar
+  
   const handleShowProductsByCategoryId = async (categoryId) => {
     try {
       let url = "http://localhost:3000/products";
