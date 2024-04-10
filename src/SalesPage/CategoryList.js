@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardMedia, CardContent } from '@mui/material';
 
-const CategoryList = ({ categories }) => {
+const CategoryList = ({ categories, handleShowProducts }) => {
   return (
     <div>
       <div className="card-container">
@@ -9,7 +9,7 @@ const CategoryList = ({ categories }) => {
           <Card
             key={`${category.category_id}-${index}`} // Her bir kategori için benzersiz bir anahtar
             className="custom-card"
-            // onClick={() => handleShowProducts(category.category_id)} // Kategoriye tıklandığında ürünleri getir
+           onClick={() => handleShowProducts(category.category_id)} // Kategoriye tıklandığında ürünleri getir
           >
             <CardMedia
               component="img"
