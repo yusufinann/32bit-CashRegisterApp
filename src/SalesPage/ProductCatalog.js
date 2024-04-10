@@ -2,6 +2,7 @@ import React from 'react';
 import { TextField, Button} from '@mui/material';
 import './styles.css'
 import { useGlobalContext } from '../contexts/ClobalContext';
+import CategoryList from './CategoryList';
 
 const ProductCatalog = () => {
 
@@ -37,9 +38,9 @@ const ProductCatalog = () => {
         </div>
       </form>
 
-      {/*<FilteredProductList />
+      {/* <FilteredProductList /> */}
       <CategoryList />
-      <ProductList />*/}
+      {/* <ProductList /> */}
     </div>
   );
 };
