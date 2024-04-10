@@ -4,6 +4,7 @@ import './styles.css'
 import { useGlobalContext } from '../contexts/ClobalContext';
 import CategoryList from './CategoryList';
 import ProductList from './ProductList';
+import FilteredProductList from './FilteredProductList';
 
 const ProductCatalog = () => {
 
@@ -40,8 +41,10 @@ const ProductCatalog = () => {
           </Button>
         </div>
       </form>
+      {(state.showFilteredProducts && state.barcode) && (
+        <FilteredProductList />
+      )}
 
-      {/* <FilteredProductList /> */}
       {state.showCategories && (
         <CategoryList  //CategoryList
           categories={state.categories}
