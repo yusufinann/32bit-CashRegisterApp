@@ -4,7 +4,7 @@ import Home from "./HomePage/Home";
 import LoginPage from "./LoginPage/Login";
 import { LoginProvider } from "./contexts/LoginContext";
 import Sales from "./HomePage/Sales";
-import { GlobalContextProvider } from "./contexts/ClobalContext";
+import { GlobalContextProvider } from "./contexts/GlobalContext";
 
 function App() {
   return (

@@ -1,7 +1,7 @@
 import React from 'react';
 import { TextField, Button} from '@mui/material';
 import './styles.css'
-import { useGlobalContext } from '../contexts/ClobalContext';
+import { useGlobalContext } from '../contexts/GlobalContext';
 import CategoryList from './CategoryList';
 import ProductList from './ProductList';
 import FilteredProductList from './FilteredProductList';
