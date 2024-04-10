@@ -6,7 +6,7 @@ import CategoryList from './CategoryList';
 
 const ProductCatalog = () => {
 
-    const { state, handleBarcodeChange } = useGlobalContext();
+    const { state, handleBarcodeChange, handleShowCategories } = useGlobalContext();
   return (
     <div>
       <form>
@@ -22,7 +22,8 @@ const ProductCatalog = () => {
         <div className="button-container">
           <Button
             variant="contained"
-            color="primary"
+            color="primary"            
+            onClick={handleShowCategories}
           >
             Kategoriler
           </Button>
