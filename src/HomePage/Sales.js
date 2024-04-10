@@ -1,12 +1,22 @@
 import React from "react";
 import { Grid } from "@mui/material";
+import { useNavigate } from 'react-router-dom';
+import TravelExploreTwoToneIcon from '@mui/icons-material/TravelExploreTwoTone';
+import GlobalNavi from "../GlobalComponents/GlobalNavi";
 
 const Sales = () => {
+    const navigate = useNavigate();
+    const somethingText = "See Price";
+
+    const handleIconClick = () => {
+        // İkon tıklandığında anasayfaya yönlendirme
+        navigate('/price');
+      };
   return (
     <Grid container spacing={2}>
-      
+       
       <Grid item xs={12} style={{ border: "1px solid #2b2d42" }}>
-       {/* Navi component*/}
+      <GlobalNavi  title="Sales Page" linkTo="/home" icon={<TravelExploreTwoToneIcon onClick={handleIconClick} style={{ fontSize: '3rem' }} />} something={somethingText} />
       </Grid>
 
       
