@@ -17,6 +17,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { Visibility, VisibilityOff, Keyboard } from '@mui/icons-material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useLogin } from '../contexts/LoginContext';
+import { getVersion } from '../services/versionService'; // Import the getVersion function
 
 const theme = createTheme();
 
@@ -26,6 +27,8 @@ const Login = () => {
   const passwordInputRef = useRef(null);
   const [showPassword, setShowPassword] = useState(false);
   const [isKeyboardOpen, setIsKeyboardOpen] = useState(false);
+  const version = getVersion();
+
   const handleLogin = () => {
     login(usernameInputRef.current.value, passwordInputRef.current.value);
   };
@@ -126,6 +129,11 @@ const Login = () => {
           >
             Login
           </Button>
+          {version && (
+            <Typography variant="body2">
+              Version: {version}
+            </Typography>
+          )}
         </Box>
       </Container>
       <Modal
