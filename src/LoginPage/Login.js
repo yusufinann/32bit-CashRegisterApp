@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
+import { Navigate } from 'react-router-dom';
 import {
   TextField,
   Button,
@@ -15,14 +16,19 @@ import {
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { Visibility, VisibilityOff, Keyboard } from '@mui/icons-material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { useLogin } from '../contexts/LoginContext';
 
 const theme = createTheme();
 
 const Login = () => {
-  const usernameInputRef = React.useRef(null);
-  const passwordInputRef = React.useRef(null);
-  const [showPassword, setShowPassword] = React.useState(false);
-  const [isKeyboardOpen, setIsKeyboardOpen] = React.useState(false);
+  const { isLoggedIn, showError, login } = useLogin();
+  const usernameInputRef = useRef(null);
+  const passwordInputRef = useRef(null);
+  const [showPassword, setShowPassword] = useState(false);
+  const [isKeyboardOpen, setIsKeyboardOpen] = useState(false);
+  const handleLogin = () => {
+    login(usernameInputRef.current.value, passwordInputRef.current.value);
+  };
 
   const togglePasswordVisibility = () => {
     setShowPassword((prevShowPassword) => !prevShowPassword);
@@ -35,6 +41,10 @@ const Login = () => {
   const closeKeyboard = () => {
     setIsKeyboardOpen(false);
   };
+
+  if (isLoggedIn) {
+    return <Navigate to="/home" />;
+  }
 
   return (
     <ThemeProvider theme={theme}>
@@ -73,7 +83,7 @@ const Login = () => {
             InputProps={{
               endAdornment: (
                 <InputAdornment position="end">
-                  <IconButton>
+                  <IconButton onClick={openKeyboard}>
                     <Keyboard />
                   </IconButton>
                 </InputAdornment>
@@ -102,6 +112,20 @@ const Login = () => {
               ),
             }}
           />
+          {showError && (
+            <Typography variant="body2" color="error">
+              Invalid username or password
+            </Typography>
+          )}
+          <Button
+            fullWidth
+            variant="contained"
+            color="primary"
+            onClick={handleLogin}
+            sx={{ mt: 3, mb: 2, backgroundColor: '#ff4081' }}
+          >
+            Login
+          </Button>
         </Box>
       </Container>
       <Modal
