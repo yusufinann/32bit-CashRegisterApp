@@ -1,5 +1,8 @@
 import React from 'react';
 import { Container, Typography, Grid, styled} from '@mui/material';
+import { LocalGroceryStore,Assignment,MonetizationOn, CollectionsBookmark,AlarmOn, Settings   } from '@mui/icons-material';
+import MenuButtons from '../GlobalComponents/MenuButtons';
+
 
 
 const MainContainer = styled(Container)({
@@ -33,6 +36,46 @@ const Home = () => {
                 Welcome to Home Page
                 </TitleTypography>
             <Grid container spacing={3} justifyContent="center">
+
+            <MenuButtons 
+                        title="Sales Page" 
+                        linkTo="/sales" 
+                        icon={<LocalGroceryStore/>}
+                        color='#1976D2'
+                    />
+                       <MenuButtons 
+                        title="Product Entry" 
+                        linkTo="/product-entry" 
+                        icon={<Assignment/>}
+                        color='#E91E63'
+                    />
+                       <MenuButtons 
+                        title="Rebate Procedures" 
+                        linkTo="/rebate-procedures" 
+                        icon={<MonetizationOn/>}
+                        color='#673AB7'
+                    />
+                       <MenuButtons 
+                        title="COLLECTIONS" 
+                        linkTo="/collections" 
+                        icon={<CollectionsBookmark/>}
+                        color='#FFC107'
+                    />
+                       <MenuButtons 
+                        title="REPORTS" 
+                        linkTo="/reports" 
+                        icon={<AlarmOn/>}
+                        color='#FF5722'
+                    />
+                       <MenuButtons 
+                        title="SETTINGS" 
+                        linkTo="/settings" 
+                        icon={  <Settings/>}
+                        color='#795548'
+                    />
+                
+                
+                {/* Diğer menü düğmeleri buraya eklenebilir */}
               {/* Menu Buttons */}
                 </Grid>
                 </MainContainer>
