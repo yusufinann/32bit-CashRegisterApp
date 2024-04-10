@@ -1,8 +1,11 @@
 import React from 'react';
 import { TextField, Button} from '@mui/material';
 import './styles.css'
+import { useGlobalContext } from '../contexts/ClobalContext';
 
 const ProductCatalog = () => {
+
+    const { state, handleBarcodeChange } = useGlobalContext();
   return (
     <div>
       <form>
@@ -10,6 +13,8 @@ const ProductCatalog = () => {
           id="barcodeInput"
           label="Barkod giriniz"
           variant="outlined"
+          value={state.barcode}
+          onChange={handleBarcodeChange}
           fullWidth
           style={{ marginTop: 10 }}
         />
@@ -20,7 +25,7 @@ const ProductCatalog = () => {
           >
             Kategoriler
           </Button>
-          <Button variant="contained" color="success">
+          <Button variant="contained" color="success"  onClick={() => {}}>
             Alt Kategoriler
           </Button>
           <Button
