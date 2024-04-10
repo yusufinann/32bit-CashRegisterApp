@@ -40,7 +40,11 @@ const ProductCatalog = () => {
       </form>
 
       {/* <FilteredProductList /> */}
-      <CategoryList />
+      {state.showCategories && (
+        <CategoryList  //CategoryList
+          categories={state.categories}
+        />
+      )}
       {/* <ProductList /> */}
     </div>
   );
