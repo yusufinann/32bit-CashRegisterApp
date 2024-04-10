@@ -1,6 +1,6 @@
 import React from 'react';
 import { TextField, Button} from '@mui/material';
-
+import './styles.css'
 
 const ProductCatalog = () => {
   return (
