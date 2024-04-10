@@ -3,10 +3,11 @@ import { TextField, Button} from '@mui/material';
 import './styles.css'
 import { useGlobalContext } from '../contexts/ClobalContext';
 import CategoryList from './CategoryList';
+import ProductList from './ProductList';
 
 const ProductCatalog = () => {
 
-    const { state, handleBarcodeChange, handleShowCategories } = useGlobalContext();
+    const {state, setState, handleShowCategories, handleShowProducts, handleBarcodeChange } = useGlobalContext();
   return (
     <div>
       <form>
@@ -33,6 +34,7 @@ const ProductCatalog = () => {
           <Button
             variant="contained"
             color="error"
+            onClick={handleShowProducts}
           >
             Ürünler
           </Button>
@@ -45,7 +47,13 @@ const ProductCatalog = () => {
           categories={state.categories}
         />
       )}
-      {/* <ProductList /> */}
+        {state.showProducts && (
+        <ProductList
+          products={state.products}
+          isOpen={state.showProducts}
+          toggle={() => setState({ ...state, showProducts: !state.showProducts })}
+        />
+      )}
     </div>
   );
 };
