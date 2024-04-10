@@ -1,26 +1,26 @@
 import React from 'react';
 import { Card, CardMedia, CardContent, Typography, Button } from '@mui/material';
-import './styles.css'; // Stil dosyası burada kullanılıyor.
+import './styles.css';
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
-const ProductList = () => {
+const ProductList = ({ products }) => {
   return (
     <div>
       <div className="card-container">
-        
-          <Card sx={{ width: 200 }} className="custom-card">
+        {products.map((product) => (
+          <Card key={product.product_id} sx={{ width: 200 }} className="custom-card">
             <CardMedia
               component="img"
-            //   alt={product.product_name}
+              alt={product.product_name}
               height="140"
-            //   image={product.image_url}
+              image={product.image_url}
             />
             <CardContent>
               <Typography variant="subtitle1" color="text.primary" fontWeight="bold">
-                {/* {product.product_name} */}
+                {product.product_name}
               </Typography>
               <Typography variant="body2" color="text.primary">
-                {/* {product.price} TL */}
+                {product.price} TL
               </Typography>
               <Button
                 variant="contained"
@@ -31,7 +31,7 @@ const ProductList = () => {
               </Button>
             </CardContent>
           </Card>
-      
+        ))}
       </div>
     </div>
   );
