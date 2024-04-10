@@ -81,7 +81,28 @@ const GlobalContextProvider = ({ children }) => {
     // Sayfa yüklendiğinde ürünleri göster
     handleShowProducts();
   }, []); // Boş bağımlılık dizisi kullanarak yalnızca bir kez çalışmasını sağlar
-
+  const handleShowProductsByCategoryId = async (categoryId) => {
+    try {
+      let url = "http://localhost:3000/products";
+      if (categoryId) {
+        url += `?category_id=${categoryId}`;
+      }
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error('API response was not ok.');
+      }
+      const data = await response.json();
+      setState(prevState => ({
+        ...prevState,
+        products: data, // Yeni ürünleri eski ürünlerin üzerine yaz
+        showCategories: false,
+        showProducts: true,
+      }));
+    } catch (error) {
+      console.error('Error fetching products:', error);
+    }
+  };
+  
 
   const contextValue = {
     globalState,
@@ -91,6 +112,7 @@ const GlobalContextProvider = ({ children }) => {
     handleBarcodeChange,
     handleShowCategories,
     handleShowProducts,
+    handleShowProductsByCategoryId,
     // other functions...
   };
 
