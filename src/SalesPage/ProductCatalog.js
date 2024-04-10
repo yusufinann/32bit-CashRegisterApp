@@ -7,7 +7,7 @@ import ProductList from './ProductList';
 
 const ProductCatalog = () => {
 
-    const {state, setState, handleShowCategories, handleShowProducts, handleBarcodeChange } = useGlobalContext();
+    const {state, setState, handleShowCategories, handleShowProducts, handleBarcodeChange,  handleShowProductsByCategoryId } = useGlobalContext();
   return (
     <div>
       <form>
@@ -45,6 +45,7 @@ const ProductCatalog = () => {
       {state.showCategories && (
         <CategoryList  //CategoryList
           categories={state.categories}
+          handleShowProducts={handleShowProductsByCategoryId}
         />
       )}
         {state.showProducts && (
