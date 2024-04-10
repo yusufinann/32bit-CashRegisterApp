@@ -3,6 +3,7 @@ import { Grid } from "@mui/material";
 import { useNavigate } from 'react-router-dom';
 import TravelExploreTwoToneIcon from '@mui/icons-material/TravelExploreTwoTone';
 import GlobalNavi from "../GlobalComponents/GlobalNavi";
+import ProductCatalog from "../SalesPage/ProductCatalog";
 
 const Sales = () => {
     const navigate = useNavigate();
@@ -32,7 +33,7 @@ const Sales = () => {
           overflow: "auto", // Enable scrolling
         }}
       >
-        {/* ProductCatalog component */}
+        <ProductCatalog/>
       </Grid>
 
       {/* CartList */}
