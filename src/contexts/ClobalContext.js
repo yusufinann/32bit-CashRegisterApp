@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 
 const GlobalContext = createContext();
 
@@ -10,9 +10,12 @@ const GlobalContextProvider = ({ children }) => {
   });
 
   const [state, setState] = useState({
-    barcode: "",
+    barcode: '',
     categories: [],
     showCategories: false,
+    showProducts: false,
+    products: [],
+    selectedProduct: null,
     // other properties specific to LeftSales...
   });
 
@@ -49,11 +52,36 @@ const GlobalContextProvider = ({ children }) => {
         ...prevState,
         categories: data,
         showCategories: true,
+        showProducts: false,
       }));
     } catch (error) {
       console.error("Error fetching categories:", error);
     }
   };
+
+  const handleShowProducts = async () => {
+    try {
+      const response = await fetch('http://localhost:3000/products');
+      if (!response.ok) {
+        throw new Error('API response was not ok.');
+      }
+      const data = await response.json();
+      setState({
+        ...state,
+        products: data,
+        showCategories: false,
+        showProducts: true,
+      });
+    } catch (error) {
+      console.error('Error fetching products:', error);
+    }
+  };
+ 
+  useEffect(() => {
+    // Sayfa yüklendiğinde ürünleri göster
+    handleShowProducts();
+  }, []); // Boş bağımlılık dizisi kullanarak yalnızca bir kez çalışmasını sağlar
+
 
   const contextValue = {
     globalState,
@@ -61,8 +89,8 @@ const GlobalContextProvider = ({ children }) => {
     logout,
     state,
     handleBarcodeChange,
-
     handleShowCategories,
+    handleShowProducts,
     // other functions...
   };
 
