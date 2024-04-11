@@ -5,6 +5,7 @@ import TravelExploreTwoToneIcon from '@mui/icons-material/TravelExploreTwoTone';
 import GlobalNavi from "../GlobalComponents/GlobalNavi";
 import ProductCatalog from "../SalesPage/ProductCatalog";
 import CartManagement from "../SalesPage/CartManagement";
+import TransactionButtons from "../SalesPage/TransactionButtons";
 
 const Sales = () => {
     const navigate = useNavigate();
@@ -66,7 +67,7 @@ const Sales = () => {
         }}
       >
         <div>
-          {/* CheckoutPanel component */}
+        <TransactionButtons/>
         </div>
       </Grid>
     </Grid>
