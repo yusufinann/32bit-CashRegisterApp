@@ -1,14 +1,17 @@
 import React from 'react';
 import { Card, CardMedia, CardContent, Typography, Button } from '@mui/material';
 import './styles.css';
+import { useGlobalContext } from '../contexts/GlobalContext';
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
-const ProductList = ({ products }) => {
+const ProductList = ({ products, isOpen, toggle }) => {
+  const { addToCart } = useGlobalContext();
+
   return (
     <div>
       <div className="card-container">
         {products.map((product) => (
-          <Card key={product.product_id} sx={{ width: 200 }} className="custom-card">
+          <Card key={product.product_id} sx={{ width: 200 }} className="custom-card" onClick={() => addToCart(product)}>
             <CardMedia
               component="img"
               alt={product.product_name}
