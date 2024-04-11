@@ -1,9 +1,11 @@
 import React from 'react';
 import { Grid } from "@mui/material";
 import CartList from './CartList';
+import TotalAmount from './TotalAmount';
+import { useGlobalContext } from '../contexts/GlobalContext';
 
 function CartManagement() {
-
+    const { totalAmount } = useGlobalContext();
     return (
         <div>
             <Grid
@@ -23,6 +25,8 @@ function CartManagement() {
             >
                 <CartList /> 
             </Grid>
+
+            <TotalAmount totalAmount={totalAmount} />      
         </div>
     );
 }
