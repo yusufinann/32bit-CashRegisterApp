@@ -23,6 +23,7 @@ const GlobalContextProvider = ({ children }) => {
 
   
   const [cart, setCart] = useState([]); // New state for cart
+  const [totalAmount, setTotalAmount] = useState(0);
 
   const login = (user) => {
     setGlobalState({
@@ -157,6 +158,16 @@ const GlobalContextProvider = ({ children }) => {
     );
   };
 
+  useEffect(() => {
+    // Her sepet öğesi eklendiğinde veya kaldırıldığında toplam tutarı hesapla
+    let newTotalAmount = 0;
+    cart.forEach(item => {
+      newTotalAmount += item.product.price * item.quantity;
+    });
+    setTotalAmount(newTotalAmount);
+  }, [cart, setTotalAmount]);
+
+
   const contextValue = {
     globalState,
     login,
@@ -170,6 +181,7 @@ const GlobalContextProvider = ({ children }) => {
     removeFromCart,
     increaseQuantity,
     decreaseQuantity,
+    totalAmount,
     // other functions...
   };
 
