@@ -2,6 +2,7 @@ import React from 'react'
 import { Grid } from "@mui/material";
 import GlobalNavi from '../GlobalComponents/GlobalNavi';
 import ReceiptArea from './ReceiptArea';
+import CartManagement from '../SalesPage/CartManagement';
 const OrderSummary = () => { //see price
   return (
     <Grid container spacing={2}>
@@ -42,7 +43,7 @@ const OrderSummary = () => { //see price
           
         }}
       >
-        {/* middle area for order summary */}
+        <CartManagement/>
       </Grid>
 
       <Grid
