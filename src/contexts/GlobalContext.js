@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useCallback, useContext, useEffect, useState } from "react";
 
 const GlobalContext = createContext();
 
@@ -86,29 +86,32 @@ const GlobalContextProvider = ({ children }) => {
     }
   };
 
-  const handleShowProducts = async () => {
+  const handleShowProducts = useCallback(async () => {
+    console.log("Fetching products..."); // Indicate the operation has started
     try {
       const response = await fetch('http://localhost:3000/products');
       if (!response.ok) {
         throw new Error('API response was not ok.');
       }
       const data = await response.json();
-      setState({
-        ...state,
+      setState(prevState => ({
+        ...prevState,
         products: data,
         showCategories: false,
         showProducts: true,
-        showFilteredProducts:false
-      });
+        showFilteredProducts: false
+      }));
     } catch (error) {
       console.error('Error fetching products:', error);
     }
-  };
+  }, []); // Assuming no dependencies, if there are, include them in this array
+  
  
+
   useEffect(() => {
-    // Sayfa yüklendiğinde ürünleri göster
     handleShowProducts();
-  }, []); // Boş bağımlılık dizisi kullanarak yalnızca bir kez çalışmasını sağlar
+    // handleShowProducts fonksiyonunu bağımlılık dizisine ekle
+  }, [handleShowProducts]);
   
   const handleShowProductsByCategoryId = async (categoryId) => {
     try {
