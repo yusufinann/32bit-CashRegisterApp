@@ -13,9 +13,9 @@ const ReceiptContainer = styled("div")({
   boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
 });
 
-function Receipt({ productList, subTotal, tax, totalAmount }) {
+const Receipt = React.forwardRef(({ productList, subTotal, tax, totalAmount }, ref) => {
   return (
-    <ReceiptContainer>
+    <ReceiptContainer ref={ref}>
       <div className="receipt-header">
         <h2>ÖRNEK İŞLETME</h2>
         <p>DEMİRCİKARA MAH. 1431 SOK. NO:12</p>
@@ -23,15 +23,15 @@ function Receipt({ productList, subTotal, tax, totalAmount }) {
         <p>ANTALYA</p>
       </div>
       <div className="receipt-line date">
-        <span>TARİH : 07.05.2019</span>
-        <span className="time">SAAT : 12:30</span>
+        <span>TARİH : null</span>
+        <span className="time">SAAT : null</span>
       </div>
       <div className="receipt-line">
-        <span>SATIŞ NO: 2</span>
-        <span className="time">SATIŞ : NAKİT</span>
+        <span>SATIŞ NO: null</span>
+        <span className="time">SATIŞ : null</span>
       </div>
       <div className="receipt-line">
-        <span>KASİYER : AHMET</span>
+        <span>KASİYER : null</span>
       </div>
       <p className="receipt-line">
         <div className="divider">--------------------------------------------------------------------------------</div>
@@ -42,22 +42,22 @@ function Receipt({ productList, subTotal, tax, totalAmount }) {
       </p>
       <div className="receipt-line">
         <span>ALINAN PARA</span>
-        <span>100,00</span>
+        <span>null</span>
       </div>
       <div className="receipt-line">
         <span>PARA ÜSTÜ</span>
-        <span>9,80</span>
+        <span>null</span>
       </div>
       <p className="receipt-line">
         <div className="divider">--------------------------------------------------------------------------------</div>
       </p>
-      <div className="receipt-line">
+      <div className="receipt-line">  
         <span>GENEL TOPLAM</span>
         <span>{totalAmount}</span>
       </div>
       <p className="receipt-line bottom">KDV FİŞİ DEĞİLDİR</p>
     </ReceiptContainer>
   );
-}
+});
 
 export default Receipt;
