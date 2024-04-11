@@ -5,6 +5,7 @@ import LoginPage from "./LoginPage/Login";
 import { LoginProvider } from "./contexts/LoginContext";
 import Sales from "./HomePage/Sales";
 import { GlobalContextProvider } from "./contexts/GlobalContext";
+import OrderSummary from "./OrderSummary/OrderSummary";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/" element={<LoginPage />} />          
           <Route path="/sales" element={<Sales />} />
+          <Route path="/price" element={<OrderSummary/>} />
         </Routes>
       </LoginProvider>
       </GlobalContextProvider>
