@@ -7,22 +7,24 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 const CartList = () => {
- const renderCartItem = () => {
+  const { removeFromCart, increaseQuantity, decreaseQuantity, cart } = useGlobalContext();
+
+  const renderCartItem = (item) => {
     return (
     
         <Card sx={{ marginBottom: '5px', height: 'auto', backgroundColor: "orange", width: "100%" }} >
           <CardContent style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '10%' }}>
             <div style={{ display: 'flex', alignItems: 'center', marginBottom: 'auto' }}>
-              <img  style={{ width: '50px', height: '50px', borderRadius: '50%', marginRight: '10px' }} />
+              <img src={item.product.image} alt={item.product.name} style={{ width: '50px', height: '50px', borderRadius: '50%', marginRight: '10px' }} />
               <div>
                 <Typography gutterBottom variant="h6">
-                  product name
+                  {item.product.name}
                 </Typography>
                 <Typography variant="body1">
-                  product.price TL
+                  Price: {item.product.price} TL
                 </Typography>
                 <Typography variant="body1">
-                  Quantity
+                  Quantity: {item.quantity}
                 </Typography>
                 <Typography variant="body1">
                   Total
@@ -30,13 +32,13 @@ const CartList = () => {
               </div>
               <div style={{ marginLeft: 'auto' }}>
               <CardActions >
-              <IconButton color="secondary" aria-label="Remove">
+              <IconButton color="secondary" aria-label="Remove" onClick={() => removeFromCart(item.product)}>
                 <DeleteIcon />
               </IconButton>
-              <IconButton color="primary" aria-label="Add">
+              <IconButton color="primary" aria-label="Add" onClick={() => increaseQuantity(item.product)}>
                 <AddIcon />
               </IconButton>
-              <IconButton color="primary" aria-label="Remove">
+              <IconButton color="primary" aria-label="Remove" onClick={() => decreaseQuantity(item.product)}>
                 <RemoveIcon />
               </IconButton>
             </CardActions>
@@ -52,6 +54,7 @@ const CartList = () => {
     return (
       <div style={{ padding: '20px', marginTop: 'auto' }}>
         <Grid container spacing={2}>
+          {cart.map(renderCartItem)}
         </Grid>
        {/* <Button
           variant="contained"
@@ -83,6 +86,7 @@ const CartList = () => {
     );
   };
 
+  return <div>{cart.length > 0 ? renderSummary() : renderEmptyCart()}</div>;
 };
 
 export default CartList;
