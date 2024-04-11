@@ -17,7 +17,7 @@ const GlobalContextProvider = ({ children }) => {
     products: [],
     selectedProduct: null,
     filteredProducts: [], // Filtrelenmiş ürünleri saklamak için
- 
+    showFilteredProducts:false,
     // other properties specific to LeftSales...
   });
 
@@ -166,7 +166,27 @@ const GlobalContextProvider = ({ children }) => {
     });
     setTotalAmount(newTotalAmount);
   }, [cart, setTotalAmount]);
+  
+  const addToCart = (product) => {
+    setCart((prevCart) => {
+      const existingItem = prevCart.find((item) => item.product.id === product.product_id);
+      if (existingItem) {
+        return prevCart.map((item) =>
+          item.product.id === product.product_id ? { ...item, quantity: item.quantity + 1 } : item
+        );
+      } else {
+        return [...prevCart, { product: { id: product.product_id, name: product.product_name, price: product.price,image:product.image_url,barcode:product.barcode }, quantity: 1 }];
+      }
+    });
+  };
 
+  const handleAddToCart = (product) => {
+    addToCart(product);
+  };
+
+  const handleCardClick = (product) => {
+    addToCart(product);
+  };
 
   const contextValue = {
     globalState,
@@ -178,10 +198,13 @@ const GlobalContextProvider = ({ children }) => {
     handleShowProducts,
     handleShowProductsByCategoryId,   
     cart, 
+    setCart,
     removeFromCart,
     increaseQuantity,
     decreaseQuantity,
     totalAmount,
+    handleAddToCart,
+    handleCardClick
     // other functions...
   };
 
