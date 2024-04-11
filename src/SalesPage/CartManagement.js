@@ -1,5 +1,6 @@
 import React from 'react';
 import { Grid } from "@mui/material";
+import CartList from './CartList';
 
 function CartManagement() {
 
@@ -20,7 +21,7 @@ function CartManagement() {
                     marginTop:"auto"
                 }}
             >
-                {/* <CartList /> */}
+                <CartList /> 
             </Grid>
         </div>
     );
