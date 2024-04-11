@@ -7,7 +7,7 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 const CartList = () => {
-  const { removeFromCart, increaseQuantity, decreaseQuantity, cart } = useGlobalContext();
+  const { removeFromCart, increaseQuantity, decreaseQuantity, cart, totalAmount } = useGlobalContext();
 
   const renderCartItem = (item) => {
     return (
@@ -27,7 +27,7 @@ const CartList = () => {
                   Quantity: {item.quantity}
                 </Typography>
                 <Typography variant="body1">
-                  Total
+                  Total: {item.product.price * item.quantity} TL
                 </Typography>
               </div>
               <div style={{ marginLeft: 'auto' }}>
