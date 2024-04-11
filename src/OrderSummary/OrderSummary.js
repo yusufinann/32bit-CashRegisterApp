@@ -1,6 +1,7 @@
 import React from 'react'
 import { Grid } from "@mui/material";
 import GlobalNavi from '../GlobalComponents/GlobalNavi';
+import ReceiptArea from './ReceiptArea';
 const OrderSummary = () => { //see price
   return (
     <Grid container spacing={2}>
@@ -25,7 +26,7 @@ const OrderSummary = () => { //see price
           overflow: "auto", // Enable scrolling
         }}
       >
-        {/* <ReceiptArea/> */}
+        <ReceiptArea/>
       </Grid>
 
       {/* CartList */}
