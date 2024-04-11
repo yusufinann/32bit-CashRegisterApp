@@ -204,7 +204,8 @@ const GlobalContextProvider = ({ children }) => {
     decreaseQuantity,
     totalAmount,
     handleAddToCart,
-    handleCardClick
+    handleCardClick,
+    addToCart
     // other functions...
   };
 
