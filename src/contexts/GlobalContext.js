@@ -183,7 +183,7 @@ const GlobalContextProvider = ({ children }) => {
     });
   };
 
-  const handleAddToCart = (product) => {
+  const handleAddToCart = (product) => {//Card veya Button click olunca addtocart çalışcak
     addToCart(product);
   };
 
