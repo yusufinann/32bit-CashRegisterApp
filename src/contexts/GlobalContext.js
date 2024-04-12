@@ -11,6 +11,7 @@ const GlobalContextProvider = ({ children }) => {
 
   const [state, setState] = useState({
     barcode: '',
+    searchQuery:'',
     categories: [],
     showCategories: false,
     showProducts: false,
@@ -18,6 +19,7 @@ const GlobalContextProvider = ({ children }) => {
     selectedProduct: null,
     filteredProducts: [], // Filtrelenmiş ürünleri saklamak için
     showFilteredProducts:false,
+    wantedProduct:[],
     // other properties specific to LeftSales...
   });
 
@@ -187,6 +189,26 @@ const GlobalContextProvider = ({ children }) => {
     addToCart(product);
   };
 
+  const handleSearching = useCallback((query) => {
+    const formattedQuery = query.replace(/\s+/g, '').toLowerCase(); // Remove spaces and convert to lower case
+    const wantedProducts = state.products.filter(product =>
+      product.product_name.replace(/\s+/g, '').toLowerCase().includes(formattedQuery)
+    );
+  
+    setState(prev => ({
+      ...prev,
+      searchQuery: query, // Keep the original query in the state to show in the input field
+      wantedProduct:wantedProducts,
+      showFilteredProducts: wantedProducts.length > 0
+    }));
+  }, [state.products]);
+  
+
+  const handleChange = useCallback((event) => {
+    handleSearching(event.target.value);
+  }, [handleSearching]);    
+
+
 
   const contextValue = {
     globalState,
@@ -204,7 +226,9 @@ const GlobalContextProvider = ({ children }) => {
     decreaseQuantity,
     totalAmount,
     handleAddToCart,
-    addToCart
+    addToCart,
+    handleSearching,
+    handleChange,
     // other functions...
   };
 
