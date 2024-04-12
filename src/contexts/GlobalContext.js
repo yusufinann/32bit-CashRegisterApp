@@ -187,9 +187,6 @@ const GlobalContextProvider = ({ children }) => {
     addToCart(product);
   };
 
-  const handleCardClick = (product) => {
-    addToCart(product);
-  };
 
   const contextValue = {
     globalState,
@@ -207,7 +204,6 @@ const GlobalContextProvider = ({ children }) => {
     decreaseQuantity,
     totalAmount,
     handleAddToCart,
-    handleCardClick,
     addToCart
     // other functions...
   };
