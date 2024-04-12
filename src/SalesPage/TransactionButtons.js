@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button, Container } from "@mui/material";
 import "./styles.css";
 import TransactionPanel from "./TransactionPanel";
+import ModalSearch from "./ModalSearch";
 
 const TransactionButtons = () => {
     // Modalın açık/kapalı durumunu kontrol eden state
@@ -60,6 +61,8 @@ const TransactionButtons = () => {
       >
         <TransactionPanel />
       </div>
+      <ModalSearch open={openModal} handleClose={handleCloseModal} />
+        
     </Container>
   );
 };
