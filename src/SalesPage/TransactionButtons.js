@@ -1,15 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Container } from "@mui/material";
 import "./styles.css";
 import TransactionPanel from "./TransactionPanel";
 
 const TransactionButtons = () => {
+    // Modalın açık/kapalı durumunu kontrol eden state
+    const [openModal, setOpenModal] = useState(false);
+
+    // Modalı açan fonksiyon
+    const handleOpenModal = () => {
+      setOpenModal(true);
+    };
+  
+    // Modalı kapatan fonksiyon
+    const handleCloseModal = () => {
+      setOpenModal(false);
+    };
   return (
     <Container>
       <div
         style={{ display: "flex", justifyContent: "space-between", margin: 20 }}
       >
-        <Button variant="contained" color="primary">
+        <Button variant="contained" color="primary" onClick={handleOpenModal}>
           isimden Ara
         </Button>
         <Button variant="contained" color="success">
