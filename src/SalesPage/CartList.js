@@ -1,92 +1,92 @@
 import React from 'react';
 import { useGlobalContext } from '../contexts/GlobalContext';
-import { IconButton, Typography, Button, Card, CardContent, CardActions, Grid } from '@mui/material';
+import { IconButton, Typography, Button, Card, CardContent, CardActions, Grid, Box } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
-const CartList = () => {
-  const { removeFromCart, increaseQuantity, decreaseQuantity, cart, totalAmount } = useGlobalContext();
+const styles = {
+  card: {
+    marginBottom: 'auto',
+    backgroundColor: "orange",
+    width: "100%"
+  },
+  image: {
+    width: '80px',
+    height: '80px',
+    borderRadius: '50%',
+    marginRight: '10px'
+  },
+  productDetails: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between' // Ensure content is spread across the card
+  },
+  actions: {
+    display: 'flex'
+  }
+};
 
-  const renderCartItem = (item) => {
-    return (
-    
-        <Card sx={{ marginBottom: '5px', height: 'auto', backgroundColor: "orange", width: "100%" }} >
-          <CardContent style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '10%' }}>
-            <div style={{ display: 'flex', alignItems: 'center', marginBottom: 'auto' }}>
-              <img src={item.product.image} alt={item.product.name} style={{ width: '50px', height: '50px', borderRadius: '50%', marginRight: '10px' }} />
-              <div>
-                <Typography gutterBottom variant="h6">
-                  {item.product.name}
-                </Typography>
-                <Typography variant="body1">
-                  Price: {item.product.price} TL
-                </Typography>
-                <Typography variant="body1">
-                  Quantity: {item.quantity}
-                </Typography>
-                <Typography variant="body1">
-                  Total: {item.product.price * item.quantity} TL
-                </Typography>
-              </div>
-              <div style={{ marginLeft: 'auto' }}>
-              <CardActions >
-              <IconButton color="secondary" aria-label="Remove" onClick={() => removeFromCart(item.product)}>
+const CartList = () => {
+  const { removeFromCart, increaseQuantity, decreaseQuantity, cart } = useGlobalContext();
+
+  const renderCartItem = (item) => (
+    <Grid item xs={12} key={item.product.id}>
+      <Card sx={styles.card}>
+        <CardContent>
+          <Box sx={styles.productDetails}>
+            <img src={item.product.image} alt={item.product.name} style={styles.image} />
+            <Box>
+              <Typography gutterBottom variant="h6">
+                {item.product.name}
+              </Typography>
+              <Typography variant="body1">Price: {item.product.price} TL</Typography>
+              <Typography variant="body1">Quantity: {item.quantity}</Typography>
+              <Typography variant="body1">Total: {item.product.price * item.quantity} TL</Typography>
+            </Box>
+            <CardActions sx={styles.actions}>
+              <IconButton color="secondary" onClick={() => removeFromCart(item.product)} aria-label="Remove item">
                 <DeleteIcon />
               </IconButton>
-              <IconButton color="primary" aria-label="Add" onClick={() => increaseQuantity(item.product)}>
+              <IconButton color="primary" onClick={() => increaseQuantity(item.product)} aria-label="Add item">
                 <AddIcon />
               </IconButton>
-              <IconButton color="primary" aria-label="Remove" onClick={() => decreaseQuantity(item.product)}>
+              <IconButton color="primary" onClick={() => decreaseQuantity(item.product)} aria-label="Decrease item">
                 <RemoveIcon />
               </IconButton>
             </CardActions>
-              </div>
-            </div>           
-          </CardContent>
-        </Card>
-     
-    );
-  };
+          </Box>
+        </CardContent>
+      </Card>
+    </Grid>
+  );
+  
 
-  const renderSummary = () => {
-    return (
-      <div style={{ padding: '20px', marginTop: 'auto' }}>
-        <Grid container spacing={2}>
-          {cart.map(renderCartItem)}
-        </Grid>
-       {/* <Button
-          variant="contained"
-          color="secondary"
-          startIcon={<PaymentIcon />}
-          onClick={() => alert('Redirect to payment page')}
-          style={{ marginTop: '20px' }}
-        >
-          Proceed to Payment
-    </Button>*/}
-      </div>
-    );
-  };
+  const renderSummary = () => (
+    <Box sx={{ padding: '20px', marginTop: 'auto' }}>
+      <Grid container spacing={2}>
+        {cart.map(renderCartItem)}
+      </Grid>
+    </Box>
+  );
 
-  const renderEmptyCart = () => {
-    return (
-      <div style={{ padding: '20px', margin: '20px', textAlign: 'center' }}>
-        <Typography variant="h5">Your Cart is Empty</Typography>
-        <Button
-          variant="contained"
-          color="primary"
-          startIcon={<ShoppingCartIcon />}
-          onClick={() => alert('Redirect to shopping page')}
-          style={{ marginTop: '20px' }}
-        >
-          Go Shopping
-        </Button>
-      </div>
-    );
-  };
+  const renderEmptyCart = () => (
+    <Box sx={{ padding: '20px', margin: '20px', textAlign: 'center' }}>
+      <Typography variant="h5">Your Cart is Empty</Typography>
+      <Button
+        variant="contained"
+        color="primary"
+        startIcon={<ShoppingCartIcon />}
+        onClick={() => alert('Redirect to shopping page')}
+        sx={{ marginTop: '20px' }}
+      >
+        Go Shopping
+      </Button>
+    </Box>
+  );
 
-  return <div>{cart.length > 0 ? renderSummary() : renderEmptyCart()}</div>;
+  return <Box>{cart.length > 0 ? renderSummary() : renderEmptyCart()}</Box>;
 };
 
 export default CartList;
