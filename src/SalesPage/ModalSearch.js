@@ -1,6 +1,14 @@
-import React from 'react';
-import { Button, TextField, Dialog, DialogActions, DialogContent, DialogTitle } from '@mui/material';
-import { useGlobalContext } from '../contexts/GlobalContext';
+import React from "react";
+import {
+  Button,
+  TextField,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+} from "@mui/material";
+import { useGlobalContext } from "../contexts/GlobalContext";
+import ProductSearchResult from "./ProductSearchResult";
 
 const ModalSearch = ({ open, handleClose }) => {
   const { state, handleChange } = useGlobalContext();
@@ -22,11 +30,13 @@ const ModalSearch = ({ open, handleClose }) => {
         />
       </DialogContent>
       <DialogActions>
-        <Button onClick={handleClose}>İptal</Button>
-        {/* Area where products are displayed */}
+        {state.showFilteredProducts && (
+          <ProductSearchResult products={state.wantedProduct} />
+        )}
       </DialogActions>
+      <Button onClick={handleClose}>İptal</Button>
     </Dialog>
   );
-}
+};
 
 export default ModalSearch;
