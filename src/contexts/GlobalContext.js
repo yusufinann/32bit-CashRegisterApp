@@ -49,25 +49,45 @@ const GlobalContextProvider = ({ children }) => {
 
   const handleBarcodeChange = async (event) => {
     const newBarcode = event.target.value;
-    console.log('New barcode:', newBarcode); // Konsola barkod değerini yazdır
-    const filteredProducts = state.products.filter(product => product.barcode === newBarcode);
+     // Eğer barcode boş ise, durumu güncelleyerek varsayılan veya önceki duruma dönmeyi sağla
+  if (!newBarcode.trim()) {
+    setState(prevState => ({
+      ...prevState,
+      barcode: '',
+      filteredProducts: [],
+      showCategories: false, // Boş input olduğunda kategorileri göster
+      showProducts: true,
+      showFilteredProducts: false
+    }));
+    return; // Eğer barcode boş ise, daha fazla işlem yapmadan fonksiyondan çık.
+  }
     
-    if (filteredProducts.length > 0) {
-      setState(prevState => ({ 
-        ...prevState, 
-        barcode: newBarcode, 
+    try {
+      const response = await axios.get(`http://localhost:3000/products?barcode=${newBarcode}`);
+  
+      const filteredProducts = response.data; // 'data' alanı doğrudan veriyi içerir
+  
+      setState(prevState => ({
+        ...prevState,
+        barcode: newBarcode,
         filteredProducts: filteredProducts,
         showCategories: false, // Diğer durumları false olarak ayarla
-        showProducts: false,   // Diğer durumları false olarak ayarla
-        showFilteredProducts: true // Filtrelenmiş ürünler varsa true olarak ayarla
+        showProducts: filteredProducts.length === 0, // Ürünler yoksa true
+        showFilteredProducts: filteredProducts.length > 0 // Filtrelenmiş ürünler varsa true
       }));
-    } else {
-      setState(prevState => ({ 
-        ...prevState, 
+
+     
+
+    } catch (error) {
+      console.error('Failed to fetch products:', error);
+      // Hata durumunda state'i güncelle veya kullanıcıya bilgi ver
+      setState(prevState => ({
+        ...prevState,
         barcode: newBarcode,
-        showCategories: false, // Diğer durumları false olarak ayarla
-        showProducts: true,   // Ürünleri gösterme durumunu true olarak ayarla
-        showFilteredProducts: false // Filtrelenmiş ürünleri gösterme durumunu false olarak ayarla
+        filteredProducts: [],
+        showCategories: false,
+        showProducts: true, // API hatası durumunda ürünleri göster
+        showFilteredProducts: false
       }));
     }
   };
