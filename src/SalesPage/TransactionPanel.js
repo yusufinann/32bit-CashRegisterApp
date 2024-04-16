@@ -6,7 +6,7 @@ import { useGlobalContext } from "../contexts/GlobalContext";
 
 const TransactionPanel = () => {
 
-  const { input, handleClick, handleClear, handleDeleteOne } = useGlobalContext();
+  const { input, handleClick, handleClear, handleDeleteOne,openCampaignModalFn  } = useGlobalContext();
 
 
   const buttonStyle = {
@@ -57,7 +57,7 @@ const TransactionPanel = () => {
                 </Button>
             </div>
             <div style={{ flexGrow: 2, margin: 5, display: 'flex', justifyContent: 'flex-end',borderRadius:"10px",height:"100%",width:80 }}>
-                <Button variant="contained" color="success" sx={{ width: "100%", height: "100%" }}>Kampanya Listesi</Button>
+                <Button variant="contained" onClick={openCampaignModalFn} color="success" sx={{ width: "100%", height: "100%" }}>Kampanya Listesi</Button>
             </div>
         </div>
 
