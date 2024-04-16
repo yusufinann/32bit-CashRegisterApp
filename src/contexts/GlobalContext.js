@@ -26,7 +26,8 @@ const GlobalContextProvider = ({ children }) => {
 
   
   const [cart, setCart] = useState([]); // New state for cart
-  const [totalAmount, setTotalAmount] = useState(0);
+  const [totalAmount, setTotalAmount] = useState(0);  
+  const [campaignProducts,setCampaignProducts]=useState([]);
 
   const login = (user) => {
     setGlobalState({
@@ -337,6 +338,27 @@ const GlobalContextProvider = ({ children }) => {
     });
   };
 
+  const handleShowCampaignProducts = async () => {
+    try {
+      // Fetch products that are part of a campaign
+      const response = await axios.get('http://localhost:3000/products?campaign_state=1');
+      // Setting the campaignProducts state with data from the response
+      setCampaignProducts(response.data);
+    } catch (error) {
+      console.error('Error fetching campaign products:', error);
+      // Handle different error scenarios
+      if (error.response) {
+        console.error('Error response:', error.response.status, error.response.data);
+      } else if (error.request) {
+        console.error('Error request:', error.request);
+      } else {
+        console.error('Error message:', error.message);
+      }
+    }
+  };
+
+  
+
 
   const contextValue = {
     globalState,
@@ -359,6 +381,7 @@ const GlobalContextProvider = ({ children }) => {
     handleChange,
     calculateTotalPrice,
     input, setInput, handleClick, handleClear, handleDeleteOne ,
+    handleShowCampaignProducts
     // other functions...
   };
 
