@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardMedia, CardContent, Typography, Button } from '@mui/material';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
-
+import './CardList.css'
 
 const GlobalCardList = ({ array, AddToCartFunction }) => {
   const campaignStyles = {
