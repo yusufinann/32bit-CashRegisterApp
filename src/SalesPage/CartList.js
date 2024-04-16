@@ -31,8 +31,7 @@ const styles = {
 const CartList = () => {
   const { removeFromCart, increaseQuantity, decreaseQuantity, cart } = useGlobalContext();
 
-    const calculateTotalPrice = (item) => {
-    let totalCost = item.quantity * item.product.price;
+ 
 
     // Apply different campaigns based on the campaign ID
     switch (item.product.campaign_id) {
