@@ -1,4 +1,5 @@
 import React, { createContext, useCallback, useContext, useEffect, useState } from "react";
+import axios from 'axios';
 
 const GlobalContext = createContext();
 
@@ -71,69 +72,103 @@ const GlobalContextProvider = ({ children }) => {
 
   const handleShowCategories = async () => {
     try {
-      const response = await fetch("http://localhost:3000/categories");
-      if (!response.ok) {
-        throw new Error("API response was not ok.");
-      }
-      const data = await response.json();
-      setState((prevState) => ({
+      const response = await axios.get('http://localhost:3000/categories');
+      const data = response.data; // Axios otomatik olarak JSON'a çevirir
+  
+      setState(prevState => ({
         ...prevState,
         categories: data,
         showCategories: true,
         showProducts: false,
-        showFilteredProducts:false
+        showFilteredProducts: false
       }));
+      
     } catch (error) {
-      console.error("Error fetching categories:", error);
+      console.error('Error fetching categories:', error);
+      // Axios, error objesinde HTTP response status'ını ve data'yı içerir
+      if (error.response) {
+        // İstek yapıldı ve server tarafından bir response alındı
+        console.error('Error response:', error.response.status, error.response.data);
+      } else if (error.request) {
+        // İstek yapıldı ama hiçbir response alınamadı
+        console.error('Error request:', error.request);
+      } else {
+        // Bir şeyler isteği yaparken hatalı gitti
+        console.error('Error message:', error.message);
+      }
     }
   };
 
+  
   const handleShowProducts = useCallback(async () => {
-    console.log("Fetching products..."); // Indicate the operation has started
     try {
-      const response = await fetch('http://localhost:3000/products');
-      if (!response.ok) {
-        throw new Error('API response was not ok.');
-      }
-      const data = await response.json();
+      // Axios kullanarak API'dan ürünlerin alınması
+      const response = await axios.get('http://localhost:3000/products');
+      const data = response.data; // Axios otomatik olarak JSON'a çevirir ve response.data içerisinde saklar
+  
       setState(prevState => ({
         ...prevState,
         products: data,
         showCategories: false,
         showProducts: true,
-        showFilteredProducts: false
+         showFilteredProducts: false
       }));
     } catch (error) {
       console.error('Error fetching products:', error);
+      // Axios, error objesinde HTTP response status'ını ve data'yı içerir
+      if (error.response) {
+        // İstek yapıldı ve server tarafından bir response alındı
+        console.error('Error response:', error.response.status, error.response.data);
+      } else if (error.request) {
+        // İstek yapıldı ama hiçbir response alınamadı
+        console.error('Error request:', error.request);
+      } else {
+        // Bir şeyler isteği yaparken hatalı gitti
+        console.error('Error message:', error.message);
+      }
     }
-  }, []); // Assuming no dependencies, if there are, include them in this array
+  }, []); // Bağımlılıklar bu array içerisinde belirtilmelidir. Burada herhangi bir bağımlılık olmadığı varsayılmıştır.
   
- 
 
   useEffect(() => {
     handleShowProducts();
     // handleShowProducts fonksiyonunu bağımlılık dizisine ekle
   }, [handleShowProducts]);
+
   
+
   const handleShowProductsByCategoryId = async (categoryId) => {
     try {
-      let url = "http://localhost:3000/products";
+      // Kategoriye göre ürünleri filtrelemek için dinamik URL oluşturma
+      let url = 'http://localhost:3000/products';
       if (categoryId) {
         url += `?category_id=${categoryId}`;
       }
-      const response = await fetch(url);
-      if (!response.ok) {
-        throw new Error('API response was not ok.');
-      }
-      const data = await response.json();
+  
+      // Axios kullanarak API'dan veri çekme
+      const response = await axios.get(url);
+      const data = response.data; // Axios otomatik olarak JSON'a çevirir
+  
       setState(prevState => ({
         ...prevState,
         products: data, // Yeni ürünleri eski ürünlerin üzerine yaz
         showCategories: false,
         showProducts: true,
       }));
+  
     } catch (error) {
-      console.error('Error fetching products:', error);
+      console.error('Error fetching products by category:', error);
+      // Axios hata yönetimi
+      if (error.response) {
+        // İstek yapıldı ve server tarafından bir response alındı
+        console.error('Error response:', error.response.status, error.response.data);
+      } else if (error.request) {
+        // İstek yapıldı ama hiçbir response alınamadı
+        console.error('Error request:', error.request);
+      } else {
+        // Bir şeyler isteği yaparken hatalı gitti
+        console.error('Error message:', error.message);
+      }
     }
   };
   
