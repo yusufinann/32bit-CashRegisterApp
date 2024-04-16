@@ -7,62 +7,31 @@ import CampaignListModal from "./CampaignListModal";
 
 const TransactionButtons = () => {
     // Modalın açık/kapalı durumunu kontrol eden state
-    const [openModal, setOpenModal] = useState(false);
-
-    // Modalı açan fonksiyon
-    const handleOpenModal = () => {
-      setOpenModal(true);
-    };
-  
-    // Modalı kapatan fonksiyon
-    const handleCloseModal = () => {
-      setOpenModal(false);
-    };
+    const [openSearchModal, setOpenSearchModal] = useState(false);
+   
+    const handleOpenSearchModal = () => setOpenSearchModal(true);
+    const handleCloseSearchModal = () => setOpenSearchModal(false);
+ 
   return (
     <Container>
-      <div
-        style={{ display: "flex", justifyContent: "space-between", margin: 20 }}
-      >
-        <Button variant="contained" color="primary" onClick={handleOpenModal}>
-          isimden Ara
-        </Button>
-        <Button variant="contained" color="success">
-          Satıcı
-        </Button>
-        <Button variant="contained" color="error">
-          A101 Hadi
-        </Button>
-      </div>
-      <div
-        style={{ display: "flex", justifyContent: "space-between", margin: 20 }}
-      >
-        <Button variant="contained" color="primary">
-          Taksitli
-        </Button>
-      </div>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          marginLeft: 20,
-        }}
-      >
-        <Button variant="contained" color="primary">
-          Belge İptal
-        </Button>
-        <Button variant="contained" color="success">
-          Satır İptal
-        </Button>
-        <Button variant="contained" color="error">
-          Taksitli
-        </Button>
-      </div>
+       <div style={{ display: "flex",flexDirection:"row" ,justifyContent: "space-between", margin: 20 }}>
+         
+         <div>
+         <Button variant="contained" color="primary" onClick={handleOpenSearchModal}>isimden Ara</Button>
+          </div>
+         <div>
+         <Button variant="contained" color="primary" >Button</Button>
+       </div>
+       <div>
+         <Button variant="contained" color="primary">Belge İptal</Button>
+       </div>
+       </div>
       <div
         style={{ display: "flex", justifyContent: "space-between", margin: 20 }}
       >
         <TransactionPanel />
       </div>
-      <ModalSearch open={openModal} handleClose={handleCloseModal} />
+      <ModalSearch open={openSearchModal} handleClose={handleCloseSearchModal} />
       <CampaignListModal/> 
     </Container>
   );
