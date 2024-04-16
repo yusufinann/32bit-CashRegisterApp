@@ -23,41 +23,36 @@ const Receipt = React.forwardRef(({ productList, subTotal, tax, totalAmount }, r
         <p>ANTALYA</p>
       </div>
       <div className="receipt-line date">
-        <span>TARİH : null</span>
-        <span className="time">SAAT : null</span>
+        <span>TARİH : 07.05.2019</span>
+        <span className="time">SAAT : 12:30</span>
       </div>
       <div className="receipt-line">
-        <span>SATIŞ NO: null</span>
-        <span className="time">SATIŞ : null</span>
+        <span>SATIŞ NO: 2</span>
+        <span className="time">SATIŞ : NAKİT</span>
       </div>
       <div className="receipt-line">
-        <span>KASİYER : null</span>
+        <span>KASİYER : AHMET</span>
       </div>
-      <p className="receipt-line">
-        <div className="divider">--------------------------------------------------------------------------------</div>
-      </p>
+      <div className="receipt-line divider">--------------------------------------------------------------------------------</div>
       <div className="receipt-body">{productList}</div>
-      <p className="receipt-line">
-        <div className="divider">--------------------------------------------------------------------------------</div>
-      </p>
+      <div className="receipt-line divider">--------------------------------------------------------------------------------</div>
       <div className="receipt-line">
         <span>ALINAN PARA</span>
-        <span>null</span>
+        <span>100,00</span>
       </div>
       <div className="receipt-line">
         <span>PARA ÜSTÜ</span>
-        <span>null</span>
+        <span>9,80</span>
       </div>
-      <p className="receipt-line">
-        <div className="divider">--------------------------------------------------------------------------------</div>
-      </p>
+      <div className="receipt-line divider">--------------------------------------------------------------------------------</div>
       <div className="receipt-line">  
         <span>GENEL TOPLAM</span>
         <span>{totalAmount}</span>
       </div>
-      <p className="receipt-line bottom">KDV FİŞİ DEĞİLDİR</p>
+      <div className="receipt-line bottom">KDV FİŞİ DEĞİLDİR</div>
     </ReceiptContainer>
   );
 });
 
 export default Receipt;
+
