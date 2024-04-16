@@ -29,9 +29,9 @@ const styles = {
 };
 
 const CartList = () => {
-  const { removeFromCart, increaseQuantity, decreaseQuantity, cart } = useGlobalContext();
+  const { removeFromCart, increaseQuantity, decreaseQuantity, cart,calculateTotalPrice } = useGlobalContext();
 
- 
+
   const renderCartItem = (item) => (
     <Grid item xs={12} key={item.product.id}>
       <Card sx={styles.card}>
