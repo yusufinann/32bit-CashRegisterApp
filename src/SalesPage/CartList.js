@@ -32,32 +32,6 @@ const CartList = () => {
   const { removeFromCart, increaseQuantity, decreaseQuantity, cart } = useGlobalContext();
 
  
-
-    // Apply different campaigns based on the campaign ID
-    switch (item.product.campaign_id) {
-      case 'C001':
-        // Campaign C001: "Buy 3, pay for 2"
-        const numberOfFullDiscounts = Math.floor(item.quantity / 3);
-        const numberOfPaidItems = item.quantity - numberOfFullDiscounts;
-        totalCost = numberOfPaidItems * item.product.price;
-        break;
-      case 'C002':
-        // Campaign C002: 50% discount
-        totalCost = item.quantity * item.product.price * 0.5;
-        break;
-      case 'C003':
-        // Campaign C003: 10% discount
-        totalCost = item.quantity * item.product.price * 0.9;
-        break;
-      default:
-        // No campaign, regular price
-        totalCost = item.quantity * item.product.price;
-        break;
-    }
-
-    return totalCost;
-  };
-
   const renderCartItem = (item) => (
     <Grid item xs={12} key={item.product.id}>
       <Card sx={styles.card}>
