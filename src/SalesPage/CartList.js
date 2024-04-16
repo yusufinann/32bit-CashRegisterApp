@@ -31,6 +31,34 @@ const styles = {
 const CartList = () => {
   const { removeFromCart, increaseQuantity, decreaseQuantity, cart } = useGlobalContext();
 
+    const calculateTotalPrice = (item) => {
+    let totalCost = item.quantity * item.product.price;
+
+    // Apply different campaigns based on the campaign ID
+    switch (item.product.campaign_id) {
+      case 'C001':
+        // Campaign C001: "Buy 3, pay for 2"
+        const numberOfFullDiscounts = Math.floor(item.quantity / 3);
+        const numberOfPaidItems = item.quantity - numberOfFullDiscounts;
+        totalCost = numberOfPaidItems * item.product.price;
+        break;
+      case 'C002':
+        // Campaign C002: 50% discount
+        totalCost = item.quantity * item.product.price * 0.5;
+        break;
+      case 'C003':
+        // Campaign C003: 10% discount
+        totalCost = item.quantity * item.product.price * 0.9;
+        break;
+      default:
+        // No campaign, regular price
+        totalCost = item.quantity * item.product.price;
+        break;
+    }
+
+    return totalCost;
+  };
+
   const renderCartItem = (item) => (
     <Grid item xs={12} key={item.product.id}>
       <Card sx={styles.card}>
@@ -41,9 +69,10 @@ const CartList = () => {
               <Typography gutterBottom variant="h6">
                 {item.product.name}
               </Typography>
-              <Typography variant="body1">Price: {item.product.price} TL</Typography>
-              <Typography variant="body1">Quantity: {item.quantity}</Typography>
-              <Typography variant="body1">Total: {item.product.price * item.quantity} TL</Typography>
+              <Typography variant="body1">Fiyat: {item.product.price} TL</Typography>
+              <Typography variant="body1">Adet: {item.quantity} KDV : %{item.product.vat_rate}</Typography>
+
+              <Typography variant="body1">Toplam : {calculateTotalPrice(item)} TL</Typography>
             </Box>
             <CardActions sx={styles.actions}>
               <IconButton color="secondary" onClick={() => removeFromCart(item.product)} aria-label="Remove item">
@@ -61,7 +90,6 @@ const CartList = () => {
       </Card>
     </Grid>
   );
-  
 
   const renderSummary = () => (
     <Box sx={{ padding: '20px', marginTop: 'auto' }}>
