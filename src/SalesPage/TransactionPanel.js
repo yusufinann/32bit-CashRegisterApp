@@ -1,155 +1,135 @@
 import React, { useState } from "react";
 import { Button, Input, Grid } from "@mui/material";
-//import * as math from "mathjs";
-import "./styles.css";
+import BackspaceIcon from '@mui/icons-material/Backspace';
+import ClearIcon from '@mui/icons-material/Clear';
 
 const TransactionPanel = () => {
   const [input, setInput] = useState("");
 
   const handleClick = (value) => setInput((prevInput) => prevInput + value);
-
   const handleClear = () => setInput("");
-
- /* const handleCalculate = () => {
-    try {
-      setInput(math.evaluate(input).toString());
-    } catch (error) {
-      setInput("Error");
-    }
-  };*/
+  const handleDeleteOne = () => {
+    setInput((prevInput) => {
+      // Eğer önceki input boşsa, bir değişiklik yapmamak için aynısını döndürür
+      if (prevInput === "") return prevInput;
+      // Önceki input'un son karakterini siler
+      return prevInput.slice(0, -1);
+    });
+  };
+  
 
   const buttonStyle = {
-    width: "60px",
-    height: "60px",
-    margin: 5,
-  };
+    width: "100%",  // Butonun genişliği div'e tam sığacak şekilde
+    height: "100%", // Butonun yüksekliği div'e tam sığacak şekilde
+    borderRadius: "10px" , // borderRadius özelliği eklendi
+    backgroundColor: '#0E3F57', 
+    color:"white",
+    fontWeight:"bold",
+    boxShadow: '0px 4px 8px rgba(0,0,0,0.2)', 
+    transition: 'background-color 0.3s',
+    ':hover': {
+      backgroundColor: '#FFD700', // Farklı bir hover rengi belirleyebilirsiniz.
+    } };  
+
+    
+  const flexcontainer ={
+    display: 'flex', flexDirection: 'row', margin: 5, width: "100%", height: 60
+  }
+
 
   return (
-    <Grid container>
-      <Grid item xs={8} style={{ marginTop: "10px" }}>
+    <Grid container spacing={1} style={{ padding: 10 }}>
+      <Grid item xs={8} >
         <Input
+          fullWidth
           type="text"
           value={input}
           placeholder="0"
           readOnly
-          style={{ textAlign: "right" }}
+          style={{ fontSize: '2rem', textAlign: "right" }}
         />
       </Grid>
-      <Grid item xs={4}>
-        <Button color="secondary" onClick={handleClear} style={buttonStyle}>
-          C
-        </Button>
+      <Grid item xs={1} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}> 
+    {/* Bu boş Grid item, aradaki boşluğu sağlar. */}
+  </Grid>
+      <Grid item xs={3}>
+        <Button variant="contained" color="secondary" onClick={handleClear} sx={buttonStyle}><ClearIcon/></Button>
       </Grid>
+    
+      <div style={flexcontainer}>
+            <div style={{ flexGrow: 1, margin: 5,borderRadius:"10px",height:"100%" }}>
+                <Button color="primary" onClick={() => handleClick("00")} sx={buttonStyle}>00</Button>
+            </div>
+            <div style={{ flexGrow: 1,  margin: 5,borderRadius:"10px",height:"100%" }}>
+                <Button color="primary" onClick={handleDeleteOne} sx={buttonStyle}>
+                    <BackspaceIcon />
+                </Button>
+            </div>
+            <div style={{ flexGrow: 2, margin: 5, display: 'flex', justifyContent: 'flex-end',borderRadius:"10px",height:"100%",width:80 }}>
+                <Button variant="contained" color="success" sx={{ width: "100%", height: "100%" }}>Kampanya Listesi</Button>
+            </div>
+        </div>
 
-      <Grid item>
-        <Button
-          color="primary"
-          onClick={() => handleClick("7")}
-          style={buttonStyle}
-        >
+        <div style={flexcontainer}>
+      <div style={{ flexGrow: 1, margin: 5, borderRadius: "10px",height:"100%" }}>
+        <Button color="primary" onClick={() => handleClick("7")} sx={buttonStyle}>
           7
         </Button>
-        <Button
-          color="primary"
-          onClick={() => handleClick("8")}
-          style={buttonStyle}
-        >
+      </div>
+      <div style={{ flexGrow: 1,  margin: 5, borderRadius: "10px",height:"100%" }}>
+        <Button color="primary" onClick={() => handleClick("8")} sx={buttonStyle}>
           8
         </Button>
-        <Button
-          color="primary"
-          onClick={() => handleClick("9")}
-          style={buttonStyle}
-        >
+      </div>
+      <div style={{ flexGrow: 1,  margin: 5, borderRadius: "10px",height:"100%" }}>
+        <Button color="primary" onClick={() => handleClick("9")} sx={buttonStyle}>
           9
         </Button>
-        <Button
-          color="secondary"
-          onClick={() => handleClick("/")}
-          style={{ ...buttonStyle, padding: 7 }}
-        >
-          /
+      </div>
+      <div style={{ flexGrow: 10, margin: 5, borderRadius: "10px", justifyContent: 'flex-end',height:"100%",width:80  }}>
+        <Button color="primary" onClick={handleClear} sx={buttonStyle}>
+          Miktar
         </Button>
-      </Grid>
-      <Grid item>
-        <Button
-          color="primary"
-          onClick={() => handleClick("4")}
-          style={buttonStyle}
-        >
-          4
+      </div>
+    </div> 
+
+      <div style={flexcontainer}>
+<div style={{ flexGrow: 1, margin:5,borderRadius: "10px",height:"100%"}}>  <Button color="primary" onClick={() => handleClick("4")} sx={buttonStyle}>4</Button></div>
+<div style={{ flexGrow: 1, margin:5,borderRadius: "10px",height:"100%"}}> <Button color="primary" onClick={() => handleClick("5")} sx={buttonStyle}>5</Button></div>
+<div style={{ flexGrow: 1, margin:5,borderRadius: "10px",height:"100%"}}> <Button color="primary" onClick={() => handleClick("6")} sx={buttonStyle}>6</Button></div>
+<div style={{ flexGrow: 10,  margin: 5, borderRadius: "10px", justifyContent: 'flex-end',flexDirection:"column" ,height:"130px",width:80 }}>
+<Button variant="contained" color="success" style={{ width: "100%", height: "100%", borderRadius: "10px" }}>
+          Ödeme, Nakit
         </Button>
-        <Button
-          color="primary"
-          onClick={() => handleClick("5")}
-          style={buttonStyle}
-        >
-          5
-        </Button>
-        <Button
-          color="primary"
-          onClick={() => handleClick("6")}
-          style={buttonStyle}
-        >
-          6
-        </Button>
-        <Button
-          color="success"
-          onClick={() => handleClick("*")}
-          style={buttonStyle}
-        >
-          *
-        </Button>
-      </Grid>
-      <Grid item>
-        <Button
-          color="primary"
-          onClick={() => handleClick("1")}
-          style={buttonStyle}
-        >
-          1
-        </Button>
-        <Button
-          color="primary"
-          onClick={() => handleClick("2")}
-          style={buttonStyle}
-        >
-          2
-        </Button>
-        <Button 
-      variant="contained"
-      color="error"
-      style={{
-        width: "120px",
-        height: "60px",
-        margin: 5,
-      }}
-    >
-      Kredi Kartı
-    </Button>
-      </Grid>
-      <Grid item>
-        <Button
-          color="primary"
-          onClick={() => handleClick("0")}
-          style={buttonStyle}
-        >
-          0
-        </Button>
-        <Button
-          color="primary"
-          onClick={() => handleClick(".")}
-          style={buttonStyle}
-        >
-          .
-        </Button>
-        <Button 
-        variant="contained" color="success"
-   style={{width: "120px",
-    height: "60px",
-    margin: 5, }}>Ödeme,Nakit</Button>
- 
-      </Grid>
+      </div>
+
+      </div>     
+     
+     
+      <div style={flexcontainer}>
+<div style={{ flexGrow: 1, margin:5,borderRadius: "10px",height:"100%"}}>  <Button color="primary" onClick={() => handleClick("1")} sx={buttonStyle}>1</Button></div>
+<div style={{ flexGrow: 1, margin:5,borderRadius: "10px",height:"100%"}}> <Button color="primary" onClick={() => handleClick("2")} sx={buttonStyle}>2</Button></div>
+<div style={{ flexGrow: 1,margin:5,borderRadius: "10px",height:"100%"}}> <Button color="primary" onClick={() => handleClick("3")} sx={buttonStyle}>3</Button></div>
+<div style={{ flexGrow: 10,  margin: 5, borderRadius: "10px", justifyContent: 'flex-end',flexDirection:"column" ,height:"100%",width:80 }}>
+
+      </div>
+
+
+
+      </div>     
+   
+  <div style={flexcontainer}>
+            <div style={{ flexGrow: 1,  margin: 5,borderRadius:"10px",height:"100%" }}> <Button color="primary" onClick={() => handleClick("0")} sx={buttonStyle}>0</Button>
+            </div>
+            <div style={{ flexGrow: 1,  margin: 5,borderRadius:"10px",height:"100%" }}>
+            <Button color="primary" onClick={() => handleClick(".")} sx={buttonStyle}>.</Button>
+            </div>
+            <div style={{ flexGrow: 2,  margin: 5, display: 'flex', justifyContent: 'flex-end',borderRadius:"10px",height:"100%",width:80 }}>
+            <Button variant="contained" color="error" style={{ width: "100%", height: "100%"}}>
+          Kredi Kartı
+        </Button> </div>
+</div>
+      
     </Grid>
   );
 };
