@@ -1,22 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import { Button, Input, Grid } from "@mui/material";
 import BackspaceIcon from '@mui/icons-material/Backspace';
 import ClearIcon from '@mui/icons-material/Clear';
+import { useGlobalContext } from "../contexts/GlobalContext";
 
 const TransactionPanel = () => {
-  const [input, setInput] = useState("");
 
-  const handleClick = (value) => setInput((prevInput) => prevInput + value);
-  const handleClear = () => setInput("");
-  const handleDeleteOne = () => {
-    setInput((prevInput) => {
-      // Eğer önceki input boşsa, bir değişiklik yapmamak için aynısını döndürür
-      if (prevInput === "") return prevInput;
-      // Önceki input'un son karakterini siler
-      return prevInput.slice(0, -1);
-    });
-  };
-  
+  const { input, handleClick, handleClear, handleDeleteOne } = useGlobalContext();
+
 
   const buttonStyle = {
     width: "100%",  // Butonun genişliği div'e tam sığacak şekilde
@@ -135,3 +126,4 @@ const TransactionPanel = () => {
 };
 
 export default TransactionPanel;
+
