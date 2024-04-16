@@ -28,6 +28,8 @@ const GlobalContextProvider = ({ children }) => {
   const [cart, setCart] = useState([]); // New state for cart
   const [totalAmount, setTotalAmount] = useState(0);  
   const [campaignProducts,setCampaignProducts]=useState([]);
+  const [openCampaignModal, setOpenCampaignModal] = useState(false);
+  const [filteredCampaignProducts, setFilteredCampaignProducts] = useState([]);
 
   const login = (user) => {
     setGlobalState({
@@ -356,7 +358,25 @@ const GlobalContextProvider = ({ children }) => {
       }
     }
   };
+   //kampanya listesinde filtreleme işlemi için
+   const handleCampaignFilter = (campaignId) => {
+    if (campaignId === 'ALL') {
+      setFilteredCampaignProducts(campaignProducts); // Show all products if no filter is selected
+    } else {
+      const filtered = campaignProducts.filter(product => product.campaign_id === campaignId);
+      setFilteredCampaignProducts(filtered);
+    }
+  };
 
+  const openCampaignModalFn = () => {
+    setOpenCampaignModal(true);
+    handleShowCampaignProducts();
+};
+
+const closeCampaignModalFn = () => {
+  setOpenCampaignModal(false);
+  handleCampaignFilter('ALL'); // Reset filter when closing
+};
   
 
 
@@ -381,7 +401,13 @@ const GlobalContextProvider = ({ children }) => {
     handleChange,
     calculateTotalPrice,
     input, setInput, handleClick, handleClear, handleDeleteOne ,
-    handleShowCampaignProducts
+    handleShowCampaignProducts,
+    openCampaignModal,
+    openCampaignModalFn,
+    closeCampaignModalFn,
+    handleAddToCart,
+    handleCampaignFilter,
+    filteredCampaignProducts
     // other functions...
   };
 
