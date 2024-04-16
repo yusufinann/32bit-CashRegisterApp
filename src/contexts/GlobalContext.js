@@ -327,6 +327,15 @@ const GlobalContextProvider = ({ children }) => {
     return totalCost;
   };
   
+  const [input, setInput] = useState("");
+  const handleClick = (value) => setInput((prevInput) => prevInput + value);
+  const handleClear = () => setInput("");
+  const handleDeleteOne = () => {
+    setInput((prevInput) => {
+      if (prevInput === "") return prevInput;
+      return prevInput.slice(0, -1);
+    });
+  };
 
 
   const contextValue = {
@@ -349,6 +358,7 @@ const GlobalContextProvider = ({ children }) => {
     handleSearching,
     handleChange,
     calculateTotalPrice,
+    input, setInput, handleClick, handleClear, handleDeleteOne ,
     // other functions...
   };
 
