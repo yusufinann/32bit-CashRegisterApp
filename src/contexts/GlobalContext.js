@@ -367,6 +367,10 @@ const GlobalContextProvider = ({ children }) => {
       setFilteredCampaignProducts(filtered);
     }
   };
+  useEffect(() => {
+    handleCampaignFilter('ALL'); // Default to showing all products
+  }, [campaignProducts]);
+
 
   const openCampaignModalFn = () => {
     setOpenCampaignModal(true);
