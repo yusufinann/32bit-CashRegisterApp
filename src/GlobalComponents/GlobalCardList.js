@@ -2,11 +2,27 @@ import React from 'react';
 import { Card, CardMedia, CardContent, Typography, Button } from '@mui/material';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
-const GlobalCardList = ({ array,  AddToCartFunction }) => {
+
+const GlobalCardList = ({ array, AddToCartFunction }) => {
+  const campaignStyles = {
+    C001: "3 Al 2 Öde",
+    C002: "Etiketin Yarısı",
+    C003: "%10 indirim"
+  };
   return (
     <div className="card-container">
       {array.map((arr) => (
-        <Card key={arr.product_id} sx={{ width: 150 }} className="custom-card" onClick={() => AddToCartFunction(arr)}>
+        <Card key={arr.product_id} sx={{ width: 150, position: 'relative', overflow: 'visible' }} className="custom-card" onClick={() => AddToCartFunction(arr)}>
+          {arr.campaign_state === 1 && (
+            <div className="campaign-ribbon">
+              Kampanya!
+            </div>
+          )}
+          {campaignStyles[arr.campaign_id] && (
+  <div className="special-offer-ribbon">
+    {campaignStyles[arr.campaign_id]}
+  </div>
+)}
           <CardMedia
             component="img"
             alt={arr.product_name}
