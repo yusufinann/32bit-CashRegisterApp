@@ -209,16 +209,72 @@ const GlobalContextProvider = ({ children }) => {
   
   const addToCart = (product) => {
     setCart((prevCart) => {
-      const existingItem = prevCart.find((item) => item.product.id === product.product_id);
-      if (existingItem) {
-        return prevCart.map((item) =>
-          item.product.id === product.product_id ? { ...item, quantity: item.quantity + 1 } : item
-        );
-      } else {
-        return [...prevCart, { product: { id: product.product_id, name: product.product_name, price: product.price,image:product.image_url,barcode:product.barcode }, quantity: 1 }];
-      }
+        const existingItem = prevCart.find((item) => item.product.id === product.product_id);
+
+        if (existingItem) {
+            // Update quantity
+            let newQuantity = existingItem.quantity + 1;
+            let newPrice = existingItem.product.price;
+
+            // Implement campaign C001: 3 for 2 offer
+            if (product.campaign_id === 'C001') {
+                const groupsOfThree = Math.floor(newQuantity / 3);
+                const remainder = newQuantity % 3;
+                newPrice = (groupsOfThree * 2 * existingItem.product.price) + (remainder * existingItem.product.price);
+            }
+
+            // Implement campaign C002: 50% discount
+            else if (product.campaign_id === 'C002') {
+                newPrice = existingItem.product.price * 0.5 * newQuantity;
+            }
+
+            // Implement campaign C003: 10% discount
+            else if (product.campaign_id === 'C003') {
+                newPrice = existingItem.product.price * 0.9 * newQuantity;
+            }
+
+            return prevCart.map((item) =>
+                item.product.id === product.product_id ? { ...item, quantity: newQuantity, totalPrice: newPrice } : item
+            );
+        } else {
+            // Adding a new item to the cart
+            let initialPrice = product.price;
+
+            // Check if the product addition should apply C001 offer
+            if (product.campaign_id === 'C001' && product.quantity === 3) {
+                initialPrice = product.price * 2; // Pay for 2 even though it's 3
+            }
+
+            // Apply C002: 50% discount on first addition
+            else if (product.campaign_id === 'C002') {
+                initialPrice = product.price * 0.5;
+            }
+
+            // Apply C003: 10% discount on first addition
+            else if (product.campaign_id === 'C003') {
+                initialPrice = product.price * 0.9;
+            }
+
+            return [
+                ...prevCart,
+                {
+                    product: {
+                        id: product.product_id,
+                        name: product.product_name,
+                        price: product.price,
+                        image: product.image_url,
+                        barcode: product.barcode,
+                        campaign_id: product.campaign_id,
+                        vat_rate:product.vat_rate
+                    },
+                    quantity: 1,
+                    totalPrice: initialPrice
+                }
+            ];
+        }
     });
-  };
+};
+
 
   const handleAddToCart = (product) => {//Card veya Button click olunca addtocart çalışcak
     addToCart(product);
