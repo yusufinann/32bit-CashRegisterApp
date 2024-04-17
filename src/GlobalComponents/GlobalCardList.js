@@ -13,7 +13,7 @@ const GlobalCardList = ({ array, AddToCartFunction }) => {
       {array.map((arr) => (
         <Card key={arr.product_id} sx={{ width: 150, position: 'relative', overflow: 'visible' }} className="custom-card" onClick={() => AddToCartFunction(arr)}>
           {arr.campaign_state === 1 && (
-            <div className="campaign-ribbon">
+            <div className="campaign-badge">
               Kampanya!
             </div>
           )}
