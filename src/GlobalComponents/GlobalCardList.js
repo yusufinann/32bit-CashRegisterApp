@@ -1,6 +1,5 @@
 import React from 'react';
-import { Card, CardMedia, CardContent, Typography, Button } from '@mui/material';
-import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import { Card, CardMedia, CardContent, Typography } from '@mui/material';
 import './CardList.css'
 
 const GlobalCardList = ({ array, AddToCartFunction }) => {
@@ -36,17 +35,6 @@ const GlobalCardList = ({ array, AddToCartFunction }) => {
             <Typography variant="body1">
               Price: {arr.price} TL
             </Typography>
-            <Button
-              variant="contained"
-              color="primary"
-              startIcon={<AddShoppingCartIcon />}
-              onClick={(e) => {
-                e.stopPropagation(); // Prevent triggering the onClick event of the Card component
-                AddToCartFunction(arr, e);
-              }}
-            >
-              Sepete Ekle
-            </Button>
           </CardContent>
         </Card>
       ))}
