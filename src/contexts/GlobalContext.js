@@ -49,49 +49,53 @@ const GlobalContextProvider = ({ children }) => {
 
   const handleBarcodeChange = async (event) => {
     const newBarcode = event.target.value;
-     // Eğer barcode boş ise, durumu güncelleyerek varsayılan veya önceki duruma dönmeyi sağla
-  if (!newBarcode.trim()) {
-    setState(prevState => ({
-      ...prevState,
-      barcode: '',
-      filteredProducts: [],
-      showCategories: false, // Boş input olduğunda kategorileri göster
-      showProducts: true,
-      showFilteredProducts: false
-    }));
-    return; // Eğer barcode boş ise, daha fazla işlem yapmadan fonksiyondan çık.
-  }
+    // If the barcode input is empty, reset the relevant parts of the state
+    if (!newBarcode.trim()) {
+        setState(prevState => ({
+            ...prevState,
+            barcode: '',
+            filteredProducts: [],
+            showCategories: false,
+            showProducts: true,
+            showFilteredProducts: false
+        }));
+        return; // Early exit if barcode input is empty
+    }
     
     try {
-      const response = await axios.get(`http://localhost:3000/products?barcode=${newBarcode}`);
-  
-      const filteredProducts = response.data; // 'data' alanı doğrudan veriyi içerir
-  
-      setState(prevState => ({
-        ...prevState,
-        barcode: newBarcode,
-        filteredProducts: filteredProducts,
-        showCategories: false, // Diğer durumları false olarak ayarla
-        showProducts: filteredProducts.length === 0, // Ürünler yoksa true
-        showFilteredProducts: filteredProducts.length > 0 // Filtrelenmiş ürünler varsa true
-      }));
+        // Fetch products from the backend based on the barcode
+        const response = await axios.get(`http://localhost:3000/products?barcode=${newBarcode}`);
+        const filteredProducts = response.data; // Assumes 'data' directly contains the product list
 
-     
+        // If a product is found, add it to the cart
+        if (filteredProducts.length > 0) {
+            const productToAdd = filteredProducts[0];
+            addToCart(productToAdd); // This function needs to be implemented
+        }
+
+        // Update state with the new data
+        setState(prevState => ({
+            ...prevState,
+            barcode: newBarcode,
+            filteredProducts: filteredProducts,
+            showCategories: false,
+            showProducts: filteredProducts.length === 0,
+            showFilteredProducts: filteredProducts.length > 0
+        }));
 
     } catch (error) {
-      console.error('Failed to fetch products:', error);
-      // Hata durumunda state'i güncelle veya kullanıcıya bilgi ver
-      setState(prevState => ({
-        ...prevState,
-        barcode: newBarcode,
-        filteredProducts: [],
-        showCategories: false,
-        showProducts: true, // API hatası durumunda ürünleri göster
-        showFilteredProducts: false
-      }));
+        console.error('Failed to fetch products:', error);
+        // Update state to reflect the error situation
+        setState(prevState => ({
+            ...prevState,
+            barcode: newBarcode,
+            filteredProducts: [],
+            showCategories: false,
+            showProducts: true,
+            showFilteredProducts: false
+        }));
     }
-  };
-
+};
 
   const handleShowCategories = async () => {
     try {
