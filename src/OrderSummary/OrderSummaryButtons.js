@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { Button, Container, Dialog, DialogTitle, DialogContent } from "@mui/material";
-import "./styles.css";
+
 import { useGlobalContext } from '../contexts/GlobalContext';
 import ReceiptList from './ReceiptList';
 import TransactionPanel from '../SalesPage/TransactionPanel';

@@ -4,6 +4,7 @@ import { Grid,  Typography,Paper} from "@mui/material";
 import ReceiptArea from './ReceiptArea';
 import { styled } from "@mui/material/styles";
 import CartManagement from '../SalesPage/CartManagement';
+import OrderSummaryButtons from './OrderSummaryButtons';
 const OrderSummary = () => { //see price
 
   const Item = styled(Paper)(({ theme }) => ({
@@ -45,6 +46,7 @@ const OrderSummary = () => { //see price
         <Item>
           <Typography variant="h6">İşlem Paneli</Typography>
          {/* Right component */}
+         <OrderSummaryButtons/>
         </Item>
       </Grid>
     </Grid>
