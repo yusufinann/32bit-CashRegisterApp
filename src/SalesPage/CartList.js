@@ -94,8 +94,14 @@ const CartList = () => {
       bgcolor: 'background.paper',
       marginY: 1,
       borderRadius: '10px',
-    }}>
-      {cart.map((item) => renderCartItem(item))}
+    }}
+    >
+      {/*güncellenen alan */}
+      {cart.map((item) => (
+  <React.Fragment key={item.product.id}>
+    {renderCartItem(item)}
+  </React.Fragment>
+))}
     </Paper>
   );
 
