@@ -30,6 +30,7 @@ const GlobalContextProvider = ({ children }) => {
   const [campaignProducts,setCampaignProducts]=useState([]);
   const [openCampaignModal, setOpenCampaignModal] = useState(false);
   const [filteredCampaignProducts, setFilteredCampaignProducts] = useState([]);
+  const [receipts, setReceipts] = useState([]);
 
   const login = (user) => {
     setGlobalState({
@@ -405,7 +406,43 @@ const closeCampaignModalFn = () => {
   setOpenCampaignModal(false);
   handleCampaignFilter('ALL'); // Reset filter when closing
 };
+const saveReceipt = async () => {
+  const receipt = {
+    timestamp: `${new Date().toLocaleDateString("tr-TR")} ${new Date().toLocaleTimeString("tr-TR", { hour: '2-digit', minute: '2-digit' })}`,
+    items: cart.map(item => ({
+      productId: item.product.id,
+      productName: item.product.name,
+      quantity: item.quantity,
+      unitPrice: item.product.price,
+      totalPrice: item.totalPrice,
+      barcode: item.product.barcode,
+      vat_rate: item.product.vat_rate
+    })),
+    total: cart.reduce((total, item) => total + item.totalPrice, 0)  // Use totalPrice from the item if available
+  };
+
   
+
+  try {
+    const response = await fetch('http://localhost:3000/receipts', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(receipt)
+    });
+
+    if (response.ok) {
+      const savedReceipt = await response.json();
+      setReceipts([...receipts, savedReceipt]); 
+      console.log("Receipt saved:", savedReceipt);
+    } else {
+      throw new Error('Failed to save receipt');
+    }
+  } catch (error) {
+    console.error("Error saving the receipt:", error);
+  }
+};
 
 
   const contextValue = {
@@ -435,7 +472,8 @@ const closeCampaignModalFn = () => {
     closeCampaignModalFn,
     handleAddToCart,
     handleCampaignFilter,
-    filteredCampaignProducts
+    filteredCampaignProducts,
+    receipts, saveReceipt,
     // other functions...
   };
 
