@@ -27,6 +27,7 @@ const GlobalContextProvider = ({ children }) => {
   
   const [cart, setCart] = useState([]); // New state for cart
   const [totalAmount, setTotalAmount] = useState(0);  
+  const [paymentType, setPaymentType] = useState('');
   const [campaignProducts,setCampaignProducts]=useState([]);
   const [openCampaignModal, setOpenCampaignModal] = useState(false);
   const [filteredCampaignProducts, setFilteredCampaignProducts] = useState([]);
@@ -455,6 +456,7 @@ const saveReceipt = async () => {
     handleCampaignFilter,
     filteredCampaignProducts,
     receipts, saveReceipt,
+    paymentType, setPaymentType,
     // other functions...
   };
 
