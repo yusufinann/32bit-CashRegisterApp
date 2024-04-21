@@ -3,11 +3,22 @@ import { Button, Input, Grid } from "@mui/material";
 import BackspaceIcon from '@mui/icons-material/Backspace';
 import ClearIcon from '@mui/icons-material/Clear';
 import { useGlobalContext } from "../contexts/GlobalContext";
+import { useNavigate } from 'react-router-dom';
 
 const TransactionPanel = () => {
 
-  const { input, handleClick, handleClear, handleDeleteOne,openCampaignModalFn  } = useGlobalContext();
+  const navigate = useNavigate();
 
+  const { input, handleClick, handleClear, handleDeleteOne,openCampaignModalFn, setPaymentType,saveReceivedMoney  } = useGlobalContext();
+
+  const handleSaveAndNavigate = async (paymentType) => {
+    setPaymentType(paymentType); // Ödeme tipini dinamik olarak ayarla
+  
+    // `saveReceivedMoney` fonksiyonunu çağır
+    await saveReceivedMoney();
+  
+    navigate('/price'); // Kullanıcıyı '/price' sayfasına yönlendir
+  };
 
   const buttonStyle = {
     width: "100%",  // Butonun genişliği div'e tam sığacak şekilde
@@ -89,7 +100,7 @@ const TransactionPanel = () => {
 <div style={{ flexGrow: 1, margin:5,borderRadius: "10px",height:"100%"}}> <Button color="primary" onClick={() => handleClick("5")} sx={buttonStyle}>5</Button></div>
 <div style={{ flexGrow: 1, margin:5,borderRadius: "10px",height:"100%"}}> <Button color="primary" onClick={() => handleClick("6")} sx={buttonStyle}>6</Button></div>
 <div style={{ flexGrow: 10,  margin: 5, borderRadius: "10px", justifyContent: 'flex-end',flexDirection:"column" ,height:"130px",width:80 }}>
-<Button variant="contained" color="success" style={{ width: "100%", height: "100%", borderRadius: "10px" }}>
+<Button variant="contained"  onClick={() => handleSaveAndNavigate('Nakit')} color="success" style={{ width: "100%", height: "100%", borderRadius: "10px" }}>
           Ödeme, Nakit
         </Button>
       </div>
@@ -116,7 +127,7 @@ const TransactionPanel = () => {
             <Button color="primary" onClick={() => handleClick(".")} sx={buttonStyle}>.</Button>
             </div>
             <div style={{ flexGrow: 2,  margin: 5, display: 'flex', justifyContent: 'flex-end',borderRadius:"10px",height:"100%",width:80 }}>
-            <Button variant="contained" color="error" style={{ width: "100%", height: "100%"}}>
+            <Button variant="contained" onClick={() => handleSaveAndNavigate('Kart')} color="error" style={{ width: "100%", height: "100%"}}>
           Kredi Kartı
         </Button> </div>
 </div>
