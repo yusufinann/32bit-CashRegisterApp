@@ -7,7 +7,7 @@ import ReceiptList from '../ReceiptsPage/ReceiptList';
 import TransactionPanel from '../SalesPage/TransactionPanel';
 const OrderSummaryButtons = () => {
     const [open, setOpen] = useState(false); // Modal için state
-    const { saveReceipt } = useGlobalContext();
+    const [isDisabled, setIsDisabled] = useState(false);
 
     const handleSaveAndShow = async () => {
       await saveReceipt();
@@ -17,6 +17,14 @@ const OrderSummaryButtons = () => {
     const handleClose = () => {
       setOpen(false); // Modalı kapat
     };
+    const {saveReceipt,totalAmount,receivedMoney } = useGlobalContext();
+  
+
+    if (receivedMoney - totalAmount < 0 && !isDisabled) {
+      setIsDisabled(true);
+    } else if (receivedMoney - totalAmount >= 0 && isDisabled) {
+      setIsDisabled(false);
+    }
 
     return (
       <Container>
@@ -24,6 +32,7 @@ const OrderSummaryButtons = () => {
           <Button
             variant="contained"
             color="primary"
+            disabled={isDisabled}
             onClick={handleSaveAndShow}
           >
             Belge Bitir
