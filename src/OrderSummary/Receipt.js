@@ -1,6 +1,7 @@
 import React from "react";
 import { styled } from "@mui/system";
 import "./receipt.css";
+import { useGlobalContext } from "../contexts/GlobalContext";
 
 const ReceiptContainer = styled("div")({
   fontFamily: "Arial, sans-serif",
@@ -14,6 +15,9 @@ const ReceiptContainer = styled("div")({
 });
 
 const Receipt = React.forwardRef(({ productList, subTotal, tax, totalAmount }, ref) => {
+  const {paymentType,receivedMoney} = useGlobalContext();
+  const changeGiven = receivedMoney - totalAmount;
+ 
   return (
     <ReceiptContainer ref={ref}>
       <div className="receipt-header">
@@ -23,12 +27,13 @@ const Receipt = React.forwardRef(({ productList, subTotal, tax, totalAmount }, r
         <p>ANTALYA</p>
       </div>
       <div className="receipt-line date">
-        <span>TARİH : 07.05.2019</span>
-        <span className="time">SAAT : 12:30</span>
+      <span>TARİH : {new Date().toLocaleDateString("tr-TR")}</span>
+  <span className="time">SAAT : {new Date().toLocaleTimeString("tr-TR", { hour: '2-digit', minute: '2-digit' })}</span>
+ 
       </div>
       <div className="receipt-line">
         <span>SATIŞ NO: 2</span>
-        <span className="time">SATIŞ : NAKİT</span>
+        <span className="time">SATIŞ : {paymentType}</span>
       </div>
       <div className="receipt-line">
         <span>KASİYER : AHMET</span>
@@ -38,11 +43,11 @@ const Receipt = React.forwardRef(({ productList, subTotal, tax, totalAmount }, r
       <div className="receipt-line divider">--------------------------------------------------------------------------------</div>
       <div className="receipt-line">
         <span>ALINAN PARA</span>
-        <span>100,00</span>
+        <span>{receivedMoney}</span>
       </div>
       <div className="receipt-line">
         <span>PARA ÜSTÜ</span>
-        <span>9,80</span>
+        <span>{changeGiven}</span>
       </div>
       <div className="receipt-line divider">--------------------------------------------------------------------------------</div>
       <div className="receipt-line">  
