@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Button, Container, Dialog, DialogTitle, DialogContent } from "@mui/material";
 
 import { useGlobalContext } from '../contexts/GlobalContext';
-import ReceiptList from './ReceiptList';
+import ReceiptList from '../ReceiptsPage/ReceiptList';
 import TransactionPanel from '../SalesPage/TransactionPanel';
 const OrderSummaryButtons = () => {
     const [open, setOpen] = useState(false); // Modal için state
