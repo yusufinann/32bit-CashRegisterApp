@@ -338,6 +338,10 @@ const handleShowProducts = useCallback(async () => {
   };
   
   const [input, setInput] = useState("");
+  const [receivedMoney, setReceivedMoney] = useState(null);
+  const saveReceivedMoney = () => {
+    setReceivedMoney(input); // input değerini receivedMoney'e kaydet
+  };
   const handleClick = (value) => setInput((prevInput) => prevInput + value);
   const handleClear = () => setInput("");
   const handleDeleteOne = () => {
@@ -457,6 +461,9 @@ const saveReceipt = async () => {
     filteredCampaignProducts,
     receipts, saveReceipt,
     paymentType, setPaymentType,
+    receivedMoney,
+    saveReceivedMoney,
+    setReceivedMoney
     // other functions...
   };
 
