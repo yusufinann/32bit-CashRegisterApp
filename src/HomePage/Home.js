@@ -56,8 +56,8 @@ const Home = () => {
                         color='#673AB7'
                     />
                        <MenuButtons 
-                        title="COLLECTIONS" 
-                        linkTo="/collections" 
+                        title="RECEIPTS" 
+                        linkTo="/receipts" 
                         icon={<CollectionsBookmark/>}
                         color='#FFC107'
                     />
