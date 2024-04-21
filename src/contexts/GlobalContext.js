@@ -98,72 +98,53 @@ const GlobalContextProvider = ({ children }) => {
     }
 };
 
-  const handleShowCategories = async () => {
-    try {
-      const response = await axios.get('http://localhost:3000/categories');
-      const data = response.data; // Axios otomatik olarak JSON'a çevirir
-  
-      setState(prevState => ({
-        ...prevState,
-        categories: data,
-        showCategories: true,
-        showProducts: false,
-        showFilteredProducts: false
-      }));
-      
-    } catch (error) {
-      console.error('Error fetching categories:', error);
-      // Axios, error objesinde HTTP response status'ını ve data'yı içerir
-      if (error.response) {
-        // İstek yapıldı ve server tarafından bir response alındı
-        console.error('Error response:', error.response.status, error.response.data);
-      } else if (error.request) {
-        // İstek yapıldı ama hiçbir response alınamadı
-        console.error('Error request:', error.request);
-      } else {
-        // Bir şeyler isteği yaparken hatalı gitti
-        console.error('Error message:', error.message);
-      }
+async function fetchFromAPI(endpoint) {
+  try {
+    const response = await axios.get(`http://localhost:3000/${endpoint}`);
+    const data = response.data;
+    return data;
+  } catch (error) {
+    console.error(`Error fetching ${endpoint}:`, error);
+    if (error.response) {
+      console.error('Error response:', error.response.status, error.response.data);
+    } else if (error.request) {
+      console.error('Error request:', error.request);
+    } else {
+      console.error('Error message:', error.message);
     }
-  };
+    throw error;
+  }
+}
 
-  
-  const handleShowProducts = useCallback(async () => {
-    try {
-      // Axios kullanarak API'dan ürünlerin alınması
-      const response = await axios.get('http://localhost:3000/products');
-      const data = response.data; // Axios otomatik olarak JSON'a çevirir ve response.data içerisinde saklar
-  
-      setState(prevState => ({
-        ...prevState,
-        products: data,
-        showCategories: false,
-        showProducts: true,
-         showFilteredProducts: false
-      }));
-    } catch (error) {
-      console.error('Error fetching products:', error);
-      // Axios, error objesinde HTTP response status'ını ve data'yı içerir
-      if (error.response) {
-        // İstek yapıldı ve server tarafından bir response alındı
-        console.error('Error response:', error.response.status, error.response.data);
-      } else if (error.request) {
-        // İstek yapıldı ama hiçbir response alınamadı
-        console.error('Error request:', error.request);
-      } else {
-        // Bir şeyler isteği yaparken hatalı gitti
-        console.error('Error message:', error.message);
-      }
-    }
-  }, []); // Bağımlılıklar bu array içerisinde belirtilmelidir. Burada herhangi bir bağımlılık olmadığı varsayılmıştır.
-  
+const handleShowCategories = useCallback(async () => {
+  try {
+    const data = await fetchFromAPI('categories');
+    setState(prevState => ({
+      ...prevState,
+      categories: data,
+      showCategories: true,
+      showProducts: false,
+      showFilteredProducts: false
+    }));
+  } catch (error) {
+    // Error handling could include setting an error state, etc.
+  }
+}, []);
 
-  useEffect(() => {
-    handleShowProducts();
-    // handleShowProducts fonksiyonunu bağımlılık dizisine ekle
-  }, [handleShowProducts]);
-
-  
+const handleShowProducts = useCallback(async () => {
+  try {
+    const data = await fetchFromAPI('products');
+    setState(prevState => ({
+      ...prevState,
+      products: data,
+      showCategories: false,
+      showProducts: true,
+      showFilteredProducts: false
+    }));
+  } catch (error) {
+    // Error handling could include setting an error state, etc.
+  }
+}, []);
 
   const handleShowProductsByCategoryId = async (categoryId) => {
     try {
