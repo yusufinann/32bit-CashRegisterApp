@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { TextField, Button} from '@mui/material';
 import './styles.css'
 import { useGlobalContext } from '../contexts/GlobalContext';
@@ -9,6 +9,12 @@ import FilteredProductList from './FilteredProductList';
 const ProductCatalog = () => {
 
     const {state, setState, handleShowCategories, handleShowProducts, handleBarcodeChange,  handleShowProductsByCategoryId } = useGlobalContext();
+    useEffect(() => {
+      handleShowCategories();
+    }, [handleShowCategories]);
+    useEffect(() => {
+      handleShowProducts();
+    }, [handleShowProducts]);
   return (
     <div>
       <form>
