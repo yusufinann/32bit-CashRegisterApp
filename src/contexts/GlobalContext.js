@@ -122,33 +122,44 @@ async function fetchFromAPI(endpoint) {
 
 const handleShowCategories = useCallback(async () => {
   try {
+    if (state.categories.length > 0) {
+      console.log("Categories already loaded.");
+      updateStateAndKeyboard(true, false, false);
+      return;
+    }
+
     const data = await fetchFromAPI('categories');
-    setState(prevState => ({
-      ...prevState,
-      categories: data,
-      showCategories: true,
-      showProducts: false,
-      showFilteredProducts: false
-    }));
+    updateStateAndKeyboard(true, false, false, { categories: data });
+    console.log("Fetched categories");
   } catch (error) {
-    // Error handling could include setting an error state, etc.
+    handleFetchError(error);
+  }
+}, [state.categories]);
+
+const handleShowProducts = useCallback(async () => {
+  try {  
+    const data = await fetchFromAPI('products');
+    updateStateAndKeyboard(false, true, false, { products: data });
+    console.log("Fetched products");
+  } catch (error) {
+    handleFetchError(error);
   }
 }, []);
 
-const handleShowProducts = useCallback(async () => {
-  try {
-    const data = await fetchFromAPI('products');
-    setState(prevState => ({
-      ...prevState,
-      products: data,
-      showCategories: false,
-      showProducts: true,
-      showFilteredProducts: false
-    }));
-  } catch (error) {
-    // Error handling could include setting an error state, etc.
-  }
-}, []);
+const updateStateAndKeyboard = (showCategories, showProducts, showFilteredProducts,extraState = {}) => {
+  setState(prevState => ({
+    ...prevState,
+    showCategories,
+    showProducts,
+    showFilteredProducts,
+    ...extraState
+  }));
+  setIsKeyboardOpen(false);
+};
+
+const handleFetchError = (error) => {
+  // Hata işleme burada gerçekleştirilebilir
+};
 
   const handleShowProductsByCategoryId = async (categoryId) => {
     try {
