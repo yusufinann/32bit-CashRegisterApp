@@ -32,6 +32,9 @@ const GlobalContextProvider = ({ children }) => {
   const [openCampaignModal, setOpenCampaignModal] = useState(false);
   const [filteredCampaignProducts, setFilteredCampaignProducts] = useState([]);
   const [receipts, setReceipts] = useState([]);
+  const [isKeyboardOpen, setIsKeyboardOpen] = useState(false); //VirtualKeyboard
+  const [keyboardPosition, setKeyboardPosition] = useState({ x: 0, y: 0 });//VirtualKeyboard
+ 
 
   const login = (user) => {
     setGlobalState({
@@ -463,7 +466,11 @@ const saveReceipt = async () => {
     paymentType, setPaymentType,
     receivedMoney,
     saveReceivedMoney,
-    setReceivedMoney
+    setReceivedMoney,
+    setIsKeyboardOpen, //VirtualKeyboard
+    isKeyboardOpen, //VirtualKeyboard
+    keyboardPosition, setKeyboardPosition //VirtualKeyboard
+    
     // other functions...
   };
 
