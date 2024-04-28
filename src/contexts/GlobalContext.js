@@ -306,17 +306,24 @@ const handleFetchError = (error) => {
   };
 
   const handleSearching = useCallback((query) => {
-    const formattedQuery = query.replace(/\s+/g, '').toLowerCase(); // Remove spaces and convert to lower case
+    // Boşlukları kaldır ve küçük harfe dönüştür
+    const formattedQuery = query.trim().toLowerCase();
+  
+    // Sorguya göre ürünleri filtrele
     const wantedProducts = state.products.filter(product =>
-      product.product_name.replace(/\s+/g, '').toLowerCase().includes(formattedQuery)
+      product.product_name.toLowerCase().startsWith(formattedQuery)
     );
   
+    // Durum güncellemesi yap
     setState(prev => ({
       ...prev,
-      searchQuery: query, // Keep the original query in the state to show in the input field
-      wantedProduct:wantedProducts,
+      searchQuery: query, // Giriş alanında göstermek için orijinal sorguyu tut
+      wantedProduct: wantedProducts,
       showFilteredProducts: wantedProducts.length > 0
     }));
+  
+    // ModalSearch'te tüm ürünler gösterildiğinde isme göre arama alanını kapat
+    setShowAllProducts(false);
   }, [state.products]);
   
 
