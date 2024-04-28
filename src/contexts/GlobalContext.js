@@ -451,6 +451,7 @@ const saveReceipt = async () => {
     login,
     logout,
     state,
+    setState,
     handleBarcodeChange,
     handleShowCategories,
     handleShowProducts,
