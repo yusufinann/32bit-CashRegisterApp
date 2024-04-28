@@ -1,15 +1,18 @@
 import React from 'react';
 import { Card, CardMedia, CardContent } from '@mui/material';
+import { useGlobalContext } from '../contexts/GlobalContext';
 
-const CategoryList = ({ categories, handleShowProducts }) => {
+const CategoryList = () => {
+  const { handleShowProductsByCategoryId, state } = useGlobalContext();
+
   return (
     <div>
       <div className="card-container">
-        {categories.map((category, index) => ( // index parametresini ekleyin
+        {state.categories.map((category, index) => ( // index parametresini ekleyin
           <Card
             key={`${category.category_id}-${index}`} // Her bir kategori için benzersiz bir anahtar
             className="custom-card"
-           onClick={() => handleShowProducts(category.category_id)} // Kategoriye tıklandığında ürünleri getir
+            onClick={() => handleShowProductsByCategoryId(category.category_id)} // Kategoriye tıklandığında ürünleri getir
           >
             <CardMedia
               component="img"
