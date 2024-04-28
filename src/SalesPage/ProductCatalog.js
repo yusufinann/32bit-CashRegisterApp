@@ -7,10 +7,11 @@ import CategoryList from './CategoryList';
 import ProductList from './ProductList';
 import FilteredProductList from './FilteredProductList';
 import VirtualKeyboard from '../GlobalComponents/VirtualKeyboard';
+import SubcategoryList from './SubcategoryList';
 
 const ProductCatalog = () => {
 
-  const { state, setState, handleShowCategories, handleShowProducts, handleBarcodeChange,setIsKeyboardOpen ,setKeyboardPosition} = useGlobalContext();
+  const { state, setState, handleShowCategories, handleShowProducts, handleBarcodeChange,setIsKeyboardOpen ,setKeyboardPosition,handleSubCategoriesClick} = useGlobalContext();
   const [inputValue, setInputValue] = useState("");
    
   const handleInputClick = (event) => {
@@ -25,6 +26,10 @@ const ProductCatalog = () => {
  
   const toggleCategories = useCallback(() => {
     setState(prevState => ({ ...prevState, showCategories: !prevState.showCategories }));
+  }, [setState]);
+
+  const  toggleSubcategories = useCallback(() => {
+    setState(prevState => ({ ...prevState, showSubcategories: !prevState.showSubcategories }));
   }, [setState]);
 
   const handleVirtualKeyboardPress = useCallback((value) => {
@@ -66,7 +71,7 @@ const ProductCatalog = () => {
       <Button variant="contained" color="primary" onClick={handleShowCategories}>
         Kategoriler
       </Button>
-      <Button variant="contained" color="success">
+      <Button variant="contained" color="success" onClick={handleSubCategoriesClick}>
         Alt Kategoriler
       </Button>
       <Button variant="contained" color="error" onClick={handleShowProducts}>
@@ -76,7 +81,7 @@ const ProductCatalog = () => {
     {state.showFilteredProducts && state.barcode && <FilteredProductList />}
     {state.showCategories && <CategoryList isOpen={state.showCategories} toggle={toggleCategories} />}
     {state.showProducts && <ProductList isOpen={state.showProducts} toggle={toggleProducts} />}
-   
+    {state.showSubcategories && <SubcategoryList isOpen={state.showSubcategories} toggle={toggleSubcategories} />}
   </>
   );
 };
