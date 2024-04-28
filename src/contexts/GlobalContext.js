@@ -34,6 +34,7 @@ const GlobalContextProvider = ({ children }) => {
   const [receipts, setReceipts] = useState([]);
   const [isKeyboardOpen, setIsKeyboardOpen] = useState(false); //VirtualKeyboard
   const [keyboardPosition, setKeyboardPosition] = useState({ x: 0, y: 0 });//VirtualKeyboard
+  const [showAllProducts, setShowAllProducts] = useState(false); //ModalSearch 
  
 
   const login = (user) => {
@@ -480,7 +481,8 @@ const saveReceipt = async () => {
     setReceivedMoney,
     setIsKeyboardOpen, //VirtualKeyboard
     isKeyboardOpen, //VirtualKeyboard
-    keyboardPosition, setKeyboardPosition //VirtualKeyboard
+    keyboardPosition, setKeyboardPosition, //VirtualKeyboard
+    showAllProducts, setShowAllProducts, //ModalSearch
     
     // other functions...
   };
