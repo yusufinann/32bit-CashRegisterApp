@@ -21,6 +21,8 @@ const GlobalContextProvider = ({ children }) => {
     filteredProducts: [], // Filtrelenmiş ürünleri saklamak için
     showFilteredProducts:false,
     wantedProduct:[],
+    showSubcategories:false, //Altkategoriler için
+    subcategories:[] //Altkategoriler için
     // other properties specific to LeftSales...
   });
 
@@ -86,7 +88,8 @@ const GlobalContextProvider = ({ children }) => {
             filteredProducts: filteredProducts,
             showCategories: false,
             showProducts: filteredProducts.length === 0,
-            showFilteredProducts: filteredProducts.length > 0
+            showFilteredProducts: filteredProducts.length > 0,
+            showSubcategories:false,
         }));
 
     } catch (error) {
@@ -98,7 +101,8 @@ const GlobalContextProvider = ({ children }) => {
             filteredProducts: [],
             showCategories: false,
             showProducts: true,
-            showFilteredProducts: false
+            showFilteredProducts: false,
+            showSubcategories:false,
         }));
     }
 };
@@ -125,12 +129,12 @@ const handleShowCategories = useCallback(async () => {
   try {
     if (state.categories.length > 0) {
       console.log("Categories already loaded.");
-      updateStateAndKeyboard(true, false, false);
+      updateStateAndKeyboard(true, false, false,false);
       return;
     }
 
     const data = await fetchFromAPI('categories');
-    updateStateAndKeyboard(true, false, false, { categories: data });
+    updateStateAndKeyboard(true, false, false,false, { categories: data });
     console.log("Fetched categories");
   } catch (error) {
     handleFetchError(error);
@@ -140,19 +144,32 @@ const handleShowCategories = useCallback(async () => {
 const handleShowProducts = useCallback(async () => {
   try {  
     const data = await fetchFromAPI('products');
-    updateStateAndKeyboard(false, true, false, { products: data });
+    updateStateAndKeyboard(false, true, false,false, { products: data });
     console.log("Fetched products");
   } catch (error) {
     handleFetchError(error);
   }
 }, []);
 
-const updateStateAndKeyboard = (showCategories, showProducts, showFilteredProducts,extraState = {}) => {
+//AltKategorileri getiren fonksiyon.
+const handleSubCategoriesClick = useCallback(async () => {
+  try {  
+    const data = await fetchFromAPI('subcategories');
+    updateStateAndKeyboard(false, false, false,true, { subcategories: data });
+    console.log("Fetched subcategories");
+  } catch (error) {
+    handleFetchError(error);
+  }
+}, []);
+
+
+const updateStateAndKeyboard = (showCategories, showProducts, showFilteredProducts,showSubcategories,extraState = {}) => {
   setState(prevState => ({
     ...prevState,
     showCategories,
     showProducts,
     showFilteredProducts,
+    showSubcategories,   //AltKategoriler için
     ...extraState
   }));
   setIsKeyboardOpen(false);
@@ -491,6 +508,7 @@ const saveReceipt = async () => {
     isKeyboardOpen, //VirtualKeyboard
     keyboardPosition, setKeyboardPosition, //VirtualKeyboard
     showAllProducts, setShowAllProducts, //ModalSearch
+    handleSubCategoriesClick //SubcategoryList
     
     // other functions...
   };
