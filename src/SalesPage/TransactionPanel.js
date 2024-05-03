@@ -16,19 +16,18 @@ const TransactionPanel = () => {
   const handleSaveAndNavigate = async (paymentType) => {
     setPaymentType(paymentType); // Ödeme tipini dinamik olarak ayarla
   
-    if (input < Total) {
-      setShowModal(true); // Show modal for insufficient balance
-      return; // Exit the function
+    if (input < Total) { // Küçük veya eşitse uyarı göster
+      setShowModal(true); // Yetersiz bakiye uyarısı için modalı göster
+      return; // Fonksiyondan çık
     }
   
-    if (input >= Total) {
-      setShowModal(false);
-      await saveReceivedMoney(); // Call saveReceivedMoney function
-      setPartialPayment(false);
-      setInput("");
-      navigate('/price'); // Navigate user to '/price' page
-    } };
-
+    // Diğer durumda işlem yap ve sayfayı yönlendir
+    setShowModal(false);
+    await saveReceivedMoney(); // saveReceivedMoney fonksiyonunu çağır
+    setPartialPayment(false);
+    setInput("");
+    navigate('/price'); // Kullanıcıyı '/price' sayfasına yönlendir
+  };
   const buttonStyle = {
     width: "100%",  // Butonun genişliği div'e tam sığacak şekilde
     height: "100%", // Butonun yüksekliği div'e tam sığacak şekilde
