@@ -20,14 +20,18 @@ const TransactionPanel = () => {
       setShowModal(true); // Yetersiz bakiye uyarısı için modalı göster
       return; // Fonksiyondan çık
     }
-  
+
+  else
+  {
     // Diğer durumda işlem yap ve sayfayı yönlendir
     setShowModal(false);
     await saveReceivedMoney(); // saveReceivedMoney fonksiyonunu çağır
     setPartialPayment(false);
     setInput("");
     navigate('/price'); // Kullanıcıyı '/price' sayfasına yönlendir
-  };
+
+  }
+     };
   const buttonStyle = {
     width: "100%",  // Butonun genişliği div'e tam sığacak şekilde
     height: "100%", // Butonun yüksekliği div'e tam sığacak şekilde
