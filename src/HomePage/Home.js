@@ -3,6 +3,7 @@ import { Container, Typography, Grid, styled, Paper, Box, Avatar, Button} from '
 import { LocalGroceryStore,Assignment,MonetizationOn, CollectionsBookmark,AlarmOn, Settings   } from '@mui/icons-material';
 import MenuButtons from '../GlobalComponents/MenuButtons';
 import { useLogin } from '../contexts/LoginContext';
+import LogoutButton from '../LoginPage/LogoutButton';
 
 
 
@@ -52,7 +53,7 @@ const Home = () => {
                 <Box textAlign="center">
                     <AvatarContainer>
                         <Avatar alt={user.personelInfo.name} src="/static/images/avatar/1.jpg" sx={{ width: 100, height: 100, margin: '0 auto' }} />
-                     {/* <LogoutButton/> */}
+                     <LogoutButton/>
                     </AvatarContainer>
                     <Typography variant="h6" gutterBottom mt={2}>
                         Hoş geldiniz, {user.username}!
