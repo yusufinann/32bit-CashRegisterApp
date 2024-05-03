@@ -4,6 +4,7 @@ import "./styles.css";
 import TransactionPanel from "./TransactionPanel";
 import ModalSearch from "./ModalSearch";
 import CampaignListModal from "./CampaignListModal";
+import { useGlobalContext } from "../contexts/GlobalContext";
 
 const TransactionButtons = () => {
     // Modalın açık/kapalı durumunu kontrol eden state
@@ -11,6 +12,7 @@ const TransactionButtons = () => {
    
     const handleOpenSearchModal = () => setOpenSearchModal(true);
     const handleCloseSearchModal = () => setOpenSearchModal(false);
+    const {clearCart } = useGlobalContext();
  
   return (
     <Container>
@@ -23,7 +25,7 @@ const TransactionButtons = () => {
          <Button variant="contained" color="primary" >Button</Button>
        </div>
        <div>
-         <Button variant="contained" color="primary">Belge İptal</Button>
+         <Button variant="contained" color="primary" onClick={clearCart}>Belge İptal</Button>
        </div>
        </div>
       <div
