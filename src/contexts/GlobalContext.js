@@ -116,6 +116,7 @@ async function fetchFromAPI(endpoint) {
   try {
     const response = await axios.get(`http://localhost:3000/${endpoint}`);
     const data = response.data;
+    console.log("fetched from api");
     return data;
   } catch (error) {
     console.error(`Error fetching ${endpoint}:`, error);
@@ -146,11 +147,17 @@ const handleShowCategories = useCallback(async () => {
   }
 }, [state.categories]);
 
+let productsData = null;
+
 const handleShowProducts = useCallback(async () => {
-  try {  
-    const data = await fetchFromAPI('products');
-    updateStateAndKeyboard(false, true, false,false, { products: data });
-    console.log("Fetched products");
+  try {
+    if (!productsData) {
+      const data = await fetchFromAPI('products');
+      productsData = data;
+      console.log("Fetched products ");
+    }
+    updateStateAndKeyboard(false, true, false, false, { products: productsData });
+    console.log("Fetched products already");
   } catch (error) {
     handleFetchError(error);
   }
@@ -159,13 +166,18 @@ const handleShowProducts = useCallback(async () => {
 //AltKategorileri getiren fonksiyon.
 const handleSubCategoriesClick = useCallback(async () => {
   try {  
+    if (state.subcategories.length > 0) {
+      console.log("subcategories already loaded.");
+      updateStateAndKeyboard(false, false, false,true);
+      return;
+    } 
     const data = await fetchFromAPI('subcategories');
     updateStateAndKeyboard(false, false, false,true, { subcategories: data });
     console.log("Fetched subcategories");
   } catch (error) {
     handleFetchError(error);
   }
-}, []);
+}, [state.subcategories]);
 
 const handleShowProductsBySubcategory = async (subcategories) => {  //handleShowProductsByCategoryId
   try {
