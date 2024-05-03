@@ -5,26 +5,28 @@ import { Button, Container, Dialog, DialogTitle, DialogContent } from "@mui/mate
 import { useGlobalContext } from '../contexts/GlobalContext';
 import ReceiptArea from '../OrderSummary/ReceiptArea';
 import TransactionPanel from '../SalesPage/TransactionPanel';
+import { useNavigate } from 'react-router-dom';
 const OrderSummaryButtons = () => {
     const [open, setOpen] = useState(false); // Modal için state
     const [isDisabled, setIsDisabled] = useState(false);
-
-    const handleSaveAndShow = async () => {
-      await saveReceipt();
-      setOpen(true); // saveReceipt işlemi tamamlandıktan sonra modalı aç
-    };
+    const {Total, receivedMoney, clearCart,saveReceipt } = useGlobalContext();
+    const navigate = useNavigate();
 
     const handleClose = () => {
-      setOpen(false); // Modalı kapat
-    };
-    const {saveReceipt,totalAmount,receivedMoney } = useGlobalContext();
-  
+      saveReceipt();
+      setOpen(false);
+      navigate('/sales');
+      clearCart(); // Clear cart array using the function from GlobalContext
 
-    if (receivedMoney - totalAmount < 0 && !isDisabled) {
+    };
+   
+
+    if (receivedMoney - Total  < 0 && !isDisabled) {
       setIsDisabled(true);
-    } else if (receivedMoney - totalAmount >= 0 && isDisabled) {
+  } else if (receivedMoney - Total  >= 0 && isDisabled) {
       setIsDisabled(false);
-    }
+  }
+
 
     return (
       <Container>
@@ -33,7 +35,7 @@ const OrderSummaryButtons = () => {
             variant="contained"
             color="primary"
             disabled={isDisabled}
-            onClick={handleSaveAndShow}
+            onClick={() => setOpen(true)}
           >
             Belge Bitir
           </Button>
