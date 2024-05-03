@@ -5,7 +5,7 @@ import TotalAmount from "./TotalAmount";
 import { useGlobalContext } from "../contexts/GlobalContext";
 
 function CartManagement() {
-  const { totalAmount } = useGlobalContext();
+  const { subTotal } = useGlobalContext();
   return (
     <div style={{ margin: 20 }}>
       <Grid
@@ -24,7 +24,7 @@ function CartManagement() {
         <CartList />
       </Grid>
 
-      <TotalAmount totalAmount={totalAmount} />
+      <TotalAmount subTotal={subTotal} />
     </div>
   );
 }

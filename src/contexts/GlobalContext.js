@@ -28,7 +28,7 @@ const GlobalContextProvider = ({ children }) => {
 
   
   const [cart, setCart] = useState([]); // New state for cart
-  const [totalAmount, setTotalAmount] = useState(0);  
+  const [subTotal, setSubTotal] = useState(0);
   const [paymentType, setPaymentType] = useState('');
   const [campaignProducts,setCampaignProducts]=useState([]);
   const [openCampaignModal, setOpenCampaignModal] = useState(false);
@@ -319,12 +319,12 @@ const handleFetchError = (error) => {
 
   useEffect(() => {
     // Her sepet öğesi eklendiğinde veya kaldırıldığında toplam tutarı hesapla
-    let newTotalAmount = 0;
+    let newSubTotal = 0;
     cart.forEach(item => {
-      newTotalAmount += item.product.price * item.quantity;
+      newSubTotal += item.product.price * item.quantity;
     });
-    setTotalAmount(newTotalAmount);
-  }, [cart, setTotalAmount]);
+    setSubTotal(newSubTotal);
+  }, [cart, setSubTotal]);
   
   const addToCart = (product) => {
     setCart((prevCart) => {
@@ -569,7 +569,7 @@ const saveReceipt = async () => {
     removeFromCart,
     increaseQuantity,
     decreaseQuantity,
-    totalAmount,
+    subTotal,
     handleAddToCart,
     addToCart,
     handleSearching,
