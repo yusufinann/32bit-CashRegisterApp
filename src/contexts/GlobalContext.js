@@ -36,7 +36,10 @@ const GlobalContextProvider = ({ children }) => {
   const [receipts, setReceipts] = useState([]);
   const [isKeyboardOpen, setIsKeyboardOpen] = useState(false); //VirtualKeyboard
   const [keyboardPosition, setKeyboardPosition] = useState({ x: 0, y: 0 });//VirtualKeyboard
-  const [showAllProducts, setShowAllProducts] = useState(false); //ModalSearch 
+  const [showAllProducts, setShowAllProducts] = useState(false); //ModalSearch
+  const clearCart = () => {
+    setCart([]); // Clear the cart array
+} 
  
 
   const login = (user) => {
@@ -449,6 +452,13 @@ const handleFetchError = (error) => {
 
     return totalCost;
   };
+
+  const calculateCartTotal = () => {
+    return cart.reduce((total, item) => total + calculateTotalPrice(item), 0); // Correct the reduce function
+  };
+  
+  const Total = calculateCartTotal().toFixed(2); 
+  
   
   const [input, setInput] = useState("");
   const [receivedMoney, setReceivedMoney] = useState(null);
@@ -584,7 +594,10 @@ const saveReceipt = async () => {
     showAllProducts, setShowAllProducts, //ModalSearch
     handleSubCategoriesClick, //SubcategoryList
     handleShowProductsBySubcategory,
-    handleShowSubcategoryByCategoryId //To show Subcategory by Category id
+    handleShowSubcategoryByCategoryId ,//To show Subcategory by Category id
+    clearCart,
+    Total,  //Cart için ,Calculator,OrderSummaryButtons,Receipt,TotalAmount
+   
     
     // other functions...
   };
