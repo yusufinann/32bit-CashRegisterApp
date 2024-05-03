@@ -5,7 +5,7 @@ import { Card, CardMedia, CardContent } from '@mui/material';
 
 
 const SubcategoryList = () => {
-  const {state } = useGlobalContext();
+  const {state,handleShowProductsBySubcategory } = useGlobalContext();
   
  
   return (
@@ -15,12 +15,14 @@ const SubcategoryList = () => {
          <Card
            key={subcategory.id} // Kategori verisinin benzersiz bir kimliği olduğunu varsayarak 'id' alanını anahtar olarak kullanıyoruz
            className="custom-card"
+           onClick={() => handleShowProductsBySubcategory(subcategory.id)} // Kategoriye tıklandığında ürünleri getir
+   
          >
            <CardMedia
              component="img"
-            // alt={subcategory.name}
+             alt={subcategory.name}
              height="140"
-           //  image={subcategory.image_url}
+             image={subcategory.image_url}
            />
            <CardContent>
              <p>{subcategory.name}</p>

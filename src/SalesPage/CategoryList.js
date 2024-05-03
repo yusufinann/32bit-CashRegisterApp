@@ -3,7 +3,7 @@ import { Card, CardMedia, CardContent } from '@mui/material';
 import { useGlobalContext } from '../contexts/GlobalContext';
 
 const CategoryList = () => {
-  const { handleShowProductsByCategoryId, state } = useGlobalContext();
+  const { handleShowSubcategoryByCategoryId, state } = useGlobalContext();
 
   return (
     <div>
@@ -12,7 +12,7 @@ const CategoryList = () => {
           <Card
             key={`${category.category_id}-${index}`} // Her bir kategori için benzersiz bir anahtar
             className="custom-card"
-            onClick={() => handleShowProductsByCategoryId(category.category_id)} // Kategoriye tıklandığında ürünleri getir
+            onClick={() => handleShowSubcategoryByCategoryId(category.category_id)} 
           >
             <CardMedia
               component="img"
