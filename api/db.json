@@ -1,75 +1,219 @@
 {
   "categories": [
-      {
-        "category_id": 1,
-        "category_name": "Meyve Sebze",
-        "image_url": "https://cdn.pixabay.com/photo/2015/12/16/03/34/fruit-1095331_1280.jpg",
-        "id": "e614",
-        "subcategories": ["1a", "1b"]
-      },
-      {
-        "category_id": 2,
-        "category_name": "Süt Ürünleri",
-        "image_url": "https://cdn.pixabay.com/photo/2016/12/06/18/27/milk-1887234_1280.jpg",
-        "id": "13fb",
-        "subcategories": ["2a", "2b", "2c"]
-      },
-      {
-        "category_id": 3,
-        "category_name": "Fırın Ürünü",
-        "image_url": "https://cdn.pixabay.com/photo/2023/10/02/11/46/cupcakes-8289052_1280.jpg",
-        "id": "0b58",
-        "subcategories": ["3a", "3b", "3c"]
-      },
-      {
-        "category_id": 4,
-        "category_name": "Et ve Balık",
-        "image_url": "https://cdn.pixabay.com/photo/2017/09/16/21/44/food-2756948_1280.jpg",
-        "id": "a51c",
-        "subcategories": ["4a", "4b"]
-      },
-      {
-        "category_id": 5,
-        "category_name": "Atıştırmalık",
-        "image_url": "https://cdn.pixabay.com/photo/2012/02/29/12/17/bread-18987_1280.jpg",
-        "id": "4a37",
-        "subcategories": ["5a"]
-      },
-      {
-        "category_id": 6,
-        "category_name": "İçecekler",
-        "image_url": "https://images.pexels.com/photos/5498218/pexels-photo-5498218.jpeg",
-        "id": "9d29",
-        "subcategories": ["6a","6b"]
-      },
-      {
-        "category_id": 7,
-        "category_name": "Baharatlar",
-        "image_url": "https://cdn.pixabay.com/photo/2019/05/07/09/01/spices-4185324_1280.jpg",
-        "id": "02b9",
-        "subcategories": ["7a"]
-      },
-      {
-        "category_id": 8,
-        "category_name": "Bakliyat",
-        "image_url": "https://cdn.pixabay.com/photo/2017/08/07/19/08/beans-2606866_1280.jpg",
-        "id": "2eff",
-        "subcategories": ["8a"]
-      },
-      {
-        "category_id": 9,
-        "category_name": "Temizlik Ürünleri",
-        "image_url": "https://cdn.pixabay.com/photo/2020/06/21/09/54/objects-5324168_1280.jpg",
-        "id": "49a9",
-        "subcategories": ["9a"]
-      },
-      {
-        "category_id": 10,
-        "category_name": "Kişisel Bakım",
-        "image_url": "https://cdn.pixabay.com/photo/2017/06/10/12/10/cosmetics-2389779_1280.jpg",
-        "id": "cc45",
-        "subcategories": ["10a"]
-      }
+    {
+      "category_id": 1,
+      "category_name": "Meyve Sebze",
+      "image_url": "https://cdn.pixabay.com/photo/2015/12/16/03/34/fruit-1095331_1280.jpg",
+      "subcategories": [
+        {
+          "id": "1a"
+        },
+        {
+          "id": "1b"
+        }
+      ],
+      "id": "8477"
+    },
+    {
+      "category_id": 2,
+      "category_name": "Süt Ürünleri",
+      "image_url": "https://cdn.pixabay.com/photo/2016/12/06/18/27/milk-1887234_1280.jpg",
+      "subcategories": [
+        {
+          "id": "2a"
+        },
+        {
+          "id": "2b"
+        },
+        {
+          "id": "2c"
+        }
+      ],
+      "id": "95df"
+    },
+    {
+      "category_id": 3,
+      "category_name": "Fırın Ürünü",
+      "image_url": "https://cdn.pixabay.com/photo/2023/10/02/11/46/cupcakes-8289052_1280.jpg",
+      "id": "0b58",
+      "subcategories": [
+        {
+          "id": "3a"
+        },
+        {
+          "id": "3b"
+        },
+        {
+          "id": "3c"
+        }
+      ]
+    },
+    {
+      "category_id": 4,
+      "category_name": "Et ve Balık",
+      "image_url": "https://cdn.pixabay.com/photo/2017/09/16/21/44/food-2756948_1280.jpg",
+      "subcategories": [
+        {
+          "id": "4a"
+        },
+        {
+          "id": "4b"
+        }
+      ],
+      "id": "bc1c"
+    },
+    {
+      "category_id": 5,
+      "category_name": "Atıştırmalık",
+      "image_url": "https://cdn.pixabay.com/photo/2012/02/29/12/17/bread-18987_1280.jpg",
+      "subcategories": [
+        "5a"
+      ],
+      "id": "915b"
+    },
+    {
+      "category_id": 6,
+      "category_name": "İçecekler",
+      "image_url": "https://images.pexels.com/photos/5498218/pexels-photo-5498218.jpeg",
+      "subcategories": [
+        {
+          "id": "6a"
+        },
+        {
+          "id": "6b"
+        }
+      ],
+      "id": "e177"
+    },
+    {
+      "category_id": 7,
+      "category_name": "Baharatlar",
+      "image_url": "https://cdn.pixabay.com/photo/2019/05/07/09/01/spices-4185324_1280.jpg",
+      "subcategories": [
+        "7a"
+      ],
+      "id": "add5"
+    },
+    {
+      "category_id": 8,
+      "category_name": "Bakliyat",
+      "image_url": "https://cdn.pixabay.com/photo/2017/08/07/19/08/beans-2606866_1280.jpg",
+      "subcategories": [
+        "8a"
+      ],
+      "id": "9af4"
+    },
+    {
+      "category_id": 9,
+      "category_name": "Temizlik Ürünleri",
+      "image_url": "https://cdn.pixabay.com/photo/2020/06/21/09/54/objects-5324168_1280.jpg",
+      "subcategories": [
+        "9a"
+      ],
+      "id": "02c2"
+    },
+    {
+      "category_id": 10,
+      "category_name": "Kişisel Bakım",
+      "image_url": "https://cdn.pixabay.com/photo/2017/06/10/12/10/cosmetics-2389779_1280.jpg",
+      "subcategories": [
+        "10a"
+      ],
+      "id": "d150"
+    },
+    {
+      "category_id": 11,
+      "category_name": "Ev Gereçleri",
+      "image_url": "https://example.com/ev_gerecleri.jpg",
+      "subcategories": [
+        {
+          "id": "11a"
+        },
+        {
+          "id": "11b"
+        }
+      ],
+      "id": "18da"
+    },
+    {
+      "category_id": 12,
+      "category_name": "Oyuncaklar",
+      "image_url": "https://example.com/oyuncaklar.jpg",
+      "subcategories": [
+        {
+          "id": "12a"
+        },
+        {
+          "id": "12b"
+        },
+        {
+          "id": "12c"
+        }
+      ],
+      "id": "5c5f"
+    },
+    {
+      "category_id": 13,
+      "category_name": "Ofis Malzemeleri",
+      "image_url": "https://example.com/ofis_malzemeleri.jpg",
+      "subcategories": [
+        {
+          "id": "13a"
+        },
+        {
+          "id": "13b"
+        },
+        {
+          "id": "13c"
+        }
+      ],
+      "id": "fd5f"
+    },
+    {
+      "category_id": 14,
+      "category_name": "Ev Elektroniği",
+      "image_url": "https://example.com/ev_elektronigi.jpg",
+      "subcategories": [
+        {
+          "id": "14a"
+        },
+        {
+          "id": "14b"
+        }
+      ],
+      "id": "62f2"
+    },
+    {
+      "category_id": 15,
+      "category_name": "Spor Malzemeleri",
+      "image_url": "https://example.com/spor_malzemeleri.jpg",
+      "subcategories": [
+        {
+          "id": "15a"
+        },
+        {
+          "id": "15b"
+        },
+        {
+          "id": "15c"
+        }
+      ],
+      "id": "641d"
+    },
+    {
+      "category_id": 16,
+      "category_name": "Kitaplar",
+      "image_url": "https://example.com/kitaplar.jpg",
+      "subcategories": [
+        {
+          "id": "16a"
+        },
+        {
+          "id": "16b"
+        }
+      ],
+      "id": "313f"
+    }
   ],
   "products": [
     {
@@ -90,8 +234,10 @@
       "campaign_state": 1,
       "campaign_id": "C001",
       "vat_rate": 8,
-      "id": "b565",
-      "subcategories": ["1b"]
+      "subcategories": [
+        "1b"
+      ],
+      "id": "8377"
     },
     {
       "product_id": 2,
@@ -111,8 +257,10 @@
       "campaign_state": 1,
       "campaign_id": "C001",
       "vat_rate": 8,
-      "id": "c43f",
-      "subcategories": ["2a"]
+      "subcategories": [
+        "2a"
+      ],
+      "id": "0ff1"
     },
     {
       "product_id": 3,
@@ -132,8 +280,10 @@
       "campaign_state": 1,
       "campaign_id": "C001",
       "vat_rate": 8,
-      "id": "7a20",
-      "subcategories": ["3a"]
+      "subcategories": [
+        "3a"
+      ],
+      "id": "e726"
     },
     {
       "product_id": 4,
@@ -153,8 +303,10 @@
       "campaign_state": 1,
       "campaign_id": "C003",
       "vat_rate": 8,
-      "id": "70fc",
-      "subcategories": ["4a"]
+      "subcategories": [
+        "4a"
+      ],
+      "id": "cb31"
     },
     {
       "product_id": 5,
@@ -174,8 +326,10 @@
       "campaign_state": 0,
       "campaign_id": null,
       "vat_rate": 8,
-      "id": "7e4e",
-      "subcategories": ["5a"]
+      "subcategories": [
+        "5a"
+      ],
+      "id": "4884"
     },
     {
       "product_id": 6,
@@ -195,8 +349,10 @@
       "campaign_state": 0,
       "campaign_id": null,
       "vat_rate": 8,
-      "id": "f29d",
-      "subcategories": ["1a"]
+      "subcategories": [
+        "1a"
+      ],
+      "id": "ade1"
     },
     {
       "product_id": 7,
@@ -216,8 +372,10 @@
       "campaign_state": 1,
       "campaign_id": "C003",
       "vat_rate": 8,
-      "id": "dcee",
-      "subcategories": ["2b"]
+      "subcategories": [
+        "2c"
+      ],
+      "id": "d47c"
     },
     {
       "product_id": 8,
@@ -237,8 +395,10 @@
       "campaign_state": 0,
       "campaign_id": null,
       "vat_rate": 8,
-      "id": "1400",
-      "subcategories": ["3b"]
+      "subcategories": [
+        "3a"
+      ],
+      "id": "3a43"
     },
     {
       "product_id": 9,
@@ -258,8 +418,10 @@
       "campaign_state": 1,
       "campaign_id": "C003",
       "vat_rate": 8,
-      "id": "a007",
-      "subcategories": ["4b"]
+      "subcategories": [
+        "4c"
+      ],
+      "id": "9079"
     },
     {
       "product_id": 10,
@@ -279,8 +441,10 @@
       "campaign_state": 1,
       "campaign_id": "C002",
       "vat_rate": 8,
-      "id": "5797",
-      "subcategories": ["5a"]
+      "subcategories": [
+        "5a"
+      ],
+      "id": "a2f2"
     },
     {
       "product_id": 11,
@@ -300,8 +464,10 @@
       "campaign_state": 0,
       "campaign_id": null,
       "vat_rate": 8,
-      "id": "3e18",
-      "subcategories": ["6a"]
+      "subcategories": [
+        "6a"
+      ],
+      "id": "4c8d"
     },
     {
       "product_id": 12,
@@ -321,8 +487,10 @@
       "campaign_id": null,
       "campaign_state": 0,
       "vat_rate": 8,
-      "id": "aee7",
-      "subcategories": ["7a"]
+      "subcategories": [
+        "7a"
+      ],
+      "id": "fe13"
     },
     {
       "product_id": 13,
@@ -342,8 +510,10 @@
       "campaign_state": 1,
       "campaign_id": "C003",
       "vat_rate": 8,
-      "id": "15cb",
-      "subcategories": ["8a"]
+      "subcategories": [
+        "8a"
+      ],
+      "id": "8db4"
     },
     {
       "product_id": 14,
@@ -363,8 +533,10 @@
       "campaign_state": 1,
       "campaign_id": "C002",
       "vat_rate": 8,
-      "id": "b367",
-      "subcategories": ["9a"]
+      "subcategories": [
+        "9a"
+      ],
+      "id": "957d"
     },
     {
       "product_id": 15,
@@ -384,79 +556,2900 @@
       "campaign_state": 1,
       "campaign_id": "C003",
       "vat_rate": 8,
-      "id": "0a3b",
-      "subcategories": ["10a"]
+      "subcategories": [
+        "10a"
+      ],
+      "id": "e7d6"
+    },
+    {
+      "product_id": 16,
+      "barcode": "2345678901235",
+      "product_name": "istavrit",
+      "category_id": 4,
+      "brand": "Fish",
+      "unit": "kg",
+      "price": 10,
+      "discount": 0.05,
+      "manufacturing_date": "2024-02-10",
+      "expiry_date": "2024-03-10",
+      "stock_quantity": 200,
+      "supplier": "MilkyWayfish",
+      "is_active": 1,
+      "image_url": "https://cdn.pixabay.com/photo/2017/09/16/21/44/food-2756948_1280.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C001",
+      "vat_rate": 8,
+      "subcategories": [
+        "4b"
+      ],
+      "id": "2c9a"
+    },
+    {
+      "product_id": 17,
+      "barcode": "3456789012340",
+      "product_name": "Meyve Bıçağı",
+      "category_id": 11,
+      "brand": "KitchenPro",
+      "unit": "adet",
+      "price": 5,
+      "discount": 0.1,
+      "manufacturing_date": "2024-02-20",
+      "expiry_date": "2027-02-20",
+      "stock_quantity": 100,
+      "supplier": "CutleryMart",
+      "is_active": 1,
+      "image_url": "https://example.com/meyve_bicagi.jpg",
+      "campaign_state": 0,
+      "campaign_id": null,
+      "vat_rate": 8,
+      "subcategories": [
+        "11a"
+      ],
+      "id": "e383"
+    },
+    {
+      "product_id": 18,
+      "barcode": "4567890123459",
+      "product_name": "Sebze Soyacağı",
+      "category_id": 11,
+      "brand": "KitchenPro",
+      "unit": "adet",
+      "price": 3,
+      "discount": 0.05,
+      "manufacturing_date": "2024-02-15",
+      "expiry_date": "2027-02-15",
+      "stock_quantity": 150,
+      "supplier": "CutleryMart",
+      "is_active": 1,
+      "image_url": "https://example.com/sebze_soyacagi.jpg",
+      "campaign_state": 0,
+      "campaign_id": null,
+      "vat_rate": 8,
+      "subcategories": [
+        "11a"
+      ],
+      "id": "de9a"
+    },
+    {
+      "product_id": 19,
+      "barcode": "5678901234562",
+      "product_name": "Pamuk Oyuncak Ayı",
+      "category_id": 12,
+      "brand": "SoftToys",
+      "unit": "adet",
+      "price": 15,
+      "discount": 0.2,
+      "manufacturing_date": "2024-01-10",
+      "expiry_date": "2029-01-10",
+      "stock_quantity": 50,
+      "supplier": "ToyEmporium",
+      "is_active": 1,
+      "image_url": "https://example.com/pamuk_oyuncak_ayi.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C002",
+      "vat_rate": 8,
+      "subcategories": [
+        "12a"
+      ],
+      "id": "fb2e"
+    },
+    {
+      "product_id": 20,
+      "barcode": "6789012345671",
+      "product_name": "Ahşap Blok Seti",
+      "category_id": 12,
+      "brand": "WoodenWonders",
+      "unit": "set",
+      "price": 25,
+      "discount": 0.15,
+      "manufacturing_date": "2024-01-05",
+      "expiry_date": "2030-01-05",
+      "stock_quantity": 30,
+      "supplier": "ToyEmporium",
+      "is_active": 1,
+      "image_url": "https://example.com/ahsap_blok_seti.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C003",
+      "vat_rate": 8,
+      "subcategories": [
+        "12b"
+      ],
+      "id": "9bb5"
+    },
+    {
+      "product_id": 21,
+      "barcode": "0123456789018",
+      "product_name": "Eğitici Ahşap Oyuncak Seti",
+      "category_id": 12,
+      "brand": "Edutoys",
+      "unit": "set",
+      "price": 30,
+      "discount": 0.2,
+      "manufacturing_date": "2024-01-15",
+      "expiry_date": "2030-01-15",
+      "stock_quantity": 20,
+      "supplier": "SmartToys",
+      "is_active": 1,
+      "image_url": "https://example.com/egitici_ahsap_oyuncak_seti.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C001",
+      "vat_rate": 8,
+      "subcategories": [
+        "12c"
+      ],
+      "id": "e838"
+    },
+    {
+      "product_id": 22,
+      "barcode": "2345123456780",
+      "product_name": "Kurşun Kalem",
+      "category_id": 13,
+      "brand": "WriteRight",
+      "unit": "adet",
+      "price": 0.5,
+      "discount": 0.05,
+      "manufacturing_date": "2024-02-01",
+      "expiry_date": "2026-02-01",
+      "stock_quantity": 500,
+      "supplier": "StationeryWorld",
+      "is_active": 1,
+      "image_url": "https://example.com/kursun_kalem.jpg",
+      "campaign_state": 0,
+      "campaign_id": null,
+      "vat_rate": 8,
+      "subcategories": [
+        "13a"
+      ],
+      "id": "ccf9"
+    },
+    {
+      "product_id": 23,
+      "barcode": "3456123456781",
+      "product_name": "Defter",
+      "category_id": 13,
+      "brand": "NoteMaster",
+      "unit": "adet",
+      "price": 2,
+      "discount": 0.1,
+      "manufacturing_date": "2024-02-10",
+      "expiry_date": "2025-02-10",
+      "stock_quantity": 300,
+      "supplier": "StationeryWorld",
+      "is_active": 1,
+      "image_url": "https://example.com/defter.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C002",
+      "vat_rate": 8,
+      "subcategories": [
+        "13b"
+      ],
+      "id": "78af"
+    },
+    {
+      "product_id": 24,
+      "barcode": "4567123456782",
+      "product_name": "Dosya",
+      "category_id": 13,
+      "brand": "FileMaster",
+      "unit": "adet",
+      "price": 3,
+      "discount": 0.15,
+      "manufacturing_date": "2024-02-15",
+      "expiry_date": "2025-02-15",
+      "stock_quantity": 200,
+      "supplier": "StationeryWorld",
+      "is_active": 1,
+      "image_url": "https://example.com/dosya.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C003",
+      "vat_rate": 8,
+      "subcategories": [
+        "13c"
+      ],
+      "id": "d533"
+    },
+    {
+      "product_id": 25,
+      "barcode": "5678123456783",
+      "product_name": "Mini Blender",
+      "category_id": 14,
+      "brand": "BlendMaster",
+      "unit": "adet",
+      "price": 20,
+      "discount": 0.1,
+      "manufacturing_date": "2024-02-10",
+      "expiry_date": "2028-02-10",
+      "stock_quantity": 100,
+      "supplier": "ApplianceEmporium",
+      "is_active": 1,
+      "image_url": "https://example.com/mini_blender.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C002",
+      "vat_rate": 8,
+      "subcategories": [
+        "14a"
+      ],
+      "id": "ba9f"
+    },
+    {
+      "product_id": 26,
+      "barcode": "6789123456784",
+      "product_name": "Bulaşık Makinesi",
+      "category_id": 14,
+      "brand": "WashMaster",
+      "unit": "adet",
+      "price": 500,
+      "discount": 0.2,
+      "manufacturing_date": "2024-01-20",
+      "expiry_date": "2030-01-20",
+      "stock_quantity": 20,
+      "supplier": "ApplianceEmporium",
+      "is_active": 1,
+      "image_url": "https://example.com/bulasik_makinesi.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C002",
+      "vat_rate": 8,
+      "subcategories": [
+        "14b"
+      ],
+      "id": "f607"
+    },
+    {
+      "product_id": 27,
+      "barcode": "1234567890124",
+      "product_name": "Dumbbell Set",
+      "category_id": 15,
+      "brand": "FitLife",
+      "unit": "set",
+      "price": 100,
+      "discount": 0.1,
+      "manufacturing_date": "2024-02-05",
+      "expiry_date": "2030-02-05",
+      "stock_quantity": 50,
+      "supplier": "FitnessEmporium",
+      "is_active": 1,
+      "image_url": "https://example.com/dumbbell_set.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C003",
+      "vat_rate": 8,
+      "subcategories": [
+        "15a"
+      ],
+      "id": "429c"
+    },
+    {
+      "product_id": 28,
+      "barcode": "2345678901236",
+      "product_name": "Kamp Çadırı",
+      "category_id": 15,
+      "brand": "OutdoorGear",
+      "unit": "adet",
+      "price": 150,
+      "discount": 0.2,
+      "manufacturing_date": "2024-01-25",
+      "expiry_date": "2030-01-25",
+      "stock_quantity": 30,
+      "supplier": "OutdoorEmporium",
+      "is_active": 1,
+      "image_url": "https://example.com/kamp_cadiri.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C001",
+      "vat_rate": 8,
+      "subcategories": [
+        "15b"
+      ],
+      "id": "fa1e"
+    },
+    {
+      "product_id": 29,
+      "barcode": "3456789012341",
+      "product_name": "Spor Ayakkabı",
+      "category_id": 15,
+      "brand": "SportsPro",
+      "unit": "adet",
+      "price": 75,
+      "discount": 0.15,
+      "manufacturing_date": "2024-01-15",
+      "expiry_date": "2030-01-15",
+      "stock_quantity": 100,
+      "supplier": "SportsEmporium",
+      "is_active": 1,
+      "image_url": "https://example.com/spor_ayakkabi.jpg",
+      "campaign_state": 0,
+      "campaign_id": null,
+      "vat_rate": 8,
+      "subcategories": [
+        "15c"
+      ],
+      "id": "acd8"
+    },
+    {
+      "product_id": 30,
+      "barcode": "4567890123458",
+      "product_name": "Masal Kitabı",
+      "category_id": 16,
+      "brand": "TalesAndFables",
+      "unit": "adet",
+      "price": 10,
+      "discount": 0.1,
+      "manufacturing_date": "2024-02-20",
+      "expiry_date": "2028-02-20",
+      "stock_quantity": 200,
+      "supplier": "BookEmporium",
+      "is_active": 1,
+      "image_url": "https://example.com/masal_kitabi.jpg",
+      "campaign_state": 0,
+      "campaign_id": null,
+      "vat_rate": 8,
+      "subcategories": [
+        "16a"
+      ],
+      "id": "79a5"
+    },
+    {
+      "product_id": 31,
+      "barcode": "5678901234563",
+      "product_name": "Bilim Kurgu Romanı",
+      "category_id": 16,
+      "brand": "SciFiReads",
+      "unit": "adet",
+      "price": 12,
+      "discount": 0.15,
+      "manufacturing_date": "2024-01-10",
+      "expiry_date": "2028-01-10",
+      "stock_quantity": 150,
+      "supplier": "BookEmporium",
+      "is_active": 1,
+      "image_url": "https://example.com/bilim_kurgu_romani.jpg",
+      "campaign_state": 0,
+      "campaign_id": null,
+      "vat_rate": 8,
+      "subcategories": [
+        "16b"
+      ],
+      "id": "e3c9"
+    },
+    {
+      "product_id": 32,
+      "barcode": "6789012345670",
+      "product_name": "Çocuk Kitabı",
+      "category_id": 16,
+      "brand": "KidsBooks",
+      "unit": "adet",
+      "price": 8,
+      "discount": 0.1,
+      "manufacturing_date": "2024-02-05",
+      "expiry_date": "2028-02-05",
+      "stock_quantity": 100,
+      "supplier": "BookEmporium",
+      "is_active": 1,
+      "image_url": "https://example.com/cocuk_kitabi.jpg",
+      "campaign_state": 0,
+      "campaign_id": null,
+      "vat_rate": 8,
+      "subcategories": [
+        "16c"
+      ],
+      "id": "904e"
+    },
+    {
+      "product_id": 33,
+      "barcode": "8901234567892",
+      "product_name": "Portakal Suyu",
+      "category_id": 6,
+      "brand": "JuicyFresh",
+      "unit": "1L",
+      "price": 4,
+      "discount": 0.1,
+      "manufacturing_date": "2024-03-10",
+      "expiry_date": "2024-04-10",
+      "stock_quantity": 300,
+      "supplier": "FreshDrinksCo",
+      "is_active": 1,
+      "image_url": "https://example.com/portakal_suyu.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C001",
+      "vat_rate": 8,
+      "subcategories": [
+        "6a"
+      ],
+      "id": "b60b"
+    },
+    {
+      "product_id": 34,
+      "barcode": "9012345678903",
+      "product_name": "Kırmızı Mercimek",
+      "category_id": 8,
+      "brand": "PulsePride",
+      "unit": "kg",
+      "price": 2,
+      "discount": 0.05,
+      "manufacturing_date": "2024-03-15",
+      "expiry_date": "2025-03-15",
+      "stock_quantity": 200,
+      "supplier": "LegumeLogistics",
+      "is_active": 1,
+      "image_url": "https://example.com/kirmizi_mercimek.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C002",
+      "vat_rate": 8,
+      "subcategories": [
+        "8a"
+      ],
+      "id": "01d5"
+    },
+    {
+      "product_id": 35,
+      "barcode": "0123456789013",
+      "product_name": "Çilek Reçeli",
+      "category_id": 3,
+      "brand": "Grandma'sRecipes",
+      "unit": "340g",
+      "price": 7,
+      "discount": 0.15,
+      "manufacturing_date": "2024-03-20",
+      "expiry_date": "2025-03-20",
+      "stock_quantity": 150,
+      "supplier": "JamMakers",
+      "is_active": 1,
+      "image_url": "https://example.com/cilek_receli.jpg",
+      "campaign_state": 0,
+      "campaign_id": null,
+      "vat_rate": 8,
+      "subcategories": [
+        "3a"
+      ],
+      "id": "9b87"
+    },
+    {
+      "product_id": 36,
+      "barcode": "1234567890125",
+      "product_name": "Organik Yumurta",
+      "category_id": 4,
+      "brand": "FarmFresh",
+      "unit": "10 adet",
+      "price": 10,
+      "discount": 0.2,
+      "manufacturing_date": "2024-03-25",
+      "expiry_date": "2024-04-25",
+      "stock_quantity": 100,
+      "supplier": "OrganicFarms",
+      "is_active": 1,
+      "image_url": "https://example.com/organik_yumurta.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C003",
+      "vat_rate": 8,
+      "subcategories": [
+        "4b"
+      ],
+      "id": "2539"
+    },
+    {
+      "product_id": 37,
+      "barcode": "2345678901237",
+      "product_name": "Bebek Bezi",
+      "category_id": 9,
+      "brand": "BabyCare",
+      "unit": "adet",
+      "price": 20,
+      "discount": 0.1,
+      "manufacturing_date": "2024-03-30",
+      "expiry_date": "2025-03-30",
+      "stock_quantity": 300,
+      "supplier": "BabyEmporium",
+      "is_active": 1,
+      "image_url": "https://example.com/bebek_bez.jpg",
+      "campaign_state": 0,
+      "campaign_id": null,
+      "vat_rate": 8,
+      "subcategories": [
+        "9a"
+      ],
+      "id": "ded8"
+    },
+    {
+      "product_id": 38,
+      "barcode": "3456789012346",
+      "product_name": "Domates Salçası",
+      "category_id": 7,
+      "brand": "Grandma'sRecipes",
+      "unit": "720g",
+      "price": 8,
+      "discount": 0.1,
+      "manufacturing_date": "2024-04-05",
+      "expiry_date": "2025-04-05",
+      "stock_quantity": 200,
+      "supplier": "SauceMasters",
+      "is_active": 1,
+      "image_url": "https://example.com/domates_salcasi.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C001",
+      "vat_rate": 8,
+      "subcategories": [
+        "7a"
+      ],
+      "id": "f225"
+    },
+    {
+      "product_id": 39,
+      "barcode": "4567890123457",
+      "product_name": "Dana Kıyma",
+      "category_id": 4,
+      "brand": "MeatMaster",
+      "unit": "500g",
+      "price": 20,
+      "discount": 0.05,
+      "manufacturing_date": "2024-04-10",
+      "expiry_date": "2024-04-20",
+      "stock_quantity": 100,
+      "supplier": "FreshMeats",
+      "is_active": 1,
+      "image_url": "https://example.com/dana_kiyma.jpg",
+      "campaign_state": 0,
+      "campaign_id": null,
+      "vat_rate": 8,
+      "subcategories": [
+        "4a"
+      ],
+      "id": "d225"
+    },
+    {
+      "product_id": 40,
+      "barcode": "5678901234568",
+      "product_name": "Elma Suyu",
+      "category_id": 6,
+      "brand": "JuicyFresh",
+      "unit": "1L",
+      "price": 5,
+      "discount": 0.15,
+      "manufacturing_date": "2024-04-15",
+      "expiry_date": "2024-05-15",
+      "stock_quantity": 150,
+      "supplier": "FreshDrinksCo",
+      "is_active": 1,
+      "image_url": "https://example.com/elma_suyu.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C002",
+      "vat_rate": 8,
+      "subcategories": [
+        "6a"
+      ],
+      "id": "c227"
+    },
+    {
+      "product_id": 41,
+      "barcode": "6789012345679",
+      "product_name": "Peynir",
+      "category_id": 2,
+      "brand": "DairyDelight",
+      "unit": "250g",
+      "price": 12,
+      "discount": 0.2,
+      "manufacturing_date": "2024-04-20",
+      "expiry_date": "2024-05-20",
+      "stock_quantity": 80,
+      "supplier": "MilkyWaySup",
+      "is_active": 1,
+      "image_url": "https://example.com/peynir.jpg",
+      "campaign_state": 0,
+      "campaign_id": null,
+      "vat_rate": 8,
+      "subcategories": [
+        "2b"
+      ],
+      "id": "958c"
+    },
+    {
+      "product_id": 42,
+      "barcode": "7890123456780",
+      "product_name": "Beyaz Çikolata",
+      "category_id": 5,
+      "brand": "SweetDelight",
+      "unit": "100g",
+      "price": 3,
+      "discount": 0.1,
+      "manufacturing_date": "2024-04-25",
+      "expiry_date": "2024-05-25",
+      "stock_quantity": 200,
+      "supplier": "ChocoMasters",
+      "is_active": 1,
+      "image_url": "https://example.com/beyaz_cikolata.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C003",
+      "vat_rate": 8,
+      "subcategories": [
+        "5a"
+      ],
+      "id": "7604"
+    },
+    {
+      "product_id": 43,
+      "barcode": "9012345678904",
+      "product_name": "Limonata",
+      "category_id": 6,
+      "brand": "FreshSips",
+      "unit": "330ml",
+      "price": 3.5,
+      "discount": 0.05,
+      "manufacturing_date": "2024-05-01",
+      "expiry_date": "2024-06-01",
+      "stock_quantity": 300,
+      "supplier": "FreshDrinksCo",
+      "is_active": 1,
+      "image_url": "https://example.com/limonata.jpg",
+      "campaign_state": 0,
+      "campaign_id": null,
+      "vat_rate": 8,
+      "subcategories": [
+        "6b"
+      ],
+      "id": "2bc6"
+    },
+    {
+      "product_id": 44,
+      "barcode": "0123456789014",
+      "product_name": "Badem",
+      "category_id": 1,
+      "brand": "NuttyFresh",
+      "unit": "250g",
+      "price": 15,
+      "discount": 0.1,
+      "manufacturing_date": "2024-05-05",
+      "expiry_date": "2024-06-05",
+      "stock_quantity": 120,
+      "supplier": "NuttySup",
+      "is_active": 1,
+      "image_url": "https://example.com/badem.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C001",
+      "vat_rate": 8,
+      "subcategories": [
+        "1a"
+      ],
+      "id": "524c"
+    },
+    {
+      "product_id": 45,
+      "barcode": "1234567890126",
+      "product_name": "Biber Salçası",
+      "category_id": 7,
+      "brand": "Grandma'sRecipes",
+      "unit": "500g",
+      "price": 6,
+      "discount": 0.05,
+      "manufacturing_date": "2024-05-10",
+      "expiry_date": "2025-05-10",
+      "stock_quantity": 150,
+      "supplier": "SauceMasters",
+      "is_active": 1,
+      "image_url": "https://example.com/biber_salcasi.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C002",
+      "vat_rate": 8,
+      "subcategories": [
+        "7a"
+      ],
+      "id": "9641"
+    },
+    {
+      "product_id": 46,
+      "barcode": "2345678901238",
+      "product_name": "Kakaolu Kurabiye",
+      "category_id": 5,
+      "brand": "SweetDelight",
+      "unit": "paket",
+      "price": 4.5,
+      "discount": 0.1,
+      "manufacturing_date": "2024-05-15",
+      "expiry_date": "2024-06-15",
+      "stock_quantity": 200,
+      "supplier": "ChocoMasters",
+      "is_active": 1,
+      "image_url": "https://example.com/kakaolu_kurabiye.jpg",
+      "campaign_state": 0,
+      "campaign_id": null,
+      "vat_rate": 8,
+      "subcategories": [
+        "5b"
+      ],
+      "id": "ca20"
+    },
+    {
+      "product_id": 47,
+      "barcode": "3456789012347",
+      "product_name": "Fırın Makarna",
+      "category_id": 3,
+      "brand": "PastaParadise",
+      "unit": "500g",
+      "price": 3,
+      "discount": 0.05,
+      "manufacturing_date": "2024-05-20",
+      "expiry_date": "2025-05-20",
+      "stock_quantity": 250,
+      "supplier": "PastaMakers",
+      "is_active": 1,
+      "image_url": "https://example.com/firin_makarna.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C003",
+      "vat_rate": 8,
+      "subcategories": [
+        "3a"
+      ],
+      "id": "0a15"
+    },
+    {
+      "product_id": 48,
+      "barcode": "4567890123458",
+      "product_name": "Beyaz Un",
+      "category_id": 3,
+      "brand": "BakeMaster",
+      "unit": "1kg",
+      "price": 2.5,
+      "discount": 0.08,
+      "manufacturing_date": "2024-05-25",
+      "expiry_date": "2025-05-25",
+      "stock_quantity": 200,
+      "supplier": "FlourMills",
+      "is_active": 1,
+      "image_url": "https://example.com/beyaz_un.jpg",
+      "campaign_state": 0,
+      "campaign_id": null,
+      "vat_rate": 8,
+      "subcategories": [
+        "3b"
+      ],
+      "id": "88bd"
+    },
+    {
+      "product_id": 49,
+      "barcode": "5678901234569",
+      "product_name": "Muz",
+      "category_id": 1,
+      "brand": "FreshHarvest",
+      "unit": "kg",
+      "price": 3,
+      "discount": 0.1,
+      "manufacturing_date": "2024-06-01",
+      "expiry_date": "2024-06-10",
+      "stock_quantity": 150,
+      "supplier": "FarmFreshCo",
+      "is_active": 1,
+      "image_url": "https://example.com/muz.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C001",
+      "vat_rate": 8,
+      "subcategories": [
+        "1a"
+      ],
+      "id": "4d4b"
+    },
+    {
+      "product_id": 50,
+      "barcode": "6789012345670",
+      "product_name": "Salatalık",
+      "category_id": 1,
+      "brand": "FreshHarvest",
+      "unit": "adet",
+      "price": 0.75,
+      "discount": 0.05,
+      "manufacturing_date": "2024-06-05",
+      "expiry_date": "2024-06-15",
+      "stock_quantity": 200,
+      "supplier": "FarmFreshCo",
+      "is_active": 1,
+      "image_url": "https://example.com/salatalik.jpg",
+      "campaign_state": 0,
+      "campaign_id": null,
+      "vat_rate": 8,
+      "subcategories": [
+        "1b"
+      ],
+      "id": "b90a"
+    },
+    {
+      "product_id": 51,
+      "barcode": "7890123456781",
+      "product_name": "Kaşar Peyniri",
+      "category_id": 2,
+      "brand": "DairyDelight",
+      "unit": "250g",
+      "price": 10,
+      "discount": 0.1,
+      "manufacturing_date": "2024-06-10",
+      "expiry_date": "2024-07-10",
+      "stock_quantity": 150,
+      "supplier": "MilkyWaySup",
+      "is_active": 1,
+      "image_url": "https://example.com/kasar_peyniri.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C002",
+      "vat_rate": 8,
+      "subcategories": [
+        "2b"
+      ],
+      "id": "c606"
+    },
+    {
+      "product_id": 52,
+      "barcode": "8901234567891",
+      "product_name": "Sıvı Yağ",
+      "category_id": 8,
+      "brand": "HealthyOil",
+      "unit": "1L",
+      "price": 12,
+      "discount": 0.15,
+      "manufacturing_date": "2024-06-15",
+      "expiry_date": "2025-06-15",
+      "stock_quantity": 200,
+      "supplier": "OilProducers",
+      "is_active": 1,
+      "image_url": "https://example.com/sivi_yag.jpg",
+      "campaign_state": 0,
+      "campaign_id": null,
+      "vat_rate": 8,
+      "subcategories": [
+        "8a"
+      ],
+      "id": "0b9a"
+    },
+    {
+      "product_id": 53,
+      "barcode": "0123456789015",
+      "product_name": "Dana Kavurma",
+      "category_id": 4,
+      "brand": "MeatMaster",
+      "unit": "kg",
+      "price": 30,
+      "discount": 0.2,
+      "manufacturing_date": "2024-06-20",
+      "expiry_date": "2024-07-20",
+      "stock_quantity": 100,
+      "supplier": "FreshMeats",
+      "is_active": 1,
+      "image_url": "https://example.com/dana_kavurma.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C003",
+      "vat_rate": 8,
+      "subcategories": [
+        "4a"
+      ],
+      "id": "11a4"
+    },
+    {
+      "product_id": 54,
+      "barcode": "2345678901239",
+      "product_name": "Kahve",
+      "category_id": 6,
+      "brand": "CoffeeMasters",
+      "unit": "250g",
+      "price": 20,
+      "discount": 0.1,
+      "manufacturing_date": "2024-06-25",
+      "expiry_date": "2025-06-25",
+      "stock_quantity": 120,
+      "supplier": "CoffeeRoasters",
+      "is_active": 1,
+      "image_url": "https://example.com/kahve.jpg",
+      "campaign_state": 0,
+      "campaign_id": null,
+      "vat_rate": 8,
+      "subcategories": [
+        "6b"
+      ],
+      "id": "0c97"
+    },
+    {
+      "product_id": 55,
+      "barcode": "3456789012350",
+      "product_name": "Mantar",
+      "category_id": 1,
+      "brand": "FreshHarvest",
+      "unit": "250g",
+      "price": 4,
+      "discount": 0.05,
+      "manufacturing_date": "2024-07-01",
+      "expiry_date": "2024-07-10",
+      "stock_quantity": 150,
+      "supplier": "FarmFreshCo",
+      "is_active": 1,
+      "image_url": "https://example.com/mantar.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C001",
+      "vat_rate": 8,
+      "subcategories": [
+        "1b"
+      ],
+      "id": "0a03"
+    },
+    {
+      "product_id": 56,
+      "barcode": "4567890123460",
+      "product_name": "Çikolatalı Puding",
+      "category_id": 5,
+      "brand": "SweetDelight",
+      "unit": "200g",
+      "price": 2,
+      "discount": 0.05,
+      "manufacturing_date": "2024-07-05",
+      "expiry_date": "2024-08-05",
+      "stock_quantity": 200,
+      "supplier": "DessertMakers",
+      "is_active": 1,
+      "image_url": "https://example.com/cikolatali_puding.jpg",
+      "campaign_state": 0,
+      "campaign_id": null,
+      "vat_rate": 8,
+      "subcategories": [
+        "5a"
+      ],
+      "id": "7768"
+    },
+    {
+      "product_id": 57,
+      "barcode": "5678901234560",
+      "product_name": "Elmali Kurabiye",
+      "category_id": 5,
+      "brand": "BakeMaster",
+      "unit": "paket",
+      "price": 4.5,
+      "discount": 0.1,
+      "manufacturing_date": "2024-07-10",
+      "expiry_date": "2024-08-10",
+      "stock_quantity": 200,
+      "supplier": "BakeryHub",
+      "is_active": 1,
+      "image_url": "https://example.com/elmali_kurabiye.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C003",
+      "vat_rate": 8,
+      "subcategories": [
+        "5b"
+      ],
+      "id": "1b16"
+    },
+    {
+      "product_id": 58,
+      "barcode": "6789012345671",
+      "product_name": "Kavrulmuş Antep Fıstığı",
+      "category_id": 5,
+      "brand": "NuttyDelights",
+      "unit": "250g",
+      "price": 15,
+      "discount": 0.2,
+      "manufacturing_date": "2024-07-15",
+      "expiry_date": "2024-08-15",
+      "stock_quantity": 150,
+      "supplier": "NutFarmers",
+      "is_active": 1,
+      "image_url": "https://example.com/antep_fistigi.jpg",
+      "campaign_state": 0,
+      "campaign_id": null,
+      "vat_rate": 8,
+      "subcategories": [
+        "5a"
+      ],
+      "id": "8467"
+    },
+    {
+      "product_id": 59,
+      "barcode": "8901234567892",
+      "product_name": "Portakal Suyu",
+      "category_id": 6,
+      "brand": "CitrusFresh",
+      "unit": "1L",
+      "price": 5,
+      "discount": 0.15,
+      "manufacturing_date": "2024-07-20",
+      "expiry_date": "2024-08-20",
+      "stock_quantity": 200,
+      "supplier": "JuiceMakers",
+      "is_active": 1,
+      "image_url": "https://example.com/portakal_suyu.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C002",
+      "vat_rate": 8,
+      "subcategories": [
+        "6a"
+      ],
+      "id": "e6bd"
+    },
+    {
+      "product_id": 60,
+      "barcode": "9012345678902",
+      "product_name": "Zeytin Yağı",
+      "category_id": 8,
+      "brand": "OliveGrove",
+      "unit": "500ml",
+      "price": 18,
+      "discount": 0.1,
+      "manufacturing_date": "2024-07-25",
+      "expiry_date": "2025-07-25",
+      "stock_quantity": 150,
+      "supplier": "OlivePress",
+      "is_active": 1,
+      "image_url": "https://example.com/zeytin_yagi.jpg",
+      "campaign_state": 0,
+      "campaign_id": null,
+      "vat_rate": 8,
+      "subcategories": [
+        "8a"
+      ],
+      "id": "57db"
+    },
+    {
+      "product_id": 61,
+      "barcode": "0123456789016",
+      "product_name": "Yeşil Salata",
+      "category_id": 1,
+      "brand": "FarmFresh",
+      "unit": "adet",
+      "price": 3.5,
+      "discount": 0.1,
+      "manufacturing_date": "2024-08-01",
+      "expiry_date": "2024-08-07",
+      "stock_quantity": 100,
+      "supplier": "GreensFarm",
+      "is_active": 1,
+      "image_url": "https://example.com/yesil_salata.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C001",
+      "vat_rate": 8,
+      "subcategories": [
+        "1b"
+      ],
+      "id": "cb20"
+    },
+    {
+      "product_id": 62,
+      "barcode": "2345678901240",
+      "product_name": "Kuşbaşı Et",
+      "category_id": 4,
+      "brand": "MeatMaster",
+      "unit": "kg",
+      "price": 35,
+      "discount": 0.2,
+      "manufacturing_date": "2024-08-05",
+      "expiry_date": "2024-08-15",
+      "stock_quantity": 80,
+      "supplier": "FreshMeats",
+      "is_active": 1,
+      "image_url": "https://example.com/kusbası_et.jpg",
+      "campaign_state": 0,
+      "campaign_id": null,
+      "vat_rate": 8,
+      "subcategories": [
+        "4a"
+      ],
+      "id": "3571"
+    },
+    {
+      "product_id": 63,
+      "barcode": "3456789012360",
+      "product_name": "Fındık",
+      "category_id": 5,
+      "brand": "NuttyDelights",
+      "unit": "250g",
+      "price": 12,
+      "discount": 0.1,
+      "manufacturing_date": "2024-08-10",
+      "expiry_date": "2024-09-10",
+      "stock_quantity": 150,
+      "supplier": "NutFarmers",
+      "is_active": 1,
+      "image_url": "https://example.com/findik.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C002",
+      "vat_rate": 8,
+      "subcategories": [
+        "5a"
+      ],
+      "id": "0065"
+    },
+    {
+      "product_id": 64,
+      "barcode": "4567890123461",
+      "product_name": "Beyaz Lahana",
+      "category_id": 1,
+      "brand": "FreshHarvest",
+      "unit": "adet",
+      "price": 2,
+      "discount": 0.05,
+      "manufacturing_date": "2024-08-15",
+      "expiry_date": "2024-08-21",
+      "stock_quantity": 120,
+      "supplier": "FarmFreshCo",
+      "is_active": 1,
+      "image_url": "https://example.com/beyaz_lahana.jpg",
+      "campaign_state": 0,
+      "campaign_id": null,
+      "vat_rate": 8,
+      "subcategories": [
+        "1b"
+      ],
+      "id": "e9aa"
+    },
+    {
+      "product_id": 65,
+      "barcode": "5678901234561",
+      "product_name": "Bitter Çikolata",
+      "category_id": 5,
+      "brand": "ChocoDelight",
+      "unit": "100g",
+      "price": 6,
+      "discount": 0.1,
+      "manufacturing_date": "2024-08-20",
+      "expiry_date": "2025-08-20",
+      "stock_quantity": 200,
+      "supplier": "SweetTreats",
+      "is_active": 1,
+      "image_url": "https://example.com/bitter_cikolata.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C003",
+      "vat_rate": 8,
+      "subcategories": [
+        "5a"
+      ],
+      "id": "c199"
+    },
+    {
+      "product_id": 66,
+      "barcode": "6789012345672",
+      "product_name": "Ton Balığı",
+      "category_id": 4,
+      "brand": "SeaFresh",
+      "unit": "kg",
+      "price": 20,
+      "discount": 0.15,
+      "manufacturing_date": "2024-08-25",
+      "expiry_date": "2024-09-25",
+      "stock_quantity": 150,
+      "supplier": "MarineCatch",
+      "is_active": 1,
+      "image_url": "https://example.com/ton_baligi.jpg",
+      "campaign_state": 0,
+      "campaign_id": null,
+      "vat_rate": 8,
+      "subcategories": [
+        "4b"
+      ],
+      "id": "5546"
+    },
+    {
+      "product_id": 67,
+      "barcode": "9012345678903",
+      "product_name": "Yoğurtlu Kabak Salatası",
+      "category_id": 1,
+      "brand": "FarmFresh",
+      "unit": "500g",
+      "price": 4.5,
+      "discount": 0.1,
+      "manufacturing_date": "2024-08-30",
+      "expiry_date": "2024-09-05",
+      "stock_quantity": 100,
+      "supplier": "GreensFarm",
+      "is_active": 1,
+      "image_url": "https://example.com/yogurtlu_kabak_salatasi.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C001",
+      "vat_rate": 8,
+      "subcategories": [
+        "1b"
+      ],
+      "id": "5ed3"
+    },
+    {
+      "product_id": 68,
+      "barcode": "0123456789017",
+      "product_name": "Limon",
+      "category_id": 1,
+      "brand": "FreshHarvest",
+      "unit": "kg",
+      "price": 5,
+      "discount": 0.1,
+      "manufacturing_date": "2024-09-01",
+      "expiry_date": "2024-09-07",
+      "stock_quantity": 150,
+      "supplier": "FarmFreshCo",
+      "is_active": 1,
+      "image_url": "https://example.com/limon.jpg",
+      "campaign_state": 0,
+      "campaign_id": null,
+      "vat_rate": 8,
+      "subcategories": [
+        "1a"
+      ],
+      "id": "b19b"
+    },
+    {
+      "product_id": 69,
+      "barcode": "2345678901241",
+      "product_name": "Beyaz Peynir",
+      "category_id": 2,
+      "brand": "DairyDelight",
+      "unit": "500g",
+      "price": 12,
+      "discount": 0.2,
+      "manufacturing_date": "2024-09-05",
+      "expiry_date": "2024-10-05",
+      "stock_quantity": 100,
+      "supplier": "MilkyWaySup",
+      "is_active": 1,
+      "image_url": "https://example.com/beyaz_peynir.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C002",
+      "vat_rate": 8,
+      "subcategories": [
+        "2b"
+      ],
+      "id": "cad6"
+    },
+    {
+      "product_id": 70,
+      "barcode": "3456789012361",
+      "product_name": "Kuşkonmaz",
+      "category_id": 1,
+      "brand": "FarmFresh",
+      "unit": "kg",
+      "price": 8,
+      "discount": 0.1,
+      "manufacturing_date": "2024-09-10",
+      "expiry_date": "2024-09-15",
+      "stock_quantity": 80,
+      "supplier": "GreensFarm",
+      "is_active": 1,
+      "image_url": "https://example.com/kuskonmaz.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C003",
+      "vat_rate": 8,
+      "subcategories": [
+        "1b"
+      ],
+      "id": "d38d"
+    },
+    {
+      "product_id": 71,
+      "barcode": "4567890123462",
+      "product_name": "Kırmızı Pancar",
+      "category_id": 1,
+      "brand": "FarmFresh",
+      "unit": "kg",
+      "price": 3,
+      "discount": 0.05,
+      "manufacturing_date": "2024-09-15",
+      "expiry_date": "2024-09-21",
+      "stock_quantity": 120,
+      "supplier": "GreensFarm",
+      "is_active": 1,
+      "image_url": "https://example.com/kirmizi_pancar.jpg",
+      "campaign_state": 0,
+      "campaign_id": null,
+      "vat_rate": 8,
+      "subcategories": [
+        "1b"
+      ],
+      "id": "5589"
+    },
+    {
+      "product_id": 72,
+      "barcode": "5678901234562",
+      "product_name": "Sade Soda",
+      "category_id": 6,
+      "brand": "SodaKing",
+      "unit": "1L",
+      "price": 1,
+      "discount": 0,
+      "manufacturing_date": "2024-09-20",
+      "expiry_date": "2025-09-20",
+      "stock_quantity": 200,
+      "supplier": "BeverageInc",
+      "is_active": 1,
+      "image_url": "https://example.com/sade_soda.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C001",
+      "vat_rate": 8,
+      "subcategories": [
+        "6b"
+      ],
+      "id": "9034"
+    },
+    {
+      "product_id": 73,
+      "barcode": "6789012345673",
+      "product_name": "Çörek Otu",
+      "category_id": 7,
+      "brand": "SpiceKing",
+      "unit": "100g",
+      "price": 4,
+      "discount": 0.1,
+      "manufacturing_date": "2024-09-25",
+      "expiry_date": "2026-09-25",
+      "stock_quantity": 150,
+      "supplier": "SpiceHub",
+      "is_active": 1,
+      "image_url": "https://example.com/corek_otu.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C002",
+      "vat_rate": 8,
+      "subcategories": [
+        "7a"
+      ],
+      "id": "2ff3"
+    },
+    {
+      "product_id": 74,
+      "barcode": "9012345678904",
+      "product_name": "Bulgur",
+      "category_id": 8,
+      "brand": "GrainMaster",
+      "unit": "kg",
+      "price": 2,
+      "discount": 0,
+      "manufacturing_date": "2024-09-30",
+      "expiry_date": "2026-09-30",
+      "stock_quantity": 100,
+      "supplier": "GrainHub",
+      "is_active": 1,
+      "image_url": "https://example.com/bulgur.jpg",
+      "campaign_state": 0,
+      "campaign_id": null,
+      "vat_rate": 8,
+      "subcategories": [
+        "8a"
+      ],
+      "id": "6f9c"
+    },
+    {
+      "product_id": 75,
+      "barcode": "0123456789018",
+      "product_name": "Sübye",
+      "category_id": 9,
+      "brand": "SübyeCo",
+      "unit": "500ml",
+      "price": 5,
+      "discount": 0.15,
+      "manufacturing_date": "2024-10-01",
+      "expiry_date": "2025-10-01",
+      "stock_quantity": 80,
+      "supplier": "DairyDelights",
+      "is_active": 1,
+      "image_url": "https://example.com/subye.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C003",
+      "vat_rate": 8,
+      "subcategories": [
+        "9a"
+      ],
+      "id": "4f9b"
+    },
+    {
+      "product_id": 76,
+      "barcode": "2345678901242",
+      "product_name": "Ispanak",
+      "category_id": 1,
+      "brand": "FarmFresh",
+      "unit": "adet",
+      "price": 2.5,
+      "discount": 0.1,
+      "manufacturing_date": "2024-10-05",
+      "expiry_date": "2024-10-11",
+      "stock_quantity": 150,
+      "supplier": "GreensFarm",
+      "is_active": 1,
+      "image_url": "https://example.com/ispanak.jpg",
+      "campaign_state": 0,
+      "campaign_id": null,
+      "vat_rate": 8,
+      "subcategories": [
+        "1b"
+      ],
+      "id": "174b"
+    },
+    {
+      "product_id": 77,
+      "barcode": "3456789012362",
+      "product_name": "Fıstık Ezmesi",
+      "category_id": 5,
+      "brand": "NuttyDelights",
+      "unit": "250g",
+      "price": 10,
+      "discount": 0.1,
+      "manufacturing_date": "2024-10-10",
+      "expiry_date": "2024-11-10",
+      "stock_quantity": 100,
+      "supplier": "NutFarmers",
+      "is_active": 1,
+      "image_url": "https://example.com/fistik_ezmesi.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C001",
+      "vat_rate": 8,
+      "subcategories": [
+        "5a"
+      ],
+      "id": "afc2"
+    },
+    {
+      "product_id": 78,
+      "barcode": "4567890123463",
+      "product_name": "Tahin",
+      "category_id": 8,
+      "brand": "GrainMaster",
+      "unit": "500g",
+      "price": 7,
+      "discount": 0.2,
+      "manufacturing_date": "2024-10-15",
+      "expiry_date": "2025-10-15",
+      "stock_quantity": 80,
+      "supplier": "GrainHub",
+      "is_active": 1,
+      "image_url": "https://example.com/tahin.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C002",
+      "vat_rate": 8,
+      "subcategories": [
+        "8a"
+      ],
+      "id": "9c51"
+    },
+    {
+      "product_id": 79,
+      "barcode": "5678901234563",
+      "product_name": "Paprika",
+      "category_id": 7,
+      "brand": "SpiceKing",
+      "unit": "100g",
+      "price": 3,
+      "discount": 0,
+      "manufacturing_date": "2024-10-20",
+      "expiry_date": "2025-10-20",
+      "stock_quantity": 200,
+      "supplier": "SpiceHub",
+      "is_active": 1,
+      "image_url": "https://example.com/paprika.jpg",
+      "campaign_state": 0,
+      "campaign_id": null,
+      "vat_rate": 8,
+      "subcategories": [
+        "7a"
+      ],
+      "id": "098a"
+    },
+    {
+      "product_id": 80,
+      "barcode": "6789012345674",
+      "product_name": "Kuş Üzümü",
+      "category_id": 1,
+      "brand": "FarmFresh",
+      "unit": "100g",
+      "price": 1.5,
+      "discount": 0.05,
+      "manufacturing_date": "2024-10-25",
+      "expiry_date": "2024-11-25",
+      "stock_quantity": 300,
+      "supplier": "GreensFarm",
+      "is_active": 1,
+      "image_url": "https://example.com/kus_uzumu.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C003",
+      "vat_rate": 8,
+      "subcategories": [
+        "1b"
+      ],
+      "id": "bbb5"
+    },
+    {
+      "product_id": 81,
+      "barcode": "0123456789019",
+      "product_name": "Maden Suyu",
+      "category_id": 6,
+      "brand": "SpringRefresh",
+      "unit": "1L",
+      "price": 1.75,
+      "discount": 0.05,
+      "manufacturing_date": "2024-11-01",
+      "expiry_date": "2025-11-01",
+      "stock_quantity": 200,
+      "supplier": "BeverageInc",
+      "is_active": 1,
+      "image_url": "https://example.com/maden_suyu.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C001",
+      "vat_rate": 8,
+      "subcategories": [
+        "6b"
+      ],
+      "id": "c81d"
+    },
+    {
+      "product_id": 82,
+      "barcode": "2345678901243",
+      "product_name": "Sumak",
+      "category_id": 7,
+      "brand": "SpiceKing",
+      "unit": "100g",
+      "price": 3.5,
+      "discount": 0,
+      "manufacturing_date": "2024-11-05",
+      "expiry_date": "2025-11-05",
+      "stock_quantity": 150,
+      "supplier": "SpiceHub",
+      "is_active": 1,
+      "image_url": "https://example.com/sumak.jpg",
+      "campaign_state": 0,
+      "campaign_id": null,
+      "vat_rate": 8,
+      "subcategories": [
+        "7a"
+      ],
+      "id": "59d7"
+    },
+    {
+      "product_id": 83,
+      "barcode": "3456789012363",
+      "product_name": "Kurutulmuş Fasulye",
+      "category_id": 8,
+      "brand": "PulsePride",
+      "unit": "250g",
+      "price": 3,
+      "discount": 0.1,
+      "manufacturing_date": "2024-11-10",
+      "expiry_date": "2025-11-10",
+      "stock_quantity": 100,
+      "supplier": "LegumeLogistics",
+      "is_active": 1,
+      "image_url": "https://example.com/kurutulmus_fasulye.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C002",
+      "vat_rate": 8,
+      "subcategories": [
+        "8a"
+      ],
+      "id": "b6a8"
+    },
+    {
+      "product_id": 84,
+      "barcode": "4567890123464",
+      "product_name": "Tahin Helvası",
+      "category_id": 5,
+      "brand": "NuttyDelights",
+      "unit": "kg",
+      "price": 15,
+      "discount": 0.2,
+      "manufacturing_date": "2024-11-15",
+      "expiry_date": "2025-11-15",
+      "stock_quantity": 80,
+      "supplier": "NutFarmers",
+      "is_active": 1,
+      "image_url": "https://example.com/tahin_helvasi.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C003",
+      "vat_rate": 8,
+      "subcategories": [
+        "5a"
+      ],
+      "id": "d675"
+    },
+    {
+      "product_id": 85,
+      "barcode": "5678901234564",
+      "product_name": "Kabak",
+      "category_id": 1,
+      "brand": "FarmFresh",
+      "unit": "adet",
+      "price": 2,
+      "discount": 0.05,
+      "manufacturing_date": "2024-11-20",
+      "expiry_date": "2024-11-26",
+      "stock_quantity": 150,
+      "supplier": "GreensFarm",
+      "is_active": 1,
+      "image_url": "https://example.com/kabak.jpg",
+      "campaign_state": 0,
+      "campaign_id": null,
+      "vat_rate": 8,
+      "subcategories": [
+        "1b"
+      ],
+      "id": "3716"
+    },
+    {
+      "product_id": 86,
+      "barcode": "6789012345675",
+      "product_name": "Elma Şekeri",
+      "category_id": 5,
+      "brand": "SweetDelights",
+      "unit": "paket",
+      "price": 3.5,
+      "discount": 0.1,
+      "manufacturing_date": "2024-11-25",
+      "expiry_date": "2025-11-25",
+      "stock_quantity": 200,
+      "supplier": "SweetTreats",
+      "is_active": 1,
+      "image_url": "https://example.com/elma_sekeri.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C001",
+      "vat_rate": 8,
+      "subcategories": [
+        "5a"
+      ],
+      "id": "f8f0"
+    },
+    {
+      "product_id": 87,
+      "barcode": "9012345678905",
+      "product_name": "Bebek Papatyası",
+      "category_id": 1,
+      "brand": "BlossomFresh",
+      "unit": "adet",
+      "price": 2.25,
+      "discount": 0.05,
+      "manufacturing_date": "2024-12-01",
+      "expiry_date": "2024-12-07",
+      "stock_quantity": 120,
+      "supplier": "GreensFarm",
+      "is_active": 1,
+      "image_url": "https://example.com/bebek_papatyasi.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C002",
+      "vat_rate": 8,
+      "subcategories": [
+        "1a"
+      ],
+      "id": "e91e"
+    },
+    {
+      "product_id": 88,
+      "barcode": "0123456789020",
+      "product_name": "Portakal Suyu",
+      "category_id": 6,
+      "brand": "JuiceMaster",
+      "unit": "1L",
+      "price": 2.5,
+      "discount": 0.1,
+      "manufacturing_date": "2024-12-05",
+      "expiry_date": "2025-12-05",
+      "stock_quantity": 150,
+      "supplier": "JuiceHub",
+      "is_active": 1,
+      "image_url": "https://example.com/portakal_suyu.jpg",
+      "campaign_state": 0,
+      "campaign_id": null,
+      "vat_rate": 8,
+      "subcategories": [
+        "6a"
+      ],
+      "id": "df40"
+    },
+    {
+      "product_id": 89,
+      "barcode": "2345678901244",
+      "product_name": "Nane",
+      "category_id": 7,
+      "brand": "HerbGarden",
+      "unit": "50g",
+      "price": 1.75,
+      "discount": 0,
+      "manufacturing_date": "2024-12-10",
+      "expiry_date": "2025-12-10",
+      "stock_quantity": 200,
+      "supplier": "HerbHarvest",
+      "is_active": 1,
+      "image_url": "https://example.com/nane.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C003",
+      "vat_rate": 8,
+      "subcategories": [
+        "7a"
+      ],
+      "id": "f78d"
+    },
+    {
+      "product_id": 90,
+      "barcode": "3456789012364",
+      "product_name": "Kuru Fasulye",
+      "category_id": 8,
+      "brand": "PulsePride",
+      "unit": "kg",
+      "price": 2.5,
+      "discount": 0.05,
+      "manufacturing_date": "2024-12-15",
+      "expiry_date": "2025-12-15",
+      "stock_quantity": 100,
+      "supplier": "LegumeLogistics",
+      "is_active": 1,
+      "image_url": "https://example.com/kuru_fasulye.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C001",
+      "vat_rate": 8,
+      "subcategories": [
+        "8a"
+      ],
+      "id": "0da2"
+    },
+    {
+      "product_id": 91,
+      "barcode": "4567890123465",
+      "product_name": "Kuş Üzümü",
+      "category_id": 1,
+      "brand": "VineyardFresh",
+      "unit": "kg",
+      "price": 3,
+      "discount": 0.1,
+      "manufacturing_date": "2024-12-20",
+      "expiry_date": "2024-12-27",
+      "stock_quantity": 150,
+      "supplier": "GreensFarm",
+      "is_active": 1,
+      "image_url": "https://example.com/kus_uzumu.jpg",
+      "campaign_state": 0,
+      "campaign_id": null,
+      "vat_rate": 8,
+      "subcategories": [
+        "1a"
+      ],
+      "id": "f480"
+    },
+    {
+      "product_id": 92,
+      "barcode": "5678901234565",
+      "product_name": "Mandalina",
+      "category_id": 1,
+      "brand": "CitrusHarvest",
+      "unit": "adet",
+      "price": 1.5,
+      "discount": 0.05,
+      "manufacturing_date": "2024-12-25",
+      "expiry_date": "2025-01-01",
+      "stock_quantity": 120,
+      "supplier": "CitrusFarmers",
+      "is_active": 1,
+      "image_url": "https://example.com/mandalina.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C002",
+      "vat_rate": 8,
+      "subcategories": [
+        "1a"
+      ],
+      "id": "04a0"
+    },
+    {
+      "product_id": 93,
+      "barcode": "6789012345676",
+      "product_name": "Çilek Reçeli",
+      "category_id": 5,
+      "brand": "HomemadeDelights",
+      "unit": "250g",
+      "price": 4,
+      "discount": 0.1,
+      "manufacturing_date": "2025-01-01",
+      "expiry_date": "2026-01-01",
+      "stock_quantity": 150,
+      "supplier": "HomemadeGoodies",
+      "is_active": 1,
+      "image_url": "https://example.com/cilek_receli.jpg",
+      "campaign_state": 0,
+      "campaign_id": null,
+      "vat_rate": 8,
+      "subcategories": [
+        "5a"
+      ],
+      "id": "5c17"
+    },
+    {
+      "product_id": 94,
+      "barcode": "9012345678906",
+      "product_name": "Elma Suyu",
+      "category_id": 6,
+      "brand": "FruitFusion",
+      "unit": "1L",
+      "price": 2,
+      "discount": 0.05,
+      "manufacturing_date": "2025-01-05",
+      "expiry_date": "2025-01-05",
+      "stock_quantity": 200,
+      "supplier": "FruitCo",
+      "is_active": 1,
+      "image_url": "https://example.com/elma_suyu.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C001",
+      "vat_rate": 8,
+      "subcategories": [
+        "6a"
+      ],
+      "id": "c206"
+    },
+    {
+      "product_id": 95,
+      "barcode": "0123456789021",
+      "product_name": "Tarçın",
+      "category_id": 7,
+      "brand": "SpiceMaster",
+      "unit": "50g",
+      "price": 2.5,
+      "discount": 0,
+      "manufacturing_date": "2025-01-10",
+      "expiry_date": "2026-01-10",
+      "stock_quantity": 150,
+      "supplier": "SpiceHub",
+      "is_active": 1,
+      "image_url": "https://example.com/tarcin.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C002",
+      "vat_rate": 8,
+      "subcategories": [
+        "7a"
+      ],
+      "id": "17d1"
+    },
+    {
+      "product_id": 96,
+      "barcode": "2345678901245",
+      "product_name": "Bulgur",
+      "category_id": 8,
+      "brand": "GrainPride",
+      "unit": "kg",
+      "price": 2,
+      "discount": 0.1,
+      "manufacturing_date": "2025-01-15",
+      "expiry_date": "2026-01-15",
+      "stock_quantity": 100,
+      "supplier": "GrainHarvest",
+      "is_active": 1,
+      "image_url": "https://example.com/bulgur.jpg",
+      "campaign_state": 0,
+      "campaign_id": null,
+      "vat_rate": 8,
+      "subcategories": [
+        "8a"
+      ],
+      "id": "2d1f"
+    },
+    {
+      "product_id": 97,
+      "barcode": "3456789012365",
+      "product_name": "Badem",
+      "category_id": 1,
+      "brand": "NuttyDelights",
+      "unit": "100g",
+      "price": 4.5,
+      "discount": 0.15,
+      "manufacturing_date": "2025-01-20",
+      "expiry_date": "2025-01-20",
+      "stock_quantity": 200,
+      "supplier": "NutFarmers",
+      "is_active": 1,
+      "image_url": "https://example.com/badem.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C003",
+      "vat_rate": 8,
+      "subcategories": [
+        "1a"
+      ],
+      "id": "1200"
+    },
+    {
+      "product_id": 98,
+      "barcode": "4567890123466",
+      "product_name": "Havuç",
+      "category_id": 1,
+      "brand": "RootFresh",
+      "unit": "kg",
+      "price": 2,
+      "discount": 0.05,
+      "manufacturing_date": "2025-01-25",
+      "expiry_date": "2025-01-25",
+      "stock_quantity": 150,
+      "supplier": "GreensFarm",
+      "is_active": 1,
+      "image_url": "https://example.com/havuc.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C001",
+      "vat_rate": 8,
+      "subcategories": [
+        "1b"
+      ],
+      "id": "8342"
+    },
+    {
+      "product_id": 99,
+      "barcode": "5678901234566",
+      "product_name": "Kayısı",
+      "category_id": 1,
+      "brand": "OrchardFresh",
+      "unit": "kg",
+      "price": 3.5,
+      "discount": 0.1,
+      "manufacturing_date": "2025-01-30",
+      "expiry_date": "2025-01-30",
+      "stock_quantity": 120,
+      "supplier": "FruitCo",
+      "is_active": 1,
+      "image_url": "https://example.com/kayisi.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C002",
+      "vat_rate": 8,
+      "subcategories": [
+        "1a"
+      ],
+      "id": "f336"
+    },
+    {
+      "product_id": 100,
+      "barcode": "6789012345679",
+      "product_name": "Vişne",
+      "category_id": 1,
+      "brand": "OrchardFresh",
+      "unit": "kg",
+      "price": 4,
+      "discount": 0.1,
+      "manufacturing_date": "2025-02-05",
+      "expiry_date": "2025-02-05",
+      "stock_quantity": 150,
+      "supplier": "FruitCo",
+      "is_active": 1,
+      "image_url": "https://example.com/visne.jpg",
+      "campaign_state": 0,
+      "campaign_id": null,
+      "vat_rate": 8,
+      "subcategories": [
+        "1a"
+      ],
+      "id": "1993"
+    },
+    {
+      "product_id": 101,
+      "barcode": "7890123456780",
+      "product_name": "Kabak",
+      "category_id": 1,
+      "brand": "GardenFresh",
+      "unit": "kg",
+      "price": 2,
+      "discount": 0.05,
+      "manufacturing_date": "2025-02-10",
+      "expiry_date": "2025-02-10",
+      "stock_quantity": 150,
+      "supplier": "GreensFarm",
+      "is_active": 1,
+      "image_url": "https://example.com/kabak.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C003",
+      "vat_rate": 8,
+      "subcategories": [
+        "1b"
+      ],
+      "id": "bb4f"
+    },
+    {
+      "product_id": 102,
+      "barcode": "8901234567891",
+      "product_name": "Havuç",
+      "category_id": 1,
+      "brand": "RootFresh",
+      "unit": "kg",
+      "price": 2,
+      "discount": 0.05,
+      "manufacturing_date": "2025-02-15",
+      "expiry_date": "2025-02-15",
+      "stock_quantity": 150,
+      "supplier": "GreensFarm",
+      "is_active": 1,
+      "image_url": "https://example.com/havuc.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C001",
+      "vat_rate": 8,
+      "subcategories": [
+        "1b"
+      ],
+      "id": "8944"
+    },
+    {
+      "product_id": 103,
+      "barcode": "9012345678902",
+      "product_name": "Erik",
+      "category_id": 1,
+      "brand": "OrchardFresh",
+      "unit": "kg",
+      "price": 4,
+      "discount": 0.1,
+      "manufacturing_date": "2025-02-20",
+      "expiry_date": "2025-02-20",
+      "stock_quantity": 120,
+      "supplier": "FruitCo",
+      "is_active": 1,
+      "image_url": "https://example.com/erik.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C002",
+      "vat_rate": 8,
+      "subcategories": [
+        "1a"
+      ],
+      "id": "0778"
+    },
+    {
+      "product_id": 104,
+      "barcode": "0123456789023",
+      "product_name": "Armut",
+      "category_id": 1,
+      "brand": "OrchardFresh",
+      "unit": "kg",
+      "price": 3.5,
+      "discount": 0.1,
+      "manufacturing_date": "2025-02-25",
+      "expiry_date": "2025-02-25",
+      "stock_quantity": 120,
+      "supplier": "FruitCo",
+      "is_active": 1,
+      "image_url": "https://example.com/armut.jpg",
+      "campaign_state": 0,
+      "campaign_id": null,
+      "vat_rate": 8,
+      "subcategories": [
+        "1a"
+      ],
+      "id": "425c"
+    },
+    {
+      "product_id": 105,
+      "barcode": "2345678901236",
+      "product_name": "Vişne",
+      "category_id": 1,
+      "brand": "OrchardFresh",
+      "unit": "kg",
+      "price": 4,
+      "discount": 0.1,
+      "manufacturing_date": "2025-03-01",
+      "expiry_date": "2025-03-01",
+      "stock_quantity": 150,
+      "supplier": "FruitCo",
+      "is_active": 1,
+      "image_url": "https://example.com/visne.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C001",
+      "vat_rate": 8,
+      "subcategories": [
+        "1a"
+      ],
+      "id": "1956"
+    },
+    {
+      "product_id": 106,
+      "barcode": "3456789012347",
+      "product_name": "Kırmızı Lahana",
+      "category_id": 1,
+      "brand": "GardenFresh",
+      "unit": "kg",
+      "price": 3,
+      "discount": 0.05,
+      "manufacturing_date": "2025-03-05",
+      "expiry_date": "2025-03-05",
+      "stock_quantity": 150,
+      "supplier": "GreensFarm",
+      "is_active": 1,
+      "image_url": "https://example.com/kirmizi_lahana.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C002",
+      "vat_rate": 8,
+      "subcategories": [
+        "1b"
+      ],
+      "id": "7ae5"
+    },
+    {
+      "product_id": 107,
+      "barcode": "4567890123467",
+      "product_name": "Kereviz",
+      "category_id": 1,
+      "brand": "RootFresh",
+      "unit": "kg",
+      "price": 2,
+      "discount": 0.05,
+      "manufacturing_date": "2025-03-10",
+      "expiry_date": "2025-03-10",
+      "stock_quantity": 150,
+      "supplier": "GreensFarm",
+      "is_active": 1,
+      "image_url": "https://example.com/kereviz.jpg",
+      "campaign_state": 0,
+      "campaign_id": null,
+      "vat_rate": 8,
+      "subcategories": [
+        "1b"
+      ],
+      "id": "3d76"
+    },
+    {
+      "product_id": 108,
+      "barcode": "5678901234567",
+      "product_name": "Beyaz Lahana",
+      "category_id": 1,
+      "brand": "GardenFresh",
+      "unit": "kg",
+      "price": 2.5,
+      "discount": 0.05,
+      "manufacturing_date": "2025-03-15",
+      "expiry_date": "2025-03-15",
+      "stock_quantity": 150,
+      "supplier": "GreensFarm",
+      "is_active": 1,
+      "image_url": "https://example.com/beyaz_lahana.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C003",
+      "vat_rate": 8,
+      "subcategories": [
+        "1b"
+      ],
+      "id": "4701"
+    },
+    {
+      "product_id": 109,
+      "barcode": "6789012345678",
+      "product_name": "Karnabahar",
+      "category_id": 1,
+      "brand": "GardenFresh",
+      "unit": "kg",
+      "price": 3,
+      "discount": 0.05,
+      "manufacturing_date": "2025-03-20",
+      "expiry_date": "2025-03-20",
+      "stock_quantity": 150,
+      "supplier": "GreensFarm",
+      "is_active": 1,
+      "image_url": "https://example.com/karnabahar.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C001",
+      "vat_rate": 8,
+      "subcategories": [
+        "1b"
+      ],
+      "id": "01d8"
+    },
+    {
+      "product_id": 110,
+      "barcode": "7890123456789",
+      "product_name": "Kırmızı Biber",
+      "category_id": 1,
+      "brand": "GardenFresh",
+      "unit": "kg",
+      "price": 2,
+      "discount": 0.05,
+      "manufacturing_date": "2025-03-25",
+      "expiry_date": "2025-03-25",
+      "stock_quantity": 150,
+      "supplier": "GreensFarm",
+      "is_active": 1,
+      "image_url": "https://example.com/kirmizi_biber.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C002",
+      "vat_rate": 8,
+      "subcategories": [
+        "1b"
+      ],
+      "id": "a1b6"
+    },
+    {
+      "product_id": 111,
+      "barcode": "0123456789011",
+      "product_name": "Marul",
+      "category_id": 1,
+      "brand": "GardenFresh",
+      "unit": "adet",
+      "price": 2,
+      "discount": 0.05,
+      "manufacturing_date": "2025-03-30",
+      "expiry_date": "2025-03-30",
+      "stock_quantity": 150,
+      "supplier": "GreensFarm",
+      "is_active": 1,
+      "image_url": "https://example.com/marul.jpg",
+      "campaign_state": 0,
+      "campaign_id": null,
+      "vat_rate": 8,
+      "subcategories": [
+        "1b"
+      ],
+      "id": "c84f"
+    },
+    {
+      "product_id": 112,
+      "barcode": "1234567890122",
+      "product_name": "Pırasa",
+      "category_id": 1,
+      "brand": "GardenFresh",
+      "unit": "kg",
+      "price": 3,
+      "discount": 0.05,
+      "manufacturing_date": "2025-04-05",
+      "expiry_date": "2025-04-05",
+      "stock_quantity": 150,
+      "supplier": "GreensFarm",
+      "is_active": 1,
+      "image_url": "https://example.com/pirasa.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C001",
+      "vat_rate": 8,
+      "subcategories": [
+        "1b"
+      ],
+      "id": "f69d"
+    },
+    {
+      "product_id": 113,
+      "barcode": "2345678901233",
+      "product_name": "Ispanak",
+      "category_id": 1,
+      "brand": "GardenFresh",
+      "unit": "kg",
+      "price": 3,
+      "discount": 0.05,
+      "manufacturing_date": "2025-04-10",
+      "expiry_date": "2025-04-10",
+      "stock_quantity": 150,
+      "supplier": "GreensFarm",
+      "is_active": 1,
+      "image_url": "https://example.com/ispanak.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C002",
+      "vat_rate": 8,
+      "subcategories": [
+        "1b"
+      ],
+      "id": "c4ea"
+    },
+    {
+      "product_id": 114,
+      "barcode": "3456789012344",
+      "product_name": "Enginar",
+      "category_id": 1,
+      "brand": "GardenFresh",
+      "unit": "adet",
+      "price": 4,
+      "discount": 0.05,
+      "manufacturing_date": "2025-04-15",
+      "expiry_date": "2025-04-15",
+      "stock_quantity": 150,
+      "supplier": "GreensFarm",
+      "is_active": 1,
+      "image_url": "https://example.com/enginar.jpg",
+      "campaign_state": 0,
+      "campaign_id": null,
+      "vat_rate": 8,
+      "subcategories": [
+        "1b"
+      ],
+      "id": "5969"
+    },
+    {
+      "product_id": 115,
+      "barcode": "4567890123455",
+      "product_name": "Frenk Soğanı",
+      "category_id": 1,
+      "brand": "GardenFresh",
+      "unit": "kg",
+      "price": 4,
+      "discount": 0.05,
+      "manufacturing_date": "2025-04-20",
+      "expiry_date": "2025-04-20",
+      "stock_quantity": 150,
+      "supplier": "GreensFarm",
+      "is_active": 1,
+      "image_url": "https://example.com/frenk_sogan.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C003",
+      "vat_rate": 8,
+      "subcategories": [
+        "1b"
+      ],
+      "id": "ea08"
+    },
+    {
+      "product_id": 116,
+      "barcode": "5678901234566",
+      "product_name": "Brokoli",
+      "category_id": 1,
+      "brand": "GardenFresh",
+      "unit": "kg",
+      "price": 3,
+      "discount": 0.05,
+      "manufacturing_date": "2025-04-25",
+      "expiry_date": "2025-04-25",
+      "stock_quantity": 150,
+      "supplier": "GreensFarm",
+      "is_active": 1,
+      "image_url": "https://example.com/brokoli.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C001",
+      "vat_rate": 8,
+      "subcategories": [
+        "1b"
+      ],
+      "id": "4f4b"
+    },
+    {
+      "product_id": 117,
+      "barcode": "6789012345677",
+      "product_name": "Kırmızı Biber",
+      "category_id": 1,
+      "brand": "GardenFresh",
+      "unit": "kg",
+      "price": 2,
+      "discount": 0.05,
+      "manufacturing_date": "2025-05-01",
+      "expiry_date": "2025-05-01",
+      "stock_quantity": 150,
+      "supplier": "GreensFarm",
+      "is_active": 1,
+      "image_url": "https://example.com/kirmizi_biber.jpg",
+      "campaign_state": 0,
+      "campaign_id": null,
+      "vat_rate": 8,
+      "subcategories": [
+        "1b"
+      ],
+      "id": "a579"
+    },
+    {
+      "product_id": 118,
+      "barcode": "7890123456788",
+      "product_name": "Kuşkonmaz",
+      "category_id": 1,
+      "brand": "GardenFresh",
+      "unit": "kg",
+      "price": 5,
+      "discount": 0.05,
+      "manufacturing_date": "2025-05-05",
+      "expiry_date": "2025-05-05",
+      "stock_quantity": 150,
+      "supplier": "GreensFarm",
+      "is_active": 1,
+      "image_url": "https://example.com/kuskonmaz.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C002",
+      "vat_rate": 8,
+      "subcategories": [
+        "1b"
+      ],
+      "id": "47ce"
+    },
+    {
+      "product_id": 119,
+      "barcode": "9012345678909",
+      "product_name": "Roka",
+      "category_id": 1,
+      "brand": "GardenFresh",
+      "unit": "adet",
+      "price": 2,
+      "discount": 0.05,
+      "manufacturing_date": "2025-05-10",
+      "expiry_date": "2025-05-10",
+      "stock_quantity": 150,
+      "supplier": "GreensFarm",
+      "is_active": 1,
+      "image_url": "https://example.com/roka.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C003",
+      "vat_rate": 8,
+      "subcategories": [
+        "1b"
+      ],
+      "id": "6a8b"
+    },
+    {
+      "product_id": 120,
+      "barcode": "0123456789013",
+      "product_name": "Taze Soğan",
+      "category_id": 1,
+      "brand": "GardenFresh",
+      "unit": "adet",
+      "price": 2,
+      "discount": 0.05,
+      "manufacturing_date": "2025-05-15",
+      "expiry_date": "2025-05-15",
+      "stock_quantity": 150,
+      "supplier": "GreensFarm",
+      "is_active": 1,
+      "image_url": "https://example.com/taze_sogan.jpg",
+      "campaign_state": 0,
+      "campaign_id": null,
+      "vat_rate": 8,
+      "subcategories": [
+        "1b"
+      ],
+      "id": "8c8e"
+    },
+    {
+      "product_id": 121,
+      "barcode": "1234567890124",
+      "product_name": "Patlıcan",
+      "category_id": 1,
+      "brand": "GardenFresh",
+      "unit": "adet",
+      "price": 3,
+      "discount": 0.05,
+      "manufacturing_date": "2025-05-20",
+      "expiry_date": "2025-05-20",
+      "stock_quantity": 150,
+      "supplier": "GreensFarm",
+      "is_active": 1,
+      "image_url": "https://example.com/patlican.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C001",
+      "vat_rate": 8,
+      "subcategories": [
+        "1b"
+      ],
+      "id": "fa93"
+    },
+    {
+      "product_id": 122,
+      "barcode": "2345678901235",
+      "product_name": "Kabak",
+      "category_id": 1,
+      "brand": "GardenFresh",
+      "unit": "adet",
+      "price": 3,
+      "discount": 0.05,
+      "manufacturing_date": "2025-05-25",
+      "expiry_date": "2025-05-25",
+      "stock_quantity": 150,
+      "supplier": "GreensFarm",
+      "is_active": 1,
+      "image_url": "https://example.com/kabak.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C002",
+      "vat_rate": 8,
+      "subcategories": [
+        "1b"
+      ],
+      "id": "49c5"
+    },
+    {
+      "product_id": 123,
+      "barcode": "3456789012346",
+      "product_name": "Havuç",
+      "category_id": 1,
+      "brand": "GardenFresh",
+      "unit": "kg",
+      "price": 2,
+      "discount": 0.05,
+      "manufacturing_date": "2025-05-30",
+      "expiry_date": "2025-05-30",
+      "stock_quantity": 150,
+      "supplier": "GreensFarm",
+      "is_active": 1,
+      "image_url": "https://example.com/havuc.jpg",
+      "campaign_state": 0,
+      "campaign_id": null,
+      "vat_rate": 8,
+      "subcategories": [
+        "1b"
+      ],
+      "id": "1481"
+    },
+    {
+      "product_id": 124,
+      "barcode": "4567890123457",
+      "product_name": "Turp",
+      "category_id": 1,
+      "brand": "GardenFresh",
+      "unit": "kg",
+      "price": 2,
+      "discount": 0.05,
+      "manufacturing_date": "2025-06-05",
+      "expiry_date": "2025-06-05",
+      "stock_quantity": 150,
+      "supplier": "GreensFarm",
+      "is_active": 1,
+      "image_url": "https://example.com/turp.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C003",
+      "vat_rate": 8,
+      "subcategories": [
+        "1b"
+      ],
+      "id": "c1c4"
+    },
+    {
+      "product_id": 125,
+      "barcode": "5678901234568",
+      "product_name": "Bezelye",
+      "category_id": 1,
+      "brand": "GardenFresh",
+      "unit": "kg",
+      "price": 4,
+      "discount": 0.05,
+      "manufacturing_date": "2025-06-10",
+      "expiry_date": "2025-06-10",
+      "stock_quantity": 150,
+      "supplier": "GreensFarm",
+      "is_active": 1,
+      "image_url": "https://example.com/bezelye.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C001",
+      "vat_rate": 8,
+      "subcategories": [
+        "1b"
+      ],
+      "id": "7f6d"
+    },
+    {
+      "product_id": 126,
+      "barcode": "6789012345679",
+      "product_name": "Karnabahar",
+      "category_id": 1,
+      "brand": "GardenFresh",
+      "unit": "adet",
+      "price": 4,
+      "discount": 0.05,
+      "manufacturing_date": "2025-06-15",
+      "expiry_date": "2025-06-15",
+      "stock_quantity": 150,
+      "supplier": "GreensFarm",
+      "is_active": 1,
+      "image_url": "https://example.com/karnabahar.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C002",
+      "vat_rate": 8,
+      "subcategories": [
+        "1b"
+      ],
+      "id": "80f8"
+    },
+    {
+      "product_id": 127,
+      "barcode": "7890123456780",
+      "product_name": "Pırasa",
+      "category_id": 1,
+      "brand": "GardenFresh",
+      "unit": "kg",
+      "price": 3,
+      "discount": 0.05,
+      "manufacturing_date": "2025-06-20",
+      "expiry_date": "2025-06-20",
+      "stock_quantity": 150,
+      "supplier": "GreensFarm",
+      "is_active": 1,
+      "image_url": "https://example.com/pirasa.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C003",
+      "vat_rate": 8,
+      "subcategories": [
+        "1b"
+      ],
+      "id": "fd3c"
+    },
+    {
+      "product_id": 128,
+      "barcode": "9012345678900",
+      "product_name": "Lahana",
+      "category_id": 1,
+      "brand": "GardenFresh",
+      "unit": "adet",
+      "price": 3,
+      "discount": 0.05,
+      "manufacturing_date": "2025-06-25",
+      "expiry_date": "2025-06-25",
+      "stock_quantity": 150,
+      "supplier": "GreensFarm",
+      "is_active": 1,
+      "image_url": "https://example.com/lahana.jpg",
+      "campaign_state": 0,
+      "campaign_id": null,
+      "vat_rate": 8,
+      "subcategories": [
+        "1b"
+      ],
+      "id": "74d6"
+    },
+    {
+      "product_id": 129,
+      "barcode": "0123456789014",
+      "product_name": "Roka",
+      "category_id": 1,
+      "brand": "GardenFresh",
+      "unit": "adet",
+      "price": 2,
+      "discount": 0.05,
+      "manufacturing_date": "2025-07-01",
+      "expiry_date": "2025-07-01",
+      "stock_quantity": 150,
+      "supplier": "GreensFarm",
+      "is_active": 1,
+      "image_url": "https://example.com/roka.jpg",
+      "campaign_state": 1,
+      "campaign_id": "C003",
+      "vat_rate": 8,
+      "subcategories": [
+        "1b"
+      ],
+      "id": "65dd"
+    },
+    {
+      "product_id": 130,
+      "barcode": "1234567890125",
+      "product_name": "Taze Soğan",
+      "category_id": 1,
+      "brand": "GardenFresh",
+      "unit": "adet",
+      "price": 2,
+      "discount": 0.05,
+      "manufacturing_date": "2025-07-05",
+      "expiry_date": "2025-07-05",
+      "stock_quantity": 150,
+      "supplier": "GreensFarm",
+      "is_active": 1,
+      "image_url": "https://example.com/taze_sogan.jpg",
+      "campaign_state": 0,
+      "campaign_id": null,
+      "vat_rate": 8,
+      "subcategories": [
+        "1b"
+      ],
+      "id": "2284"
     }
   ],
   "subcategories": [
     {
       "id": "1a",
-      "name": "Meyve"
+      "name": "Meyve",
+      "image_url": "https://cdn.pixabay.com/photo/2019/12/13/07/04/fresh-fruits-basket-4692358_960_720.jpg",
+      "category_id": 1
     },
     {
       "id": "1b",
-      "name": "Sebze"
+      "name": "Sebze",
+      "image_url": "https://cdn.pixabay.com/photo/2019/05/30/08/33/white-background-4239325_960_720.jpg",
+      "category_id": 1
     },
     {
       "id": "2a",
-      "name": "Süt"
+      "name": "Süt",
+      "image_url": "https://cdn.pixabay.com/photo/2016/12/06/18/27/milk-1887234_1280.jpg",
+      "category_id": 2
     },
     {
       "id": "2b",
-      "name": "Peynir"
+      "name": "Peynir",
+      "image_url": "https://cdn.pixabay.com/photo/2017/01/11/19/56/cheese-1972744_960_720.jpg",
+      "category_id": 2
     },
     {
       "id": "2c",
-      "name": "Yoğurt"
+      "name": "Yoğurt",
+      "image_url": "https://cdn.pixabay.com/photo/2017/02/03/15/15/yogurt-2035323_1280.jpg",
+      "category_id": 2
     },
     {
       "id": "3a",
-      "name": "Ekmek"
+      "name": "Ekmek",
+      "image_url": "https://cdn.pixabay.com/photo/2021/11/08/09/58/bread-6778770_1280.jpg",
+      "category_id": 3
     },
     {
       "id": "3b",
-      "name": "Poğaça"
+      "name": "Poğaça",
+      "image_url": "https://cdn.pixabay.com/photo/2022/07/30/10/09/pastries-7353409_640.jpg",
+      "category_id": 3
     },
     {
       "id": "3c",
-      "name": "Börek"
+      "name": "Börek",
+      "image_url": "https://cdn.pixabay.com/photo/2022/07/30/10/09/pastries-7353409_640.jpg",
+      "category_id": 3
     },
     {
       "id": "4a",
-      "name": "Et"
+      "name": "Sığır Eti",
+      "image_url": "https://cdn.pixabay.com/photo/2018/03/27/22/26/beef-3267625_1280.jpg",
+      "category_id": 4
     },
     {
       "id": "4b",
-      "name": "Balık"
+      "name": "Balık",
+      "image_url": "https://cdn.pixabay.com/photo/2014/11/05/15/57/salmon-518032_1280.jpg",
+      "category_id": 4
+    },
+    {
+      "id": "4c",
+      "name": "Tavuk Eti",
+      "image_url": "https://cdn.pixabay.com/photo/2018/03/27/22/26/beef-3267625_1280.jpg",
+      "category_id": 4
     },
     {
       "id": "5a",
-      "name": "Atıştırmalık"
+      "name": "Atıştırmalık",
+      "image_url": "https://cdn.pixabay.com/photo/2016/08/12/16/01/cake-1589012_960_720.jpg",
+      "category_id": 5
     },
     {
       "id": "6a",
-      "name": "Soğuk İçecekler"
+      "name": "Soğuk İçecekler",
+      "image_url": "https://cdn.pixabay.com/photo/2020/12/05/04/54/bottles-5805067_1280.jpg",
+      "category_id": 6
     },
     {
       "id": "6b",
-      "name": "Sıcak İçecekler"
+      "name": "Sıcak İçecekler",
+      "image_url": "https://cdn.pixabay.com/photo/2020/11/02/22/23/steam-5708092_1280.jpg",
+      "category_id": 6
     },
     {
       "id": "7a",
-      "name": "Baharatlar"
+      "name": "Baharatlar",
+      "image_url": "https://cdn.pixabay.com/photo/2019/05/07/09/01/spices-4185324_1280.jpg",
+      "category_id": 7
     },
     {
       "id": "8a",
-      "name": "Bakliyat"
+      "name": "Bakliyat",
+      "image_url": "https://cdn.pixabay.com/photo/2015/12/16/03/34/fruit-1095331_1280.jpg",
+      "category_id": 8
     },
     {
       "id": "9a",
-      "name": "Temizlik Ürünleri"
+      "name": "Temizlik Ürünleri",
+      "image_url": "https://cdn.pixabay.com/photo/2020/06/21/09/54/objects-5324168_1280.jpg",
+      "category_id": 9
     },
     {
       "id": "10a",
-      "name": "Kişisel Bakım"
+      "name": "Kişisel Bakım",
+      "image_url": "https://cdn.pixabay.com/photo/2017/06/10/12/10/cosmetics-2389779_1280.jpg",
+      "category_id": 10
+    },
+    {
+      "id": "11a",
+      "name": "Mutfak Gereçleri",
+      "image_url": "https://example.com/mutfak_gerecleri.jpg",
+      "category_id": 11
+    },
+    {
+      "id": "11b",
+      "name": "Ev Dekorasyonu",
+      "image_url": "https://example.com/ev_dekorasyonu.jpg",
+      "category_id": 11
+    },
+    {
+      "id": "12a",
+      "name": "Yumuşak Oyuncaklar",
+      "image_url": "https://example.com/yumusak_oyuncaklar.jpg",
+      "category_id": 12
+    },
+    {
+      "id": "12b",
+      "name": "Ahşap Oyuncaklar",
+      "image_url": "https://example.com/ahsap_oyuncaklar.jpg",
+      "category_id": 12
+    },
+    {
+      "id": "12c",
+      "name": "Eğitici Oyuncaklar",
+      "image_url": "https://example.com/egitici_oyuncaklar.jpg",
+      "category_id": 12
+    },
+    {
+      "id": "13a",
+      "name": "Kalem",
+      "image_url": "https://example.com/kalem.jpg",
+      "category_id": 13
+    },
+    {
+      "id": "13b",
+      "name": "Defter",
+      "image_url": "https://example.com/defter.jpg",
+      "category_id": 13
+    },
+    {
+      "id": "13c",
+      "name": "Dosya",
+      "image_url": "https://example.com/dosya.jpg",
+      "category_id": 13
+    },
+    {
+      "id": "14a",
+      "name": "Küçük Ev Aletleri",
+      "image_url": "https://example.com/kucuk_ev_aletleri.jpg",
+      "category_id": 14
+    },
+    {
+      "id": "14b",
+      "name": "Büyük Ev Aletleri",
+      "image_url": "https://example.com/buyuk_ev_aletleri.jpg",
+      "category_id": 14
+    },
+    {
+      "id": "15a",
+      "name": "Fitness Ekipmanları",
+      "image_url": "https://example.com/fitness_ekipmanlari.jpg",
+      "category_id": 15
+    },
+    {
+      "id": "15b",
+      "name": "Outdoor Malzemeler",
+      "image_url": "https://example.com/outdoor_malzemeler.jpg",
+      "category_id": 15
+    },
+    {
+      "id": "15c",
+      "name": "Spor Giyim",
+      "image_url": "https://example.com/spor_giyim.jpg",
+      "category_id": 15
+    },
+    {
+      "id": "16a",
+      "name": "Roman",
+      "image_url": "https://example.com/roman.jpg",
+      "category_id": 16
+    },
+    {
+      "id": "16b",
+      "name": "Kurgu",
+      "image_url": "https://example.com/kurgu.jpg",
+      "category_id": 16
     }
   ],
-  "receipts": []
+  "receipts": [],
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "12345",
+      "personelInfo": {
+        "name": "John Doe",
+        "position": "Manager",
+        "department": "Sales"
+      },
+      "kasaInfo": {
+        "location": "Main Store",
+        "balance": 50000
+      }
+    },
+    {
+      "id": "2",
+      "username": "user1",
+      "password": "password1",
+      "personelInfo": {
+        "name": "Jane Smith",
+        "position": "Cashier",
+        "department": "Front Desk"
+      },
+      "kasaInfo": {
+        "location": "Register 1",
+        "balance": 2500
+      }
+    },
+    {
+      "id": "3",
+      "username": "user2",
+      "password": "password2",
+      "personelInfo": {
+        "name": "Michael Johnson",
+        "position": "Stock Clerk",
+        "department": "Inventory"
+      },
+      "kasaInfo": {
+        "location": "Register 2",
+        "balance": 3500
+      }
+    }
+  ]
 }
