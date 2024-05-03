@@ -37,6 +37,8 @@ const GlobalContextProvider = ({ children }) => {
   const [isKeyboardOpen, setIsKeyboardOpen] = useState(false); //VirtualKeyboard
   const [keyboardPosition, setKeyboardPosition] = useState({ x: 0, y: 0 });//VirtualKeyboard
   const [showAllProducts, setShowAllProducts] = useState(false); //ModalSearch
+  const [partialPayment, setPartialPayment] = useState(false);//PaymentModal - Receipt
+ 
   const clearCart = () => {
     setCart([]); // Clear the cart array
 } 
@@ -597,6 +599,8 @@ const saveReceipt = async () => {
     handleShowSubcategoryByCategoryId ,//To show Subcategory by Category id
     clearCart,
     Total,  //Cart için ,Calculator,OrderSummaryButtons,Receipt,TotalAmount
+    partialPayment, setPartialPayment,//PaymentModal - Receipt
+ 
    
     
     // other functions...

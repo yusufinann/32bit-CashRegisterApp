@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Input, Grid } from "@mui/material";
 import BackspaceIcon from '@mui/icons-material/Backspace';
 import ClearIcon from '@mui/icons-material/Clear';
@@ -9,16 +9,24 @@ const TransactionPanel = () => {
 
   const navigate = useNavigate();
 
-  const { input, handleClick, handleClear, handleDeleteOne,openCampaignModalFn, setPaymentType,saveReceivedMoney  } = useGlobalContext();
+  const { input, handleClick, handleClear, handleDeleteOne,openCampaignModalFn, setPaymentType,saveReceivedMoney,Total,setPartialPayment,setInput  } = useGlobalContext();
+  const [showModal, setShowModal] = useState(false);
 
   const handleSaveAndNavigate = async (paymentType) => {
     setPaymentType(paymentType); // Ödeme tipini dinamik olarak ayarla
   
-    // `saveReceivedMoney` fonksiyonunu çağır
-    await saveReceivedMoney();
+    if (input < Total) {
+      setShowModal(true); // Show modal for insufficient balance
+      return; // Exit the function
+    }
   
-    navigate('/price'); // Kullanıcıyı '/price' sayfasına yönlendir
-  };
+    if (input >= Total) {
+      setShowModal(false);
+      await saveReceivedMoney(); // Call saveReceivedMoney function
+      setPartialPayment(false);
+      setInput("");
+      navigate('/price'); // Navigate user to '/price' page
+    } };
 
   const buttonStyle = {
     width: "100%",  // Butonun genişliği div'e tam sığacak şekilde
@@ -100,10 +108,10 @@ const TransactionPanel = () => {
 <div style={{ flexGrow: 1, margin:5,borderRadius: "10px",height:"100%"}}> <Button color="primary" onClick={() => handleClick("5")} sx={buttonStyle}>5</Button></div>
 <div style={{ flexGrow: 1, margin:5,borderRadius: "10px",height:"100%"}}> <Button color="primary" onClick={() => handleClick("6")} sx={buttonStyle}>6</Button></div>
 <div style={{ flexGrow: 10,  margin: 5, borderRadius: "10px", justifyContent: 'flex-end',flexDirection:"column" ,height:"130px",width:80 }}>
-<Button variant="contained"  onClick={() => handleSaveAndNavigate('Nakit')} color="success" style={{ width: "100%", height: "100%", borderRadius: "10px" }}>
+<Button variant="contained"  onClick={() => handleSaveAndNavigate('Nakit')}   color="success" style={{ width: "100%", height: "100%", borderRadius: "10px" }}>
           Ödeme, Nakit
         </Button>
-      </div>
+   </div>
 
       </div>     
      
@@ -131,6 +139,8 @@ const TransactionPanel = () => {
           Kredi Kartı
         </Button> </div>
 </div>
+
+
       
     </Grid>
   );
