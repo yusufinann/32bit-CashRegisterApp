@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Button, Container, Dialog, DialogTitle, DialogContent } from "@mui/material";
 
 import { useGlobalContext } from '../contexts/GlobalContext';
-import ReceiptList from '../ReceiptsPage/ReceiptList';
+import ReceiptArea from '../OrderSummary/ReceiptArea';
 import TransactionPanel from '../SalesPage/TransactionPanel';
 const OrderSummaryButtons = () => {
     const [open, setOpen] = useState(false); // Modal için state
@@ -44,7 +44,7 @@ const OrderSummaryButtons = () => {
           >
             <DialogTitle id="receipt-dialog-title">Receipt List</DialogTitle>
             <DialogContent>
-              <ReceiptList />
+            <ReceiptArea />
             </DialogContent>
             <Button onClick={handleClose} color="primary">
               Close
