@@ -162,6 +162,43 @@ const handleSubCategoriesClick = useCallback(async () => {
   }
 }, []);
 
+const handleShowProductsBySubcategory = async (subcategories) => {  //handleShowProductsByCategoryId
+  try {
+    // Kategoriye göre ürünleri filtrelemek için dinamik URL oluşturma
+    let url = 'http://localhost:3000/products';
+    if (subcategories) {
+      url += `?subcategories=${subcategories}`;
+    }
+
+    // Axios kullanarak API'dan veri çekme
+    const response = await axios.get(url);
+    const data = response.data; // Axios otomatik olarak JSON'a çevirir
+
+    setState(prevState => ({
+      ...prevState,
+      products: data, // Yeni ürünleri eski ürünlerin üzerine yaz
+      showCategories: false,
+      showProducts: true,
+      showSubcategories:false
+    }));
+
+  } catch (error) {
+    console.error('Error fetching products by category:', error);
+    // Axios hata yönetimi
+    if (error.response) {
+      // İstek yapıldı ve server tarafından bir response alındı
+      console.error('Error response:', error.response.status, error.response.data);
+    } else if (error.request) {
+      // İstek yapıldı ama hiçbir response alınamadı
+      console.error('Error request:', error.request);
+    } else {
+      // Bir şeyler isteği yaparken hatalı gitti
+      console.error('Error message:', error.message);
+    }
+  }
+};
+
+
 
 const updateStateAndKeyboard = (showCategories, showProducts, showFilteredProducts,showSubcategories,extraState = {}) => {
   setState(prevState => ({
@@ -508,7 +545,8 @@ const saveReceipt = async () => {
     isKeyboardOpen, //VirtualKeyboard
     keyboardPosition, setKeyboardPosition, //VirtualKeyboard
     showAllProducts, setShowAllProducts, //ModalSearch
-    handleSubCategoriesClick //SubcategoryList
+    handleSubCategoriesClick, //SubcategoryList
+    handleShowProductsBySubcategory
     
     // other functions...
   };
