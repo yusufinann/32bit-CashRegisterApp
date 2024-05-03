@@ -4,6 +4,7 @@ import BackspaceIcon from '@mui/icons-material/Backspace';
 import ClearIcon from '@mui/icons-material/Clear';
 import { useGlobalContext } from "../contexts/GlobalContext";
 import { useNavigate } from 'react-router-dom';
+import PaymentModal from "./PaymentModal";
 
 const TransactionPanel = () => {
 
@@ -140,6 +141,8 @@ const TransactionPanel = () => {
         </Button> </div>
 </div>
 
+  {/* Yetersiz bakiye uyarısı için modal */}
+<PaymentModal isOpen={showModal} handleClose={() => setShowModal(false)} />
 
       
     </Grid>
