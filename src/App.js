@@ -7,10 +7,15 @@ import Sales from "./HomePage/Sales";
 import { GlobalContextProvider } from "./contexts/GlobalContext";
 import OrderSummary from "./OrderSummary/OrderSummary";
 import Receipts from "./HomePage/Receipts";
+import { KeyboardProvider } from "./contexts/KeyboardContext";
+import VirtualKeyboard from "./GlobalComponents/VirtualKeyboard";
 
 function App() {
   return (
+    <KeyboardProvider> 
+      
     <GlobalContextProvider>
+    <VirtualKeyboard />
       <LoginProvider>
         <Routes>
           <Route path="/home" element={<Home />} />
@@ -21,6 +26,7 @@ function App() {
         </Routes>
       </LoginProvider>
       </GlobalContextProvider>
+      </KeyboardProvider> 
   );
 }
 

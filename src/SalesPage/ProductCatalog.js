@@ -8,18 +8,18 @@ import ProductList from './ProductList';
 import FilteredProductList from './FilteredProductList';
 import VirtualKeyboard from '../GlobalComponents/VirtualKeyboard';
 import SubcategoryList from './SubcategoryList';
+import { useKeyboardContext } from '../contexts/KeyboardContext';
 
 const ProductCatalog = () => {
 
-  const { state, setState, handleShowCategories, handleShowProducts, handleBarcodeChange,setIsKeyboardOpen ,setKeyboardPosition,handleSubCategoriesClick} = useGlobalContext();
+  const { state, setState, handleShowCategories, handleShowProducts, handleBarcodeChange,handleSubCategoriesClick} = useGlobalContext();
+  const { handleClear } = useKeyboardContext();
   const [inputValue, setInputValue] = useState("");
    
-  const handleInputClick = (event) => {
-    const rect = event.target.getBoundingClientRect();
-    setIsKeyboardOpen(true);
-    setKeyboardPosition({ x: rect.left, y: rect.bottom });
+  const handleBarcodeInputChange = (event) => {
+    const value = event.target.value;
+    handleBarcodeChange({ target: { value } });
   };
-
   const toggleProducts = useCallback(() => {
     setState(prevState => ({ ...prevState, showProducts: !prevState.showProducts }));
   }, [setState]);
@@ -44,29 +44,24 @@ const ProductCatalog = () => {
   };
   return (
     <> 
-    <TextField
-      value={inputValue}
-      placeholder={"Giriş için tıklayın..."}
-      onClick={handleInputClick}
-      onChange={handleInputChange}
-      fullWidth
-      variant="outlined"
-      InputProps={{
-        style: { cursor: "pointer", color: "#dc143c" }, // kırmızı metin rengi
-        endAdornment: (
-          <IconButton onClick={() => setInputValue("")} style={{ color: "#dc143c" }}>
-            <ClearIcon /> {/* Temizleme simgesi */}
-          </IconButton>
-        ),
-      }}
-      InputLabelProps={{
-        style: { color: "#dc143c" }, // kırmızı etiket rengi
-      }}
-    />
-    <VirtualKeyboard
-      onInputChange={setInputValue}
-      KeyboardPress={handleVirtualKeyboardPress}
-    />
+   <TextField
+        id="barcode"
+        placeholder={"Giriş için tıklayın..."}
+        onChange={handleBarcodeInputChange}
+        fullWidth
+        variant="outlined"
+        InputProps={{
+          style: { cursor: "pointer", color: "#dc143c" },
+          endAdornment: (
+            <IconButton onClick={handleClear} style={{ color: "#dc143c" }}>
+              <ClearIcon />
+            </IconButton>
+          ),
+        }}
+        InputLabelProps={{
+          style: { color: "#dc143c" },
+        }}
+      />
     <div className="button-container">
       <Button variant="contained" color="primary" onClick={handleShowCategories}>
         Kategoriler

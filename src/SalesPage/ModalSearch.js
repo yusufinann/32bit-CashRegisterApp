@@ -62,6 +62,10 @@ const ModalSearch = ({ open, handleClose }) => {
     setCurrentPage(pageNumber);
   };
 
+  const handleSearchingChange = (event) => {
+    const value = event.target.value;
+    handleChange({ target: { value } });
+  };
   const indexOfLastProduct = (currentPage + 1) * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
   const currentProducts = showAllProducts ? state.products.slice(indexOfFirstProduct, indexOfLastProduct) : state.wantedProduct.slice(indexOfFirstProduct, indexOfLastProduct);
@@ -77,7 +81,7 @@ const ModalSearch = ({ open, handleClose }) => {
       <DialogTitle>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <span style={{ fontSize: '1.5rem', marginRight: '0.5rem' }}>🔍</span> 
-          <span style={{ flex: 1 }}>Ürünleri Ara</span>
+          <span style={{ flex: 1 }}>Search Products</span>
         </Box>
         <Box sx={{ display: 'flex', gap: 1, marginTop: 2 }}>
           {letterButtons}
@@ -87,37 +91,33 @@ const ModalSearch = ({ open, handleClose }) => {
             color="primary"
             size="small"
           >
-            Tüm Ürünler
+            All Products
           </Button>
         </Box>
       </DialogTitle>
     
       <TextField
-        autoFocus
-        margin="dense"
-        id="name"
-        label="Ara..."
-        type="text"
-        fullWidth
-        variant="outlined"
-        value={state.searchQuery}
-        onChange={handleChange}
-        InputProps={{
-          sx: {
-            borderRadius: '8px',
-            fontSize: '0.9rem',
-            '& .MuiOutlinedInput-input': {
-              padding: '12px 14px',
+          id="searching"
+          type="text"
+          fullWidth
+          variant="outlined"
+          onChange={handleSearchingChange}
+          InputProps={{
+            sx: {
+              borderRadius: "8px",
+              fontSize: "0.9rem",
+              "& .MuiOutlinedInput-input": {
+                padding: "12px 14px",
+              },
+              "& .MuiInputLabel-root": {
+                fontSize: "0.9rem",
+                background: "#ffffff",
+                padding: "0 4px",
+                borderRadius: "8px",
+              },
             },
-            '& .MuiInputLabel-root': {
-              fontSize: '0.9rem',
-              background: '#ffffff',
-              padding: '0 4px',
-              borderRadius: '8px',
-            },
-          },
-        }}
-      />
+          }}
+        />
 
       <DialogActions>
         <Button onClick={handleClose} color="secondary" variant="outlined">
