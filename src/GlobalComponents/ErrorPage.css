@@ -1,0 +1,24 @@
+.error-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .error-icon {
+    font-size: 30px;
+    color: #721c24;
+    margin-bottom: 10px;
+  }
+  
+  .error-message {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+  }
+  

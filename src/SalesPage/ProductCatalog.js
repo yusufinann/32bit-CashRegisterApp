@@ -1,20 +1,19 @@
-import React, { useCallback, useState } from 'react';
-import { Button, TextField, IconButton } from '@mui/material';
+import React, { useCallback} from 'react';
+import { Button, TextField, IconButton, CircularProgress } from '@mui/material';
 import ClearIcon from '@mui/icons-material/Clear';
 import './styles.css'
 import { useGlobalContext } from '../contexts/GlobalContext';
 import CategoryList from './CategoryList';
 import ProductList from './ProductList';
 import FilteredProductList from './FilteredProductList';
-import VirtualKeyboard from '../GlobalComponents/VirtualKeyboard';
 import SubcategoryList from './SubcategoryList';
 import { useKeyboardContext } from '../contexts/KeyboardContext';
+import ErrorPage from '../GlobalComponents/ErrorPage';
 
 const ProductCatalog = () => {
 
-  const { state, setState, handleShowCategories, handleShowProducts, handleBarcodeChange,handleSubCategoriesClick} = useGlobalContext();
+  const { state, setState, handleShowCategories, handleShowProducts, handleBarcodeChange,handleSubCategoriesClick,loading,error} = useGlobalContext();
   const { handleClear } = useKeyboardContext();
-  const [inputValue, setInputValue] = useState("");
    
   const handleBarcodeInputChange = (event) => {
     const value = event.target.value;
@@ -32,16 +31,6 @@ const ProductCatalog = () => {
     setState(prevState => ({ ...prevState, showSubcategories: !prevState.showSubcategories }));
   }, [setState]);
 
-  const handleVirtualKeyboardPress = useCallback((value) => {
-    handleBarcodeChange({ target: { value } });
-    setInputValue(value);
-  }, [handleBarcodeChange]);
-
-  const handleInputChange = (event) => {
-    const value = event.target.value;
-    setInputValue(value);
-    handleBarcodeChange({ target: { value } });
-  };
   return (
     <> 
    <TextField
@@ -73,11 +62,18 @@ const ProductCatalog = () => {
         Ürünler
       </Button>
     </div>
+    {error ? (
+        <ErrorPage message={error} />
+      ) : (
+        <>
+    {loading && <CircularProgress/>}
     {state.showFilteredProducts && state.barcode && <FilteredProductList />}
     {state.showCategories && <CategoryList isOpen={state.showCategories} toggle={toggleCategories} />}
     {state.showProducts && <ProductList isOpen={state.showProducts} toggle={toggleProducts} />}
     {state.showSubcategories && <SubcategoryList isOpen={state.showSubcategories} toggle={toggleSubcategories} />}
   </>
+)}
+ </>
   );
 };
 
