@@ -5,33 +5,62 @@ import ClearIcon from '@mui/icons-material/Clear';
 import { useGlobalContext } from "../contexts/GlobalContext";
 import { useNavigate } from 'react-router-dom';
 import PaymentModal from "./PaymentModal";
+import { useCartContext } from "../contexts/CartContext";
 
 const TransactionPanel = () => {
 
   const navigate = useNavigate();
 
-  const { input, handleClick, handleClear, handleDeleteOne,openCampaignModalFn, setPaymentType,saveReceivedMoney,Total,setPartialPayment,setInput  } = useGlobalContext();
-  const [showModal, setShowModal] = useState(false);
+  const { openCampaignModalFn  } = useGlobalContext();
+  const {saveReceivedMoney,Total,input,setPaymentType,setInput,setPartialPayment,clearCart} = useCartContext();
+
+  const [openModal, setOpenModal] = useState(false); // State for modal open/close
+  let remaining = parseFloat(Total) - parseFloat(input);
+  
+
+
+  
+  const handleClick = (value) => setInput((prevInput) => prevInput + value);
+  const handleClear = () => setInput("");
+  const handleDeleteOne = () => {
+    setInput((prevInput) => {
+      if (prevInput === "") return prevInput;
+      return prevInput.slice(0, -1);
+    });
+  };
+
 
   const handleSaveAndNavigate = async (paymentType) => {
-    setPaymentType(paymentType); // Ödeme tipini dinamik olarak ayarla
-  
-    if (input < Total) { // Küçük veya eşitse uyarı göster
-      setShowModal(true); // Yetersiz bakiye uyarısı için modalı göster
-      return; // Fonksiyondan çık
+
+    if (input === "" || input === "0") {
+      // Alert göster
+      alert("Please enter a valid amount.");
+      return; // İşlemi durdur
     }
 
-  else
-  {
-    // Diğer durumda işlem yap ve sayfayı yönlendir
-    setShowModal(false);
-    await saveReceivedMoney(); // saveReceivedMoney fonksiyonunu çağır
+    setPaymentType(paymentType); // Ödeme tipini dinamik olarak ayarla
+    if (parseFloat(input) < parseFloat(Total)) {
+      setOpenModal(true);
+      return;
+    }
+    
+    await saveReceivedMoney();
     setPartialPayment(false);
     setInput("");
     navigate('/price'); // Kullanıcıyı '/price' sayfasına yönlendir
-
+  };
+  
+  const handlePayment = () => {
+    saveReceivedMoney();
+    setPartialPayment(true);
+    navigate('/price');
+    setInput("");
+  };
+  const handleClose=()=>{
+      setOpenModal(false);
+      clearCart();
   }
-     };
+  
   const buttonStyle = {
     width: "100%",  // Butonun genişliği div'e tam sığacak şekilde
     height: "100%", // Butonun yüksekliği div'e tam sığacak şekilde
@@ -145,7 +174,7 @@ const TransactionPanel = () => {
 </div>
 
   {/* Yetersiz bakiye uyarısı için modal */}
-<PaymentModal isOpen={showModal} handleClose={() => setShowModal(false)} />
+  <PaymentModal open={openModal} handleClose={handleClose}remaining={remaining} Total={Total} handlePayment={handlePayment} clearCart={clearCart}/>
 
       
     </Grid>

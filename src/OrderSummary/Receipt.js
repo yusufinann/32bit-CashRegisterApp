@@ -1,7 +1,8 @@
 import React from "react";
 import { styled } from "@mui/system";
 import "./receipt.css";
-import { useGlobalContext } from "../contexts/GlobalContext";
+import { useLogin } from "../contexts/LoginContext";
+import { useCartContext } from "../contexts/CartContext";
 
 const ReceiptContainer = styled("div")({
   fontFamily: "Arial, sans-serif",
@@ -15,8 +16,8 @@ const ReceiptContainer = styled("div")({
 });
 
 const Receipt = React.forwardRef(({ productList, subTotal }, ref) => {
-  const { paymentType, receivedMoney, Total, partialPayment } =
-    useGlobalContext();
+  const { paymentType, receivedMoney, partialPayment,saleId,Total} = useCartContext();
+  const { user } = useLogin();
   const changeGiven = (receivedMoney - Total).toFixed(2);
   return (  
     <ReceiptContainer ref={ref}>
@@ -37,11 +38,11 @@ const Receipt = React.forwardRef(({ productList, subTotal }, ref) => {
         </span>
       </div>
       <div className="receipt-line">
-        <span>SATIŞ NO: null</span>
+        <span>SATIŞ NO:  {saleId}</span>
         <span className="time">SATIŞ : {paymentType}</span>
       </div>
       <div className="receipt-line">
-        <span>KASİYER : null</span>
+        <span>KASİYER : {user.personelInfo.name}</span>
       </div>
       <div className="receipt-line divider">
         --------------------------------------------------------------------------------

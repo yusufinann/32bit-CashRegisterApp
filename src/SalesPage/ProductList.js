@@ -4,10 +4,13 @@ import React from 'react';
 import './styles.css';
 import { useGlobalContext } from '../contexts/GlobalContext';
 import GlobalCardList from '../GlobalComponents/GlobalCardList';
+import { useCartContext } from '../contexts/CartContext';
 
 
 const ProductList = () => {
-  const {handleAddToCart,state } = useGlobalContext();
+  const {state } = useGlobalContext();
+  
+  const { handleAddToCart } = useCartContext();
 
   return (
     <div>

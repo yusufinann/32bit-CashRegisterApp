@@ -2,16 +2,18 @@ import React from 'react';
 import { Dialog, DialogTitle, DialogContent, DialogActions, Button } from '@mui/material';
 import GlobalCardList from '../GlobalComponents/GlobalCardList';
 import { useGlobalContext } from '../contexts/GlobalContext';
+import { useCartContext } from '../contexts/CartContext';
 
 
 
 const CampaignListModal = () => {
-    const { openCampaignModal, closeCampaignModalFn, handleAddToCart, handleCampaignFilter, filteredCampaignProducts } = useGlobalContext();
+    const { openCampaignModal, closeCampaignModalFn, handleCampaignFilter, filteredCampaignProducts } = useGlobalContext();
+    const {handleAddToCart} = useCartContext();
 
 
   return (
     <Dialog open={openCampaignModal} onClose={closeCampaignModalFn} aria-labelledby="campaign-list-dialog-title">
-    <DialogTitle id="campaign-list-dialog-title">Kampanya Listesi</DialogTitle>
+    <DialogTitle id="campaign-list-dialog-title">Campaign List</DialogTitle>
     <DialogContent>
       <GlobalCardList array={filteredCampaignProducts} AddToCartFunction={handleAddToCart} />
     </DialogContent>

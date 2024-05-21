@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { Button, TextField, Dialog, DialogTitle, DialogActions, Box,Paper } from '@mui/material';
 import { useGlobalContext } from '../contexts/GlobalContext';
 import GlobalCardList from '../GlobalComponents/GlobalCardList';
+import { useCartContext } from '../contexts/CartContext';
 
 const ModalSearch = ({ open, handleClose }) => {
-  const { setState, state, handleChange, handleAddToCart, showAllProducts, setShowAllProducts } = useGlobalContext();
+  const { setState, state, handleChange, showAllProducts, setShowAllProducts } = useGlobalContext();
+  const { handleAddToCart } = useCartContext();
   const [currentPage, setCurrentPage] = useState(0);
   const productsPerPage = 10;
 

@@ -1,21 +1,69 @@
-import React from 'react';
-import { Box, Typography, IconButton, Paper, Button, useTheme, useMediaQuery } from '@mui/material';
+import React, { useState } from 'react';
+import { Box, Typography, IconButton, Paper, Button, useTheme, useMediaQuery, Snackbar, Alert } from '@mui/material';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import { useGlobalContext } from '../contexts/GlobalContext';
+import { useCartContext } from '../contexts/CartContext';
 
 const CartList = () => {
-  const { removeFromCart, increaseQuantity, decreaseQuantity, cart,calculateTotalPrice } = useGlobalContext();
+  const { setCart, cart, calculateTotalPrice } = useCartContext();
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
+  const [removeAlertOpen, setRemoveAlertOpen] = useState(false);
+  const [removedProduct, setRemovedProduct] = useState(null);
+  
+  
+  const removeFromCart = (product) => {
+    setCart((prevCart) =>
+      prevCart.filter((item) => item.product.id !== product.id)
+    );
+  };
+
+  const increaseQuantity = (product) => {
+    setCart((prevCart) =>
+      prevCart.map((item) =>
+        item.product.id === product.id
+          ? { ...item, quantity: item.quantity + 1 }
+          : item
+      )
+    );
+  };
+
+  const decreaseQuantity = (product) => {
+    setCart((prevCart) =>
+      prevCart
+        .map((item) =>
+          item.product.id === product.id
+            ? item.quantity > 1
+              ? { ...item, quantity: item.quantity - 1 }
+              : null
+            : item
+        )
+        .filter(Boolean)
+    );
+  };
+
+
+  const handleRemoveFromCart = (product) => {
+    removeFromCart(product);
+    setRemovedProduct(product);
+    setRemoveAlertOpen(true);
+  };
+
+  const handleCloseRemoveAlert = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setRemoveAlertOpen(false);
+    setRemovedProduct(null);
+  };
 
   const renderCartItem = (item) => {
     const normalTotal = item.quantity * item.product.price;
     const discountedTotal = calculateTotalPrice(item);
     const isDiscounted = normalTotal.toFixed(2) !== discountedTotal.toFixed(2);
-  
+
     return (
       <Box sx={{
         display: 'flex',
@@ -37,7 +85,7 @@ const CartList = () => {
             KDV%{item.product.vat_rate}
           </Typography>
         </Box>
-        
+
         <Box sx={{
           display: 'flex',
           flexDirection: 'row',
@@ -80,13 +128,14 @@ const CartList = () => {
           <Typography variant="body1" sx={{ fontWeight: 'bold', fontSize: isSmallScreen ? '0.8rem' : '1rem', flexBasis: '15%' }}>
             {discountedTotal.toFixed(2)} TL
           </Typography>
-          <IconButton color="error" onClick={() => removeFromCart(item.product)} sx={{ flexBasis: '5%' }}>
+          <IconButton color="error" onClick={() => handleRemoveFromCart(item.product)} sx={{ flexBasis: '5%' }}>
             <DeleteOutlineIcon />
           </IconButton>
         </Box>
       </Box>
     );
   };
+
   const renderSummary = () => (
     <Paper elevation={3} sx={{
       display: 'flex',
@@ -96,12 +145,11 @@ const CartList = () => {
       borderRadius: '10px',
     }}
     >
-      {/*güncellenen alan */}
       {cart.map((item) => (
-  <React.Fragment key={item.product.id}>
-    {renderCartItem(item)}
-  </React.Fragment>
-))}
+        <React.Fragment key={item.product.id}>
+          {renderCartItem(item)}
+        </React.Fragment>
+      ))}
     </Paper>
   );
 
@@ -120,7 +168,21 @@ const CartList = () => {
     </Box>
   );
 
-  return <Box sx={{ padding: 3 }}>{cart.length > 0 ? renderSummary() : renderEmptyCart()}</Box>;
+  return (
+    <Box sx={{ padding: 3 }}>
+      {cart.length > 0 ? renderSummary() : renderEmptyCart()}
+      <Snackbar
+        open={removeAlertOpen}
+        autoHideDuration={3000}
+        onClose={handleCloseRemoveAlert}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+      >
+        <Alert onClose={handleCloseRemoveAlert} severity="info" sx={{ width: '300px', fontSize: '1.2rem' }}>
+          {removedProduct ? `${removedProduct.name} removed from cart` : ''}
+        </Alert>
+      </Snackbar>
+    </Box>
+  );
 };
 
 export default CartList;

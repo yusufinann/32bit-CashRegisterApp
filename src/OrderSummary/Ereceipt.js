@@ -1,14 +1,13 @@
 import React from 'react';
 import { Dialog, DialogTitle, DialogContent, DialogActions, TextField, Button } from "@mui/material";
-
-import { useGlobalContext } from '../contexts/GlobalContext';
 import Receipt from './Receipt';
+import { useCartContext } from '../contexts/CartContext';
 
 const Ereceipt = ({ open, handleClose, handleSendReceipt, setEmail, email }) => {
   const handleChange = (e) => {
     setEmail(e.target.value);
   };
-  const { cart, totalAmount } = useGlobalContext();
+  const { cart, totalAmount } = useCartContext();
   const productList = cart.flatMap((item) => [
     <div className="receipt-line" key={`${item.product.barcode}-1`}>
       <span>{item.product.barcode} ({item.quantity} × {item.product.price})</span>

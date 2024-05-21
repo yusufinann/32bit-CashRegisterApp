@@ -9,12 +9,14 @@ import OrderSummary from "./OrderSummary/OrderSummary";
 import Receipts from "./HomePage/Receipts";
 import { KeyboardProvider } from "./contexts/KeyboardContext";
 import VirtualKeyboard from "./GlobalComponents/VirtualKeyboard";
+import { CartContextProvider } from "./contexts/CartContext";
 
 function App() {
   return (
     <KeyboardProvider> 
       
     <GlobalContextProvider>
+    <CartContextProvider>
     <VirtualKeyboard />
       <LoginProvider>
         <Routes>
@@ -25,6 +27,7 @@ function App() {
           <Route path="/receipts" element={<Receipts />} />
         </Routes>
       </LoginProvider>
+      </CartContextProvider>
       </GlobalContextProvider>
       </KeyboardProvider> 
   );

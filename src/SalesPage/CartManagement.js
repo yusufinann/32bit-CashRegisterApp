@@ -2,10 +2,11 @@ import React from "react";
 import { Grid } from "@mui/material";
 import CartList from "./CartList";
 import TotalAmount from "./TotalAmount";
-import { useGlobalContext } from "../contexts/GlobalContext";
+import { useCartContext } from "../contexts/CartContext";
 
 function CartManagement() {
-  const { subTotal } = useGlobalContext();
+  const { subTotal } = useCartContext();
+
   return (
     <div style={{ margin: 20 }}>
       <Grid

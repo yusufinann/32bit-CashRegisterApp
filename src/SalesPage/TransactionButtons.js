@@ -4,7 +4,7 @@ import "./styles.css";
 import TransactionPanel from "./TransactionPanel";
 import ModalSearch from "./ModalSearch";
 import CampaignListModal from "./CampaignListModal";
-import { useGlobalContext } from "../contexts/GlobalContext";
+import { useCartContext } from "../contexts/CartContext";
 
 const TransactionButtons = () => {
     // Modalın açık/kapalı durumunu kontrol eden state
@@ -12,7 +12,7 @@ const TransactionButtons = () => {
    
     const handleOpenSearchModal = () => setOpenSearchModal(true);
     const handleCloseSearchModal = () => setOpenSearchModal(false);
-    const {clearCart } = useGlobalContext();
+    const {clearCart } = useCartContext();
  
   return (
     <Container>

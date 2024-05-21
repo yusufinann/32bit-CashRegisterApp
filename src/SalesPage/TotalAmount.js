@@ -1,10 +1,11 @@
 
 import React from 'react';
 import { Typography, Box, Divider } from '@mui/material';
-import { useGlobalContext } from '../contexts/GlobalContext';
+import { useCartContext } from '../contexts/CartContext';
 
 const TotalAmount = ({subTotal }) => {
-  const {Total } = useGlobalContext(); // Correctly call the function
+  const {Total } = useCartContext(); // Correctly call the function
+
 
 
   return (
