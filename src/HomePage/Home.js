@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, Typography, Grid, styled, Paper, Box, Avatar, Button} from '@mui/material';
 import { LocalGroceryStore,Assignment,MonetizationOn, CollectionsBookmark,AlarmOn, Settings   } from '@mui/icons-material';
 import MenuButtons from '../GlobalComponents/MenuButtons';
 import { useLogin } from '../contexts/LoginContext';
 import LogoutButton from '../LoginPage/LogoutButton';
+import ShopStatus from '../ShopStatus';
+import IPDisplay from '../services/IPDisplay';
 
 
 
@@ -37,6 +39,18 @@ const AvatarContainer = styled(Box)({
 const Home = () => {
     const { isLoggedIn, user } = useLogin();
 
+ const [currentTime, setCurrentTime] = useState(new Date());
+ useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+
+    return () => clearInterval(intervalId);
+  }, []);
+
+  // Format the current time to display hours and minutes
+  const formattedTime = currentTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
     return (
         <div>
         <Paper
@@ -50,30 +64,36 @@ const Home = () => {
             }}
         >
             {isLoggedIn ? (
-                <Box textAlign="center">
-                    <AvatarContainer>
-                        <Avatar alt={user.personelInfo.name} src="/static/images/avatar/1.jpg" sx={{ width: 100, height: 100, margin: '0 auto' }} />
-                     <LogoutButton/>
-                    </AvatarContainer>
-                    <Typography variant="h6" gutterBottom mt={2}>
-                        Hoş geldiniz, {user.username}!
-                    </Typography>
-                    <Typography variant="subtitle1" gutterBottom>
-                        Personel: {user.personelInfo.name}
-                    </Typography>
-                    <Typography variant="subtitle1" gutterBottom>
-                        Kasa Konumu: {user.kasaInfo.location}
-                    </Typography>
-                    <Button variant="contained" color="primary" size="large" style={{ marginTop: '20px' }}>
-                        Profili Düzenle
-                    </Button>
-                </Box>
-            ) : (
-                <Typography variant="body1" gutterBottom>
-                    Lütfen giriş yapın
-                </Typography>
-            )}
-        </Paper>
+               <Box textAlign="center">
+               <ShopStatus />
+               <AvatarContainer>
+                 <Avatar
+                   alt={user.personelInfo.name}
+                   src="/static/images/avatar/1.jpg"
+                   sx={{ width: 100, height: 100, margin: '0 auto' }}
+                 />
+                 <LogoutButton />
+               </AvatarContainer>
+               <Typography variant="h6" gutterBottom mt={2}>
+                 Hoş geldiniz, {user.username}!
+               </Typography>
+               <Typography variant="subtitle1" gutterBottom>
+                 Personel: {user.personelInfo.name}
+               </Typography>
+               <Typography variant="subtitle1" gutterBottom>
+                 Kasa Konumu: {user.kasaInfo.location}
+               </Typography>
+               <Typography variant="subtitle1" gutterBottom>
+                 Sistem Saati: {formattedTime}
+               </Typography>
+                <IPDisplay/> 
+             </Box>
+           ) : (
+               <Typography variant="body1" gutterBottom>
+                   Lütfen giriş yapın
+               </Typography>
+           )}
+       </Paper>
 
 
         <MainContainer component="main" maxWidth="md">

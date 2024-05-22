@@ -395,7 +395,6 @@ const closeCampaignModalFn = () => {
     setShowAllProducts, //ModalSearch
     handleSubCategoriesClick,
     handleShowSubcategoryByCategoryId,
-    //Cart için ,Calculator,OrderSummaryButtons,Receipt,TotalAmount
     partialPayment,
     setPartialPayment, //Calculator-PaymentModal-Receipt
     openCampaignModalFn,closeCampaignModalFn,openCampaignModal,
