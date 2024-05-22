@@ -1,37 +1,32 @@
 import React from 'react';
-import './styles.css';
+import '../GlobalComponents/CardList.css'
 import { useGlobalContext } from '../contexts/GlobalContext';
-import { Card, CardMedia, CardContent } from '@mui/material';
-
 
 const SubcategoryList = () => {
   const {state,handleShowProductsBySubcategory } = useGlobalContext();
   
  
   return (
-     <div>
-     <div className="card-container">
-       {state.subcategories.map((subcategory) => (
-         <Card
-           key={subcategory.id} // Kategori verisinin benzersiz bir kimliği olduğunu varsayarak 'id' alanını anahtar olarak kullanıyoruz
-           className="custom-card"
-           onClick={() => handleShowProductsBySubcategory(subcategory.id)} // Kategoriye tıklandığında ürünleri getir
-   
-         >
-           <CardMedia
-             component="img"
-             alt={subcategory.name}
-             height="140"
-             image={subcategory.image_url}
-           />
-           <CardContent>
-             <p>{subcategory.name}</p>
-           </CardContent>
-         </Card>
-       ))}
-     </div>
-   </div>
-  );
+    <div className="card-container">
+    {state.subcategories.map((subcategory) => (
+     <div
+        key={subcategory.id}
+        className="custom-card draw"
+        onClick={() => handleShowProductsBySubcategory(subcategory.id)}
+      >
+        <div className="product-image-container">
+          <img
+            alt={subcategory.name}
+            src={subcategory.image_url}
+            className="product-image"
+          />
+        </div>
+        <div className="card-content">
+          <p>{subcategory.name}</p>
+          </div>
+      </div>
+    ))}
+  </div>
+);
 };
-
 export default SubcategoryList;

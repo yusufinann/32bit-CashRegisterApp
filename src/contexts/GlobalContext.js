@@ -9,24 +9,17 @@ import axios from "axios";
 const GlobalContext = createContext();
 
 const GlobalContextProvider = ({ children }) => {
-  const [globalState, setGlobalState] = useState({
-    isLoggedIn: false,
-    user: null,
-    // other properties...
-  });
 
   const [paymentType, setPaymentType] = useState("");
   const [campaignProducts, setCampaignProducts] = useState([]);
   // const [selectedProducts, setSelectedProducts] = useState([]);
   const [filteredCampaignProducts, setFilteredCampaignProducts] = useState([]); //kampanya listesinde filtreleme işlemi için
   //const [searchQuery, setSearchQuery] = useState('');
-  const [isKeyboardOpen, setIsKeyboardOpen] = useState(false); //VirtualKeyboard
-  const [keyboardPosition, setKeyboardPosition] = useState({ x: 0, y: 0 }); //VirtualKeyboard
   const [showAllProducts, setShowAllProducts] = useState(false); //ModalSearch
   const [partialPayment, setPartialPayment] = useState(false); //PaymentModal - Receipt
   const [loading, setLoading] = useState(false); // Yükleme durumu eklendi
   const [error, setError] = useState(false);
-  
+
   const [openCampaignModal, setOpenCampaignModal] = useState(false);
 
   const [state, setState] = useState({
@@ -264,7 +257,6 @@ const GlobalContextProvider = ({ children }) => {
       showSubcategories, //AltKategoriler için
       ...extraState,
     }));
-    setIsKeyboardOpen(false);
   };
 
   const handleShowProductsBySubcategory = async (subcategories) => {
@@ -357,49 +349,40 @@ const GlobalContextProvider = ({ children }) => {
   const openCampaignModalFn = () => {
     setOpenCampaignModal(true);
     handleShowCampaignProducts();
-};
+  };
 
-const closeCampaignModalFn = () => {
-  setOpenCampaignModal(false);
-  handleCampaignFilter('ALL'); // Reset filter when closing
-};
-
+  const closeCampaignModalFn = () => {
+    setOpenCampaignModal(false);
+    handleCampaignFilter("ALL"); // Reset filter when closing
+  };
 
   const contextValue = {
-    globalState,
-
     state, // LeftSales state
     setState, //
     handleBarcodeChange,
     handleShowCategories,
     handleShowProducts,
     handleShowProductsBySubcategory,
-
     handleSearching,
     handleChange,
-    //  selectedProducts,
     campaignProducts, //
     handleShowCampaignProducts,
     removeFromCampaignProducts,
     handleCampaignFilter,
     filteredCampaignProducts,
-
     paymentType,
     setPaymentType,
-
-    setIsKeyboardOpen, //VirtualKeyboard
-    isKeyboardOpen, //VirtualKeyboard
-    keyboardPosition,
-    setKeyboardPosition, //VirtualKeyboard
     showAllProducts,
     setShowAllProducts, //ModalSearch
     handleSubCategoriesClick,
     handleShowSubcategoryByCategoryId,
     partialPayment,
     setPartialPayment, //Calculator-PaymentModal-Receipt
-    openCampaignModalFn,closeCampaignModalFn,openCampaignModal,
+    openCampaignModalFn,
+    closeCampaignModalFn,
+    openCampaignModal,
     loading,
-    error
+    error,
   };
 
   return (

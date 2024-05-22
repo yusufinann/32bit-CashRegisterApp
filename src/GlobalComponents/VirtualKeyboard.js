@@ -11,7 +11,7 @@ const VirtualKeyboard = () => {
 
   const manipulateInput = (manipulation) => {
     const activeInput = document.getElementById(activeInputId);
-    if (activeInput && activeInput.tagName.toLowerCase() === 'input' || activeInput.tagName.toLowerCase() === 'textarea') {
+    if (activeInput && (activeInput.tagName.toLowerCase() === 'input' || activeInput.tagName.toLowerCase() === 'textarea')) {
       const caretPos = activeInput.selectionStart;
       const inputText = activeInput.value;
   
@@ -38,6 +38,7 @@ const VirtualKeyboard = () => {
       }
     }
   };
+  
   
 
   

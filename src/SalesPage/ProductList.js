@@ -1,7 +1,6 @@
-
 import React from 'react';
 //import PropTypes from 'prop-types';
-import './styles.css';
+import '../GlobalComponents/CardList.css';
 import { useGlobalContext } from '../contexts/GlobalContext';
 import GlobalCardList from '../GlobalComponents/GlobalCardList';
 import { useCartContext } from '../contexts/CartContext';

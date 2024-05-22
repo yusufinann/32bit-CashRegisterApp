@@ -8,7 +8,6 @@ const CartContextProvider = ({ children }) => {
   const [receipts, setReceipts] = useState([]);
   const [paymentType, setPaymentType] = useState("");
   const [partialPayment, setPartialPayment] = useState(false); //PaymentModal - Receipt
-  const [isVisible, setIsVisible] = useState(false);
   
  
 
@@ -147,7 +146,6 @@ const CartContextProvider = ({ children }) => {
 
   let saleId = generateUniqueId();
 
-  const [changeGiven, setChangeGiven] = useState(null);
   const [receivedMoney, setReceivedMoney] = useState(null);
   const saveReceipt = async () => {
     const totalCost = cart.reduce((total, item) => total + item.totalPrice, 0);
@@ -156,7 +154,6 @@ const CartContextProvider = ({ children }) => {
     // Alınan para girilmişse para üstünü hesapla
     if (receivedMoney !== null) {
       change = (receivedMoney - totalCost).toFixed(2);
-      setChangeGiven(change); // Hesaplanan para üstünü state'e güncelle
     }
     // Fiş verisi oluştur
     const receipt = {
@@ -229,7 +226,7 @@ const CartContextProvider = ({ children }) => {
     saveReceivedMoney,
     input,
     setInput,
-    saveReceipt,isVisible
+    saveReceipt
   };
 
   return (
