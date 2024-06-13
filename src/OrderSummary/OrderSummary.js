@@ -3,7 +3,7 @@ import GlobalNavi from '../GlobalComponents/GlobalNavi'
 import { Grid,  Typography,Paper,Button} from "@mui/material";
 import ReceiptArea from './ReceiptArea';
 import { styled } from "@mui/material/styles";
-import CartManagement from '../SalesPage/CartManagement';
+import CartManagement from '../SalesPage/CartComponent/CartManagement';
 import OrderSummaryButtons from './OrderSummaryButtons';
 import Ereceipt from '../OrderSummary/Ereceipt';
 

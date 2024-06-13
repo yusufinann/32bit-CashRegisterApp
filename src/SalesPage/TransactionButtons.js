@@ -15,7 +15,7 @@ const TransactionButtons = () => {
     const {clearCart } = useCartContext();
 
     const [alertOpen, setAlertOpen] = useState(false); // Snackbar state
-       
+   
     const handleClick = () => {
       clearCart();
       setAlertOpen(true); // Show Snackbar
@@ -51,7 +51,8 @@ const TransactionButtons = () => {
       <div
         style={{ display: "flex", justifyContent: "space-between", margin: 20 }}
       >
-        <TransactionPanel />
+        <TransactionPanel />        
+       
       </div>
       <ModalSearch open={openSearchModal} handleClose={handleCloseSearchModal} />
       <CampaignListModal/> 

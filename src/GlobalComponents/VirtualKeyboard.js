@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { useKeyboardContext } from '../contexts/KeyboardContext';
 import { useGlobalContext } from '../contexts/GlobalContext';
+import { useCartContext } from '../contexts/CartContext';
 
 // Sanal Klavye Bileşeni
 const VirtualKeyboard = () => {
   const { handlePress, isKeyboardOpen,  keyboardPosition,setIsKeyboardOpen,
     setKeyboardPosition,handleClear,activeInputId,setInputValues} = useKeyboardContext();
-    const {handleBarcodeChange,handleChange,} = useGlobalContext();
+    const {handleBarcodeChange,handleChange,state} = useGlobalContext();
+    const { handleAddToCart } = useCartContext();
   const [isShiftPressed, setIsShiftPressed] = useState(false);
 
   const manipulateInput = (manipulation) => {
@@ -74,6 +76,11 @@ const VirtualKeyboard = () => {
 
   if (activeInputId === "barcode") {
     handleBarcodeChange({ target: { value: inputValue } });
+    // at the same time add to cart
+    const matchedProduct = state.products.find(product => product.barcode === inputValue);
+    if (matchedProduct) {
+      handleAddToCart(matchedProduct);
+    }
   }
 
   if (activeInputId === "searching") {

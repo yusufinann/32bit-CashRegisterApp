@@ -1,10 +1,7 @@
 import React from 'react';
 import '../GlobalComponents/CardList.css'
-import { useGlobalContext } from '../contexts/GlobalContext';
 
-const SubcategoryList = () => {
-  const {state,handleShowProductsBySubcategory } = useGlobalContext();
-  
+const SubcategoryList = ( {state,handleShowProductsBySubcategory }) => {  
  
   return (
     <div className="card-container">

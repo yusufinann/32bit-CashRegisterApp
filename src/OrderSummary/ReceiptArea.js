@@ -11,20 +11,26 @@ import { useCartContext } from '../contexts/CartContext';
   
   
     // Cart dizisinden gelen verileri kullanarak HTML'i oluştur
-    const productList = cart.flatMap((item) => [
-      <div className="receipt-line" key={`${item.product.barcode}-1`}>
-        <span>{item.product.barcode} ({item.quantity} × {item.product.price})</span>
-      </div>,
-      <div className="receipt-line" key={`${item.product.barcode}-2`}>
-        <span>{item.product.name} - %{item.product.vat_rate}</span>
-        <span>{(item.totalPrice).toFixed(2)} </span>
-      </div>
-    ]);
+    const productList = cart.flatMap((item) => (
+      <React.Fragment key={item.product.barcode}>
+        <div className="receipt-line">
+          <span>{item.product.barcode} ({item.quantity} × {item.product.price.toFixed(2)})</span>
+        </div>
+        <div className="receipt-line">
+          <span>{item.product.name} - %{item.product.vat_rate}</span>
+          <span>{item.totalPrice.toFixed(2)}</span>
+         
+        </div>
+        
+      </React.Fragment>
+      
+    ));
+    
   
   
   
     // Ara toplam, KDV ve toplam tutarı hesapla
-    const subTotal = cart.reduce((total, product) => total + (product.quantity * product.product.price), 0);
+    const subTotal = (cart.reduce((total, product) => total + (product.quantity * product.product.price), 0)).toFixed(2);
     const tax = subTotal * 0.18; // KDV oranı %18 olarak varsayalım
     const total = subTotal + tax;
   

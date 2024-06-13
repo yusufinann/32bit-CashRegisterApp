@@ -8,81 +8,66 @@ const CartContextProvider = ({ children }) => {
   const [receipts, setReceipts] = useState([]);
   const [paymentType, setPaymentType] = useState("");
   const [partialPayment, setPartialPayment] = useState(false); //PaymentModal - Receipt
-  
- 
+  const [activeCampaign, setActiveCampaign] = useState(null); // yeni state
+  const [checkedProducts, setCheckedProducts] = useState([]); // yeni state
 
-  const addToCart = (product) => {
+  const addToCart = (product, activeCampaign) => {
     setCart((prevCart) => {
-      const existingItem = prevCart.find(
-        (item) => item.product.id === product.product_id
-      );
-
-      if (existingItem) {
-        // Update quantity
-        let newQuantity = existingItem.quantity + 1;
-        let newPrice = existingItem.product.price;
-
-        // Implement campaign C001: 3 for 2 offer
-        if (product.campaign_id === "C001") {
-          const groupsOfThree = Math.floor(newQuantity / 3);
-          const remainder = newQuantity % 3;
-          newPrice =
-            groupsOfThree * 2 * existingItem.product.price +
-            remainder * existingItem.product.price;
-        }
-
-        // Implement campaign C002: 50% discount
-        else if (product.campaign_id === "C002") {
-          newPrice = existingItem.product.price * 0.5 * newQuantity;
-        }
-
-        // Implement campaign C003: 10% discount
-        else if (product.campaign_id === "C003") {
-          newPrice = existingItem.product.price * 0.9 * newQuantity;
-        }
-
-        return prevCart.map((item) =>
-          item.product.id === product.product_id
-            ? { ...item, quantity: newQuantity, totalPrice: newPrice }
-            : item
+        const existingItemIndex = prevCart.findIndex(
+            (item) => item.product.id === product.product_id
         );
-      } else {
-        // Adding a new item to the cart
-        let initialPrice = product.price;
 
-        // Check if the product addition should apply C001 offer
-        if (product.campaign_id === "C001" && product.quantity === 3) {
-          initialPrice = product.price * 2; // Pay for 2 even though it's 3
+        if (existingItemIndex !== -1) {
+            // If the product is already in the cart
+            const updatedCart = [...prevCart];
+            updatedCart[existingItemIndex].quantity += 1;
+            updatedCart[existingItemIndex].campaignApplied = activeCampaign || updatedCart[existingItemIndex].campaignApplied;
+            updatedCart[existingItemIndex].totalPrice = calculateTotalPrice(updatedCart[existingItemIndex], checkedProducts);
+            console.log(updatedCart[existingItemIndex].totalPrice);
+            return updatedCart;
+        } else {
+            // If the product is not in the cart
+            const newItem = {
+                product: {
+                    id: product.product_id,
+                    name: product.product_name,
+                    price: product.price,
+                    image: product.image_url,
+                    barcode: product.barcode,
+                    campaign_id: product.campaign_id,
+                    vat_rate: product.vat_rate,
+                },
+                quantity: 1,
+                campaignApplied: activeCampaign || null,
+                totalPrice: 0,
+            };
+
+            newItem.totalPrice = calculateTotalPrice(newItem, checkedProducts);
+            return [...prevCart, newItem];
         }
-
-        // Apply C002: 50% discount on first addition
-        else if (product.campaign_id === "C002") {
-          initialPrice = product.price * 0.5;
-        }
-
-        // Apply C003: 10% discount on first addition
-        else if (product.campaign_id === "C003") {
-          initialPrice = product.price * 0.9;
-        }
-
-        return [
-          ...prevCart,
-          {
-            product: {
-              id: product.product_id,
-              name: product.product_name,
-              price: product.price,
-              image: product.image_url,
-              barcode: product.barcode,
-              campaign_id: product.campaign_id,
-              vat_rate: product.vat_rate,
-            },
-            quantity: 1,
-            totalPrice: initialPrice,
-          },
-        ];
-      }
     });
+};
+
+ const calculateTotalPrice = (item, checkedProducts) => {
+    let totalCost = item.quantity * item.product.price;
+
+    console.log('Calculating total price for item:', item);
+
+    if (item.campaignApplied) {
+        if (item.campaignApplied === "3al2") {
+            const groupsOfThree = Math.floor(item.quantity / 3);
+            const remainder = item.quantity % 3;
+            totalCost = groupsOfThree * 2 * item.product.price + remainder * item.product.price;
+        } else if (item.campaignApplied === "etiketinYarisi") {
+            totalCost = item.product.price * 0.5 * item.quantity;
+        } else if (item.campaignApplied === "yuzde10") {
+            totalCost = item.product.price * 0.9 * item.quantity;
+        }
+    }
+
+    console.log('Total cost calculated:', totalCost);
+
+    return totalCost;
   };
 
   useEffect(() => {
@@ -97,36 +82,7 @@ const CartContextProvider = ({ children }) => {
   const clearCart = () => { 
     setCart([]); // Clear the cart array
    
-  };
- 
-
-  const calculateTotalPrice = (item) => {
-    let totalCost = item.quantity * item.product.price;
-
-    // Apply different campaigns based on the campaign ID
-    switch (item.product.campaign_id) {
-      case "C001":
-        // Campaign C001: "Buy 3, pay for 2"
-        const numberOfFullDiscounts = Math.floor(item.quantity / 3);
-        const numberOfPaidItems = item.quantity - numberOfFullDiscounts;
-        totalCost = numberOfPaidItems * item.product.price;
-        break;
-      case "C002":
-        // Campaign C002: 50% discount
-        totalCost = item.quantity * item.product.price * 0.5;
-        break;
-      case "C003":
-        // Campaign C003: 10% discount
-        totalCost = item.quantity * item.product.price * 0.9;
-        break;
-      default:
-        // No campaign, regular price
-        totalCost = item.quantity * item.product.price;
-        break;
-    }
-
-    return totalCost;
-  };
+  };  
 
   const handleAddToCart = (product) => {
     //Card veya Button click olunca addtocart çalışcak
@@ -226,7 +182,8 @@ const CartContextProvider = ({ children }) => {
     saveReceivedMoney,
     input,
     setInput,
-    saveReceipt
+    saveReceipt,activeCampaign,
+    setActiveCampaign, checkedProducts,setCheckedProducts
   };
 
   return (

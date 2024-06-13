@@ -9,11 +9,11 @@ const GlobalCardList = ({ array, AddToCartFunction, handleFavorites, favoriteIds
   const [favoritesAlertOpen, setFavoritesAlertOpen] = useState(false); // Snackbar state for add to favorites
   const [favoriteItem, setFavoriteItem] = useState(null); // To keep track of the favorite item for alert message
 
-  const campaignStyles = {
-    C001: "3 Al 2 Öde",
-    C002: "Etiketin Yarısı",
-    C003: "%10 indirim"
-  };
+  // const campaignStyles = {
+  //   C001: "3 Al 2 Öde",
+  //   C002: "Etiketin Yarısı",
+  //   C003: "%10 indirim"
+  // };
 
   const handleFavoriteClick = (event, item) => {
     event.stopPropagation();
@@ -51,16 +51,16 @@ const GlobalCardList = ({ array, AddToCartFunction, handleFavorites, favoriteIds
     <div className="card-container">
       {array.map((arr) => (
         <div key={arr.product_id} className="custom-card draw" onClick={() => handleAddToCart(arr)}>
-          {arr.campaign_state === 1 && (
+          {/* {arr.campaign_state === 1 && (
             <div className="campaign-badge">
               Campaign!
             </div>
-          )}
-          {campaignStyles[arr.campaign_id] && (
+          )} */}
+          {/* {campaignStyles[arr.campaign_id] && (
             <div className="special-offer-ribbon">
               {campaignStyles[arr.campaign_id]}
             </div>
-          )}
+          )} */}
           {arr.image_url ? (
             <img src={arr.image_url} alt={arr.product_name} className="product-image" />
           ) : (

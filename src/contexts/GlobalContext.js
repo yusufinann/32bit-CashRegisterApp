@@ -21,6 +21,7 @@ const GlobalContextProvider = ({ children }) => {
   const [error, setError] = useState(false);
 
   const [openCampaignModal, setOpenCampaignModal] = useState(false);
+  
 
   const [state, setState] = useState({
     // LeftSales için state
@@ -180,6 +181,9 @@ const GlobalContextProvider = ({ children }) => {
       setError(true);
     }
   }, []);
+  useEffect(() => {
+    handleShowProducts(); // Load products when the component mounts
+  }, [handleShowProducts]);
   //AltKategorileri getiren fonksiyon.
   let subcategoriesData = null;
   const handleSubCategoriesClick = useCallback(async () => {

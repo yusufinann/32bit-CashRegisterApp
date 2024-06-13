@@ -9,15 +9,23 @@ import FilteredProductList from './FilteredProductList';
 import SubcategoryList from './SubcategoryList';
 import { useKeyboardContext } from '../contexts/KeyboardContext';
 import ErrorPage from '../GlobalComponents/ErrorPage';
+import { useCartContext } from '../contexts/CartContext';
 
 const ProductCatalog = () => {
 
-  const { state, setState, handleShowCategories, handleShowProducts, handleBarcodeChange,handleSubCategoriesClick,loading,error} = useGlobalContext();
+  const { state, setState, handleShowCategories, handleShowProducts, handleBarcodeChange,handleSubCategoriesClick,handleShowSubcategoryByCategoryId,handleShowProductsBySubcategory,loading,error} = useGlobalContext();
   const { handleClear } = useKeyboardContext();
+  const { handleAddToCart } = useCartContext();
    
   const handleBarcodeInputChange = (event) => {
     const value = event.target.value;
     handleBarcodeChange({ target: { value } });
+
+    // Eşleşen ürünü sepete ekleme
+    const matchedProduct = state.products.find(product => product.barcode === value);
+    if (matchedProduct) {
+      handleAddToCart(matchedProduct);
+    }
   };
   const toggleProducts = useCallback(() => {
     setState(prevState => ({ ...prevState, showProducts: !prevState.showProducts }));
@@ -68,9 +76,9 @@ const ProductCatalog = () => {
         <>
     {loading && <CircularProgress/>}
     {state.showFilteredProducts && state.barcode && <FilteredProductList />}
-    {state.showCategories && <CategoryList isOpen={state.showCategories} toggle={toggleCategories} />}
-    {state.showProducts && <ProductList isOpen={state.showProducts} toggle={toggleProducts} />}
-    {state.showSubcategories && <SubcategoryList isOpen={state.showSubcategories} toggle={toggleSubcategories} />}
+    {state.showCategories && <CategoryList isOpen={state.showCategories} toggle={toggleCategories} handleShowSubcategoryByCategoryId={handleShowSubcategoryByCategoryId}  state={state}/>}
+    {state.showProducts && <ProductList isOpen={state.showProducts} toggle={toggleProducts} handleAddToCart={handleAddToCart} state={state} />}
+    {state.showSubcategories && <SubcategoryList isOpen={state.showSubcategories} toggle={toggleSubcategories} handleShowProductsBySubcategory={handleShowProductsBySubcategory} state={state}/>}
   </>
 )}
  </>

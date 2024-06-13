@@ -1,16 +1,10 @@
 import React from 'react';
 //import PropTypes from 'prop-types';
 import '../GlobalComponents/CardList.css';
-import { useGlobalContext } from '../contexts/GlobalContext';
 import GlobalCardList from '../GlobalComponents/GlobalCardList';
-import { useCartContext } from '../contexts/CartContext';
 
 
-const ProductList = () => {
-  const {state } = useGlobalContext();
-  
-  const { handleAddToCart } = useCartContext();
-
+const ProductList = ({ handleAddToCart,state }) => { 
   return (
     <div>
         <GlobalCardList array={state.products} AddToCartFunction={handleAddToCart} />

@@ -36,4 +36,110 @@
   
 
   
+  .campaign-button {
+    background-color: #4caf50; /* Örnek renk */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  /**/
+
+   .campaign-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
   
+  .campaign-choice {
+    background: #fff;
+    border: 2px solid #007bff;
+    color: #007bff;
+    padding: 8px 16px;
+    margin: 5px 0;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .campaign-choice.active {
+    background: #007bff;
+    color: #fff;
+  }
+  
+  .campaign-choice:hover {
+    background: #0056b3;
+    color: #fff;
+  }
+  
+  .active-campaign {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #007bff;
+  }
+  .product-box {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    position: relative;
+  }
+  
+  .discounted .product-price {
+    color: red;
+    font-weight: bold;
+  }
+  
+  .campaign-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #ff4d4d;
+    color: white;
+    padding: 5px 10px;
+    border-bottom-left-radius: 8px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  
+  .product-header {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .product-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .product-name-container {
+    flex: 2;
+  }
+  
+  .product-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .product-quantity {
+    margin: 0 10px;
+  }
+  
+  .product-price {
+    margin: 0 10px;
+  }
+  
+  .remove-button {
+    display: flex;
+    align-items: center;
+  }
+    

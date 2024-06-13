@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import TravelExploreTwoToneIcon from '@mui/icons-material/TravelExploreTwoTone';
 import GlobalNavi from "../GlobalComponents/GlobalNavi";
 import ProductCatalog from "../SalesPage/ProductCatalog";
-import CartManagement from "../SalesPage/CartManagement";
+import CartManagement from "../SalesPage/CartComponent/CartManagement";
 import TransactionButtons from "../SalesPage/TransactionButtons";
 
 const Item = styled(Paper)(({ theme }) => ({

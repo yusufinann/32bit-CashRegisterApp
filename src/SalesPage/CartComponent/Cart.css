@@ -1,0 +1,189 @@
+/* Cart.css */
+.cart-item {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1px;
+  margin-bottom: 16px;
+  background-color: var(--background-color, #FFD467);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.cart-item:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cart-item-title {
+  font-family: 'Comic Neue', cursive;
+  font-size: 18px;
+}
+
+.cart-item-info {
+  color: #757575;
+  margin-bottom: 8px;
+}
+
+.cart-item-actions {
+  display: flex;
+  align-items: center;
+}
+
+.cart-item-quantity {
+  margin: 0 8px;
+  min-width: 32px;
+  font-size: 18px;
+  text-align: center;
+  font-family: 'Comic Neue', cursive;
+}
+
+.cart-item-button {
+  transition: transform 0.2s ease;
+}
+
+.cart-item-button:hover {
+  transform: scale(1.2);
+}
+
+.cart-item-button-increase:hover {
+  color: #4caf50;
+}
+
+.cart-item-button-decrease:hover {
+  color: #f44336;
+}
+
+.cart-item-button-campaign:hover {
+  color: #9c27b0;
+  transform: rotate(360deg);
+}
+
+.cart-item-button-remove:hover {
+  color: #f44336;
+  transform: rotate(360deg);
+}
+
+.cart-item-discount {
+  background-color: #f44336;
+  color: #fff;
+  padding: 4px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  display: inline-block;
+  font-family: 'Comic Neue', cursive;
+}
+
+.cart-item-price {
+  flex: 1;
+  text-align: right;
+  margin-left: 8px;
+  font-family: 'Comic Neue', cursive;
+  font-size: 18px;
+}
+
+.campaign-icon {
+  color:  #2196f3;
+  font-size: 32px;
+}
+
+.campaign-icon-active {
+  color: #4caf50;
+  font-size: 32px;
+}
+
+.popper-paper {
+  padding: 4px 8px;
+  background-color: #333;
+  border-radius: 4px;
+  max-width: 150px;
+}
+
+.popper-text {
+  color: white;
+   font-size: "0.75rem"
+  
+}
+/**/
+
+.campaign-options {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: absolute;
+  right: 500px;
+  transition: transform 0.8s ease;
+  transform: translateX(20%);
+  background-color: #fff;
+  border-left: 4px solid #eee;
+  padding: 8px;
+}
+
+.campaign-button {
+  margin-bottom: 8px;
+  padding: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.campaign-button.primary {
+  background-color: blue;
+  color: white;
+}
+
+.campaign-button.secondary {
+  background-color: red;
+  color: white;
+}
+
+.quantity-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #007bff;
+}
+
+.product-quantity {
+  min-width: 50px;
+  text-align: center;
+  font-size: 1rem;
+  margin: 0 8px;
+  font-weight: bold;
+}
+  
+
+.product-price {
+  font-weight: bold;
+  font-size: 1rem;  /*ProductList*/
+  flex-basis: 15%; 
+  margin: 0 8px;
+  color: black;
+}
+
+.product-price.small {
+  font-size: 0.8rem;
+}
+
+
+.campaign-icon {
+  color: blue;
+}
+
+.campaign-icon.active {
+  color: green;
+}
+
+.remove-button {
+  background: none;
+  border: none;
+  color: red;
+  cursor: pointer;
+  flex-basis: 5%;
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.remove-button:hover {
+  background-color: #ffcccc;
+}

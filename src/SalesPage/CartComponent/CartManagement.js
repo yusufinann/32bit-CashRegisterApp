@@ -1,8 +1,8 @@
 import React from "react";
 import { Grid } from "@mui/material";
 import CartList from "./CartList";
-import TotalAmount from "./TotalAmount";
-import { useCartContext } from "../contexts/CartContext";
+import TotalAmount from "../TotalAmount";
+import { useCartContext } from "../../contexts/CartContext";
 
 function CartManagement() {
   const { subTotal } = useCartContext();
