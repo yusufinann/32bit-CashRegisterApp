@@ -13,9 +13,14 @@ import { CartContextProvider } from "./contexts/CartContext";
 import Reports from "./HomePage/Reports";
 import { StoreStatusProvider } from "./contexts/StoreStatusContext";
 import Settings from "./HomePage/Settings";
+import { ThemeProvider} from '../src/contexts/ThemeContext';
+import ThemedApp from "./GlobalComponents/themedApp";
+
 
 function App() {
   return (
+    <ThemeProvider>
+      <ThemedApp>
     <KeyboardProvider> 
         <StoreStatusProvider>
     <GlobalContextProvider>
@@ -36,6 +41,8 @@ function App() {
       </GlobalContextProvider>
       </StoreStatusProvider>
       </KeyboardProvider> 
+      </ThemedApp>
+      </ThemeProvider>
   );
 }
 

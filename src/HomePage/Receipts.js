@@ -2,7 +2,9 @@ import React from 'react';
 import { Grid } from "@mui/material";
 import GlobalNavi from "../GlobalComponents/GlobalNavi";
 import ReceiptList from '../ReceiptsPage/ReceiptList'
+import { useTheme } from '../contexts/ThemeContext';
 const Receipts = () => {
+  const {theme}=useTheme();
     return (
         <Grid container spacing={2}>
       {/* Navi */}
@@ -20,7 +22,7 @@ const Receipts = () => {
         sm={6}  // Half width on medium screens and larger
         style={{
           margin: '10px auto', // Center the grid
-          border: "1px solid #2b2d42",
+          border: theme==='dark' ? "2px solid purple":"2px solid #2b2d42",
           borderRadius: 20,
           display: "flex",
           flexDirection: "column",

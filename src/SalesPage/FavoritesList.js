@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import GlobalCardList from '../GlobalComponents/GlobalCardList';
 import { useCartContext } from '../contexts/CartContext';
+import './styles.css'; // Import the CSS file
 
-const FavoritesList = ({ favorites, handleFavorites }) => {
+const FavoritesList = ({ favorites, handleFavorites, appTheme }) => {
   const { handleAddToCart } = useCartContext();
   const itemsPerPage = 10;
   const [currentPage, setCurrentPage] = useState(1);
@@ -33,15 +34,19 @@ const FavoritesList = ({ favorites, handleFavorites }) => {
   const pageNumbers = [];
   for (let i = 1; i <= totalPages; i++) {
     pageNumbers.push(
-      <button key={i} onClick={() => setCurrentPage(i)} style={currentPage === i ? styles.activePage : styles.pageNumber}>
+      <button
+        key={i}
+        onClick={() => setCurrentPage(i)}
+        className={currentPage === i ? 'activePage' : 'pageNumber'}
+      >
         {i}
       </button>
     );
   }
 
   return (
-    <div style={styles.container}>
-      <h1 style={styles.title}>Favorites</h1>
+    <div className={`container ${appTheme}`}>
+      <h1 className={`title ${appTheme}`}>Favorites</h1>
       {/* GlobalCardList bileşenine favoriteIds prop'unu geçir */}
       <GlobalCardList
         array={currentItems}
@@ -50,53 +55,17 @@ const FavoritesList = ({ favorites, handleFavorites }) => {
         favoriteIds={favoriteIds}
       />
       {/* Sayfalama düğmeleri */}
-      <div style={styles.pagination}>
-        <button onClick={prevPage} disabled={currentPage === 1}>Previous</button>
+      <div className="pagination">
+        <button onClick={prevPage} disabled={currentPage === 1}>
+          Previous
+        </button>
         {pageNumbers}
-        <button onClick={nextPage} disabled={currentPage === totalPages}>Next</button>
+        <button onClick={nextPage} disabled={currentPage === totalPages}>
+          Next
+        </button>
       </div>
     </div>
   );
-};
-
-// Stil nesneleri
-const styles = {
-  container: {
-    padding: '20px',
-    backgroundColor: '#f5f5f5',
-    borderRadius: '8px',
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-  },
-  title: {
-    color: '#333',
-    fontSize: '24px',
-    textAlign: 'center',
-    marginBottom: '20px',
-  },
-  pagination: {
-    display: 'flex',
-    justifyContent: 'center',
-    marginTop: '20px',
-  },
-  pageNumber: {
-    margin: '0 5px',
-    padding: '5px 10px',
-    cursor: 'pointer',
-    border: 'none',
-    background: 'transparent',
-    color: '#333',
-    fontSize: '16px',
-  },
-  activePage: {
-    margin: '0 5px',
-    padding: '5px 10px',
-    cursor: 'pointer',
-    border: 'none',
-    background: '#007bff',
-    color: '#fff',
-    fontSize: '16px',
-    borderRadius: '5px',
-  },
 };
 
 export default FavoritesList;

@@ -1,0 +1,77 @@
+.payment-result-card {
+    background: linear-gradient(135deg, #5fffb4 0%, #9e7bfe 100%);
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 500px;
+    margin: 40px auto;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .payment-result-card::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    animation: rotate 8s linear infinite;
+  }
+  
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .payment-result-card h2 {
+    font-size: 2.2em;
+    margin-bottom: 25px;
+    color: #fff;
+  }
+  
+  .payment-info {
+    margin-bottom: 20px;
+  }
+  
+  .payment-info div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 15px 0;
+    font-size: 1.2em;
+  }
+  
+  .payment-info div span {
+    font-weight: bold;
+    color: #fff;
+    margin-left: 10px;
+  }
+  
+  .payment-info div svg {
+    width: 30px;
+    height: 30px;
+    fill: #fff;
+  }
+  
+  .change {
+    font-size: 1.5em;
+    margin-top: 25px;
+    color: #ffeb3b;
+    display: flex;
+    align-items: center;
+  }
+  
+  .change svg {
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  

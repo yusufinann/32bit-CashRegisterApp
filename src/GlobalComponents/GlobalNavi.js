@@ -1,10 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import { useTheme } from '../contexts/ThemeContext';
 
 const GlobalNavi = ({ title, linkTo,icon,something }) => {
+  const {theme}=useTheme()
+  
   return (
-    <div style={{ display: 'flex' ,alignItems: 'center'}}>
+    <div style={{height:"55px",borderRadius:"8px", display: 'flex' ,alignItems: 'center',backgroundColor:theme==='dark'? 'black':'white' ,color:theme==='dark'? 'white':'black',border:theme==='dark'? '1px solid white':'1px solid black'}}>
       <Link to={linkTo} style={{ textDecoration: 'none', color: 'inherit' }}>
         <ArrowBackIosIcon style={{ fontSize: '2rem' }} />
       </Link>

@@ -3,18 +3,13 @@ import './CardList.css'
 import { IconButton, Snackbar, Alert } from '@mui/material';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import { useTheme } from '../contexts/ThemeContext';
 
 const GlobalCardList = ({ array, AddToCartFunction, handleFavorites, favoriteIds }) => {
   const [cartAlertOpen, setCartAlertOpen] = useState(false); // Snackbar state for add to cart
   const [favoritesAlertOpen, setFavoritesAlertOpen] = useState(false); // Snackbar state for add to favorites
   const [favoriteItem, setFavoriteItem] = useState(null); // To keep track of the favorite item for alert message
-
-  // const campaignStyles = {
-  //   C001: "3 Al 2 Öde",
-  //   C002: "Etiketin Yarısı",
-  //   C003: "%10 indirim"
-  // };
-
+  const { theme } = useTheme();
   const handleFavoriteClick = (event, item) => {
     event.stopPropagation();
     if (favoriteIds && favoriteIds.includes(item.product_id)) {
@@ -48,27 +43,18 @@ const GlobalCardList = ({ array, AddToCartFunction, handleFavorites, favoriteIds
   };
 
   return (
-    <div className="card-container">
+    <div className={`card-container ${theme}`}>
       {array.map((arr) => (
         <div key={arr.product_id} className="custom-card draw" onClick={() => handleAddToCart(arr)}>
-          {/* {arr.campaign_state === 1 && (
-            <div className="campaign-badge">
-              Campaign!
-            </div>
-          )} */}
-          {/* {campaignStyles[arr.campaign_id] && (
-            <div className="special-offer-ribbon">
-              {campaignStyles[arr.campaign_id]}
-            </div>
-          )} */}
+          
           {arr.image_url ? (
             <img src={arr.image_url} alt={arr.product_name} className="product-image" />
           ) : (
             <div className="placeholder-image">No Image</div>
           )}
           <div className="card-content">
-            <div className="product-name">{arr.product_name}</div>
-            <div className="product-price">Price: {arr.price} TL</div>
+            <div  className={`product-name ${theme}`}>{arr.product_name}</div>
+            <div className={`product-price ${theme}`}>Price: {arr.price} TL</div>
             
             {handleFavorites || favoriteIds ? (
               <IconButton

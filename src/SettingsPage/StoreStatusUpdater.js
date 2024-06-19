@@ -1,11 +1,15 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { useStoreStatus } from '../contexts/StoreStatusContext';
-import { Button, TextField } from '@mui/material';
+import { Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import { useTheme } from '../contexts/ThemeContext';
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import styled from 'styled-components';
+import './StoreStatusUpdater.css'; // Import your CSS file
 
 const StoreStatusUpdater = () => {
   const { setIsOnline, workingHours, setWorkingHours } = useStoreStatus();
-
+  const { theme } = useTheme();
   const [showWorkingHours, setShowWorkingHours] = useState(false);
   const navigate = useNavigate();
 
@@ -58,35 +62,26 @@ const StoreStatusUpdater = () => {
         Working Hours
       </Button>
       {showWorkingHours && (
-        <div style={{ marginTop: '20px', width: '80%' }}>
-          <TextField
-            key={workingHours.start}
+        <div className={`container ${theme === 'dark' ? 'dark-theme' : ''}`}>
+          <label className="label" htmlFor="start-time">
+            <AccessTimeIcon className="icon" /> Başlangıç Saati
+          </label>
+          <input
+            className={`input ${theme === 'dark' ? 'dark-theme' : ''}`}
             id="start-time"
-            label="Başlangıç Saati"
             type="time"
             value={workingHours.start}
             onChange={handleChangeStartTime}
-            InputLabelProps={{
-              shrink: true,
-            }}
-            inputProps={{
-              step: 300,
-            }}
-            style={{ marginBottom: '20px', width: '100%' }}
           />
-          <TextField
+          <label className="label" htmlFor="end-time">
+            <AccessTimeIcon className="icon" /> Bitiş Saati
+          </label>
+          <input
+            className={`input ${theme === 'dark' ? 'dark-theme' : ''}`}
             id="end-time"
-            label="Bitiş Saati"
             type="time"
             value={workingHours.end}
             onChange={handleChangeEndTime}
-            InputLabelProps={{
-              shrink: true,
-            }}
-            inputProps={{
-              step: 300,
-            }}
-            style={{ marginBottom: '20px', width: '100%' }}
           />
           <Button variant="contained" color="primary" onClick={handleSaveWorkingHours}>
             Save

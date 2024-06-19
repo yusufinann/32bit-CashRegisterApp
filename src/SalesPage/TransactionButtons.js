@@ -6,7 +6,7 @@ import ModalSearch from "./ModalSearch";
 import CampaignListModal from "./CampaignListModal";
 import { useCartContext } from "../contexts/CartContext";
 
-const TransactionButtons = () => {
+const TransactionButtons = ({appTheme}) => {
     // Modalın açık/kapalı durumunu kontrol eden state
     const [openSearchModal, setOpenSearchModal] = useState(false);
    
@@ -51,10 +51,10 @@ const TransactionButtons = () => {
       <div
         style={{ display: "flex", justifyContent: "space-between", margin: 20 }}
       >
-        <TransactionPanel />        
+        <TransactionPanel appTheme={appTheme}/>        
        
       </div>
-      <ModalSearch open={openSearchModal} handleClose={handleCloseSearchModal} />
+      <ModalSearch appTheme={appTheme} open={openSearchModal} handleClose={handleCloseSearchModal} />
       <CampaignListModal/> 
     </Container>
   );

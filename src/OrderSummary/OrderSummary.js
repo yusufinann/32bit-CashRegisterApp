@@ -1,15 +1,16 @@
-import React, { useState } from 'react'
-import GlobalNavi from '../GlobalComponents/GlobalNavi'
-import { Grid,  Typography,Paper,Button} from "@mui/material";
-import ReceiptArea from './ReceiptArea';
-import { styled } from "@mui/material/styles";
-import CartManagement from '../SalesPage/CartComponent/CartManagement';
-import OrderSummaryButtons from './OrderSummaryButtons';
-import Ereceipt from '../OrderSummary/Ereceipt';
+import React, { useState } from "react";
+import GlobalNavi from "../GlobalComponents/GlobalNavi";
+import ReceiptArea from "./ReceiptArea";
+import Ereceipt from "../OrderSummary/Ereceipt";
+import PaymentResult from "./PaymentResult";
+import { useTheme } from "../contexts/ThemeContext";
+import OrderSummaryButtons from "./OrderSummaryButtons";
+import { Button } from "@mui/material";
 
 const OrderSummary = () => {
   const [open, setOpen] = useState(false); // Ereceipt bileşeninin açılıp kapanmasını kontrol eden state
   const [email, setEmail] = useState(""); // setEmail fonksiyonunu tanımlayın
+  const { theme } = useTheme();
 
   const handleOpenEreceipt = () => {
     setOpen(true); // Ereceipt bileşenini aç
@@ -20,60 +21,49 @@ const OrderSummary = () => {
   };
 
   const handleSendReceipt = () => {
-    
     console.log("E-receipt sent to:", email);
     setOpen(false);
   };
 
-  const Item = styled(Paper)(({ theme }) => ({
-    textAlign: 'center',
-    overflow: "auto",
-    margin: theme.spacing(1),
-    border: "1px solid #2b2d42",
-    [theme.breakpoints.up('xs')]: {
-      height: '70vh',
-    },
-    [theme.breakpoints.up('sm')]: {
-      height: '85vh',
-    },
-    [theme.breakpoints.up('md')]: {
-      height: '85vh',
-    }
-  }));
+  const themeClass =
+    theme === "dark" ? "item-container dark" : "item-container light";
+  const maincontainer =
+    theme === "dark" ? "Main-container dark" : "Main-container light";
 
   return (
-    <Grid container spacing={0.5}>
-      <Grid item xs={12} style={{ border: "1px solid #2b2d42" }}>
+    <div className={`Main-container ${maincontainer}`}>
+      <div>
         <GlobalNavi title="See Price" linkTo="/sales" />
-      </Grid>
-      <Grid item xs={12} sm={4}>
-        <Item>
+      </div>
+      <div className="grid-container">
+        <div className={`paper-container ${themeClass}`}>
           <ReceiptArea />
-        </Item>
-      </Grid>
-      <Grid item xs={12} sm={4}>
-        <Item>
-          <CartManagement />
-        </Item>
-      </Grid>
-      <Grid item xs={12} sm={4}>
-        <Item>
-          <Typography variant="h6">İşlem Paneli</Typography>
-          <OrderSummaryButtons />
-          <Button variant="contained" color="primary" onClick={handleOpenEreceipt}>E-Receipt</Button>
-        </Item>
-      </Grid>
-      {/* Ereceipt bileşeni, "open" prop'unu ve açma/kapama fonksiyonlarını geçirin */}
+        </div>
+        <div className={`paper-container ${themeClass}`}>
+          <PaymentResult />
+        </div>
+        <div className={`paper-container ${themeClass}`}>
+          <div className={`panel ${themeClass}`}>
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={handleOpenEreceipt}
+            >
+              E-Receipt
+            </Button>
+            <OrderSummaryButtons />
+          </div>
+        </div>
+      </div>
       <Ereceipt
-        open={open} 
-        handleClose={handleCloseEreceipt} 
-        handleSendReceipt={handleSendReceipt} 
-        setEmail={setEmail} // setEmail fonksiyonunu geçirin
-        email={email} 
+        open={open}
+        handleClose={handleCloseEreceipt}
+        handleSendReceipt={handleSendReceipt}
+        setEmail={setEmail}
+        email={email}
       />
-    </Grid>
-  )
-}
+    </div>
+  );
+};
 
 export default OrderSummary;
-

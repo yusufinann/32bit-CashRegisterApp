@@ -2,7 +2,10 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import './IPDisplay.css'; 
 import ErrorPage from '../GlobalComponents/ErrorPage';
+import { useTheme } from '../contexts/ThemeContext';
+
 const IPDisplay = () => {
+    const { theme } = useTheme();
     const [details, setDetails] = useState(null);
     const [error, setError] = useState(false);
 
@@ -41,10 +44,10 @@ const IPDisplay = () => {
     };
 
     return (
-        <div className="ip-display-container"> 
-            <div className="ip-details-box"> 
-                {error ? <ErrorPage message={"Connection Error"}/>
-                 : details ? (
+        <div className={`ip-display-container ${theme}`}>
+            <div className={`ip-details-box ${theme}`}>
+                {error ? <ErrorPage message={"Connection Error"}/> 
+                : details ? (
                     <div className="details">
                         <ul>
                             <li>

@@ -5,24 +5,30 @@
   padding: 10px 0;
   justify-content: center; 
   flex-wrap: wrap;
-  
+}
+.card-container.dark {
+  display: flex;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+  padding: 10px 0;
+  justify-content: center; 
+  flex-wrap: wrap;
+  background-color: black;
 }
 
 .custom-card {
   position: relative;
   z-index: 1;
-  width: 150px;
+  width: 200px;
   cursor: pointer;
   overflow: visible;
   border: 1px solid #ddd;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), inset 0 0 0 2px #f45e61; /* Gölgeleri daha yumuşak hale getirdik */
-
   background: none;
   box-sizing: border-box;
   margin: 1em;
   padding: 0.5em 0.5em;
-  color: #f45e61;
   font-size: inherit;
   font-weight: 700;
   vertical-align: middle;
@@ -98,18 +104,26 @@
 
 .card-content {
   padding: 10px;
-    text-align: center;
+  text-align: center;
 }
 
-.product-name {
-  font-size: 1rem;
-  font-weight: bold;
-  color: #333;
+.product-name.light {
+  font-size: 1.5rem;
+  font-weight: bold; 
+}
+.product-name.dark {
+  font-size: 1.5rem;
+  font-weight: bold; 
 }
 
-.product-price {
-  font-size: 2rem;
-  color: #555;
+
+.product-price.light {
+  font-size: 1.5rem;
+  color:black;
+}
+.product-price.dark {
+  font-size: 1.5rem;
+  color:white;
 }
 
 

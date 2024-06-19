@@ -1,0 +1,72 @@
+/* General container styles */
+.settings-container.light {
+    background-color: #f0f0f0;
+    color: #000;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.settings-container.dark {
+    background-color: #2c2c2c;
+    color: #fff;
+    border: 5px solid #5615e2;
+    padding: 5px;
+}
+
+/* Navigation styles */
+.settings-navi {
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+}
+
+/* Content grid styles */
+.settings-content {
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 80px); /* Adjust height as needed */
+}
+
+.settings-card {
+    width: 100%;
+    max-width: 500px; /* Set max-width for the cards */
+    margin-bottom: 20px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.settings-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Light theme card styles */
+.settings-content.light .settings-card {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #e0e0e0;
+}
+
+/* Dark theme card styles */
+.settings-content.dark .settings-card {
+    background-color: #424242;
+    color: #fff;
+    border: 1px solid #5615e2;
+}
+
+/* Typography styles */
+.MuiTypography-h6 {
+    font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .settings-content {
+        width: 90%;
+    }
+
+    .settings-card {
+        width: 100%;
+    }
+}

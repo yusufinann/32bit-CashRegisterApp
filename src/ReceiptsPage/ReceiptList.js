@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { useCartContext } from '../contexts/CartContext';
 import { useLogin } from '../contexts/LoginContext';
-
+import '../OrderSummary/receipt.css'
 const ReceiptContainer = styled("div")`
   font-family: "Arial, sans-serif";
   max-width: 320px;
@@ -25,7 +25,7 @@ const ReceiptList = () => {
       <>
         {receipts.map((receipt, index) => {
             return (
-                <ReceiptContainer key={receipt.id || index}>
+                <ReceiptContainer key={receipt.id || index} style={{color:"black"}}>
                     <div className="receipt-header">
                         <h2>ÖRNEK İŞLETME</h2>
                         <p>DEMİRCİKARA MAH. 1431 SOK. NO:12</p>

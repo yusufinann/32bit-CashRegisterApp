@@ -20,7 +20,7 @@ const Receipt = React.forwardRef(({ productList, subTotal }, ref) => {
   const { user } = useLogin();
   const changeGiven = (receivedMoney - Total).toFixed(2);
   return (  
-    <ReceiptContainer ref={ref}>
+    <ReceiptContainer ref={ref} style={{color:"black"}}>
       <div className="receipt-header">
         <h2>ÖRNEK İŞLETME</h2>
         <p>DEMİRCİKARA MAH. 1431 SOK. NO:12</p>

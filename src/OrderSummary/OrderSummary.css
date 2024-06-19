@@ -1,0 +1,43 @@
+.Main-container {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 30px);
+  box-sizing: border-box;
+  }
+  
+  .Main-container.dark {
+    background-color: #3c3c3c;
+  }
+  
+  .grid-container {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    margin-top: 16px;
+    flex-grow: 1; /* Allow grid-container to grow and fill the remaining space */
+    overflow: auto;
+  }
+  
+  .paper-container {
+    text-align: center;
+    overflow: auto;
+    margin: 8px;
+    border: 1px solid #2b2d42;
+    background-color: white;
+  }
+  
+  .paper-container.dark {
+    background-color: black;
+    border: 1px solid white;
+  }
+  
+  .panel {
+    padding: 10px;
+    color: black;
+    font-size: 1em;
+  }
+  .panel.dark {
+    color: white;
+  }
+  
+  

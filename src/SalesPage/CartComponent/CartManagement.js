@@ -4,11 +4,11 @@ import CartList from "./CartList";
 import TotalAmount from "../TotalAmount";
 import { useCartContext } from "../../contexts/CartContext";
 
-function CartManagement() {
+function CartManagement({appTheme}) {
   const { subTotal } = useCartContext();
 
   return (
-    <div style={{ margin: 20 }}>
+    <div style={{ margin: 20}}>
       <Grid
         item
         xs={12} // Full width on small screens
@@ -16,13 +16,13 @@ function CartManagement() {
         style={{
           height: "70vh", // Set to 80% of the viewport height
           overflow: "auto",
-          backgroundColor: "white",
+          backgroundColor: appTheme==='dark' ? '#3C3C3C':"white",
           borderTopLeftRadius: 10,
           borderTopRightRadius: 10,
           width: "100%", // Full width
         }}
       >
-        <CartList />
+        <CartList/>
       </Grid>
 
       <TotalAmount subTotal={subTotal} />

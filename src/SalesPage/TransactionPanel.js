@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import PaymentModal from "./PaymentModal";
 import { useCartContext } from "../contexts/CartContext";
 
-const TransactionPanel = () => {
+const TransactionPanel = ({appTheme}) => {
 
   const navigate = useNavigate();
 
@@ -65,7 +65,7 @@ const TransactionPanel = () => {
     width: "100%",  // Butonun genişliği div'e tam sığacak şekilde
     height: "100%", // Butonun yüksekliği div'e tam sığacak şekilde
     borderRadius: "10px" , // borderRadius özelliği eklendi
-    backgroundColor: '#0E3F57', 
+    backgroundColor: appTheme === 'dark' ? 'purple' : '#0E3F57',
     color:"white",
     fontWeight:"bold",
     boxShadow: '0px 4px 8px rgba(0,0,0,0.2)', 
@@ -81,7 +81,7 @@ const TransactionPanel = () => {
 
 
   return (
-    <Grid container spacing={1} style={{ padding: 10 }}>
+    <Grid container spacing={1} style={{ padding: 10}}>
       <Grid item xs={8} >
         <Input
           fullWidth
@@ -89,7 +89,8 @@ const TransactionPanel = () => {
           value={input}
           placeholder="0"
           readOnly
-          style={{ fontSize: '2rem', textAlign: "right" }}
+          style={{ fontSize: '2rem', textAlign: "right",color: appTheme === 'dark' ? 'white' : 'black'}}
+          
         />
       </Grid>
       <Grid item xs={1} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}> 

@@ -4,7 +4,6 @@ import './receipt.css';
 import { Button } from "@mui/material";
 import { useReactToPrint } from 'react-to-print'; // useReactToPrint'yi doğru şekilde import ettiğinizden emin olun
 import { useCartContext } from '../contexts/CartContext';
-
   const ReceiptArea = () => {
     // CartContext'i kullanarak cart dizisine erişim sağla
     const { cart } = useCartContext();

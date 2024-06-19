@@ -12,8 +12,8 @@ import { useGlobalContext } from "../contexts/GlobalContext";
 import GlobalCardList from "../GlobalComponents/GlobalCardList";
 import { useCartContext } from "../contexts/CartContext";
 import FavoritesList from "./FavoritesList";
-
-const ModalSearch = ({ open, handleClose }) => {
+import './styles.css'
+const ModalSearch = ({ open, handleClose,appTheme}) => {
   const { setState, state, handleChange, showAllProducts, setShowAllProducts } = useGlobalContext();
   const { handleAddToCart } = useCartContext();
   const [currentPage, setCurrentPage] = useState(0);
@@ -140,7 +140,7 @@ const ModalSearch = ({ open, handleClose }) => {
       maxWidth="xl"
       sx={{ border: "2px solid #ccc", borderRadius: "8px" }}
     >
-      <Paper elevation={3} sx={{ padding: "24px", border: "10px solid #FF6E7F" }}>
+      <Paper elevation={3} sx={{ padding: "24px", border: appTheme==='dark' ? '10px solid purple':'10px solid #FF6E7F' ,backgroundColor:appTheme==='dark' ? '#3C3C3C':'white',color: appTheme === 'dark' ? 'white' : 'black'}}>
         <DialogTitle>
           <Box sx={{ display: "flex", alignItems: "center" }}>
             <span style={{ fontSize: "1.5rem", marginRight: "0.5rem" }}>
@@ -148,7 +148,7 @@ const ModalSearch = ({ open, handleClose }) => {
             </span>
             <span style={{ flex: 1 }}>Search Products</span>
           </Box>
-          <Box sx={{ display: "flex", gap: 1, marginTop: 2 }}>
+          <Box sx={{ display: "flex", gap: 1, marginTop: 2}}>
             <Button
               onClick={handleShowFavorites}
               variant="contained"
@@ -198,9 +198,10 @@ const ModalSearch = ({ open, handleClose }) => {
         />
 
         <DialogActions>
-          <Button onClick={handleClose} color="secondary" variant="outlined">
-            İptal
-          </Button>
+        <Button onClick={handleClose} sx={{ color: appTheme === 'dark' ? 'white' : 'black' }} variant="outlined">
+  İptal
+</Button>
+
         </DialogActions>
 
         {currentProducts.length > 0 && (
@@ -236,7 +237,9 @@ const ModalSearch = ({ open, handleClose }) => {
           </Box>
         )}
         {showFavorites && (
-          <FavoritesList handleFavorites={handleFavorites} favorites={favorites} />
+         <div className="centered-container">
+         <FavoritesList favorites={favorites} handleFavorites={handleFavorites} appTheme={appTheme} />
+       </div>
         )}
       </Paper>
     </Dialog>

@@ -18,8 +18,9 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useLogin } from '../contexts/LoginContext';
 import { getVersion } from '../services/versionService';
 import ShopStatus from '../ShopStatus';
+import { useTheme } from '../contexts/ThemeContext';
 
-const theme = createTheme({
+const themee = createTheme({
   palette: {
     primary: {
       main: '#6200ea',
@@ -59,7 +60,7 @@ const Login = () => {
   const passwordInputRef = useRef(null);
   const [showPassword, setShowPassword] = useState(false);
   const version = getVersion();
-
+ const {theme}=useTheme()
   const handleLogin = (event) => {
     event.preventDefault();
     login(usernameInputRef.current.value, passwordInputRef.current.value);
@@ -74,7 +75,7 @@ const Login = () => {
   }
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={themee}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
@@ -96,7 +97,8 @@ const Login = () => {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              backgroundColor: '#fff',
+              backgroundColor:theme==='dark' ? 'black' : '#fff',
+              color:theme==='dark' ? 'white' : '#fff',
               borderRadius: '8px',
               boxShadow: 3,
             }}
@@ -110,7 +112,7 @@ const Login = () => {
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
-              backgroundColor: '#fff',
+              backgroundColor:  theme==='dark' ? 'black' : '#fff',
               padding: 4,
               borderRadius: 2,
               boxShadow: 3,

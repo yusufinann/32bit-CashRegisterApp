@@ -1,0 +1,58 @@
+/* StoreStatusUpdater.css */
+
+.container {
+    background-color: #f0f8ff; /* default light theme */
+    color: #000; /* default light theme */
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    width: 80%;
+    animation: fadeIn 0.5s ease-in-out;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .container.dark-theme {
+    background-color: #2f4f4f;
+    color: #fff;
+  }
+  
+  .label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+  
+  .input {
+    font-size: 1.8em;
+    border: 1px solid #000; /* default light theme */
+    background-color: #fff; /* default light theme */
+    color: #000; /* default light theme */
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+  }
+  
+  .input.dark-theme {
+    border-color: #fff;
+    background-color: #666;
+    color: #fff;
+  }
+  
+  .icon {
+    vertical-align: middle;
+    margin-right: 10px;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
