@@ -1,42 +1,52 @@
 body {
     font-family: Arial, sans-serif;
-}
-.receipt {
-    width: 300px;
-    border: 1px solid #000;
-    padding: 10px;
-    
-}
-.receipt-header {
+  }
+  
+  .receipt-container {
+    font-family: Arial, sans-serif;
+    max-width: 320px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: black;
+  }
+  
+  .receipt-header {
     text-align: center;
     margin-bottom: 20px;
     font-size: 12px;
     color: black;
-}
-.receipt-line {
+  }
+  
+  .receipt-line {
     display: flex;
     justify-content: space-between;
     margin-bottom: 5px;
     font-size: 12px;
-}
-
-.bottom {
+  }
+  
+  .bottom {
     text-align: center;
     justify-content: center;
-}
-.date {
+  }
+  
+  .date {
     text-align: left;
-}
-.time {
+  }
+  
+  .time {
     text-align: right;
-}
-
-.receipt-container p {
-    margin: 0; /* Paragraflar arası boşlukları kaldırır */
-    line-height: 1.2em; /* Satır yüksekliğini belirler */
-    overflow: hidden; /* Metni fazla uzunsa keser */
-    white-space: nowrap; /* Metni bir satırda tutar */
-    text-overflow: ellipsis; /* Fazla metni keserken üç nokta (...) ekler */
+  }
+  
+  .receipt-container {
+    margin: 0;
+    line-height: 1.2em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
   
   .receipt-container .receipt-line {
@@ -46,6 +56,33 @@ body {
   }
   
   .receipt-container .receipt-line.bottom {
-    margin-bottom: 20px; /* Genel toplamın altına biraz daha fazla boşluk ekler */
+    margin-bottom: 20px;
   }
   
+  /* @media print {
+    body * {
+      display: none;
+    }
+  
+    .receipt-container, .receipt-container * {
+      display: block;
+      
+    }
+  
+    .receipt-container {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      box-shadow: none;
+      border: none;
+      
+    }
+  
+    button {
+      display: none;
+    }
+  }
+   */

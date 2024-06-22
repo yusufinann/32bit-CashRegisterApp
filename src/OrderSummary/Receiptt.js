@@ -1,6 +1,9 @@
 import React, { useRef } from "react";
 import { styled } from "@mui/system";
 import "./receipt.css";
+import { useLogin } from "../contexts/LoginContext";
+import { useCartContext } from "../contexts/CartContext";
+import PrintedReceipt from "./PrintedReceipt";
 
 const ReceiptContainer = styled("div")({
   fontFamily: "Arial, sans-serif",
@@ -14,7 +17,7 @@ const ReceiptContainer = styled("div")({
   color: "black",
 });
 
-const Receipt = ({ productList, tax, subTotal,paymentType, receivedMoney, partialPayment, saleId, Total,user }) => {
+const Receiptt = ({ productList, tax, subTotal,paymentType, receivedMoney, partialPayment, saleId, Total,user }) => {
   const receiptRef = useRef(null);
 
 
@@ -95,4 +98,4 @@ const Receipt = ({ productList, tax, subTotal,paymentType, receivedMoney, partia
   );
 };
 
-export default Receipt;
+export default Receiptt;

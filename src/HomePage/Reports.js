@@ -18,7 +18,7 @@ const Reports = () => {
             {/* Reports */}
             <Grid item xs={12} sm={12}>
                 <Paper elevation={3} style={{ padding: 20, borderRadius: 10,backgroundColor:theme==='dark'? '#3c3c3c':'white' }}>
-                    <Statistics theme={theme} /> 
+                    <Statistics theme={theme}/> 
                 </Paper>
             </Grid>
         </Grid>

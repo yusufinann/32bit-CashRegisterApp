@@ -19,6 +19,7 @@ import { useLogin } from '../contexts/LoginContext';
 import { getVersion } from '../services/versionService';
 import ShopStatus from '../ShopStatus';
 import { useTheme } from '../contexts/ThemeContext';
+import { useTranslation } from 'react-i18next';
 
 const themee = createTheme({
   palette: {
@@ -60,7 +61,8 @@ const Login = () => {
   const passwordInputRef = useRef(null);
   const [showPassword, setShowPassword] = useState(false);
   const version = getVersion();
- const {theme}=useTheme()
+ const {theme}=useTheme();
+ const {t}=useTranslation();
   const handleLogin = (event) => {
     event.preventDefault();
     login(usernameInputRef.current.value, passwordInputRef.current.value);
@@ -103,7 +105,7 @@ const Login = () => {
               boxShadow: 3,
             }}
           >
-            <ShopStatus />
+            <ShopStatus t={t}/>
           </Paper>
           <Box
             component="form"
@@ -123,7 +125,7 @@ const Login = () => {
               <LockOutlinedIcon />
             </Avatar>
             <Typography component="h1" variant="h5">
-              Login
+              {t('Login')}
             </Typography>
             <TextField
               id="username"
@@ -131,7 +133,7 @@ const Login = () => {
               margin="normal"
               required
               fullWidth
-              placeholder="Username"
+              placeholder={t('username')}
               name="username"
               autoFocus
               inputRef={usernameInputRef}
@@ -152,7 +154,7 @@ const Login = () => {
               required
               fullWidth
               id="password"
-              placeholder="Password"
+              placeholder={t('Password')}
               type={showPassword ? 'text' : 'password'}
               inputRef={passwordInputRef}
               autoComplete="current-password"
@@ -171,7 +173,7 @@ const Login = () => {
             />
             {showError && (
               <Typography variant="body2" color="error" sx={{ mt: 1 }}>
-                Invalid username or password
+                {t('Invalid username or password')}
               </Typography>
             )}
             <Button
@@ -181,11 +183,11 @@ const Login = () => {
               color="primary"
               sx={{ mt: 3, mb: 2 }}
             >
-              Login
+              {t('Login')}
             </Button>
             {version && (
               <Typography variant="body2" sx={{ mt: 2 }}>
-                Version: {version}
+                {t('Version')}: {version}
               </Typography>
             )}
           </Box>

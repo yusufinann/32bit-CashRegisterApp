@@ -6,10 +6,9 @@ import ModalSearch from "./ModalSearch";
 import CampaignListModal from "./CampaignListModal";
 import { useCartContext } from "../contexts/CartContext";
 
-const TransactionButtons = ({appTheme}) => {
+const TransactionButtons = ({appTheme,t}) => {
     // Modalın açık/kapalı durumunu kontrol eden state
     const [openSearchModal, setOpenSearchModal] = useState(false);
-   
     const handleOpenSearchModal = () => setOpenSearchModal(true);
     const handleCloseSearchModal = () => setOpenSearchModal(false);
     const {clearCart } = useCartContext();
@@ -32,26 +31,26 @@ const TransactionButtons = ({appTheme}) => {
        <div style={{ display: "flex",flexDirection:"row" ,justifyContent: "space-between", margin: 20 }}>
          
          <div>
-         <Button variant="contained" color="primary" onClick={handleOpenSearchModal}>Search from name</Button>
+         <Button variant="contained" color="primary" onClick={handleOpenSearchModal}>{t('Search From Name')}</Button>
           </div>
          <div>
          <Button variant="contained" color="primary" >Button</Button>
        </div>
        <div>
-       <Button variant="contained" color="primary" onClick={handleClick}>Cancel Order</Button>
+       <Button variant="contained" color="primary" onClick={handleClick}>{t('Cancel Order')}</Button>
           <Snackbar open={alertOpen} autoHideDuration={1000} onClose={handleCloseAlert}
         anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }} // Snackbar'ın konumu
         transitionDuration={{ enter: 500, exit: 500 }} // Snackbar'ın geçiş süresi
   >
             <Alert onClose={handleCloseAlert} severity="warning"  sx={{ width: '300px', fontSize: '1.2rem' }}>
-              Cart is empty
+              {t('Cart is empty')}
             </Alert>
           </Snackbar>     </div>
        </div>
       <div
         style={{ display: "flex", justifyContent: "space-between", margin: 20 }}
       >
-        <TransactionPanel appTheme={appTheme}/>        
+        <TransactionPanel appTheme={appTheme} t={t}/>        
        
       </div>
       <ModalSearch appTheme={appTheme} open={openSearchModal} handleClose={handleCloseSearchModal} />

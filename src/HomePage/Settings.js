@@ -5,9 +5,12 @@ import StoreStatusUpdater from '../SettingsPage/StoreStatusUpdater';
 import SwitchTheme from '../SettingsPage/SwitchTheme';
 import { useTheme } from '../contexts/ThemeContext';
 import './Settings.css'; // Import the CSS file
+import ChangeLanguage from '../SettingsPage/ChangeLanguage';
+import { useTranslation } from 'react-i18next';
 
 const Settings = () => {
   const { theme } = useTheme();
+  const{t}=useTranslation();
 
   return (
     <Grid container spacing={2} className={`settings-container ${theme}`}>
@@ -29,19 +32,20 @@ const Settings = () => {
         <Card className="settings-card">
           <CardContent>
             <Typography variant="h6" component="h2" gutterBottom>
-              Store Status Updater
+             {t('Store Status Updater')}
             </Typography>
-            <StoreStatusUpdater />
+            <StoreStatusUpdater t={t} />
           </CardContent>
         </Card>
         <Card className="settings-card">
           <CardContent>
             <Typography variant="h6" component="h2" gutterBottom>
-              Switch Theme
+              {t('Switch Theme')}
             </Typography>
-            <SwitchTheme />
+            <SwitchTheme t={t} />
           </CardContent>
         </Card>
+        <ChangeLanguage/>
       </Grid>
     </Grid>
   );

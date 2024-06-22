@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 import { useCartContext } from "../contexts/CartContext";
 import ReceivedProducts from "./ReceivedProducts";
 import './OrderSummary.css'
-const OrderSummaryButtons = () => {
+const OrderSummaryButtons = ({t}) => {
   const [open, setOpen] = useState(false);
   const { clearCart, saveReceipt } = useCartContext();
 
@@ -27,7 +27,7 @@ const OrderSummaryButtons = () => {
   return (
     <Container>
       <Button variant="contained" color="primary" onClick={() => setOpen(true)}>
-        Belge Bitir
+      {t('Finish Document')}
       </Button>
       <div
         style={{
@@ -42,12 +42,12 @@ const OrderSummaryButtons = () => {
           onClose={handleClose}
           aria-labelledby="receipt-dialog-title"
         >
-          <DialogTitle id="receipt-dialog-title">Receipt List</DialogTitle>
+          <DialogTitle id="receipt-dialog-title">{t('Receipt List')}</DialogTitle>
           <DialogContent>
-            <ReceiptArea />
+            <ReceiptArea t={t}/>
           </DialogContent>
           <Button onClick={handleClose} color="primary">
-            Close
+            {t('Close')}
           </Button>
         </Dialog>
         <div

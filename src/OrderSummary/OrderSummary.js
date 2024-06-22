@@ -6,12 +6,13 @@ import PaymentResult from "./PaymentResult";
 import { useTheme } from "../contexts/ThemeContext";
 import OrderSummaryButtons from "./OrderSummaryButtons";
 import { Button } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 const OrderSummary = () => {
   const [open, setOpen] = useState(false); // Ereceipt bileşeninin açılıp kapanmasını kontrol eden state
   const [email, setEmail] = useState(""); // setEmail fonksiyonunu tanımlayın
   const { theme } = useTheme();
-
+ const {t}=useTranslation();
   const handleOpenEreceipt = () => {
     setOpen(true); // Ereceipt bileşenini aç
   };
@@ -37,10 +38,10 @@ const OrderSummary = () => {
       </div>
       <div className="grid-container">
         <div className={`paper-container ${themeClass}`}>
-          <ReceiptArea />
+           <ReceiptArea t={t}/> 
         </div>
         <div className={`paper-container ${themeClass}`}>
-          <PaymentResult />
+          <PaymentResult t={t}/>
         </div>
         <div className={`paper-container ${themeClass}`}>
           <div className={`panel ${themeClass}`}>
@@ -49,9 +50,9 @@ const OrderSummary = () => {
               color="primary"
               onClick={handleOpenEreceipt}
             >
-              E-Receipt
+             {t('E-Receipt')}
             </Button>
-            <OrderSummaryButtons />
+            <OrderSummaryButtons t={t}/>
           </div>
         </div>
       </div>
@@ -61,6 +62,7 @@ const OrderSummary = () => {
         handleSendReceipt={handleSendReceipt}
         setEmail={setEmail}
         email={email}
+        t={t}
       />
     </div>
   );

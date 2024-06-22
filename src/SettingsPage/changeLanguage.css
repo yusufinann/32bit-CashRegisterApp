@@ -1,0 +1,40 @@
+.language-selector {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .language-button {
+    background: #f0f0f0;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .language-button img {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+  }
+  
+  .language-button:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.05);
+  }
+  
+  .language-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+  
+  .language-button.active {
+    border-color: #007bff;
+    background-color: #e0f0ff;
+    color: #007bff;
+  }
+  

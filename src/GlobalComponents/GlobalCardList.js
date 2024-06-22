@@ -4,12 +4,14 @@ import { IconButton, Snackbar, Alert } from '@mui/material';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { useTheme } from '../contexts/ThemeContext';
+import { useTranslation } from 'react-i18next';
 
 const GlobalCardList = ({ array, AddToCartFunction, handleFavorites, favoriteIds }) => {
   const [cartAlertOpen, setCartAlertOpen] = useState(false); // Snackbar state for add to cart
   const [favoritesAlertOpen, setFavoritesAlertOpen] = useState(false); // Snackbar state for add to favorites
   const [favoriteItem, setFavoriteItem] = useState(null); // To keep track of the favorite item for alert message
   const { theme } = useTheme();
+  const{t}=useTranslation();
   const handleFavoriteClick = (event, item) => {
     event.stopPropagation();
     if (favoriteIds && favoriteIds.includes(item.product_id)) {
@@ -54,7 +56,7 @@ const GlobalCardList = ({ array, AddToCartFunction, handleFavorites, favoriteIds
           )}
           <div className="card-content">
             <div  className={`product-name ${theme}`}>{arr.product_name}</div>
-            <div className={`product-price ${theme}`}>Price: {arr.price} TL</div>
+            <div className={`product-price ${theme}`}>{t('Price')}: {arr.price} TL</div>
             
             {handleFavorites || favoriteIds ? (
               <IconButton

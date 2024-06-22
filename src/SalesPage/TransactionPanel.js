@@ -7,10 +7,9 @@ import { useNavigate } from 'react-router-dom';
 import PaymentModal from "./PaymentModal";
 import { useCartContext } from "../contexts/CartContext";
 
-const TransactionPanel = ({appTheme}) => {
+const TransactionPanel = ({appTheme,t}) => {
 
   const navigate = useNavigate();
-
   const { openCampaignModalFn  } = useGlobalContext();
   const {saveReceivedMoney,Total,input,setPaymentType,setInput,setPartialPayment,clearCart} = useCartContext();
 
@@ -110,7 +109,7 @@ const TransactionPanel = ({appTheme}) => {
                 </Button>
             </div>
             <div style={{ flexGrow: 2, margin: 5, display: 'flex', justifyContent: 'flex-end',borderRadius:"10px",height:"100%",width:80 }}>
-                <Button variant="contained" onClick={openCampaignModalFn} color="success" sx={{ width: "100%", height: "100%" }}>Kampanya Listesi</Button>
+                <Button variant="contained" onClick={openCampaignModalFn} color="success" sx={{ width: "100%", height: "100%" }}>{t('Campaign List')}</Button>
             </div>
         </div>
 
@@ -132,7 +131,7 @@ const TransactionPanel = ({appTheme}) => {
       </div>
       <div style={{ flexGrow: 10, margin: 5, borderRadius: "10px", justifyContent: 'flex-end',height:"100%",width:80  }}>
         <Button color="primary" onClick={handleClear} sx={buttonStyle}>
-          Miktar
+          {t('Quantity')}
         </Button>
       </div>
     </div> 
@@ -143,7 +142,7 @@ const TransactionPanel = ({appTheme}) => {
 <div style={{ flexGrow: 1, margin:5,borderRadius: "10px",height:"100%"}}> <Button color="primary" onClick={() => handleClick("6")} sx={buttonStyle}>6</Button></div>
 <div style={{ flexGrow: 10,  margin: 5, borderRadius: "10px", justifyContent: 'flex-end',flexDirection:"column" ,height:"130px",width:80 }}>
 <Button variant="contained"  onClick={() => handleSaveAndNavigate('Nakit')}   color="success" style={{ width: "100%", height: "100%", borderRadius: "10px" }}>
-          Ödeme, Nakit
+          {t('Cash')}
         </Button>
    </div>
 
@@ -170,7 +169,7 @@ const TransactionPanel = ({appTheme}) => {
             </div>
             <div style={{ flexGrow: 2,  margin: 5, display: 'flex', justifyContent: 'flex-end',borderRadius:"10px",height:"100%",width:80 }}>
             <Button variant="contained" onClick={() => handleSaveAndNavigate('Kart')} color="error" style={{ width: "100%", height: "100%"}}>
-          Kredi Kartı
+          {t('Credit Card')}
         </Button> </div>
 </div>
 

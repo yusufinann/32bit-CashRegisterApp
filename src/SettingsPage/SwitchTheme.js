@@ -19,12 +19,12 @@ const ToggleButton = styled.button`
   }
 `;
 
-const SwitchTheme = () => {
+const SwitchTheme = ({t}) => {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <ToggleButton onClick={toggleTheme}>
-      Switch to {theme === 'light' ? 'Dark' : 'Light'} Theme
+    <ToggleButton theme={theme} onClick={toggleTheme}>
+       {theme === 'light' ? t('Switch to Dark Theme') : t('Switch to Light Theme')}
     </ToggleButton>
   );
 };

@@ -11,11 +11,10 @@ import { useKeyboardContext } from '../contexts/KeyboardContext';
 import ErrorPage from '../GlobalComponents/ErrorPage';
 import { useCartContext } from '../contexts/CartContext';
 
-const ProductCatalog = ({ appTheme }) => {
+const ProductCatalog = ({ appTheme,t }) => {
   const { state, setState, handleShowCategories, handleShowProducts, handleBarcodeChange, handleSubCategoriesClick, handleShowSubcategoryByCategoryId, handleShowProductsBySubcategory, loading, error } = useGlobalContext();
   const { handleClear } = useKeyboardContext();
   const { handleAddToCart } = useCartContext();
-
   const handleBarcodeInputChange = (event) => {
     const value = event.target.value;
     handleBarcodeChange({ target: { value } });
@@ -43,7 +42,7 @@ const ProductCatalog = ({ appTheme }) => {
     <> 
       <TextField
         id="barcode"
-        placeholder="Giriş için tıklayın..."
+        placeholder={t('Enter Barcode...')}
         onChange={handleBarcodeInputChange}
         fullWidth
         variant="outlined"
@@ -74,13 +73,13 @@ const ProductCatalog = ({ appTheme }) => {
       />
       <div className="button-container">
         <Button variant="contained" color="primary" onClick={handleShowCategories}>
-          Kategoriler
+          {t('Categories')}
         </Button>
         <Button variant="contained" color="success" onClick={handleSubCategoriesClick}>
-          Alt Kategoriler
+         {t('Subcategories')}
         </Button>
         <Button variant="contained" color="error" onClick={handleShowProducts}>
-          Ürünler
+          {t('Products')}
         </Button>
       </div>
       {error ? (

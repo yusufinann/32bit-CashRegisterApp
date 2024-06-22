@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Grid, Typography } from '@mui/material';
 import { IconButton, Paper, styled } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 
 const StyledIconButton = styled(IconButton)({
     borderRadius: '10%',
@@ -37,6 +38,7 @@ const StyledPaper = styled(Paper)({
     },
 });
 const MenuButtons = ({ title, linkTo, icon, color }) => {
+    const {t}=useTranslation();
     return (
      
         <Grid item>
@@ -46,7 +48,7 @@ const MenuButtons = ({ title, linkTo, icon, color }) => {
                     {React.cloneElement(icon, { style: { fontSize: '2.5rem', color: '#fff' } })}
                
                     </StyledIconButton>
-                    <ButtonTypography>{title}</ButtonTypography>
+                    <ButtonTypography>{t(title)}</ButtonTypography>
                 </StyledPaper>
             </Link>
         </Grid>

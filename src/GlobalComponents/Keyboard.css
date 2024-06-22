@@ -1,0 +1,80 @@
+/* Keyboard.css */
+
+.keyboard-container {
+    position: fixed;
+    z-index: 9999;
+  }
+  
+  .keyboard-inner {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.4);
+    max-width: 100%;
+  }
+  
+  .keys-container {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    max-width: 100%;
+  }
+  
+  .key-button {
+    flex: 1;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 3px 8px;
+    margin: 0 3px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    text-transform: none;
+  }
+  
+  .close-button {
+    position: absolute;
+    top: -25px;
+    right: -25px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    background-color: #dc143c;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .dark-theme .keyboard-inner {
+    background-color: #333;
+    color: #dc143c;
+  }
+  
+  .dark-theme .keys-container {
+    background-color: #222;
+  }
+  
+  .dark-theme .key-button {
+    background-color: #444;
+    color: #ddd;
+  }
+  
+  .light-theme .keyboard-inner {
+    background-color: #2d2d2d;
+    color: #dc143c;
+  }
+  
+  .light-theme .keys-container {
+    background-color: #f9f9f9;
+  }
+  
+  .light-theme .key-button {
+    background-color: white;
+    color: black;
+  }
+  .backspace-button {
+    font-size: 1.2em; /* Örnek bir büyüklük, ihtiyaca göre ayarlayabilirsiniz */
+    padding: 10px 20px; /* Örnek bir padding değeri */
+  }
+  

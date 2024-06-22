@@ -2,7 +2,7 @@ import React from 'react';
 import { useStoreStatus } from './contexts/StoreStatusContext';
 import { FiberManualRecord as FiberManualRecordIcon } from '@mui/icons-material';
 
-const ShopStatus = () => {
+const ShopStatus = ({t}) => {
     const { isOnline } = useStoreStatus();
 
     // Çevrimiçi ve çevrimdışı durumlar için stil belirleme
@@ -26,7 +26,7 @@ const ShopStatus = () => {
     return (
         <div style={statusStyle}>
             {icon}
-             {isOnline ? 'online' : 'offline'}
+            {isOnline ? t('online') : t('offline')}
         </div>
     );
 };

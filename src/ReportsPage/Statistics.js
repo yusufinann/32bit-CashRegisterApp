@@ -16,12 +16,13 @@ import {
   calculateTotalDiscount,
 } from "./StatisticFunctions";
 import "./Statistics.css";
+import { useTranslation } from "react-i18next";
 
-const Statistics = ({ theme }) => {
+const Statistics = ({ theme}) => {
   const { receipts } = useCartContext();
-
+   const{t}=useTranslation();
   if (!receipts || receipts.length === 0) {
-    return <div style={{color:theme==='dark' ? 'white':'black'}}>Henüz hiç fiş bulunmamaktadır.</div>;
+    return <div style={{color:theme==='dark' ? 'white':'black'}}>{t('There are no receipts yet')}.</div>;
   }
 
   const totalSalesQuantity = calculateTotalSalesQuantity(receipts);
@@ -40,65 +41,65 @@ const Statistics = ({ theme }) => {
   return (
     <div className="statistics-container">
       <div className={`statistics-paper ${theme === 'dark' ? 'dark' : ''}`}>
-        <h4 className={`statistics-title ${theme === 'dark' ? 'dark' : ''}`}>Mağaza İstatistikleri</h4>
+        <h4 className={`statistics-title ${theme === 'dark' ? 'dark' : ''}`}>{t('Store Statistics')}</h4>
         <table className="statistics-table">
           <thead className="statistics-table-head">
             <tr>
-              <th className="statistics-table-cell">İstatistik</th>
-              <th className="statistics-table-cell">Değer</th>
+              <th className="statistics-table-cell">{t('Statistics')}</th>
+              <th className="statistics-table-cell">{t('Value')}</th>
             </tr>
           </thead>
           <tbody>
             <tr className="statistics-table-row">
-              <td className={cellTheme}>Toplam Satılan ürün miktarı</td>
+              <td className={cellTheme}>{t('Total Amount of product sold')}</td>
               <td className={cellTheme}>{totalSalesQuantity}</td>
             </tr>
             <tr className="statistics-table-row">
-              <td className={cellTheme}>Mağaza Toplam Satış Tutarı</td>
+              <td className={cellTheme}>{t('Total Store Sales Amount')}</td>
               <td className={cellTheme}>{totalSalesAmount} TL</td>
             </tr>
             <tr className="statistics-table-row">
-              <td className={cellTheme}>Toplam Kdv Tutarı</td>
+              <td className={cellTheme}>{t('Total VAT Amount')}</td>
               <td className={cellTheme}>{totalVAT} TL</td>
             </tr>
             <tr className="statistics-table-row">
-              <td className={cellTheme}>Toplam satış tutarı en yüksek olan ürün</td>
+              <td className={cellTheme}>{t('The product with the highest total sales amount')}</td>
               <td className={cellTheme}>
                 <ul className="statistics-list">
                   {mostProfitableProducts.map((product, index) => (
                     <li key={index} className="statistics-list-item">
-                      <span className="statistics-list-item primary">Ürün Adı: {product.name}</span>
+                      <span className="statistics-list-item primary">{t('Product Name')}: {product.name}</span>
                       <br />
-                      <span className="statistics-list-item secondary">Barkod: {product.barcode}</span>
+                      <span className="statistics-list-item secondary">{t('Barcode')}: {product.barcode}</span>
                       <br />
-                      <span className="statistics-list-item secondary">Satış Tutarı: {product.price}</span>
+                      <span className="statistics-list-item secondary">{t('Sales Amount')}: {product.price}</span>
                     </li>
                   ))}
                 </ul>
               </td>
             </tr>
             <tr className="statistics-table-row">
-              <td className={cellTheme}>Toplam satış tutarı en az olan ürünler</td>
+              <td className={cellTheme}>{t('Products with the lowest total sales')}</td>
               <td className={cellTheme}>
                 <ul className="statistics-list">
                   {leastProfitableProducts.map((product, index) => (
                     <li key={index} className="statistics-list-item">
-                      <span className="statistics-list-item primary">Ürün Adı: {product.name}</span>
+                      <span className="statistics-list-item primary">{t('Product Name')}: {product.name}</span>
                       <br />
-                      <span className="statistics-list-item secondary">Barkod: {product.barcode}</span>
+                      <span className="statistics-list-item secondary">{t('Barcode')}: {product.barcode}</span>
                       <br />
-                      <span className="statistics-list-item secondary">Satış Tutarı: {product.price}</span>
+                      <span className="statistics-list-item secondary">{t('Sales Amount')}: {product.price}</span>
                     </li>
                   ))}
                 </ul>
               </td>
             </tr>
             <tr className="statistics-table-row">
-              <td className={cellTheme}>Toplam Ara Toplam</td>
+              <td className={cellTheme}>{t('Total Subtotal')}</td>
               <td className={cellTheme}>{totalSubTotal}</td>
             </tr>
             <tr className="statistics-table-row">
-              <td className={cellTheme}>Ödeme Türleri Dağılımı</td>
+              <td className={cellTheme}>{t('Distribution of Payment Types')}</td>
               <td className={cellTheme}>
                 <ul className="statistics-list">
                   {Object.entries(paymentTypes).map(([type, count]) => (
@@ -108,11 +109,11 @@ const Statistics = ({ theme }) => {
               </td>
             </tr>
             <tr className="statistics-table-row">
-              <td className={cellTheme}>En çok tercih edilen ödeme Yöntemi</td>
+              <td className={cellTheme}>{t('Most preferred payment method')}</td>
               <td className={cellTheme}>{mostUsedPaymentMethod}</td>
             </tr>
             <tr className="statistics-table-row">
-              <td className={cellTheme}>En Çok Satan Ürünler (Trend Ürün)</td>
+              <td className={cellTheme}>{t('Best Selling Products (Trending Product)')}</td>
               <td className={cellTheme}>
                 <ul className="statistics-list">
                   {mostSoldProducts.length > 0 ? (
@@ -120,13 +121,13 @@ const Statistics = ({ theme }) => {
                       <li key={index} className="statistics-list-item">{`${product.name} (${product.quantity} adet)`}</li>
                     ))
                   ) : (
-                    <li className="statistics-list-item">Henüz satılan bir ürün yok.</li>
+                    <li className="statistics-list-item">{t('No products sold yet')}.</li>
                   )}
                 </ul>
               </td>
             </tr>
             <tr className="statistics-table-row">
-              <td className={cellTheme}>En Az Satan Ürünler</td>
+              <td className={cellTheme}>{t('Least Selling Products')}</td>
               <td className={cellTheme}>
                 <ul className="statistics-list">
                   {leastSoldProducts.length > 0 ? (
@@ -134,13 +135,13 @@ const Statistics = ({ theme }) => {
                       <li key={index} className="statistics-list-item">{`${product.name} (${product.quantity} adet)`}</li>
                     ))
                   ) : (
-                    <li className="statistics-list-item">Henüz satılan bir ürün yok.</li>
+                    <li className="statistics-list-item">{t('No products sold yet')}.</li>
                   )}
                 </ul>
               </td>
             </tr>
             <tr className="statistics-table-row">
-              <td className={cellTheme}>Ürünlerin Satış Dağılımı</td>
+              <td className={cellTheme}>{t('Sales Breakdown of Products')}</td>
               <td className={cellTheme}>
                 <ul className="statistics-list">
                   {Object.entries(productsSoldQuantity).map(([productName, quantity], index) => (
@@ -150,7 +151,7 @@ const Statistics = ({ theme }) => {
               </td>
             </tr>
             <tr className="statistics-table-row">
-              <td className={cellTheme}>Toplam Uygulanan İndirim</td>
+              <td className={cellTheme}>{t('Total Discount Applied')}</td>
               <td className={cellTheme}>{totalDiscount}</td>
             </tr>
           </tbody>

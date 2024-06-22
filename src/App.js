@@ -15,6 +15,7 @@ import { StoreStatusProvider } from "./contexts/StoreStatusContext";
 import Settings from "./HomePage/Settings";
 import { ThemeProvider} from '../src/contexts/ThemeContext';
 import ThemedApp from "./GlobalComponents/themedApp";
+import { LanguageProvider } from "./contexts/LanguageContext";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
     <ThemeProvider>
       <ThemedApp>
     <KeyboardProvider> 
+      <LanguageProvider>
         <StoreStatusProvider>
     <GlobalContextProvider>
     <CartContextProvider>
@@ -40,6 +42,7 @@ function App() {
       </CartContextProvider>
       </GlobalContextProvider>
       </StoreStatusProvider>
+      </LanguageProvider>
       </KeyboardProvider> 
       </ThemedApp>
       </ThemeProvider>

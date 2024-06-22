@@ -8,11 +8,12 @@ import ShopStatus from '../ShopStatus';
 import IPDisplay from '../services/IPDisplay';
 import './styles.css'; // Import the CSS file
 import { useTheme } from '../contexts/ThemeContext';
+import { useTranslation } from 'react-i18next';
 
 const Home = () => {
     const { isLoggedIn, user } = useLogin();
     const { theme } = useTheme();
-
+    const { t } = useTranslation();
     const [currentTime, setCurrentTime] = useState(new Date());
     useEffect(() => {
         const intervalId = setInterval(() => {
@@ -30,7 +31,7 @@ const Home = () => {
             <Paper className={`CustomPaper ${theme === 'dark' ? 'dark' : 'light'}`}>
                 {isLoggedIn ? (
                     <Box className="CustomBox">
-                        <ShopStatus />
+                        <ShopStatus t={t}/>
                         <Box className="AvatarContainer">
                             <Avatar
                                 alt={user.personelInfo.name}
@@ -40,31 +41,31 @@ const Home = () => {
                             <LogoutButton />
                         </Box>
                         <Typography variant="h6" gutterBottom mt={2}>
-                            Hoş geldiniz, {user.username}!
+                        {t('welcome')}, {user.username}!
                         </Typography>
                         <Typography variant="subtitle1" gutterBottom>
-                            Personel: {user.personelInfo.name}
+                            {t('Personel')}: {user.personelInfo.name}
                         </Typography>
                         <Typography variant="subtitle1" gutterBottom>
-                            Kasa Konumu: {user.kasaInfo.location}
+                        {t('Sales location')}: {user.kasaInfo.location}
                         </Typography>
                         <Typography variant="subtitle1" gutterBottom>
-                            Sistem Saati: {formattedTime}
+                            {t('System Time')}: {formattedTime}
                         </Typography>
                         <IPDisplay />
                     </Box>
                 ) : (
                     <Typography variant="body1" gutterBottom>
-                        Lütfen giriş yapın
+                        {t('Please Log In')}
                     </Typography>
                 )}
             </Paper>
 
             <Container className={`MainContainer ${theme === 'dark' ? 'dark' : 'light'}`} component="main" maxWidth="md">
-                <Typography className="TitleTypography" variant="h4" gutterBottom>
-                    Welcome to Home Page
+                <Typography className="TitleTypography"sx={{marginTop:"10vh"}} variant="h4" gutterBottom>
+                    {t('Welcome To Home Page')}
                 </Typography>
-                <Grid container spacing={3} justifyContent="center">
+                <Grid container spacing={3}  sx={{marginTop:"10vh",display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                     <MenuButtons
                         title="Sales Page"
                         linkTo="/sales"
@@ -114,3 +115,4 @@ const Home = () => {
 }
 
 export default Home;
+

@@ -5,7 +5,7 @@ import CartSummary from "./CartSummary";
 import EmptyCart from "./EmptyCart";
 import "./Cart.css";
 
-const CartList = () => {
+const CartList = ({t}) => {
   const { cart } = useCartContext();
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
@@ -21,7 +21,7 @@ const CartList = () => {
   };
 
   return (
-    <Box sx={{ padding: 3 }}>
+    <Box sx={{ padding: 2 }}>
       {cart.length > 0 ? (
         <CartSummary
           cart={cart}
@@ -30,7 +30,7 @@ const CartList = () => {
           setRemovedProduct={setRemovedProduct}
         />
       ) : (
-        <EmptyCart />
+        <EmptyCart t={t} />
       )}
       <Snackbar
         open={removeAlertOpen}
@@ -43,7 +43,7 @@ const CartList = () => {
           severity="info"
           sx={{ width: "300px", fontSize: "1.2rem" }}
         >
-          {removedProduct ? `${removedProduct.name} removed from cart` : ""}
+          {removedProduct ? `${removedProduct.name} ${t('removed from cart')}` : ""}
         </Alert>
       </Snackbar>
     </Box>

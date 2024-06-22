@@ -3,7 +3,7 @@ import { Dialog, DialogTitle, DialogContent, DialogActions, TextField, Button } 
 import Receipt from './Receipt';
 import { useCartContext } from '../contexts/CartContext';
 
-const Ereceipt = ({ open, handleClose, handleSendReceipt, setEmail, email }) => {
+const Ereceipt = ({ open, handleClose, handleSendReceipt, setEmail, email,t }) => {
   const handleChange = (e) => {
     setEmail(e.target.value);
   };
@@ -24,13 +24,13 @@ const Ereceipt = ({ open, handleClose, handleSendReceipt, setEmail, email }) => 
   const total = subTotal + tax;
   return (
     <Dialog open={open} onClose={handleClose}>
-      <DialogTitle>E-Receipt</DialogTitle>
+      <DialogTitle>{t('E-Receipt')}</DialogTitle>
       <DialogContent>
         <TextField
           autoFocus
           margin="dense"
           id="email"
-          label="E-mail Address"
+          label={t('E-mail Address')}
           type="email"
           fullWidth
           value={email}
@@ -39,8 +39,8 @@ const Ereceipt = ({ open, handleClose, handleSendReceipt, setEmail, email }) => 
        <Receipt productList={productList} subTotal={subTotal} tax={tax} total={total} totalAmount={totalAmount}  />
       </DialogContent>
       <DialogActions>
-        <Button onClick={handleClose} color="secondary">Cancel</Button>
-        <Button onClick={handleSendReceipt} color="primary">Send</Button>
+        <Button onClick={handleClose} color="secondary">{t('Cancel')}</Button>
+        <Button onClick={handleSendReceipt} color="primary">{t('Send')}</Button>
       </DialogActions>
     </Dialog>
   );

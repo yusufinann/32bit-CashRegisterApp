@@ -4,10 +4,9 @@ import { Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { useTheme } from '../contexts/ThemeContext';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
-import styled from 'styled-components';
 import './StoreStatusUpdater.css'; // Import your CSS file
 
-const StoreStatusUpdater = () => {
+const StoreStatusUpdater = ({t}) => {
   const { setIsOnline, workingHours, setWorkingHours } = useStoreStatus();
   const { theme } = useTheme();
   const [showWorkingHours, setShowWorkingHours] = useState(false);
@@ -59,12 +58,12 @@ const StoreStatusUpdater = () => {
   return (
     <>
       <Button variant="contained" onClick={handleWorkingHoursClick}>
-        Working Hours
+        {t('Working Hours')}
       </Button>
       {showWorkingHours && (
         <div className={`container ${theme === 'dark' ? 'dark-theme' : ''}`}>
           <label className="label" htmlFor="start-time">
-            <AccessTimeIcon className="icon" /> Başlangıç Saati
+            <AccessTimeIcon className="icon" /> {t('Start Time')}
           </label>
           <input
             className={`input ${theme === 'dark' ? 'dark-theme' : ''}`}
@@ -74,7 +73,7 @@ const StoreStatusUpdater = () => {
             onChange={handleChangeStartTime}
           />
           <label className="label" htmlFor="end-time">
-            <AccessTimeIcon className="icon" /> Bitiş Saati
+            <AccessTimeIcon className="icon" /> {t('End Time')}
           </label>
           <input
             className={`input ${theme === 'dark' ? 'dark-theme' : ''}`}
@@ -84,7 +83,7 @@ const StoreStatusUpdater = () => {
             onChange={handleChangeEndTime}
           />
           <Button variant="contained" color="primary" onClick={handleSaveWorkingHours}>
-            Save
+            {t('Save')}
           </Button>
         </div>
       )}
