@@ -11,7 +11,7 @@ import { useKeyboardContext } from '../contexts/KeyboardContext';
 import ErrorPage from '../GlobalComponents/ErrorPage';
 import { useCartContext } from '../contexts/CartContext';
 
-const ProductCatalog = ({ appTheme,t }) => {
+const ProductCatalog = ({ theme,t }) => {
   const { state, setState, handleShowCategories, handleShowProducts, handleBarcodeChange, handleSubCategoriesClick, handleShowSubcategoryByCategoryId, handleShowProductsBySubcategory, loading, error } = useGlobalContext();
   const { handleClear } = useKeyboardContext();
   const { handleAddToCart } = useCartContext();
@@ -47,16 +47,16 @@ const ProductCatalog = ({ appTheme,t }) => {
         fullWidth
         variant="outlined"
         sx={{
-          input: { cursor: "pointer", color: appTheme === 'dark' ? 'white' : 'black'},
+          input: { cursor: "pointer", color: theme === 'dark' ? 'white' : 'black'},
           '& .MuiOutlinedInput-root': {
             '& fieldset': {
-              borderColor: appTheme === 'dark' ? 'red' : 'default',
+              borderColor: theme === 'dark' ? 'red' : 'default',
             },
             '&:hover fieldset': {
-              borderColor: appTheme === 'dark' ? 'red' : 'default',
+              borderColor: theme === 'dark' ? 'red' : 'default',
             },
             '&.Mui-focused fieldset': {
-              borderColor: appTheme === 'dark' ? 'red' : 'default',
+              borderColor: theme === 'dark' ? 'red' : 'default',
             },
           },
         }}

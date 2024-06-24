@@ -68,9 +68,9 @@ const VirtualKeyboard = () => {
           {currentLayout.map((row, rowIndex) => (
             <div key={rowIndex} className="key-row"  style={{ display: "flex", marginBottom: "5px" }}>
               {row.map((key) => (
-                <Button key={key} onClick={() => handleKeyPress(key)} className={`key-button ${key === 'backspace' ? 'backspace-button' : ''}`}>
+                <button key={key} onClick={() => handleKeyPress(key)} className={`key-button ${key === 'backspace' ? 'backspace-button' : ''}`}>
                   {key}
-                </Button>
+                </button>
               ))}
             </div>
           ))}

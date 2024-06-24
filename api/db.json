@@ -3407,7 +3407,120 @@
       "category_id": 16
     }
   ],
-  "receipts": [],
+  "receipts": [
+    {
+      "id": "2756",
+      "timestamp": "24.06.2024 01:16",
+      "items": [
+        {
+          "productId": 2,
+          "productName": "Süt",
+          "quantity": 1,
+          "unitPrice": 2.5,
+          "totalPrice": 2.5,
+          "barcode": "2345678901234",
+          "vat_rate": 8
+        },
+        {
+          "productId": 1,
+          "productName": "Domates",
+          "quantity": 2,
+          "unitPrice": 3.5,
+          "totalPrice": 7,
+          "barcode": "1234567890123",
+          "vat_rate": 8
+        },
+        {
+          "productId": 4,
+          "productName": "Kırmızı Et",
+          "quantity": 1,
+          "unitPrice": 25,
+          "totalPrice": 12.5,
+          "barcode": "4567890123456",
+          "vat_rate": 8
+        },
+        {
+          "productId": 5,
+          "productName": "Bisküvi",
+          "quantity": 1,
+          "unitPrice": 2,
+          "totalPrice": 2,
+          "barcode": "5678901234567",
+          "vat_rate": 8
+        },
+        {
+          "productId": 6,
+          "productName": "Elma",
+          "quantity": 1,
+          "unitPrice": 2,
+          "totalPrice": 2,
+          "barcode": "6789012345678",
+          "vat_rate": 8
+        }
+      ],
+      "subTotal": "38.50",
+      "total": "26.00",
+      "receivedMoney": "30",
+      "changeGiven": "4.00",
+      "paymentType": "Nakit"
+    },
+    {
+      "id": "7093",
+      "timestamp": "24.06.2024 01:17",
+      "items": [
+        {
+          "productId": 3,
+          "productName": "Beyaz Ekmek",
+          "quantity": 2,
+          "unitPrice": 1.75,
+          "totalPrice": 1.75,
+          "barcode": "3456789012345",
+          "vat_rate": 8
+        },
+        {
+          "productId": 2,
+          "productName": "Süt",
+          "quantity": 1,
+          "unitPrice": 2.5,
+          "totalPrice": 2.5,
+          "barcode": "2345678901234",
+          "vat_rate": 8
+        },
+        {
+          "productId": 6,
+          "productName": "Elma",
+          "quantity": 2,
+          "unitPrice": 2,
+          "totalPrice": 3.6,
+          "barcode": "6789012345678",
+          "vat_rate": 8
+        },
+        {
+          "productId": 5,
+          "productName": "Bisküvi",
+          "quantity": 2,
+          "unitPrice": 2,
+          "totalPrice": 4,
+          "barcode": "5678901234567",
+          "vat_rate": 8
+        },
+        {
+          "productId": 7,
+          "productName": "Yoğurt",
+          "quantity": 1,
+          "unitPrice": 3,
+          "totalPrice": 3,
+          "barcode": "7890123456789",
+          "vat_rate": 8
+        }
+      ],
+      "subTotal": "17.00",
+      "total": "14.85",
+      "receivedMoney": "15",
+      "changeGiven": "0.15",
+      "paymentType": "Nakit"
+    }
+  ],
   "users": [
     {
       "id": "1",

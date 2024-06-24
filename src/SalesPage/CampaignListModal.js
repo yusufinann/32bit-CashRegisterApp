@@ -1,29 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Dialog, DialogTitle, DialogContent, DialogActions, Button } from '@mui/material';
-import GlobalCardList from '../GlobalComponents/GlobalCardList';
-import { useGlobalContext } from '../contexts/GlobalContext';
 import { useCartContext } from '../contexts/CartContext';
+import CampaignProducts from './CampaignProducts';
+import "./styles.css";
+const CampaignListModal = ({ openCampaignModalFn, closeCampaignModalFn,theme,t }) => {
+  const { cart, handleAddToCart, handleCampaignSelect } = useCartContext();
 
+  const [selectedCampaign, setSelectedCampaign] = useState(null);
 
-
-const CampaignListModal = () => {
-    const { openCampaignModal, closeCampaignModalFn, handleCampaignFilter, filteredCampaignProducts } = useGlobalContext();
-    const {handleAddToCart} = useCartContext();
-
+  const handleCampaignClick = (campaignType) => {
+    setSelectedCampaign(campaignType);
+    handleCampaignSelect(campaignType);
+  };
 
   return (
-    <Dialog open={openCampaignModal} onClose={closeCampaignModalFn} aria-labelledby="campaign-list-dialog-title">
-    <DialogTitle id="campaign-list-dialog-title">Campaign List</DialogTitle>
-    <DialogContent>
-      <GlobalCardList array={filteredCampaignProducts} AddToCartFunction={handleAddToCart} />
-    </DialogContent>
-    <DialogActions>
-      <Button onClick={() => handleCampaignFilter('C001')} color="primary">3 Al 2 Öde</Button>
-      <Button onClick={() => handleCampaignFilter('C002')} color="secondary">Yüzde 50 Indirim</Button>
-      <Button onClick={() => handleCampaignFilter('C003')} color="secondary">Yüzde 10 Indirim</Button>
-      <Button onClick={closeCampaignModalFn} color="primary">Close</Button>
-    </DialogActions>
-  </Dialog>
+    <Dialog open={openCampaignModalFn} onClose={closeCampaignModalFn} >
+      <DialogTitle id="campaign-list-dialog-title" className={`dialog-title ${theme}`}>{t('Campaign List')}</DialogTitle>
+      <DialogContent className={`dialog-content ${theme}`}>
+        <CampaignProducts selectedCampaign={selectedCampaign} cart={cart} handleAddToCart={handleAddToCart} theme={theme} t={t}/>
+      </DialogContent>
+      <DialogActions className={`dialog-actions ${theme}`}>
+        <Button onClick={() => handleCampaignClick('3al2')} color="primary">
+        {t('Buy 3 Pay 2')}
+        </Button>
+        <Button onClick={() => handleCampaignClick('etiketinYarisi')} color="secondary">
+        {t('50 percent discount')}
+        </Button>
+        <Button onClick={() => handleCampaignClick('yuzde10')} color="secondary">
+        {t('10 percent discount')}
+        </Button>
+        <Button onClick={closeCampaignModalFn} color="primary">
+          {t('Close')}
+        </Button>
+      </DialogActions>
+    </Dialog>
   );
 };
 

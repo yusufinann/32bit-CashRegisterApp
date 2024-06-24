@@ -3,10 +3,9 @@ import { Alert, Button, Container, Snackbar } from "@mui/material";
 import "./styles.css";
 import TransactionPanel from "./TransactionPanel";
 import ModalSearch from "./ModalSearch";
-import CampaignListModal from "./CampaignListModal";
 import { useCartContext } from "../contexts/CartContext";
 
-const TransactionButtons = ({appTheme,t}) => {
+const TransactionButtons = ({theme,t}) => {
     // Modalın açık/kapalı durumunu kontrol eden state
     const [openSearchModal, setOpenSearchModal] = useState(false);
     const handleOpenSearchModal = () => setOpenSearchModal(true);
@@ -50,11 +49,11 @@ const TransactionButtons = ({appTheme,t}) => {
       <div
         style={{ display: "flex", justifyContent: "space-between", margin: 20 }}
       >
-        <TransactionPanel appTheme={appTheme} t={t}/>        
+        <TransactionPanel theme={theme} t={t}/>        
        
       </div>
-      <ModalSearch appTheme={appTheme} open={openSearchModal} handleClose={handleCloseSearchModal} />
-      <CampaignListModal/> 
+      <ModalSearch theme={theme} open={openSearchModal} handleClose={handleCloseSearchModal} />
+      
     </Container>
   );
 };

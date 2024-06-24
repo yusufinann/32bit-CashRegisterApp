@@ -2,15 +2,23 @@ import React, { useState } from "react";
 import { Button, Input, Grid } from "@mui/material";
 import BackspaceIcon from '@mui/icons-material/Backspace';
 import ClearIcon from '@mui/icons-material/Clear';
-import { useGlobalContext } from "../contexts/GlobalContext";
 import { useNavigate } from 'react-router-dom';
 import PaymentModal from "./PaymentModal";
 import { useCartContext } from "../contexts/CartContext";
+import CampaignListModal from "./CampaignListModal";
 
-const TransactionPanel = ({appTheme,t}) => {
+const TransactionPanel = ({theme,t}) => {
 
   const navigate = useNavigate();
-  const { openCampaignModalFn  } = useGlobalContext();
+  const [isCampaignModalOpen, setIsCampaignModalOpen] = useState(false);
+
+  const openCampaignModal = () => {
+      setIsCampaignModalOpen(true);
+  };
+
+  const closeCampaignModal = () => {
+      setIsCampaignModalOpen(false);
+  };
   const {saveReceivedMoney,Total,input,setPaymentType,setInput,setPartialPayment,clearCart} = useCartContext();
 
   const [openModal, setOpenModal] = useState(false); // State for modal open/close
@@ -64,7 +72,7 @@ const TransactionPanel = ({appTheme,t}) => {
     width: "100%",  // Butonun genişliği div'e tam sığacak şekilde
     height: "100%", // Butonun yüksekliği div'e tam sığacak şekilde
     borderRadius: "10px" , // borderRadius özelliği eklendi
-    backgroundColor: appTheme === 'dark' ? 'purple' : '#0E3F57',
+    backgroundColor: theme === 'dark' ? 'purple' : '#0E3F57',
     color:"white",
     fontWeight:"bold",
     boxShadow: '0px 4px 8px rgba(0,0,0,0.2)', 
@@ -88,7 +96,7 @@ const TransactionPanel = ({appTheme,t}) => {
           value={input}
           placeholder="0"
           readOnly
-          style={{ fontSize: '2rem', textAlign: "right",color: appTheme === 'dark' ? 'white' : 'black'}}
+          style={{ fontSize: '2rem', textAlign: "right",color: theme === 'dark' ? 'white' : 'black'}}
           
         />
       </Grid>
@@ -109,7 +117,7 @@ const TransactionPanel = ({appTheme,t}) => {
                 </Button>
             </div>
             <div style={{ flexGrow: 2, margin: 5, display: 'flex', justifyContent: 'flex-end',borderRadius:"10px",height:"100%",width:80 }}>
-                <Button variant="contained" onClick={openCampaignModalFn} color="success" sx={{ width: "100%", height: "100%" }}>{t('Campaign List')}</Button>
+                <Button variant="contained" onClick={openCampaignModal} color="success" sx={{ width: "100%", height: "100%" }}>{t('Campaign List')}</Button>
             </div>
         </div>
 
@@ -176,7 +184,10 @@ const TransactionPanel = ({appTheme,t}) => {
   {/* Yetersiz bakiye uyarısı için modal */}
   <PaymentModal open={openModal} handleClose={handleClose}remaining={remaining} Total={Total} handlePayment={handlePayment} clearCart={clearCart}/>
 
-      
+  <CampaignListModal openCampaignModalFn={isCampaignModalOpen}
+                closeCampaignModalFn={closeCampaignModal}
+                theme={theme}
+                t={t}/> 
     </Grid>
   );
 };

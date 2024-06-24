@@ -3,7 +3,7 @@ import GlobalCardList from '../GlobalComponents/GlobalCardList';
 import { useCartContext } from '../contexts/CartContext';
 import './styles.css'; // Import the CSS file
 
-const FavoritesList = ({ favorites, handleFavorites, appTheme }) => {
+const FavoritesList = ({ favorites, handleFavorites, theme }) => {
   const { handleAddToCart } = useCartContext();
   const itemsPerPage = 10;
   const [currentPage, setCurrentPage] = useState(1);
@@ -45,8 +45,8 @@ const FavoritesList = ({ favorites, handleFavorites, appTheme }) => {
   }
 
   return (
-    <div className={`container ${appTheme}`}>
-      <h1 className={`title ${appTheme}`}>Favorites</h1>
+    <div className={`container ${theme}`}>
+      <h1 className={`title ${theme}`}>Favorites</h1>
       {/* GlobalCardList bileşenine favoriteIds prop'unu geçir */}
       <GlobalCardList
         array={currentItems}

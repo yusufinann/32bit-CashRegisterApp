@@ -4,23 +4,22 @@ import axios from 'axios';
 const LoginContext = createContext();
 
 export const LoginProvider = ({ children }) => {
-  const [isLoggedIn, setIsLoggedIn] = useState(() => {
-    return localStorage.getItem('isLoggedIn') === 'true';
-  });
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [showError, setShowError] = useState(false);
-  const [user, setUser] = useState(() => {
-    const storedUser = localStorage.getItem('user');
-    return storedUser ? JSON.parse(storedUser) : null;
-  });
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
     const fetchUserData = async () => {
       try {
         const response = await axios.get('http://localhost:3000/users');
         setUser(response.data);
-        localStorage.setItem('user', JSON.stringify(response.data));
+        // After fetching user data, check if user is already logged in
+        const storedLoginStatus = sessionStorage.getItem('isLoggedIn'); // Use sessionStorage
+        if (storedLoginStatus === 'true') {
+          setIsLoggedIn(true);
+        }
       } catch (error) {
-        console.error('Kullanıcı verileri alınırken hata oluştu:', error);
+        console.error('Error fetching user data:', error);
       }
     };
 
@@ -36,8 +35,7 @@ export const LoginProvider = ({ children }) => {
       setIsLoggedIn(true);
       setShowError(false);
       setUser(foundUser);
-      localStorage.setItem('user', JSON.stringify(foundUser));
-      localStorage.setItem('isLoggedIn', true);
+      sessionStorage.setItem('isLoggedIn', 'true'); // Use sessionStorage
     } else {
       setIsLoggedIn(false);
       setShowError(true);
@@ -48,8 +46,7 @@ export const LoginProvider = ({ children }) => {
     setIsLoggedIn(false);
     setShowError(false);
     setUser(null);
-    localStorage.removeItem('user');
-    localStorage.removeItem('isLoggedIn');
+    sessionStorage.removeItem('isLoggedIn'); // Use sessionStorage
   };
 
   const contextValue = {
@@ -66,7 +63,7 @@ export const LoginProvider = ({ children }) => {
 export const useLogin = () => {
   const context = useContext(LoginContext);
   if (!context) {
-    throw new Error('useLogin, LoginProvider içinde kullanılmalıdır');
+    throw new Error('useLogin must be used within a LoginProvider');
   }
   return context;
 };

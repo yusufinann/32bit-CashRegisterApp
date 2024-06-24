@@ -4,7 +4,7 @@ import CartList from "./CartList";
 import TotalAmount from "../TotalAmount";
 import { useCartContext } from "../../contexts/CartContext";
 
-function CartManagement({appTheme,t}) {
+function CartManagement({theme,t}) {
   const { subTotal } = useCartContext();
 
   return (
@@ -16,7 +16,7 @@ function CartManagement({appTheme,t}) {
         style={{
           height: "75vh", // Set to 80% of the viewport height
           overflow: "auto",
-          backgroundColor: appTheme==='dark' ? '#3C3C3C':"white",
+          backgroundColor: theme==='dark' ? '#3C3C3C':"white",
           borderTopLeftRadius: 10,
           borderTopRightRadius: 10,
           width: "100%", // Full width

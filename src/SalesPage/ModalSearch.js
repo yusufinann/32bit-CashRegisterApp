@@ -13,7 +13,7 @@ import GlobalCardList from "../GlobalComponents/GlobalCardList";
 import { useCartContext } from "../contexts/CartContext";
 import FavoritesList from "./FavoritesList";
 import './styles.css'
-const ModalSearch = ({ open, handleClose,appTheme}) => {
+const ModalSearch = ({ open, handleClose,theme}) => {
   const { setState, state, handleChange, showAllProducts, setShowAllProducts } = useGlobalContext();
   const { handleAddToCart } = useCartContext();
   const [currentPage, setCurrentPage] = useState(0);
@@ -140,7 +140,7 @@ const ModalSearch = ({ open, handleClose,appTheme}) => {
       maxWidth="xl"
       sx={{ border: "2px solid #ccc", borderRadius: "8px" }}
     >
-      <Paper elevation={3} sx={{ padding: "24px", border: appTheme==='dark' ? '10px solid purple':'10px solid #FF6E7F' ,backgroundColor:appTheme==='dark' ? '#3C3C3C':'white',color: appTheme === 'dark' ? 'white' : 'black'}}>
+      <Paper elevation={3} sx={{ padding: "24px", border: theme==='dark' ? '10px solid purple':'10px solid #FF6E7F' ,backgroundColor:theme==='dark' ? '#3C3C3C':'white',color: theme === 'dark' ? 'white' : 'black'}}>
         <DialogTitle>
           <Box sx={{ display: "flex", alignItems: "center" }}>
             <span style={{ fontSize: "1.5rem", marginRight: "0.5rem" }}>
@@ -198,7 +198,7 @@ const ModalSearch = ({ open, handleClose,appTheme}) => {
         />
 
         <DialogActions>
-        <Button onClick={handleClose} sx={{ color: appTheme === 'dark' ? 'white' : 'black' }} variant="outlined">
+        <Button onClick={handleClose} sx={{ color: theme === 'dark' ? 'white' : 'black' }} variant="outlined">
   İptal
 </Button>
 
@@ -238,7 +238,7 @@ const ModalSearch = ({ open, handleClose,appTheme}) => {
         )}
         {showFavorites && (
          <div className="centered-container">
-         <FavoritesList favorites={favorites} handleFavorites={handleFavorites} appTheme={appTheme} />
+         <FavoritesList favorites={favorites} handleFavorites={handleFavorites} theme={theme} />
        </div>
         )}
       </Paper>

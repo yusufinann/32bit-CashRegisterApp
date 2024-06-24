@@ -203,3 +203,76 @@
   font-size: 16px;
   border-radius: 5px;
 }
+
+
+/*CampaignProducts*/
+.campaign-products-container {
+  margin-top: 20px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+}
+.campaign-products-container.dark {
+  background-color: #333333;
+  color: #ffffff;
+  
+}
+
+.campaign-product-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.campaign-product-item:hover {
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+}
+
+.campaign-product-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+.campaign-product-details {
+  flex: 1;
+}
+
+.campaign-product-details h3 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.campaign-product-details p {
+  margin: 5px 0;
+}
+h2 {
+  margin-bottom: 20px;
+}
+.dialog-title{
+  background-color: #ffffff;
+  color:black
+}
+.dialog-title.dark{
+  background-color: black;
+  color:white
+}
+.dialog-content{
+  background-color: #ffffff;
+  color:black
+}
+.dialog-content.dark{
+  background-color: black;
+  color:white
+}
+.dialog-actions{
+  background-color: #ffffff;
+}
+.dialog-actions.dark{
+  background-color: black;
+}

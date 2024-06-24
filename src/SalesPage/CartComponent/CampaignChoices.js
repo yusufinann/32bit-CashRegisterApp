@@ -2,7 +2,7 @@ import React from "react";
 import { useCartContext } from "../../contexts/CartContext";
 import "../styles.css";
 
-const CampaignChoices = ({ productId, onClose }) => {
+const CampaignChoices = ({ productId, onClose, t }) => {
   const { setCart, cart, calculateTotalPrice, checkedProducts } = useCartContext();
 
   const product = cart.find(item => item.product.id === productId);
@@ -32,25 +32,27 @@ const CampaignChoices = ({ productId, onClose }) => {
         className={`campaign-choice ${activeCampaign === "3al2" ? "active" : ""}`}
         onClick={() => selectCampaign(productId, "3al2")}
       >
-        3 Al 2 Öde
+        {t('Buy 3 Pay 2')}
       </button>
       <button
         className={`campaign-choice ${activeCampaign === "etiketinYarisi" ? "active" : ""}`}
         onClick={() => selectCampaign(productId, "etiketinYarisi")}
       >
-        Etiketin Yarısı
+        {t('Half of the Label')}
       </button>
       <button
         className={`campaign-choice ${activeCampaign === "yuzde10" ? "active" : ""}`}
         onClick={() => selectCampaign(productId, "yuzde10")}
       >
-        Yüzde 10 İndirim
+        {t('10 percent discount')}
       </button>
       {activeCampaign && (
-        <div className="active-campaign">
-          Aktif Kampanya: {activeCampaign}
-        </div>
-      )}
+    <div className="active-campaign">
+      {t('Active Campaign')}: {activeCampaign === '3al2' ? t('Buy 3 Pay 2') :
+                                   activeCampaign === 'etiketinYarisi' ? t('Half of the Label') :
+                                   activeCampaign === 'yuzde10' ? t('10% discount') : ''}
+    </div>
+  )}
     </div>
   );
 };

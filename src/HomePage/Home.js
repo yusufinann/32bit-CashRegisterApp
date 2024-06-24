@@ -15,6 +15,7 @@ const Home = () => {
     const { theme } = useTheme();
     const { t } = useTranslation();
     const [currentTime, setCurrentTime] = useState(new Date());
+
     useEffect(() => {
         const intervalId = setInterval(() => {
             setCurrentTime(new Date());
@@ -33,21 +34,27 @@ const Home = () => {
                     <Box className="CustomBox">
                         <ShopStatus t={t}/>
                         <Box className="AvatarContainer">
-                            <Avatar
-                                alt={user.personelInfo.name}
-                                src="/static/images/avatar/1.jpg"
-                                sx={{ width: 100, height: 100, margin: '0 auto' }}
-                            />
+                            {/* Check if user and user.personelInfo are defined */}
+                            {user && user.personelInfo && (
+                                <Avatar
+                                    alt={user.personelInfo.name}
+                                    src="/static/images/avatar/1.jpg"
+                                    sx={{ width: 100, height: 100, margin: '0 auto' }}
+                                />
+                            )}
                             <LogoutButton />
                         </Box>
                         <Typography variant="h6" gutterBottom mt={2}>
-                        {t('welcome')}, {user.username}!
+                            {t('welcome')}, {user.username}!
                         </Typography>
+                        {/* Check if user and user.personelInfo are defined */}
+                        {user && user.personelInfo && (
+                            <Typography variant="subtitle1" gutterBottom>
+                                {t('Personel')}: {user.personelInfo.name}
+                            </Typography>
+                        )}
                         <Typography variant="subtitle1" gutterBottom>
-                            {t('Personel')}: {user.personelInfo.name}
-                        </Typography>
-                        <Typography variant="subtitle1" gutterBottom>
-                        {t('Sales location')}: {user.kasaInfo.location}
+                            {t('Sales location')}: {user && user.kasaInfo ? user.kasaInfo.location : ''}
                         </Typography>
                         <Typography variant="subtitle1" gutterBottom>
                             {t('System Time')}: {formattedTime}
@@ -62,10 +69,10 @@ const Home = () => {
             </Paper>
 
             <Container className={`MainContainer ${theme === 'dark' ? 'dark' : 'light'}`} component="main" maxWidth="md">
-                <Typography className="TitleTypography"sx={{marginTop:"10vh"}} variant="h4" gutterBottom>
+                <Typography className="TitleTypography" sx={{marginTop:"10vh"}} variant="h4" gutterBottom>
                     {t('Welcome To Home Page')}
                 </Typography>
-                <Grid container spacing={3}  sx={{marginTop:"10vh",display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <Grid container spacing={3} sx={{marginTop:"10vh",display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                     <MenuButtons
                         title="Sales Page"
                         linkTo="/sales"
@@ -75,14 +82,14 @@ const Home = () => {
                     />
                     <MenuButtons
                         title="Product Entry"
-                        linkTo="/product-entry"
+                        // linkTo="/product-entry"
                         icon={<Assignment />}
                         color='#E91E63'
                         className={`GridItem ${theme}`}
                     />
                     <MenuButtons
                         title="Rebate Procedures"
-                        linkTo="/rebate-procedures"
+                       // linkTo="/rebate-procedures"
                         icon={<MonetizationOn />}
                         color='#673AB7'
                         className={`GridItem ${theme}`}
@@ -115,4 +122,3 @@ const Home = () => {
 }
 
 export default Home;
-

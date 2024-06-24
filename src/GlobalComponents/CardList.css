@@ -125,7 +125,26 @@
   font-size: 1.5rem;
   color:white;
 }
+/*Campaigned Design*/
 
+.product-price .discounted-price {
+  font-size: 0.9rem;
+  color: red;
+  font-weight: bold;
+}
+
+.product-price .campaign-type {
+  font-size: 0.9rem;
+  color: #d32f2f;
+  margin-top: 5px;
+}
+.dark .product-price .discounted-price {
+  color: #ff5252;
+}
+
+.dark .product-price .campaign-type {
+  color: #ff5252;
+}
 
 
 @media (max-width: 768px) {
@@ -149,4 +168,27 @@
     font-size: 10px;
     padding: 3px 0;
   }
+}
+.special-offer-ribbon {
+  position: absolute;
+  top: 10px;
+  right: -10px;
+  width: 100px;
+  height: 20px;
+  background-color: #f45e61; /* Kampanya rengi */
+  color: white;
+  text-align: center;
+  line-height: 20px;
+  transform: rotate(-45deg);
+  font-size: 14px;
+  padding: 3px 0;
+  z-index: 1;
+}
+.custom-card:hover .special-offer-ribbon {
+  opacity: 1;
+}
+
+.special-offer-ribbon {
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }

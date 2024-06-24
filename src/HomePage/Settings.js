@@ -7,6 +7,7 @@ import { useTheme } from '../contexts/ThemeContext';
 import './Settings.css'; // Import the CSS file
 import ChangeLanguage from '../SettingsPage/ChangeLanguage';
 import { useTranslation } from 'react-i18next';
+import PrinterTest from '../SettingsPage/PrinterTest';
 
 const Settings = () => {
   const { theme } = useTheme();
@@ -43,6 +44,12 @@ const Settings = () => {
               {t('Switch Theme')}
             </Typography>
             <SwitchTheme t={t} />
+          </CardContent>
+        </Card>
+        <Card className="settings-card">
+          <CardContent>
+
+            <PrinterTest t={t} />
           </CardContent>
         </Card>
         <ChangeLanguage/>

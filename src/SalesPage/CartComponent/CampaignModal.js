@@ -2,7 +2,7 @@ import React from 'react'
 import { Box, Typography, Modal, Fade } from "@mui/material";
 import CampaignChoices from './CampaignChoices';
 
-const CampaignModal = ({campaignModalOpen,handleCloseCampaignModal,productId}) => {
+const CampaignModal = ({campaignModalOpen,handleCloseCampaignModal,productId,t}) => {
   return (
     <Modal
     open={campaignModalOpen}
@@ -29,9 +29,9 @@ const CampaignModal = ({campaignModalOpen,handleCloseCampaignModal,productId}) =
         }}
       >
         <Typography variant="h6" id="campaign-modal-title" sx={{ marginBottom: '16px', color: '#9c27b0' }}>
-          Kampanya Seçenekleri
+        {t('Campaign Options')}
         </Typography>
-        <CampaignChoices productId={productId} onClose={handleCloseCampaignModal}/>
+        <CampaignChoices productId={productId} onClose={handleCloseCampaignModal} t={t}/>
       </Box>
     </Fade>
   </Modal>

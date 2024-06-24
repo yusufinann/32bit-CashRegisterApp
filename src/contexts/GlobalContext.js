@@ -13,7 +13,7 @@ const GlobalContextProvider = ({ children }) => {
   const [paymentType, setPaymentType] = useState("");
   const [campaignProducts, setCampaignProducts] = useState([]);
   // const [selectedProducts, setSelectedProducts] = useState([]);
-  const [filteredCampaignProducts, setFilteredCampaignProducts] = useState([]); //kampanya listesinde filtreleme işlemi için
+  
   //const [searchQuery, setSearchQuery] = useState('');
   const [showAllProducts, setShowAllProducts] = useState(false); //ModalSearch
   const [partialPayment, setPartialPayment] = useState(false); //PaymentModal - Receipt
@@ -60,13 +60,6 @@ const GlobalContextProvider = ({ children }) => {
       );
       const filteredProducts = response.data; // Assumes 'data' directly contains the product list
 
-      // // If a product is found, add it to the cart
-      // if (filteredProducts.length > 0) {
-      //     const productToAdd = filteredProducts[0];
-      //     addToCart(productToAdd); // This function needs to be implemented
-      // }
-
-      // Update state with the new data
       setState((prevState) => ({
         ...prevState,
         barcode: newBarcode,
@@ -303,62 +296,7 @@ const GlobalContextProvider = ({ children }) => {
     }
   };
 
-  const handleShowCampaignProducts = async () => {
-    try {
-      // Fetch products that are part of a campaign
-      const response = await axios.get(
-        "http://localhost:3000/products?campaign_state=1"
-      );
-      // Setting the campaignProducts state with data from the response
-      setCampaignProducts(response.data);
-    } catch (error) {
-      console.error("Error fetching campaign products:", error);
-      // Handle different error scenarios
-      if (error.response) {
-        console.error(
-          "Error response:",
-          error.response.status,
-          error.response.data
-        );
-      } else if (error.request) {
-        console.error("Error request:", error.request);
-      } else {
-        console.error("Error message:", error.message);
-      }
-    }
-  };
-
-  const removeFromCampaignProducts = (productId) => {
-    // Filter out the product to be removed by its ID
-    setCampaignProducts((prevCampaignProducts) =>
-      prevCampaignProducts.filter((product) => product.product_id !== productId)
-    );
-  };
-
-  //kampanya listesinde filtreleme işlemi için
-  const handleCampaignFilter = (campaignId) => {
-    if (campaignId === "ALL") {
-      setFilteredCampaignProducts(campaignProducts); // Show all products if no filter is selected
-    } else {
-      const filtered = campaignProducts.filter(
-        (product) => product.campaign_id === campaignId
-      );
-      setFilteredCampaignProducts(filtered);
-    }
-  };
-
-  useEffect(() => {
-    handleCampaignFilter("ALL"); // Default to showing all products
-  }, [campaignProducts]);
-  const openCampaignModalFn = () => {
-    setOpenCampaignModal(true);
-    handleShowCampaignProducts();
-  };
-
-  const closeCampaignModalFn = () => {
-    setOpenCampaignModal(false);
-    handleCampaignFilter("ALL"); // Reset filter when closing
-  };
+ 
 
   const contextValue = {
     state, // LeftSales state
@@ -369,11 +307,7 @@ const GlobalContextProvider = ({ children }) => {
     handleShowProductsBySubcategory,
     handleSearching,
     handleChange,
-    campaignProducts, //
-    handleShowCampaignProducts,
-    removeFromCampaignProducts,
-    handleCampaignFilter,
-    filteredCampaignProducts,
+    campaignProducts,
     paymentType,
     setPaymentType,
     showAllProducts,
@@ -382,8 +316,6 @@ const GlobalContextProvider = ({ children }) => {
     handleShowSubcategoryByCategoryId,
     partialPayment,
     setPartialPayment, //Calculator-PaymentModal-Receipt
-    openCampaignModalFn,
-    closeCampaignModalFn,
     openCampaignModal,
     loading,
     error,

@@ -10,7 +10,10 @@ const CartContextProvider = ({ children }) => {
   const [partialPayment, setPartialPayment] = useState(false); //PaymentModal - Receipt
   const [activeCampaign, setActiveCampaign] = useState(null); // yeni state
   const [checkedProducts, setCheckedProducts] = useState([]); // yeni state
-
+  
+  const handleCampaignSelect = (campaignType) => {
+    setActiveCampaign(campaignType);
+  };
   const addToCart = (product, activeCampaign) => {
     setCart((prevCart) => {
         const existingItemIndex = prevCart.findIndex(
@@ -84,10 +87,10 @@ const CartContextProvider = ({ children }) => {
    
   };  
 
-  const handleAddToCart = (product) => {
+  const handleAddToCart = (product,activeCampaign) => {
     //Card veya Button click olunca addtocart çalışcak
 
-    addToCart(product);
+    addToCart(product,activeCampaign);
   };
 
   const calculateCartTotal = () => {
@@ -183,7 +186,7 @@ const CartContextProvider = ({ children }) => {
     input,
     setInput,
     saveReceipt,activeCampaign,
-    setActiveCampaign, checkedProducts,setCheckedProducts
+    setActiveCampaign, checkedProducts,setCheckedProducts,handleCampaignSelect
   };
 
   return (

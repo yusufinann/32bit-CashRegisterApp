@@ -8,9 +8,11 @@ import { useCartContext } from "../../contexts/CartContext";
 import "../styles.css";
 import "./Cart.css";
 import CampaignModal from "./CampaignModal";
+import { useTranslation } from "react-i18next";
 
 const CartItem = ({ item, isSmallScreen, setRemoveAlertOpen, setRemovedProduct }) => {
   const { setCart, calculateTotalPrice } = useCartContext();
+  const {t}=useTranslation();
   const [selectedProductForCampaign, setSelectedProductForCampaign] = useState(null);
   const [campaignModalOpen, setCampaignModalOpen] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
@@ -84,11 +86,11 @@ const CartItem = ({ item, isSmallScreen, setRemoveAlertOpen, setRemovedProduct }
 
   return (
     <div className="cart-item" style={{ '--background-color': isDiscounted ? '#ffebee' : '#FFD467' }}>
-      <div  gutterBottom className="cart-item-title">
+      <div   className="cart-item-title">
         {item.product.name}
       </div>
       <div className="cart-item-info">
-        Barkod: {item.product.barcode} | KDV: %{item.product.vat_rate}
+        {t('Barcode')}: {item.product.barcode} | {t('Tax')}: %{item.product.vat_rate}
       </div>
       <Box className="cart-item-actions">
         <IconButton
@@ -116,10 +118,13 @@ const CartItem = ({ item, isSmallScreen, setRemoveAlertOpen, setRemovedProduct }
         </IconButton>
         
         {isDiscounted && (
-          <span variant="body2" className="cart-item-discount">
-            {item.campaignApplied}
-          </span>
-        )}
+  <span className="cart-item-discount">
+    {item.campaignApplied === '3al2' ? t('Buy 3 Pay 2') :
+     item.campaignApplied === 'etiketinYarisi' ? t('Half of the Label') :
+     item.campaignApplied === 'yuzde10' ? t('10 percent discount') : ''}
+  </span>
+)}
+
         <div  className="cart-item-price">
           {discountedTotal.toFixed(2)} TL
         </div>
@@ -141,7 +146,7 @@ const CartItem = ({ item, isSmallScreen, setRemoveAlertOpen, setRemovedProduct }
           <DeleteOutlineIcon />
         </IconButton>
       </Box>
-      <CampaignModal campaignModalOpen={campaignModalOpen} handleCloseCampaignModal={handleCloseCampaignModal} productId={item.product.id} />
+      <CampaignModal campaignModalOpen={campaignModalOpen} handleCloseCampaignModal={handleCloseCampaignModal} productId={item.product.id} t={t} />
       <Popper open={open} anchorEl={anchorEl} placement="bottom" transition disablePortal>
         {({ TransitionProps }) => (
           <Fade {...TransitionProps} timeout={200}>

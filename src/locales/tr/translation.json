@@ -91,7 +91,29 @@
   "No products sold yet":"Henüz Satılan Ürün Yok",
   "Least Selling Products":"En Az Satan Ürünler",
   "Sales Breakdown of Products":"Ürünlerin Satış Dağılımı",
-  "Total Discount Applied":"Toplam Uygulanan İndirim"
+  "Total Discount Applied":"Toplam Uygulanan İndirim",
+  "Campaigned Products":"Kampanyalı Ürünler",
+  "Buy 3 Pay 2":"3 Al 2 Öde",
+  "50 percent discount":"Yüzde 50 İndirim",
+  "10 percent discount":"Yüzde 10 İndirim",
+  "There are no promotional products at the moment":"Şu anda kampanyalı ürün yok",
+  "Campaign":"Kampanya",
+  "Added to Cart":"Sepete Eklendi",
+  "Added to Favorites":"Favorilere Eklendi",
+  "Removed from Favorites":"Favorilerden Kaldırıldı",
+  "Campaign Options":"Kampanya Seçenekleri",
+  "Tax":"KDV",
+  "Half of the Label":"Etiketin Yarısı",
+  "Active Campaign":"Aktif Kampanya",
+  "Print Preview": "Yazdırma Önizleme",
+  "Printer Test": "Yazıcı Testi",
+  "This is a printer test. Click the button below to print.": "Bu bir yazıcı testidir. Yazdırmak için aşağıdaki düğmeye basın.",
+  "Print": "Yazdır",
+  "Content to Print": "Yazdırılacak İçerik",
+  "This content will be displayed during printing.": "Bu içerik yazdırma işlemi sırasında görüntülenecek."
+
+  
+
 
   }
   
