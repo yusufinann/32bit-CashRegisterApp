@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 import './IPDisplay.css'; 
 import ErrorPage from '../GlobalComponents/ErrorPage';
@@ -8,37 +8,39 @@ const IPDisplay = () => {
     const { theme } = useTheme();
     const [details, setDetails] = useState(null);
     const [error, setError] = useState(false);
-
-    useEffect(() => {
-        const storedIP = localStorage.getItem("userIP");
-        if (storedIP) {
-            fetchDetails(storedIP);
-        } else {
-            getUserGeolocationDetails();
-        }
-    }, []);
-
-    const fetchDetails = (ip) => {
-        axios.get(`https://geolocation-db.com/json/${ip}`)
-            .then(response => {
-                setDetails(response.data);
-                setError(false); // Reset error state on successful fetch
-            })
-            .catch(error => {
-                console.error("Error fetching details:", error);
-                setError(true);
-            });
-    };
-
-    const getUserGeolocationDetails = () => {
+    const getUserGeolocationDetails = useCallback(() => {
         axios.get("https://api64.ipify.org?format=json")
             .then(response => {
                 const ip = response.data.ip;
+                console.log("User IP:", ip); // Debug
                 localStorage.setItem("userIP", ip);
                 fetchDetails(ip);
             })
             .catch(error => {
                 console.error("Error fetching user IP:", error);
+                setError(true);
+            });
+    }, []);  // Empty dependency array if it doesn't depend on any props or state
+    
+    useEffect(() => {
+        const storedIP = localStorage.getItem("userIP");
+        if (storedIP) {
+            fetchDetails(storedIP);
+        } else {
+            getUserGeolocationDetails();  // Now, useCallback ensures stable reference
+        }
+    }, [getUserGeolocationDetails]);
+    
+
+    const fetchDetails = (ip) => {
+        axios.get(`https://ipinfo.io/${ip}/json?token=55448e1353a742`)
+            .then(response => {
+                console.log("Fetch details response:", response.data); // Debug
+                setDetails(response.data);
+                setError(false); // Reset error state on successful fetch
+            })
+            .catch(error => {
+                console.error("Error fetching details:", error);
                 setError(true);
             });
     };
@@ -52,10 +54,10 @@ const IPDisplay = () => {
                         <ul>
                             <li>
                                 Location :{" "}
-                                {`${details.city}, ${details.country_name}(${details.country_code})`}
+                                {`${details.city}, ${details.region}, ${details.country} (${details.countryCode})`}
                             </li>
                             <li>
-                                IP: {details.IPv4}
+                                IP: {details.ip}
                             </li>
                         </ul>
                     </div>

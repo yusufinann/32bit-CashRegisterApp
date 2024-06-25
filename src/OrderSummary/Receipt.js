@@ -14,10 +14,10 @@ const ReceiptContainer = styled("div")({
   color: "black",
 });
 
-const Receipt = ({ productList, tax, subTotal, paymentType, receivedMoney, partialPayment, saleId, Total, user }) => {
+const Receipt = ({ productList, tax, subTotal, paymentType, receivedMoney, partialPayment, saleId, Total, user,changeGiven }) => {
   const receiptRef = useRef(null);
 
-  const changeGiven = (receivedMoney - Total).toFixed(2);
+ 
 
   return (
     <ReceiptContainer className="receipt-container" ref={receiptRef}>
@@ -54,44 +54,63 @@ const Receipt = ({ productList, tax, subTotal, paymentType, receivedMoney, parti
       <div className="receipt-line divider">
         --------------------------------------------------------------------------------
       </div>
-      {partialPayment ? (
+      {paymentType === "Kredi Kartı" ? (
         <div>
           <div className="receipt-line">
-            <span>Kart ile ödenen</span>
-            <span>{(Total - receivedMoney).toFixed(2)}</span>
+            <span>Ödeme Tipi</span>
+            <span>Kredi Kartı</span>
           </div>
           <div className="receipt-line">
-            <span>Nakit ile ödenen</span>
-            <span>{receivedMoney}</span>
+            <span>ARA TOPLAM</span>
+            <span>{subTotal}</span>
+          </div>
+          <div className="receipt-line">
+            <span>GENEL TOPLAM</span>
+            <span>{Total}</span>
           </div>
         </div>
       ) : (
         <div>
-          <div className="receipt-line">
-            <span>ALINAN PARA</span>
-            <span>{receivedMoney}</span>
+          {partialPayment ? (
+            <div>
+              <div className="receipt-line">
+                <span>Kart ile ödenen</span>
+                <span>{(Total - receivedMoney).toFixed(2)}</span>
+              </div>
+              <div className="receipt-line">
+                <span>Nakit ile ödenen</span>
+                <span>{receivedMoney}</span>
+              </div>
+            </div>
+          ) : (
+            <div>
+              <div className="receipt-line">
+                <span>ALINAN PARA</span>
+                <span>{receivedMoney}</span>
+              </div>
+              <div className="receipt-line">
+                <span>PARA ÜSTÜ</span>
+                <span>{changeGiven}</span>
+              </div>
+            </div>
+          )}
+          <div className="receipt-line divider">
+            --------------------------------------------------------------------------------
           </div>
           <div className="receipt-line">
-            <span>PARA ÜSTÜ</span>
-            <span>{changeGiven}</span>
+            <span>ARA TOPLAM</span>
+            <span>{subTotal}</span>
+          </div>
+          <div className="receipt-line">
+            <span>KDV</span>
+            <span>{tax}</span>
+          </div>
+          <div className="receipt-line">
+            <span>GENEL TOPLAM</span>
+            <span>{Total}</span>
           </div>
         </div>
       )}
-      <div className="receipt-line divider">
-        --------------------------------------------------------------------------------
-      </div>
-      <div className="receipt-line">
-        <span>ARA TOPLAM</span>
-        <span>{subTotal}</span>
-      </div>
-      <div className="receipt-line">
-        <span>KDV</span>
-        <span>{tax}</span>
-      </div>
-      <div className="receipt-line">
-        <span>GENEL TOPLAM</span>
-        <span>{Total}</span>
-      </div>
       <div className="receipt-line bottom">KDV FİŞİ DEĞİLDİR</div>
     </ReceiptContainer>
   );

@@ -1,3 +1,4 @@
+// Inside the Home component
 import React, { useEffect, useState } from 'react';
 import { Container, Typography, Grid, Paper, Box, Avatar } from '@mui/material';
 import { LocalGroceryStore, Assignment, MonetizationOn, CollectionsBookmark, AlarmOn, Settings } from '@mui/icons-material';
@@ -9,9 +10,11 @@ import IPDisplay from '../services/IPDisplay';
 import './styles.css'; // Import the CSS file
 import { useTheme } from '../contexts/ThemeContext';
 import { useTranslation } from 'react-i18next';
+import { useStoreStatus } from '../contexts/StoreStatusContext';
 
 const Home = () => {
     const { isLoggedIn, user } = useLogin();
+    const { isOnline } = useStoreStatus();
     const { theme } = useTheme();
     const { t } = useTranslation();
     const [currentTime, setCurrentTime] = useState(new Date());
@@ -24,7 +27,6 @@ const Home = () => {
         return () => clearInterval(intervalId);
     }, []);
 
-    // Format the current time to display hours and minutes
     const formattedTime = currentTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
     return (
@@ -32,9 +34,8 @@ const Home = () => {
             <Paper className={`CustomPaper ${theme === 'dark' ? 'dark' : 'light'}`}>
                 {isLoggedIn ? (
                     <Box className="CustomBox">
-                        <ShopStatus t={t}/>
+                        <ShopStatus t={t} />
                         <Box className="AvatarContainer">
-                            {/* Check if user and user.personelInfo are defined */}
                             {user && user.personelInfo && (
                                 <Avatar
                                     alt={user.personelInfo.name}
@@ -47,7 +48,6 @@ const Home = () => {
                         <Typography variant="h6" gutterBottom mt={2}>
                             {t('welcome')}, {user.username}!
                         </Typography>
-                        {/* Check if user and user.personelInfo are defined */}
                         {user && user.personelInfo && (
                             <Typography variant="subtitle1" gutterBottom>
                                 {t('Personel')}: {user.personelInfo.name}
@@ -69,16 +69,18 @@ const Home = () => {
             </Paper>
 
             <Container className={`MainContainer ${theme === 'dark' ? 'dark' : 'light'}`} component="main" maxWidth="md">
-                <Typography className="TitleTypography" sx={{marginTop:"10vh"}} variant="h4" gutterBottom>
+                <Typography className="TitleTypography" sx={{ marginTop: '10vh' }} variant="h4" gutterBottom>
                     {t('Welcome To Home Page')}
                 </Typography>
-                <Grid container spacing={3} sx={{marginTop:"10vh",display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <Grid container spacing={3} sx={{ marginTop: '10vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                     <MenuButtons
                         title="Sales Page"
                         linkTo="/sales"
                         icon={<LocalGroceryStore />}
                         color='#1976D2'
+                        disabled={!isOnline}
                         className={`GridItem ${theme}`}
+                        t={t}
                     />
                     <MenuButtons
                         title="Product Entry"
@@ -89,7 +91,7 @@ const Home = () => {
                     />
                     <MenuButtons
                         title="Rebate Procedures"
-                       // linkTo="/rebate-procedures"
+                        // linkTo="/rebate-procedures"
                         icon={<MonetizationOn />}
                         color='#673AB7'
                         className={`GridItem ${theme}`}

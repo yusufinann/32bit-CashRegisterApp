@@ -15,8 +15,6 @@ const StyledIconButton = styled(IconButton)({
     },
 });
 
-
-// ...
 const ButtonTypography = styled(Typography)({
     fontSize: '1rem',
     fontWeight: 'bold',
@@ -25,34 +23,48 @@ const ButtonTypography = styled(Typography)({
     textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)',
 });
 
-// Update StyledPaper to make it more transparent and blend with the background
 const StyledPaper = styled(Paper)({
     padding: '20px',
     textAlign: 'center',
-    backgroundColor: 'rgba(255, 255, 255, 0.7)', // Use an rgba color for transparency
+    backgroundColor: 'rgba(255, 255, 255, 0.7)',
     borderRadius: '15px',
-    backdropFilter: 'blur(10px)', // Apply a blur effect for a frosted glass appearance
+    backdropFilter: 'blur(10px)',
     transition: 'box-shadow 0.3s ease-in-out',
     '&:hover': {
         boxShadow: '0 0 20px rgba(0, 0, 0, 0.7)',
     },
 });
-const MenuButtons = ({ title, linkTo, icon, color }) => {
-    const {t}=useTranslation();
+
+const MenuButtons = ({ title, linkTo, icon, color, disabled }) => {
+    const { t } = useTranslation();
+
+    const handleClick = () => {
+        if (disabled) {
+            alert(t('Store is currently offline. Please try again later.'));
+        }
+        // Optionally, you can navigate to a different page or perform another action here
+    };
+
     return (
-     
         <Grid item>
-            <Link to={linkTo}>
-                <StyledPaper elevation={3} style={{ backgroundColor: color }}>
-                    <StyledIconButton color="primary">
-                    {React.cloneElement(icon, { style: { fontSize: '2.5rem', color: '#fff' } })}
-               
+            {disabled ? (
+                <StyledPaper elevation={3} style={{ backgroundColor: '#9e9e9e', cursor: 'not-allowed' }}>
+                    <StyledIconButton color="primary" onClick={handleClick}>
+                        {React.cloneElement(icon, { style: { fontSize: '2.5rem', color: '#fff' } })}
                     </StyledIconButton>
                     <ButtonTypography>{t(title)}</ButtonTypography>
                 </StyledPaper>
-            </Link>
+            ) : (
+                <Link to={linkTo}>
+                    <StyledPaper elevation={3} style={{ backgroundColor: color }}>
+                        <StyledIconButton color="primary">
+                            {React.cloneElement(icon, { style: { fontSize: '2.5rem', color: '#fff' } })}
+                        </StyledIconButton>
+                        <ButtonTypography>{t(title)}</ButtonTypography>
+                    </StyledPaper>
+                </Link>
+            )}
         </Grid>
-        
     );
 };
 

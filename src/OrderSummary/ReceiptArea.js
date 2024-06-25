@@ -7,7 +7,7 @@ import PrintedReceipt from "./PrintedReceipt";
 import { useLogin } from "../contexts/LoginContext";
 const ReceiptArea = ({ t }) => {
   // CartContext'i kullanarak cart dizisine erişim sağla
-  const { cart, paymentType, receivedMoney, partialPayment, saleId, Total } =
+  const { cart, paymentType, receivedMoney, partialPayment, saleId, Total, changeGiven} =
     useCartContext();
   const { user } = useLogin();
 
@@ -86,6 +86,7 @@ const ReceiptArea = ({ t }) => {
         saleId={saleId}
         Total={Total}
         user={user}
+        changeGiven={changeGiven}
       />
     </>
   );

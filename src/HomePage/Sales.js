@@ -1,23 +1,17 @@
 import React from "react";
-import { Grid, Paper, Typography, Button } from "@mui/material";
-import { useNavigate } from 'react-router-dom';
+import { Grid, Paper, Typography} from "@mui/material";
 import TravelExploreTwoToneIcon from '@mui/icons-material/TravelExploreTwoTone';
 import GlobalNavi from "../GlobalComponents/GlobalNavi";
 import ProductCatalog from "../SalesPage/ProductCatalog";
 import CartManagement from "../SalesPage/CartComponent/CartManagement";
-import TransactionButtons from "../SalesPage/TransactionButtons";
+import TransactionButtons from "../SalesPage/TransactionArea/TransactionButtons";
 import './styles.css';
 import { useTranslation } from "react-i18next";
 import { useTheme } from "../contexts/ThemeContext";
 
 const Sales = () => {
-  const navigate = useNavigate(); 
   const {theme} = useTheme();
   const { t } = useTranslation();
-
-  const handleIconClick = () => {
-    navigate('/price');
-  };
 
   const paperStyles = {
     textAlign: 'center',
@@ -36,9 +30,8 @@ const Sales = () => {
           title="Sales Page"
           linkTo="/home"
           icon={
-            <Button onClick={handleIconClick}>
               <TravelExploreTwoToneIcon className="iconStyle" />
-            </Button>
+       
           }
           something="See Price"
         />

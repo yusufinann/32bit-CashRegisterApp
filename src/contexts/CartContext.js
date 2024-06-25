@@ -11,70 +11,76 @@ const CartContextProvider = ({ children }) => {
   const [activeCampaign, setActiveCampaign] = useState(null); // yeni state
   const [checkedProducts, setCheckedProducts] = useState([]); // yeni state
   
+  
   const handleCampaignSelect = (campaignType) => {
     setActiveCampaign(campaignType);
   };
   const addToCart = (product, activeCampaign) => {
     setCart((prevCart) => {
-        const existingItemIndex = prevCart.findIndex(
-            (item) => item.product.id === product.product_id
+      const existingItemIndex = prevCart.findIndex(
+        (item) => item.product.id === product.product_id
+      );
+
+      if (existingItemIndex !== -1) {
+        // Eğer ürün zaten sepette varsa
+        const updatedCart = [...prevCart];
+        updatedCart[existingItemIndex].quantity += 1;
+        updatedCart[existingItemIndex].campaignApplied =
+          activeCampaign ||
+          updatedCart[existingItemIndex].campaignApplied;
+        updatedCart[existingItemIndex].totalPrice = calculateTotalPrice(
+          updatedCart[existingItemIndex]
         );
+        return updatedCart;
+      } else {
+        // Eğer ürün sepette yoksa
+        const newItem = {
+          product: {
+            id: product.product_id,
+            name: product.product_name,
+            price: product.price,
+            image: product.image_url,
+            barcode: product.barcode,
+            campaign_id: product.campaign_id,
+            vat_rate: product.vat_rate,
+          },
+          quantity: 1,
+          campaignApplied: activeCampaign || null,
+          totalPrice: 0,
+        };
 
-        if (existingItemIndex !== -1) {
-            // If the product is already in the cart
-            const updatedCart = [...prevCart];
-            updatedCart[existingItemIndex].quantity += 1;
-            updatedCart[existingItemIndex].campaignApplied = activeCampaign || updatedCart[existingItemIndex].campaignApplied;
-            updatedCart[existingItemIndex].totalPrice = calculateTotalPrice(updatedCart[existingItemIndex], checkedProducts);
-            console.log(updatedCart[existingItemIndex].totalPrice);
-            return updatedCart;
-        } else {
-            // If the product is not in the cart
-            const newItem = {
-                product: {
-                    id: product.product_id,
-                    name: product.product_name,
-                    price: product.price,
-                    image: product.image_url,
-                    barcode: product.barcode,
-                    campaign_id: product.campaign_id,
-                    vat_rate: product.vat_rate,
-                },
-                quantity: 1,
-                campaignApplied: activeCampaign || null,
-                totalPrice: 0,
-            };
-
-            newItem.totalPrice = calculateTotalPrice(newItem, checkedProducts);
-            return [...prevCart, newItem];
-        }
+        newItem.totalPrice = calculateTotalPrice(newItem);
+        return [...prevCart, newItem];
+      }
     });
-};
+  };
 
- const calculateTotalPrice = (item, checkedProducts) => {
+  // Toplam fiyatı hesaplamak
+  const calculateTotalPrice = (item) => {
     let totalCost = item.quantity * item.product.price;
 
-    console.log('Calculating total price for item:', item);
-
     if (item.campaignApplied) {
-        if (item.campaignApplied === "3al2") {
-            const groupsOfThree = Math.floor(item.quantity / 3);
-            const remainder = item.quantity % 3;
-            totalCost = groupsOfThree * 2 * item.product.price + remainder * item.product.price;
-        } else if (item.campaignApplied === "etiketinYarisi") {
-            totalCost = item.product.price * 0.5 * item.quantity;
-        } else if (item.campaignApplied === "yuzde10") {
-            totalCost = item.product.price * 0.9 * item.quantity;
-        }
+      switch (item.campaignApplied) {
+        case "3al2":
+          const groupsOfThree = Math.floor(item.quantity / 3);
+          const remainder = item.quantity % 3;
+          totalCost = groupsOfThree * 2 * item.product.price + remainder * item.product.price;
+          break;
+        case "etiketinYarisi":
+          totalCost = item.product.price * 0.5 * item.quantity;
+          break;
+        case "yuzde10":
+          totalCost = item.product.price * 0.9 * item.quantity;
+          break;
+        default:
+          break;
+      }
     }
-
-    console.log('Total cost calculated:', totalCost);
 
     return totalCost;
   };
-
-  useEffect(() => {
-    // Calculate subtotal whenever the cart changes
+   // Sepetin alt toplamını hesaplamak
+   useEffect(() => {
     let newSubTotal = 0;
     cart.forEach((item) => {
       newSubTotal += item.product.price * item.quantity;
@@ -82,10 +88,10 @@ const CartContextProvider = ({ children }) => {
     setSubTotal(newSubTotal);
   }, [cart]);
 
-  const clearCart = () => { 
-    setCart([]); // Clear the cart array
-   
-  };  
+  // Sepeti temizlemek
+  const clearCart = () => {
+    setCart([]);
+  };
 
   const handleAddToCart = (product,activeCampaign) => {
     //Card veya Button click olunca addtocart çalışcak
@@ -136,7 +142,7 @@ const CartContextProvider = ({ children }) => {
       total: totalCost.toFixed(2),
       receivedMoney: receivedMoney, // Alınan para
       changeGiven: change, // Para üstü
-      paymentType: paymentType, // Ödeme Türü
+      paymentType: partialPayment ? "Card&Cash" : paymentType, // Ödeme Türü
     };
 
     try {
@@ -163,8 +169,6 @@ const CartContextProvider = ({ children }) => {
   const saveReceivedMoney = () => {
     setReceivedMoney(input); // input değerini receivedMoney'e kaydet
   };
-  //const changeGiven = (receivedMoney - Total).toFixed(2);
-
 
   const contextValue = {
     cart,setCart,

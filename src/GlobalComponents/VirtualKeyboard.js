@@ -1,5 +1,4 @@
 import React from 'react';
-import { Button } from '@mui/material';
 import { useKeyboardContext } from '../contexts/KeyboardContext';
 import { useTheme } from '../contexts/ThemeContext';
 import useKeyboard from './useKeyboard';
@@ -32,7 +31,7 @@ const VirtualKeyboard = () => {
     const { clientX, clientY } = event;
     const offsetX = clientX - keyboardPosition.x;
     const offsetY = clientY - keyboardPosition.y;
-
+  
     const handleDragMove = (moveEvent) => {
       const { clientX, clientY } = moveEvent;
       setKeyboardPosition({
@@ -40,15 +39,16 @@ const VirtualKeyboard = () => {
         y: clientY - offsetY,
       });
     };
-
+  
     const handleDragEnd = () => {
       document.removeEventListener('mousemove', handleDragMove);
       document.removeEventListener('mouseup', handleDragEnd);
     };
-
+  
     document.addEventListener('mousemove', handleDragMove);
     document.addEventListener('mouseup', handleDragEnd);
   };
+  
 
   const handleCloseKeyboard = (event) => {
     event.stopPropagation();

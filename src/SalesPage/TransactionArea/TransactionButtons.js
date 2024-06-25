@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import { Alert, Button, Container, Snackbar } from "@mui/material";
-import "./styles.css";
+import "../styles.css";
 import TransactionPanel from "./TransactionPanel";
-import ModalSearch from "./ModalSearch";
-import { useCartContext } from "../contexts/CartContext";
+import ModalSearch from "../ProductSearching/ModalSearch";
+import { useCartContext } from "../../contexts/CartContext";
 
 const TransactionButtons = ({theme,t}) => {
     // Modalın açık/kapalı durumunu kontrol eden state
     const [openSearchModal, setOpenSearchModal] = useState(false);
     const handleOpenSearchModal = () => setOpenSearchModal(true);
     const handleCloseSearchModal = () => setOpenSearchModal(false);
-    const {clearCart } = useCartContext();
+    const {clearCart,paymentType } = useCartContext();
 
     const [alertOpen, setAlertOpen] = useState(false); // Snackbar state
    
@@ -49,10 +49,10 @@ const TransactionButtons = ({theme,t}) => {
       <div
         style={{ display: "flex", justifyContent: "space-between", margin: 20 }}
       >
-        <TransactionPanel theme={theme} t={t}/>        
+        <TransactionPanel theme={theme} t={t} paymentType={paymentType}/>        
        
       </div>
-      <ModalSearch theme={theme} open={openSearchModal} handleClose={handleCloseSearchModal} />
+      <ModalSearch theme={theme} open={openSearchModal} handleClose={handleCloseSearchModal} t={t}/>
       
     </Container>
   );

@@ -110,8 +110,11 @@
   "This is a printer test. Click the button below to print.": "Bu bir yazıcı testidir. Yazdırmak için aşağıdaki düğmeye basın.",
   "Print": "Yazdır",
   "Content to Print": "Yazdırılacak İçerik",
-  "This content will be displayed during printing.": "Bu içerik yazdırma işlemi sırasında görüntülenecek."
-
+  "This content will be displayed during printing.": "Bu içerik yazdırma işlemi sırasında görüntülenecek.",
+  "All Products":"Tüm Ürünler",
+  "Favorites":"Favoriler",
+  "Search Products":"Ürünler Ara",
+  "Store is currently offline. Please try again later.":"Mağaza şu anda çevrimdışı. Lütfen daha sonra tekrar deneyiniz."
   
 
 

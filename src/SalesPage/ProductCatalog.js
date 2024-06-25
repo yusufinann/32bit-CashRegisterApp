@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { Button, TextField, IconButton, CircularProgress } from '@mui/material';
 import ClearIcon from '@mui/icons-material/Clear';
 import './styles.css';
@@ -11,10 +11,14 @@ import { useKeyboardContext } from '../contexts/KeyboardContext';
 import ErrorPage from '../GlobalComponents/ErrorPage';
 import { useCartContext } from '../contexts/CartContext';
 
-const ProductCatalog = ({ theme,t }) => {
+const ProductCatalog = ({ theme, t }) => {
   const { state, setState, handleShowCategories, handleShowProducts, handleBarcodeChange, handleSubCategoriesClick, handleShowSubcategoryByCategoryId, handleShowProductsBySubcategory, loading, error } = useGlobalContext();
   const { handleClear } = useKeyboardContext();
   const { handleAddToCart } = useCartContext();
+  useEffect(() => {
+    handleShowProducts(); // Load products when the component mounts
+  }, []);
+
   const handleBarcodeInputChange = (event) => {
     const value = event.target.value;
     handleBarcodeChange({ target: { value } });
@@ -37,6 +41,8 @@ const ProductCatalog = ({ theme,t }) => {
   const toggleSubcategories = useCallback(() => {
     setState(prevState => ({ ...prevState, showSubcategories: !prevState.showSubcategories }));
   }, [setState]);
+
+
 
   return (
     <> 
@@ -86,11 +92,16 @@ const ProductCatalog = ({ theme,t }) => {
         <ErrorPage message={error} />
       ) : (
         <>
-          {loading && <CircularProgress />}
-          {state.showFilteredProducts && state.barcode && <FilteredProductList />}
-          {state.showCategories && <CategoryList isOpen={state.showCategories} toggle={toggleCategories} handleShowSubcategoryByCategoryId={handleShowSubcategoryByCategoryId} state={state} />}
-          {state.showProducts && <ProductList isOpen={state.showProducts} toggle={toggleProducts} handleAddToCart={handleAddToCart} state={state} />}
-          {state.showSubcategories && <SubcategoryList isOpen={state.showSubcategories} toggle={toggleSubcategories} handleShowProductsBySubcategory={handleShowProductsBySubcategory} state={state} />}
+          {loading ? (
+            <CircularProgress />
+          ) : (
+            <>
+              {state.showFilteredProducts && state.barcode && <FilteredProductList />}
+              {state.showCategories && <CategoryList isOpen={state.showCategories} toggle={toggleCategories} handleShowSubcategoryByCategoryId={handleShowSubcategoryByCategoryId} state={state} />}
+              {state.showProducts && <ProductList isOpen={state.showProducts} toggle={toggleProducts} handleAddToCart={handleAddToCart} state={state} />}
+              {state.showSubcategories && <SubcategoryList isOpen={state.showSubcategories} toggle={toggleSubcategories} handleShowProductsBySubcategory={handleShowProductsBySubcategory} state={state} />}
+            </>
+          )}
         </>
       )}
     </>
