@@ -44,8 +44,56 @@ Uygulamam mağaza yönetimi, ürün satışı ve raporlama gibi birçok işlemi 
 - Fişlere menüden "receipts" kısmından ulaşılabilir.
 
 ### 📊 Raporlama ve İstatistikler
-- "Reports" alanında mağaza toplam hasılatı, en çok ve en az satılan ürünler, ürünlerin satış dağılımı gibi pek çok istatistik listelenmektedir.
+- "Reports" alanında mağaza toplam hasılatı, en çok ve en az satılan ürünler, ürünlerin satış ve ödeme türleri dağılımı gibi pek çok istatistik listelenmektedir.
+  
+## 🌓 Tema Desteği
 
+Uygulama, kullanıcıların tercihlerine göre dark ve light tema seçenekleri sunmaktadır.
+
+1. **Tema Seçimi:**
+
+   Tema seçimini uygulama içinden yapabilirsiniz. Varsayılan olarak uygulama light tema ile başlar, ancak kullanıcı dark tema seçeneğini tercih edebilir.
+
+2. **Tema Değiştirme:**
+
+   Uygulama içindeki ayarlar bölümünden (settings) tema seçeneklerini değiştirebilirsiniz.
+
+3. **Kullanım:**
+
+   - **Dark Tema:** Göz yormayan ve daha az ışık saçan dark tema seçeneği.
+   - **Light Tema:** Standart ve daha parlak görünüm sunan light tema seçeneği.
+
+## 🌐 Çoklu Dil Desteği
+Bu proje, çoklu dil desteği için i18next kullanmaktadır. Dil seçenekleri ve çeviriler `src/i18n.js` dosyasında yapılandırılmıştır. Uygulamanın belirli kısımlarını farklı dillere çevirmek için i18next kullanabilirsiniz. Örnek bir i18n yapılandırması aşağıda verilmiştir:
+
+```javascript
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+import translationEN from './locales/en/translation.json';
+import translationTR from './locales/tr/translation.json';
+
+const resources = {
+  en: {
+    translation: translationEN
+  },
+  tr: {
+    translation: translationTR
+  }
+};
+
+i18n
+  .use(initReactI18next)
+  .init({
+    resources,
+    lng: 'en',
+    fallbackLng: 'en',
+    interpolation: {
+      escapeValue: false
+    }
+  });
+
+export default i18n;
+```
 ## 🛠️ Kurulum
 1. Projeyi klonlayın:
    ```sh
@@ -91,37 +139,6 @@ Projenizde kullanılan bağımlılıkların listesi `package.json` dosyasındad�
 - **Routing**: React Router DOM
 - **Çoklu Dil Desteği**: i18next
 
-## 🌐 Çoklu Dil Desteği
-Bu proje, çoklu dil desteği için i18next kullanmaktadır. Dil seçenekleri ve çeviriler `src/i18n.js` dosyasında yapılandırılmıştır. Uygulamanın belirli kısımlarını farklı dillere çevirmek için i18next kullanabilirsiniz. Örnek bir i18n yapılandırması aşağıda verilmiştir:
-
-```javascript
-import i18n from 'i18next';
-import { initReactI18next } from 'react-i18next';
-import translationEN from './locales/en/translation.json';
-import translationTR from './locales/tr/translation.json';
-
-const resources = {
-  en: {
-    translation: translationEN
-  },
-  tr: {
-    translation: translationTR
-  }
-};
-
-i18n
-  .use(initReactI18next)
-  .init({
-    resources,
-    lng: 'en',
-    fallbackLng: 'en',
-    interpolation: {
-      escapeValue: false
-    }
-  });
-
-export default i18n;
-```javascript
 ## 📝 Özet
 Daha pek çok özelliği de bulunduran uygulamam, mağaza yönetimini kolaylaştıran, kullanıcı dostu bir çözüm sunmaktadır. Gelişmiş özellikleri ve kullanımı kolay arayüzü ile mağaza operasyonlarını optimize eder ve müşteri memnuniyetini artırır.
 
