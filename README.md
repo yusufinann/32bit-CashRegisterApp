@@ -51,9 +51,17 @@ Uygulamam mağaza yönetimi, ürün satışı ve raporlama gibi birçok işlemi 
    ```sh
    git clone <repository-url>
 
+
 ## 🚀 Kullanım
-Uygulamayı başlattıktan sonra tarayıcınızda [http://localhost:3000](http://localhost:3000) adresine gidin.
-Kullanıcı bilgileri ile giriş yapın ve uygulamanın tüm özelliklerini kullanın.
+1. Öncelikle, verileri API'den almak için JSON Server'ı başlatın. API verileri `http://localhost:3000` adresinden erişilebilir olacak şekilde ayarlanmıştır.
+   
+   ```bash
+   cd api
+   json-server --watch db.json
+2.Daha sonra, uygulamayı başlatmak için aşağıdaki komutu kullanın:
+### `npm start`
+Uygulamayı geliştirme modunda çalıştırır.\
+Tarayıcınızda http://localhost:3001 adresine gidin.api dosyasının(db.json) içindeki users alanından herhangi bir kullanıcının giriş bilgilerini görebilirsiniz. Kullanıcı bilgileri ile giriş yapın ve uygulamanın tüm özelliklerini kullanın.
 
 ## 📦 Bağımlılıklar
 Projenizde kullanılan bağımlılıkların listesi `package.json` dosyasındadır. İşte başlıca bağımlılıklar:
@@ -113,7 +121,7 @@ i18n
   });
 
 export default i18n;
-
+```javascript
 ## 📝 Özet
 Daha pek çok özelliği de bulunduran uygulamam, mağaza yönetimini kolaylaştıran, kullanıcı dostu bir çözüm sunmaktadır. Gelişmiş özellikleri ve kullanımı kolay arayüzü ile mağaza operasyonlarını optimize eder ve müşteri memnuniyetini artırır.
 
