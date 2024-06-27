@@ -3,11 +3,12 @@ import { useStoreStatus } from '../contexts/StoreStatusContext';
 import { Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { useTheme } from '../contexts/ThemeContext';
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
-import './StoreStatusUpdater.css'; // Import your CSS file
+import { t } from 'i18next';
+import WorkingHoursForm from './WorkingHoursForm';
 
-const StoreStatusUpdater = ({t}) => {
-  const { setIsOnline, workingHours, setWorkingHours } = useStoreStatus();
+
+const StoreStatusUpdater = () => {
+  const { setIsOnline, workingHours } = useStoreStatus();
   const { theme } = useTheme();
   const [showWorkingHours, setShowWorkingHours] = useState(false);
   const navigate = useNavigate();
@@ -18,8 +19,8 @@ const StoreStatusUpdater = ({t}) => {
     const minute = now.getMinutes();
 
     const { start, end } = workingHours;
-    const [openingHour, openingMinute] = start.split(":").map(Number);
-    const [closingHour, closingMinute] = end.split(":").map(Number);
+    const [openingHour, openingMinute] = start.split(':').map(Number);
+    const [closingHour, closingMinute] = end.split(':').map(Number);
 
     const isOpen =
       (hour > openingHour || (hour === openingHour && minute >= openingMinute)) &&
@@ -37,22 +38,7 @@ const StoreStatusUpdater = ({t}) => {
   }, [setIsOnline, isStoreOnline]);
 
   const handleWorkingHoursClick = () => {
-    setShowWorkingHours(prev => !prev);
-  };
-
-  const handleSaveWorkingHours = () => {
-    localStorage.setItem('workingHours', JSON.stringify(workingHours));
-    setIsOnline(isStoreOnline());
-    setShowWorkingHours(false);
-    navigate('/home');
-  };
-
-  const handleChangeStartTime = event => {
-    setWorkingHours({ ...workingHours, start: event.target.value });
-  };
-
-  const handleChangeEndTime = event => {
-    setWorkingHours({ ...workingHours, end: event.target.value });
+    setShowWorkingHours((prev) => !prev);
   };
 
   return (
@@ -61,31 +47,13 @@ const StoreStatusUpdater = ({t}) => {
         {t('Working Hours')}
       </Button>
       {showWorkingHours && (
-        <div className={`container ${theme === 'dark' ? 'dark-theme' : ''}`}>
-          <label className="label" htmlFor="start-time">
-            <AccessTimeIcon className="icon" /> {t('Start Time')}
-          </label>
-          <input
-            className={`input ${theme === 'dark' ? 'dark-theme' : ''}`}
-            id="start-time"
-            type="time"
-            value={workingHours.start}
-            onChange={handleChangeStartTime}
-          />
-          <label className="label" htmlFor="end-time">
-            <AccessTimeIcon className="icon" /> {t('End Time')}
-          </label>
-          <input
-            className={`input ${theme === 'dark' ? 'dark-theme' : ''}`}
-            id="end-time"
-            type="time"
-            value={workingHours.end}
-            onChange={handleChangeEndTime}
-          />
-          <Button variant="contained" color="primary" onClick={handleSaveWorkingHours}>
-            {t('Save')}
-          </Button>
-        </div>
+        <WorkingHoursForm
+          theme={theme}
+          workingHours={workingHours}
+          setShowWorkingHours={setShowWorkingHours}
+          navigate={navigate}
+          isStoreOnline={isStoreOnline}
+        />
       )}
     </>
   );

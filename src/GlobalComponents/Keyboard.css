@@ -32,10 +32,6 @@
   transition: background-color 0.3s, color 0.3s;
 }
 
-.key-button:hover {
-  background-color: #e0e0e0; /* Light gray background on hover */
-  color: #000; /* Black text on hover */
-}
 
 .close-button {
   position: absolute;
@@ -70,10 +66,7 @@
   color: #ddd;
 }
 
-.dark-theme .key-button:hover {
-  background-color: #555; /* Slightly lighter gray on hover */
-  color: #fff; /* White text on hover */
-}
+
 
 .light-theme .keyboard-inner {
   background-color: #f9f9f9;
@@ -90,10 +83,7 @@
   color: black;
 }
 
-.light-theme .key-button:hover {
-  background-color: #e0e0e0; /* Light gray background on hover */
-  color: #000; /* Black text on hover */
-}
+
 
 .backspace-button {
   font-size: 1.2em; /* Örnek bir büyüklük, ihtiyaca göre ayarlayabilirsiniz */

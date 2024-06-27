@@ -10,8 +10,17 @@ import ReceiptArea from "../OrderSummary/ReceiptArea";
 import { useNavigate } from "react-router-dom";
 import { useCartContext } from "../contexts/CartContext";
 import ReceivedProducts from "./ReceivedProducts";
-import './OrderSummary.css'
-const OrderSummaryButtons = ({t}) => {
+import "./OrderSummary.css";
+const OrderSummaryButtons = ({
+  t,
+  cart,
+  paymentType,
+  receivedMoney,
+  partialPayment,
+  saleId,
+  Total,
+  changeGiven,
+}) => {
   const [open, setOpen] = useState(false);
   const { clearCart, saveReceipt } = useCartContext();
 
@@ -27,7 +36,7 @@ const OrderSummaryButtons = ({t}) => {
   return (
     <Container>
       <Button variant="contained" color="primary" onClick={() => setOpen(true)}>
-      {t('Finish Document')}
+        {t("Finish Document")}
       </Button>
       <div
         style={{
@@ -42,12 +51,23 @@ const OrderSummaryButtons = ({t}) => {
           onClose={handleClose}
           aria-labelledby="receipt-dialog-title"
         >
-          <DialogTitle id="receipt-dialog-title">{t('Receipt List')}</DialogTitle>
+          <DialogTitle id="receipt-dialog-title">
+            {t("Receipt List")}
+          </DialogTitle>
           <DialogContent>
-            <ReceiptArea t={t}/>
+            <ReceiptArea
+              t={t}
+              cart={cart}
+              paymentType={paymentType}
+              receivedMoney={receivedMoney}
+              partialPayment={partialPayment}
+              saleId={saleId}
+              Total={Total}
+              changeGiven={changeGiven}
+            />
           </DialogContent>
           <Button onClick={handleClose} color="primary">
-            {t('Close')}
+            {t("Close")}
           </Button>
         </Dialog>
         <div

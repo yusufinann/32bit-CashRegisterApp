@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { useKeyboardContext } from '../contexts/KeyboardContext';
 import { useTheme } from '../contexts/ThemeContext';
 import useKeyboard from './useKeyboard';
@@ -26,12 +26,12 @@ const VirtualKeyboard = () => {
   const { theme } = useTheme();
   const { handleKeyPress, isShiftPressed } = useKeyboard();
 
-  const handleDragStart = (event) => {
+  const handleDragStart = useCallback((event) => {
     event.preventDefault();
     const { clientX, clientY } = event;
     const offsetX = clientX - keyboardPosition.x;
     const offsetY = clientY - keyboardPosition.y;
-  
+
     const handleDragMove = (moveEvent) => {
       const { clientX, clientY } = moveEvent;
       setKeyboardPosition({
@@ -44,10 +44,11 @@ const VirtualKeyboard = () => {
       document.removeEventListener('mousemove', handleDragMove);
       document.removeEventListener('mouseup', handleDragEnd);
     };
-  
+
     document.addEventListener('mousemove', handleDragMove);
     document.addEventListener('mouseup', handleDragEnd);
-  };
+
+  }, [keyboardPosition, setKeyboardPosition]);
   
 
   const handleCloseKeyboard = (event) => {

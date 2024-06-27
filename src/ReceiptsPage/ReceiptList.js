@@ -43,10 +43,7 @@ const ReceiptList = () => {
               <p>ANTALYA</p>
             </div>
             <div className="receipt-line date">
-              <span>TARİH : {new Date().toLocaleDateString("tr-TR")}</span>
-              <span className="time">
-                SAAT : {new Date().toLocaleTimeString("tr-TR", { hour: '2-digit', minute: '2-digit' })}
-              </span>
+              <span>TARİH & SAAT : {receipt.timestamp}</span>
             </div>
             <div className="receipt-line">
               <span>SATIŞ NO: {receipt.id}</span>

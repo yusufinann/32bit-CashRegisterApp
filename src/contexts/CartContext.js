@@ -10,6 +10,8 @@ const CartContextProvider = ({ children }) => {
   const [partialPayment, setPartialPayment] = useState(false); //PaymentModal - Receipt
   const [activeCampaign, setActiveCampaign] = useState(null); // yeni state
   const [checkedProducts, setCheckedProducts] = useState([]); // yeni state
+  const [email, setEmail] = useState(""); 
+  
   
   
   const handleCampaignSelect = (campaignType) => {
@@ -169,7 +171,7 @@ const CartContextProvider = ({ children }) => {
   const saveReceivedMoney = () => {
     setReceivedMoney(input); // input değerini receivedMoney'e kaydet
   };
-
+  const changeGiven = (receivedMoney - Total).toFixed(2);
   const contextValue = {
     cart,setCart,
     subTotal,
@@ -190,7 +192,7 @@ const CartContextProvider = ({ children }) => {
     input,
     setInput,
     saveReceipt,activeCampaign,
-    setActiveCampaign, checkedProducts,setCheckedProducts,handleCampaignSelect
+    setActiveCampaign, checkedProducts,setCheckedProducts,handleCampaignSelect,email,setEmail,changeGiven
   };
 
   return (

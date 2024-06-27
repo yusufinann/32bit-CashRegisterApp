@@ -2,13 +2,11 @@ import React from "react";
 import Receipt from "./Receipt"; // Receipt bileşenini doğru şekilde import edin
 import "./receipt.css";
 import { Button } from "@mui/material";
-import { useCartContext } from "../contexts/CartContext";
 import PrintedReceipt from "./PrintedReceipt";
 import { useLogin } from "../contexts/LoginContext";
-const ReceiptArea = ({ t }) => {
-  // CartContext'i kullanarak cart dizisine erişim sağla
-  const { cart, paymentType, receivedMoney, partialPayment, saleId, Total, changeGiven} =
-    useCartContext();
+const ReceiptArea = ({ t,cart, paymentType, receivedMoney, partialPayment, saleId, Total, changeGiven }) => {
+  
+  
   const { user } = useLogin();
 
   // Cart dizisinden gelen verileri kullanarak HTML'i oluştur

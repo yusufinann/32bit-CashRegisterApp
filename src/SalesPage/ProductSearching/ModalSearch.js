@@ -3,9 +3,7 @@ import {
   Button,
   Paper,
 } from "@mui/material";
-import { useGlobalContext } from "../../contexts/GlobalContext";
 import GlobalCardList from "../../GlobalComponents/GlobalCardList";
-import { useCartContext } from "../../contexts/CartContext";
 import FavoritesList from "../FavoritesList";
 import LetterButtons from "./LetterButtons";
 import Pagination from "./Pagination";
@@ -15,9 +13,8 @@ import useFavorites from "./useFavorites";
 import { getPageNumbers, getCurrentProducts, filterProductsByLetter } from "./utils";
 import '../styles.css';
 
-const ModalSearch = ({ open, handleClose, theme,t }) => {
-  const { setState, state, handleChange, showAllProducts, setShowAllProducts } = useGlobalContext();
-  const { handleAddToCart } = useCartContext();
+const ModalSearch = ({ open, handleClose, theme,t,handleAddToCart,setState, state, handleChange, showAllProducts, setShowAllProducts ,handleShowProducts }) => {
+  
   const [currentPage, setCurrentPage] = useState(0);
   const [showFavorites, setShowFavorites] = useState(false);
   const [favorites, addToFavorites] = useFavorites();
@@ -41,6 +38,7 @@ const ModalSearch = ({ open, handleClose, theme,t }) => {
       ...prevState,
       showFilteredProducts: false,
     }));
+    handleShowProducts();
     setCurrentPage(0);
     setShowFavorites(false);
   };

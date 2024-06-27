@@ -7,12 +7,24 @@ import { useTheme } from "../contexts/ThemeContext";
 import OrderSummaryButtons from "./OrderSummaryButtons";
 import { Button } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import { useCartContext } from "../contexts/CartContext";
 
 const OrderSummary = () => {
+  const {
+    cart,
+    paymentType,
+    receivedMoney,
+    partialPayment,
+    saleId,
+    Total,
+    changeGiven,
+    email,
+    setEmail
+  } = useCartContext();
+
   const [open, setOpen] = useState(false); // Ereceipt bileşeninin açılıp kapanmasını kontrol eden state
-  const [email, setEmail] = useState(""); // setEmail fonksiyonunu tanımlayın
   const { theme } = useTheme();
- const {t}=useTranslation();
+  const { t } = useTranslation();
   const handleOpenEreceipt = () => {
     setOpen(true); // Ereceipt bileşenini aç
   };
@@ -38,10 +50,19 @@ const OrderSummary = () => {
       </div>
       <div className="grid-container">
         <div className={`paper-container ${themeClass}`}>
-           <ReceiptArea t={t}/> 
+          <ReceiptArea
+            t={t}
+            cart={cart}
+            paymentType={paymentType}
+            receivedMoney={receivedMoney}
+            partialPayment={partialPayment}
+            saleId={saleId}
+            Total={Total}
+            changeGiven={changeGiven}
+          />
         </div>
         <div className={`paper-container ${themeClass}`}>
-          <PaymentResult t={t}/>
+          <PaymentResult t={t} />
         </div>
         <div className={`paper-container ${themeClass}`}>
           <div className={`panel ${themeClass}`}>
@@ -50,9 +71,18 @@ const OrderSummary = () => {
               color="primary"
               onClick={handleOpenEreceipt}
             >
-             {t('E-Receipt')}
+              {t("E-Receipt")}
             </Button>
-            <OrderSummaryButtons t={t}/>
+            <OrderSummaryButtons
+              t={t}
+              cart={cart}
+              paymentType={paymentType}
+              receivedMoney={receivedMoney}
+              partialPayment={partialPayment}
+              saleId={saleId}
+              Total={Total}
+              changeGiven={changeGiven}
+            />
           </div>
         </div>
       </div>
@@ -62,6 +92,13 @@ const OrderSummary = () => {
         handleSendReceipt={handleSendReceipt}
         setEmail={setEmail}
         email={email}
+        cart={cart}
+        paymentType={paymentType}
+        receivedMoney={receivedMoney}
+        partialPayment={partialPayment}
+        saleId={saleId}
+        Total={Total}
+        changeGiven={changeGiven}
         t={t}
       />
     </div>

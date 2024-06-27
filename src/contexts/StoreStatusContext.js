@@ -25,6 +25,8 @@ export const StoreStatusProvider = ({ children }) => {
     return isOpen;
   }, [workingHours]);
 
+  
+
   // Bileşen yüklendiğinde `localStorage`'dan çalışma saatlerini al
   useEffect(() => {
     const storedWorkingHours = localStorage.getItem('workingHours');

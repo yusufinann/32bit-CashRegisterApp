@@ -12,12 +12,13 @@ import ErrorPage from '../GlobalComponents/ErrorPage';
 import { useCartContext } from '../contexts/CartContext';
 
 const ProductCatalog = ({ theme, t }) => {
-  const { state, setState, handleShowCategories, handleShowProducts, handleBarcodeChange, handleSubCategoriesClick, handleShowSubcategoryByCategoryId, handleShowProductsBySubcategory, loading, error } = useGlobalContext();
+  const { state, setState, handleShowCategories, handleShowProducts, handleBarcodeChange, handleSubCategoriesClick, handleShowSubcategoryByCategoryId, handleShowProductsBySubcategory,loading,error } = useGlobalContext();
   const { handleClear } = useKeyboardContext();
   const { handleAddToCart } = useCartContext();
+ 
   useEffect(() => {
     handleShowProducts(); // Load products when the component mounts
-  }, []);
+  }, []); // Added handleShowProducts to the dependency array
 
   const handleBarcodeInputChange = (event) => {
     const value = event.target.value;

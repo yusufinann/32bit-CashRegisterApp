@@ -54,7 +54,7 @@ const Sales = () => {
           <Typography sx={{ marginTop: "32px", fontSize: "1.5rem" }} variant="h6">{t('Transaction Panel')}</Typography>
           <TransactionButtons theme={theme} t={t} />
         </Paper>
-      </Grid>
+      </Grid> 
     </Grid>
   );
 };

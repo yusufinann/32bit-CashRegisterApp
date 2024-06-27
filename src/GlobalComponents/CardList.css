@@ -71,7 +71,7 @@
   width: 100%;
   height: 100%;
 }
-/* .draw:hover::before {
+.draw:hover::before {
   border-top-color: #60daaa;
   border-right-color: #60daaa;
   transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
@@ -80,7 +80,7 @@
   border-bottom-color: #60daaa;
   border-left-color: #60daaa;
   transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s, height 0.25s ease-out 0.75s;
-} */
+}
 .custom-card:hover {
   transform: translateY(-5px);
 }
@@ -125,8 +125,6 @@
   font-size: 1.5rem;
   color:white;
 }
-/*Campaigned Design*/
-
 .product-price .discounted-price {
   font-size: 0.9rem;
   color: red;
@@ -138,24 +136,18 @@
   color: #d32f2f;
   margin-top: 5px;
 }
+
 .dark .product-price .discounted-price {
-  color: #ff5252;
+  color: #9c27b0; /* Koyu tema için mor renk */
 }
 
 .dark .product-price .campaign-type {
-  color: #ff5252;
+  color: #9c27b0; /* Koyu tema için mor renk */
 }
-
 
 @media (max-width: 768px) {
   .custom-card {
     width: 100%;
-  }
-  .special-offer-ribbon {
-    width: 100px;
-    top: 10px;
-    right: 0px;
-    transform: rotate(0deg);
   }
 }
 
@@ -163,12 +155,8 @@
   .custom-card {
     width: 100%;
   }
-  .special-offer-ribbon {
-    width: 80px;
-    font-size: 10px;
-    padding: 3px 0;
-  }
 }
+
 .special-offer-ribbon {
   position: absolute;
   top: 10px;
@@ -184,11 +172,24 @@
   padding: 3px 0;
   z-index: 1;
 }
-.custom-card:hover .special-offer-ribbon {
-  opacity: 1;
+
+.light .special-offer-ribbon {
+  background-color: #ff5252; /* Açık tema için kırmızıya yakın renk */
 }
 
-.special-offer-ribbon {
-  opacity: 0;
-  transition: opacity 0.3s ease;
+.dark .special-offer-ribbon {
+  background-color: #9c27b0; /* Koyu tema için mor renk */
 }
+.product-price .original-price {
+  text-decoration: line-through; /* Mevcut fiyatı çiz */
+  color: #757575; /* Gri renk */
+  margin-right: 5px;
+}
+
+.product-price .discounted-price {
+  font-weight: bold;
+  color: red; /* Kampanyalı fiyatı vurgula */
+  font-size: 1.5rem;
+}
+
+

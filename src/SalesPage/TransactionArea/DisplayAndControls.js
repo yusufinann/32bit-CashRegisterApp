@@ -21,6 +21,7 @@ const DisplayAndControls = ({ theme, input, t, handleSaveAndNavigate, handleDele
     <Grid container spacing={1}>
       <Grid item xs={9} style={{ height: '70px' }}>
         <Input
+         id="display-controls-input"
           fullWidth
           type="text"
           value={input}

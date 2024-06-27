@@ -65,6 +65,9 @@ export const KeyboardProvider = ({ children }) => {
     const handleFocus = (event) => {
       const clickedElement = event.target;
       if (clickedElement.tagName.toLowerCase() === 'input' || clickedElement.tagName.toLowerCase() === 'textarea') {
+        if (clickedElement.id === 'display-controls-input') {
+          return; // Prevent the keyboard from opening for the display-controls-input
+        }
         setActiveInputId(clickedElement.id);
         setIsKeyboardOpen(true);
         const { left, bottom } = clickedElement.getBoundingClientRect();
@@ -77,7 +80,7 @@ export const KeyboardProvider = ({ children }) => {
     return () => {
       document.removeEventListener('focus', handleFocus, true);
     };
-  }, [setIsKeyboardOpen, setKeyboardPosition]);
+  }, []);
   
   
   

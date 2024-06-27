@@ -114,9 +114,15 @@
   "All Products":"Tüm Ürünler",
   "Favorites":"Favoriler",
   "Search Products":"Ürünler Ara",
-  "Store is currently offline. Please try again later.":"Mağaza şu anda çevrimdışı. Lütfen daha sonra tekrar deneyiniz."
-  
+  "Store is currently offline. Please try again later.":"Mağaza şu anda çevrimdışı. Lütfen daha sonra tekrar deneyiniz.",
+  "Please enter valid time format HH:MM":"Lütfen geçerli saat formatını girin HH:MM",
+  "Insufficient Balance":"Yetersiz Bakiye",
+  "Remaining Balance":"Kalan Bakiye",
+  "Would you like to pay by Credit Card":"Kredi Kartı ile ödeme yapmak ister misiniz",
+  "Order Cancel":"Sipariş İptal",
+  "Pay with Card":"Kart ile Öde"
 
 
-  }
+
+}
   
