@@ -1,3 +1,168 @@
+# Supermarket Cash Register Uygulaması
+
+Uygulamam mağaza yönetimi, ürün satışı ve raporlama gibi birçok işlemi kapsayan kapsamlı bir çözüm sunmaktadır. Bu uygulama, mağaza çalışanlarının iş süreçlerini kolaylaştırmak ve müşteri memnuniyetini artırmak amacıyla tasarlanmıştır.
+
+## 📑 İçindekiler
+1. [Özellikler](#özellikler)
+2. [Kurulum](#kurulum)
+3. [Kullanım](#kullanım)
+4. [Bağımlılıklar](#bağımlılıklar)
+5. [Teknolojiler ve Kullanılan Kütüphaneler](#teknolojiler-ve-kullanılan-kütüphaneler)
+6. [Özet](#özet)
+7. [Create React App Scripts](#create-react-app-scripts)
+
+## ✨ Özellikler
+
+### 🔐 Kullanıcı Girişi ve Durum Takibi
+- Mağaza çalışanı API'de kayıtlı bilgileri ile sisteme giriş yapabilir.
+- Mağazanın açık/kapalı durumu mağaza saatlerine göre belirlenir.
+- Giriş yaptıktan sonra anasayfada sol üstte, giriş yapan mağaza çalışanının bilgileri, IP adresi ve lokasyonu görüntülenir.
+- Mağaza çalışma saatleri "settings" alanından değiştirilebilir.
+- Mağaza offline olduğunda satış işlemi gerçekleştirilemez.
+- Settings alanında dark tema, aydınlık tema, dil seçenekleri (Türkçe/İngilizce) ve yazıcı testi bulunmaktadır.
+
+### 🛒 Ürün Yönetimi
+- Satış sayfasında minimum 1000 ürün listelenmektedir.
+- Ürünler kategoriler ve alt kategoriler şeklinde düzenlenmiştir. Sepete eklenebilir ve adet bilgileri güncellenebilir.
+- Ürünler API'den çekilmektedir ve veri çekme işlemlerinde Axios kütüphanesi kullanılmaktadır.
+- Sepete ürün ekleme, sepetten ürünü kaldırma, miktarını artırma veya azaltma, barkod değerine göre ürün arama gibi özellikler mevcuttur.
+- İsimden ürün arama, filtreleme ve favorilere ekleme özellikleri mevcuttur.
+
+### 📱 Responsive Tasarım ve Sanal Klavye
+- Uygulama, responsive tasarım prensiplerine uygun olarak geliştirilmiştir.
+- Çoklu dili destekleyen sanal bir klavye entegre edilmiştir.
+
+### 🎉 Kampanyalar ve İndirimler
+- Mağaza ürünlerinde çeşitli kampanyalar (3 al 2 öde, %10 indirim ve etiketin yarısı) uygulanmakta ve bu fiyatlar sepete yansıtılmaktadır.
+- Kampanyalar, sepette kampanya seçenekleri ikonuna tıklanarak uygulanabilir.
+
+### 💳 Ödeme ve Fiş Yönetimi
+- Çeşitli ödeme yöntemleri desteklenmektedir.
+- Fişlerde alınan ürünlerin listesi, alınan para, para üstü, kasiyerin ad-soyad bilgileri yer almaktadır.
+- Fişler API'ye JSON formatında post edilmekte, print edilebilir veya doküman şeklinde indirilebilir.
+- E-fatura seçilmesi durumunda müşteri mail bilgisi için pop up ekranı gelmektedir.
+- Fişlere menüden "receipts" kısmından ulaşılabilir.
+
+### 📊 Raporlama ve İstatistikler
+- "Reports" alanında mağaza toplam hasılatı, en çok ve en az satılan ürünler, ürünlerin satış ve ödeme türleri dağılımı gibi pek çok istatistik listelenmektedir.
+  
+## 🌓 Tema Desteği
+
+Uygulama, kullanıcıların tercihlerine göre dark ve light tema seçenekleri sunmaktadır.
+
+1. **Tema Seçimi:**
+
+   Tema seçimini uygulama içinden yapabilirsiniz. Varsayılan olarak uygulama light tema ile başlar, ancak kullanıcı dark tema seçeneğini tercih edebilir.
+
+2. **Tema Değiştirme:**
+
+   Uygulama içindeki ayarlar bölümünden (settings) tema seçeneklerini değiştirebilirsiniz.
+
+3. **Kullanım:**
+
+   - **Dark Tema:** Göz yormayan ve daha az ışık saçan dark tema seçeneği.
+   - **Light Tema:** Standart ve daha parlak görünüm sunan light tema seçeneği.
+
+## 🌐 Çoklu Dil Desteği
+Bu proje, çoklu dil desteği için i18next kullanmaktadır. Dil seçenekleri ve çeviriler `src/i18n.js` dosyasında yapılandırılmıştır. Uygulamanın belirli kısımlarını farklı dillere çevirmek için i18next kullanabilirsiniz. Örnek bir i18n yapılandırması aşağıda verilmiştir:
+
+```javascript
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+import translationEN from './locales/en/translation.json';
+import translationTR from './locales/tr/translation.json';
+
+const resources = {
+  en: {
+    translation: translationEN
+  },
+  tr: {
+    translation: translationTR
+  }
+};
+
+i18n
+  .use(initReactI18next)
+  .init({
+    resources,
+    lng: 'en',
+    fallbackLng: 'en',
+    interpolation: {
+      escapeValue: false
+    }
+  });
+
+export default i18n;
+```
+## 🛠️ Kurulum
+1. Projeyi klonlayın:
+   ```sh
+   git clone <repository-url>
+
+
+## 🚀 Kullanım
+1. Öncelikle, verileri API'den almak için JSON Server'ı başlatın. API verileri `http://localhost:3000` adresinden erişilebilir olacak şekilde ayarlanmıştır.
+   
+   ```bash
+   cd api
+   json-server --watch db.json
+2.Daha sonra, uygulamayı başlatmak için aşağıdaki komutu kullanın:
+### `npm start`
+Uygulamayı geliştirme modunda çalıştırır.\
+Tarayıcınızda http://localhost:3001 adresine gidin.api dosyasının(db.json) içindeki users alanından herhangi bir kullanıcının giriş bilgilerini görebilirsiniz. Kullanıcı bilgileri ile giriş yapın ve uygulamanın tüm özelliklerini kullanın.
+
+## 📦 Bağımlılıklar
+Projenizde kullanılan bağımlılıkların listesi `package.json` dosyasındadır. İşte başlıca bağımlılıklar:
+
+- `@emotion/react`
+- `@emotion/styled`
+- `@mui/icons-material`
+- `@mui/material`
+- `@testing-library/jest-dom`
+- `@testing-library/react`
+- `@testing-library/user-event`
+- `axios`
+- `i18next`
+- `react`
+- `react-dom`
+- `react-i18next`
+- `react-router-dom`
+- `react-scripts`
+- `styled-components`
+- `web-vitals`
+
+## 📚 Teknolojiler ve Kullanılan Kütüphaneler
+- **Veri Yönetimi**: Context API
+- **Veri Testleri ve Çekme**: JSON Server
+- **HTTP İstekleri**: Axios
+- **Kullanıcı Arayüzü**: Responsive tasarım, sanal klavye, Material UI
+- **Routing**: React Router DOM
+- **Çoklu Dil Desteği**: i18next
+
+## 📝 Özet
+Daha pek çok özelliği de bulunduran uygulamam, mağaza yönetimini kolaylaştıran, kullanıcı dostu bir çözüm sunmaktadır. Gelişmiş özellikleri ve kullanımı kolay arayüzü ile mağaza operasyonlarını optimize eder ve müşteri memnuniyetini artırır.
+
+## 📜 Create React App Scripts
+Proje Create React App kullanılarak başlatıldı. Proje dizininde kullanabileceğiniz temel komutlar şunlardır:
+
+### `npm start`
+Uygulamayı geliştirme modunda çalıştırır.\
+Tarayıcınızda [http://localhost:3000](http://localhost:3000) adresini açarak görüntüleyebilirsiniz.
+
+### `npm test`
+Test çalıştırıcısını interaktif izleme modunda başlatır.\
+Daha fazla bilgi için [running tests](https://facebook.github.io/create-react-app/docs/running-tests) bölümüne bakın.
+
+### `npm run build`
+Uygulamayı üretim için `build` klasörüne oluşturur.\
+React'ı üretim modunda doğru bir şekilde paketler ve en iyi performans için derlemeyi optimize eder.
+
+### `npm run eject`
+**Not: Bu tek yönlü bir işlemdir. Bir kez `eject` işlemi yaptıktan sonra geri dönemezsiniz!**
+
+Eğer oluşturma aracından ve yapılandırma seçeneklerinden memnun değilseniz, `eject` komutunu kullanabilirsiniz. Bu komut, projedeki tüm yapılandırma dosyalarını ve bağımlılıkları kopyalar, böylece onları doğrudan değiştirebilirsiniz. Tüm komutlar hala çalışacaktır, ancak kopyalanan dosyalara işaret edeceklerdir.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
