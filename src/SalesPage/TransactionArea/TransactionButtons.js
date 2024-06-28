@@ -56,11 +56,6 @@ const TransactionButtons = ({ theme, t }) => {
           </Button>
         </div>
         <div>
-          <Button variant="contained" color="primary">
-            Button
-          </Button>
-        </div>
-        <div>
           <Button variant="contained" color="primary" onClick={handleClick}>
             {t("Cancel Order")}
           </Button>

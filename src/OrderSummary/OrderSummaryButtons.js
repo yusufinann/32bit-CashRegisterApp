@@ -8,7 +8,6 @@ import {
 } from "@mui/material";
 import ReceiptArea from "../OrderSummary/ReceiptArea";
 import { useNavigate } from "react-router-dom";
-import { useCartContext } from "../contexts/CartContext";
 import ReceivedProducts from "./ReceivedProducts";
 import "./OrderSummary.css";
 const OrderSummaryButtons = ({
@@ -19,10 +18,9 @@ const OrderSummaryButtons = ({
   partialPayment,
   saleId,
   Total,
-  changeGiven,
+  changeGiven,clearCart, saveReceipt
 }) => {
   const [open, setOpen] = useState(false);
-  const { clearCart, saveReceipt } = useCartContext();
 
   const navigate = useNavigate();
 
@@ -77,7 +75,7 @@ const OrderSummaryButtons = ({
             margin: 20,
           }}
         >
-          <ReceivedProducts />
+          <ReceivedProducts cart={cart}/>
         </div>
       </div>
     </Container>

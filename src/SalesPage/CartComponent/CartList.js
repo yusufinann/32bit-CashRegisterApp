@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import { Box, Snackbar, Alert, useTheme, useMediaQuery } from "@mui/material";
-import { useCartContext } from "../../contexts/CartContext";
 import CartSummary from "./CartSummary";
 import EmptyCart from "./EmptyCart";
 import "./Cart.css";
 
-const CartList = ({t}) => {
-  const { cart } = useCartContext();
+const CartList = ({t,cart}) => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const [removeAlertOpen, setRemoveAlertOpen] = useState(false);

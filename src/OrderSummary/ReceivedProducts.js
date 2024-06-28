@@ -1,9 +1,7 @@
 import React from 'react';
-import { useCartContext } from '../contexts/CartContext';
 import './ReceivedProducts.css'; // Import the CSS file for styling
 
-const ReceivedProducts = () => {
-    const { cart } = useCartContext();
+const ReceivedProducts = ({cart}) => {
     const productList = cart.map((item) => (
         <div key={item.product.barcode} className="product-container">
             <div className="product-line">

@@ -87,12 +87,13 @@ const ModalSearch = ({ open, handleClose, theme,t,handleAddToCart,setState, stat
         <ModalHeader
           handleShowFavorites={handleShowFavorites}
           handleShowAllProducts={handleShowAllProducts}
-          letterButtons={<LetterButtons handleLetterClick={handleLetterClick}
+          letterButtons={<LetterButtons handleLetterClick={handleLetterClick} 
           />}
           t={t}
         />
 
-        <SearchBar handleSearchingChange={handleSearchingChange} />
+        <SearchBar handleSearchingChange={handleSearchingChange} 
+          setShowFavorites={setShowFavorites}/>
 
         <div className="modal-actions">
           <Button onClick={handleClose} sx={{ color: theme === 'dark' ? 'white' : 'black' ,backgroundColor: theme === 'dark' ? 'purple' : '#FF6E7F',margin:2 }} variant="outlined">

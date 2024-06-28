@@ -10,7 +10,7 @@ import "./Cart.css";
 import CampaignModal from "./CampaignModal";
 import { useTranslation } from "react-i18next";
 
-const CartItem = ({ item, isSmallScreen, setRemoveAlertOpen, setRemovedProduct }) => {
+const CartItem = ({ item, setRemoveAlertOpen, setRemovedProduct }) => {
   const { setCart, calculateTotalPrice } = useCartContext();
   const {t}=useTranslation();
   const [selectedProductForCampaign, setSelectedProductForCampaign] = useState(null);

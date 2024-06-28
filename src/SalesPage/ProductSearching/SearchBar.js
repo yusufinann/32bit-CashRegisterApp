@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { InputBase, Paper } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 
-const SearchBar = ({ handleSearchingChange }) => {
+const SearchBar = ({ handleSearchingChange,setShowFavorites }) => {
+  const handleFocus = useCallback(() => {
+    setShowFavorites(false);
+  }, [setShowFavorites]);
   return (
     <Paper
       component="form"
@@ -20,6 +23,7 @@ const SearchBar = ({ handleSearchingChange }) => {
         fullWidth
         placeholder="Ara..."
         onChange={handleSearchingChange}
+        onFocus={handleFocus}
         sx={{ ml: 1, flex: 1, fontSize: "0.9rem" }}
       />
       

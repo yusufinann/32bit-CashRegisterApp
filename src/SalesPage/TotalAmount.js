@@ -1,9 +1,7 @@
 import React from "react";
 import { Typography, Box, Divider } from "@mui/material";
-import { useCartContext } from "../contexts/CartContext";
 
-const TotalAmount = ({ subTotal, t }) => {
-  const { Total } = useCartContext(); // Correctly call the function
+const TotalAmount = ({ subTotal, t,Total }) => {
 
   return (
     <Box

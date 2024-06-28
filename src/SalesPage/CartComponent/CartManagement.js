@@ -5,7 +5,7 @@ import TotalAmount from "../TotalAmount";
 import { useCartContext } from "../../contexts/CartContext";
 
 function CartManagement({theme,t}) {
-  const { subTotal } = useCartContext();
+  const { subTotal,Total,cart } = useCartContext();
 
   return (
     <div style={{ margin: 20}}>
@@ -22,10 +22,10 @@ function CartManagement({theme,t}) {
           width: "100%", // Full width
         }}
       >
-        <CartList t={t}/>
+        <CartList t={t} cart={cart}/>
       </Grid>
 
-      <TotalAmount subTotal={subTotal} t={t} />
+      <TotalAmount subTotal={subTotal} t={t} Total={Total}/>
     </div>
   );
 }

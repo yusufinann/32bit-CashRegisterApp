@@ -71,7 +71,7 @@
   width: 100%;
   height: 100%;
 }
-.draw:hover::before {
+/* .draw:hover::before {
   border-top-color: #60daaa;
   border-right-color: #60daaa;
   transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
@@ -80,7 +80,7 @@
   border-bottom-color: #60daaa;
   border-left-color: #60daaa;
   transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s, height 0.25s ease-out 0.75s;
-}
+} */
 .custom-card:hover {
   transform: translateY(-5px);
 }

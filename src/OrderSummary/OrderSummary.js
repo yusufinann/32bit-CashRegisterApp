@@ -19,7 +19,10 @@ const OrderSummary = () => {
     Total,
     changeGiven,
     email,
-    setEmail
+    setEmail,
+    clearCart,
+    saveReceipt,
+    subTotal
   } = useCartContext();
 
   const [open, setOpen] = useState(false); // Ereceipt bileşeninin açılıp kapanmasını kontrol eden state
@@ -62,7 +65,7 @@ const OrderSummary = () => {
           />
         </div>
         <div className={`paper-container ${themeClass}`}>
-          <PaymentResult t={t} />
+          <PaymentResult t={t} paymentType={paymentType} receivedMoney={receivedMoney} Total={Total} subTotal={subTotal} changeGiven={changeGiven}/>
         </div>
         <div className={`paper-container ${themeClass}`}>
           <div className={`panel ${themeClass}`}>
@@ -82,6 +85,8 @@ const OrderSummary = () => {
               saleId={saleId}
               Total={Total}
               changeGiven={changeGiven}
+              clearCart={clearCart}
+              saveReceipt={saveReceipt}
             />
           </div>
         </div>

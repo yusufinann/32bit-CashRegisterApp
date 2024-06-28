@@ -97,7 +97,7 @@ const ProductCatalog = ({ theme, t }) => {
             <CircularProgress />
           ) : (
             <>
-              {state.showFilteredProducts && state.barcode && <FilteredProductList />}
+              {state.showFilteredProducts && state.barcode && <FilteredProductList state={state} handleAddToCart={handleAddToCart}/>}
               {state.showCategories && <CategoryList isOpen={state.showCategories} toggle={toggleCategories} handleShowSubcategoryByCategoryId={handleShowSubcategoryByCategoryId} state={state} />}
               {state.showProducts && <ProductList isOpen={state.showProducts} toggle={toggleProducts} handleAddToCart={handleAddToCart} state={state} />}
               {state.showSubcategories && <SubcategoryList isOpen={state.showSubcategories} toggle={toggleSubcategories} handleShowProductsBySubcategory={handleShowProductsBySubcategory} state={state} />}
