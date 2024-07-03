@@ -13,7 +13,7 @@ const PaymentModal = ({ open, handleClose, remaining, handlePayment }) => {
       </DialogContent>
       <DialogActions>
         <Button onClick={handleClose} color="primary" variant="contained" style={{ marginRight: "10px" }}>{t('Order Cancel')}</Button>
-        <Button onClick={handlePayment} color="secondary" variant="contained">{('Pay with Card')}</Button>
+        <Button onClick={handlePayment} color="secondary" variant="contained">{t('Pay with Card')}</Button>
       </DialogActions>
     </Dialog>
   );

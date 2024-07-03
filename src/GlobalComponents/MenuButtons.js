@@ -42,7 +42,6 @@ const MenuButtons = ({ title, linkTo, icon, color, disabled }) => {
         if (disabled) {
             alert(t('Store is currently offline. Please try again later.'));
         }
-        // Optionally, you can navigate to a different page or perform another action here
     };
 
     return (

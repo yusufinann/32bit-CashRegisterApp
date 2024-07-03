@@ -4,7 +4,7 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { useTranslation } from "react-i18next";
 import "./CardList.css";
-const Card = ({ item, isDiscounted, discountedPrice, quantity, handleFavoriteClick, handleAddToCart, isFavorite,theme, handleFavorites,
+const Card = ({ item,cartItem,isDiscounted, discountedPrice, quantity, handleFavoriteClick, handleAddToCart, isFavorite,theme, handleFavorites,
   favoriteIds, }) => {
  
   const { t } = useTranslation();
@@ -17,9 +17,9 @@ const Card = ({ item, isDiscounted, discountedPrice, quantity, handleFavoriteCli
     >
       {isDiscounted && (
         <div className="special-offer-ribbon">
-          {item.campaignApplied === "etiketinYarisi" && `%50 ${t("Sale")}`}
-          {item.campaignApplied === "3al2" && `${t("Buy 3 Pay 2")}`}
-          {item.campaignApplied === "yuzde10" && `%10 ${t("Sale")}`}
+          {cartItem.campaignApplied === "etiketinYarisi" && `%50 ${t("Sale")}`}
+          {cartItem.campaignApplied === "3al2" && `${t("Buy 3 Pay 2")}`}
+          {cartItem.campaignApplied === "yuzde10" && `%10 ${t("Sale")}`}
         </div>
       )}
 

@@ -37,8 +37,9 @@ const OrderSummary = () => {
   };
 
   const handleSendReceipt = () => {
-    console.log("E-receipt sent to:", email);
+    alert(`E-receipt sent to: ${email}`);
     setOpen(false);
+    setEmail('');
   };
 
   const themeClass =

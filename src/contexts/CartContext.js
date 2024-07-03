@@ -17,7 +17,7 @@ const CartContextProvider = ({ children }) => {
     setActiveCampaign,
     handleCampaignSelect,
     checkedProducts,
-    setCheckedProducts,handleAddToCart
+    setCheckedProducts,handleAddToCart,email,setEmail
   } = useCart();
 
   const {
@@ -63,7 +63,8 @@ const CartContextProvider = ({ children }) => {
     saveReceipt,
     changeGiven,
     Total,handleAddToCart, calculateTotalPrice, 
-    saleId:generateUniqueId()
+    saleId:generateUniqueId(),
+    email,setEmail
   };
 
   return <CartContext.Provider value={contextValue}>{children}</CartContext.Provider>;

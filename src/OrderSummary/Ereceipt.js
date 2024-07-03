@@ -6,6 +6,7 @@ const Ereceipt = ({ open, handleClose, handleSendReceipt, setEmail, email, t, ca
   const handleChange = (e) => {
     setEmail(e.target.value);
   };
+  
   return (
     <Dialog open={open} onClose={handleClose}>
       <DialogTitle>{t('E-Receipt')}</DialogTitle>

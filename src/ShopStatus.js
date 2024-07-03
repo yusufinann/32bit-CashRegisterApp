@@ -1,15 +1,16 @@
 import React from 'react';
 import { useStoreStatus } from './contexts/StoreStatusContext';
 import { FiberManualRecord as FiberManualRecordIcon } from '@mui/icons-material';
+import { useTheme } from './contexts/ThemeContext';
 
 const ShopStatus = ({t}) => {
     const { isOnline } = useStoreStatus();
-
+    const{theme}=useTheme()
     // Çevrimiçi ve çevrimdışı durumlar için stil belirleme
     const statusStyle = {
         display: 'flex',
         alignItems: 'center',
-        
+        color: theme==='dark' ?'white':'black',
     };
 
     // Yuvarlak simge stili

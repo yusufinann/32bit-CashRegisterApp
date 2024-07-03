@@ -9,7 +9,6 @@
     overflow: hidden;
     text-align: center;
     border-radius: 20px;
-    
 }
 
 .MainContainer.light {
@@ -45,6 +44,7 @@
 /* Light theme styles */
 .HomeContainer.light {
     color: #000;
+    
 }
 
 .CustomPaper.light {

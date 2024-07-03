@@ -6,6 +6,7 @@ const useCart = () => {
   const [subTotal, setSubTotal] = useState(0);
   const [activeCampaign, setActiveCampaign] = useState(null);
   const [checkedProducts, setCheckedProducts] = useState([]);
+  const [email, setEmail] = useState(""); 
 
   const addToCart = useCallback((product, activeCampaign) => {
     setCart((prevCart) => {
@@ -73,7 +74,8 @@ const useCart = () => {
     handleCampaignSelect,
     checkedProducts,
     setCheckedProducts,
-    handleAddToCart
+    handleAddToCart,
+    email,setEmail
   };
 };
 

@@ -18,7 +18,7 @@ const useFetchApi = (setState) => {
       return data;
     } catch (error) {
       setError(true);
-      throw error;
+      throw error; 
     } finally {
       setTimeout(() => {
         setLoading(false);
@@ -71,8 +71,6 @@ const useFetchApi = (setState) => {
     }
   }, [cachedData, fetchFromAPI]);
 
-
-
   const handleBarcodeChange = useCallback(async (event) => {
     const newBarcode = event.target.value;
     if (!newBarcode.trim()) {
@@ -100,7 +98,6 @@ const useFetchApi = (setState) => {
         showFilteredProducts: filteredProducts.length > 0,
       }));
     } catch (error) {
-      console.error("Failed to fetch products:", error);
       setState((prevState) => ({
         ...prevState,
         barcode: newBarcode,
@@ -110,6 +107,7 @@ const useFetchApi = (setState) => {
         showSubcategories: false,
         showFilteredProducts: false,
       }));
+      setError(true); // Hata durumunu belirt
     }
   }, [setState]);
 

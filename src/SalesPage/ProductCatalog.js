@@ -99,7 +99,7 @@ const ProductCatalog = ({ theme, t, state,
         </Button>
       </div>
       {error ? (
-        <ErrorPage message={error} />
+        <ErrorPage message={"Veri Alınamadı,Servisi Kontrol Ediniz"} />
       ) : (
         <>
           {loading ? (

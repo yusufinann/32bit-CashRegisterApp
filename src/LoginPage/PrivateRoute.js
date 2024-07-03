@@ -1,5 +1,4 @@
 import React from 'react';
-import { Navigate } from 'react-router-dom';
 import { useLogin } from '../contexts/LoginContext';
 
 const PrivateRoute = ({ element: Component }) => {

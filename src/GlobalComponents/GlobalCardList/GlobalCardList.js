@@ -48,6 +48,7 @@ const GlobalCardList = ({ array, AddToCartFunction, handleFavorites, favoriteIds
         <Card
           key={item.product_id}
           item={item}
+          cartItem={cartItem}
           isDiscounted={isDiscounted}
           discountedPrice={discountedPrice}
           quantity={quantity}

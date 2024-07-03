@@ -14,7 +14,6 @@ const useProductHandlers = (setState) => {
         showFilteredProducts: false,
       }));
     } catch (error) {
-      console.error("Error fetching products:", error);
       setError(true);
     }
   }, [setState]);
@@ -34,7 +33,6 @@ const useProductHandlers = (setState) => {
         showFilteredProducts: false,
       }));
     } catch (error) {
-      console.error("Error fetching products by subcategory:", error);
       setError(true);
     }
   }, [setState]);

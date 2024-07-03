@@ -22758,7 +22758,64 @@
       "receivedMoney": null,
       "changeGiven": null,
       "paymentType": "Kredi Kartı"
+    },
+    {
+      "id": "6547",
+      "timestamp": "03.07.2024 17:00",
+      "items": [
+        {
+          "productId": 3,
+          "productName": "Beyaz Ekmek",
+          "quantity": 1,
+          "unitPrice": 1.75,
+          "totalPrice": 0.875,
+          "barcode": "3456789012345",
+          "vat_rate": 8
+        },
+        {
+          "productId": 6,
+          "productName": "Elma",
+          "quantity": 1,
+          "unitPrice": 2,
+          "totalPrice": 1.8,
+          "barcode": "6789012345678",
+          "vat_rate": 8
+        },
+        {
+          "productId": 5,
+          "productName": "Bisküvi",
+          "quantity": 3,
+          "unitPrice": 2,
+          "totalPrice": 4,
+          "barcode": "5678901234567",
+          "vat_rate": 8
+        },
+        {
+          "productId": 2,
+          "productName": "Süt",
+          "quantity": 1,
+          "unitPrice": 2.5,
+          "totalPrice": 2.5,
+          "barcode": "2345678901234",
+          "vat_rate": 8
+        },
+        {
+          "productId": 30,
+          "productName": "Masal Kitabı",
+          "quantity": 1,
+          "unitPrice": 10,
+          "totalPrice": 10,
+          "barcode": "4567890123458",
+          "vat_rate": 8
+        }
+      ],
+      "subTotal": "22.25",
+      "total": "19.18",
+      "receivedMoney": "15",
+      "changeGiven": "-4.18",
+      "paymentType": "Card&Cash"
     }
+    
   ],
   "users": [
     {
