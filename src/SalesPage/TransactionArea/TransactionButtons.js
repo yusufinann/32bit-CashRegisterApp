@@ -4,9 +4,12 @@ import "../styles.css";
 import TransactionPanel from "./TransactionPanel";
 import ModalSearch from "../ProductSearching/ModalSearch";
 import { useCartContext } from "../../contexts/CartContext";
-import { useGlobalContext } from "../../contexts/GlobalContext";
-
-const TransactionButtons = ({ theme, t }) => {
+const TransactionButtons = ({ theme, t, setState,
+  state,
+  handleChange,
+  showAllProducts,
+  setShowAllProducts,
+  handleShowProducts, }) => {
   // Modalın açık/kapalı durumunu kontrol eden state
   const [openSearchModal, setOpenSearchModal] = useState(false);
   const handleOpenSearchModal = () => {
@@ -15,14 +18,7 @@ const TransactionButtons = ({ theme, t }) => {
   };
   const handleCloseSearchModal = () => setOpenSearchModal(false);
   const { clearCart, paymentType, handleAddToCart, saveReceivedMoney, Total, input, setPaymentType, setInput, setPartialPayment} = useCartContext();
-  const {
-    setState,
-    state,
-    handleChange,
-    showAllProducts,
-    setShowAllProducts,
-    handleShowProducts,
-  } = useGlobalContext();
+
   const [alertOpen, setAlertOpen] = useState(false); // Snackbar state
 
   const handleClick = () => {

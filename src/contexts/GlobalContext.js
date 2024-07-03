@@ -1,12 +1,13 @@
 import React, { createContext, useContext, useState, useMemo, useCallback } from "react";
 import useFetchApi from "../SalesPage/FetchApi/UseFetchApi";
-
-import axios from "axios";
+import useCategoryHandlers from "../hooks/useCategoryHandlers";
+import useProductHandlers from "../hooks/useProductHandlers";
+import useSearchHandlers from "../hooks/useSearchHandlers";
 
 const GlobalContext = createContext();
 
 const GlobalContextProvider = ({ children }) => {
-  const [state, setState] = useState({
+  const initialState = {
     searchQuery: "",
     categories: [],
     showCategories: false,
@@ -17,166 +18,79 @@ const GlobalContextProvider = ({ children }) => {
     filteredProducts: [],
     wantedProduct: [],
     subcategories: [],
-  });
+  };
 
-  const { loading, error, fetchCategories, fetchProducts, fetchSubcategories, handleBarcodeChange, setError } = useFetchApi(setState, state);
+  const [state, setState] = useState(initialState);
 
-  const [showAllProducts, setShowAllProducts] = useState(true); // ModalSearch
+  const { 
+    loading, 
+    error, 
+    setError, 
+    handleBarcodeChange, 
+    fetchCategories, 
+    fetchProducts, 
+    fetchSubcategories 
+  } = useFetchApi(setState);
 
-  const handleShowCategories = useCallback(async () => {
-    try {
-      const data = await fetchCategories();
-      setState((prev) => ({
-        ...prev,
-        categories: data,
-        showCategories: true,
-        showProducts: false,
-        showSubcategories: false,
-        showFilteredProducts: false,
-      }));
-    } catch (error) {
-      console.error("Error fetching categories:", error);
-      setError(true); // Optional: Handle error state if needed
-    }
-  }, [fetchCategories,setError]);
+  const { 
+    handleShowCategories, 
+    handleShowSubcategoryByCategoryId, 
+    handleSubCategoriesClick 
+  } = useCategoryHandlers(setState);
 
-  const handleShowProducts = useCallback(async () => {
-    try {
-      const data = await fetchProducts();
-      setState((prev) => ({
-        ...prev,
-        products: data,
-        showCategories: false,
-        showProducts: true,
-        showSubcategories: false,
-        showFilteredProducts: false,
-      }));
-    } catch (error) {
-      console.error("Error fetching products:", error);
-      setError(true); // Optional: Handle error state if needed
-    }
-  }, [fetchProducts, setError]);
+  const { 
+    handleShowProducts, 
+    handleShowProductsBySubcategory 
+  } = useProductHandlers(setState);
 
-  const handleSubCategoriesClick = useCallback(async () => {
-    try {
-      const data = await fetchSubcategories();
-      setState((prev) => ({
-        ...prev,
-        subcategories: data,
-        showCategories: false,
-        showProducts: false,
-        showSubcategories: true,
-        showFilteredProducts: false,
-      }));
-    } catch (error) {
-      console.error("Error fetching subcategories:", error);
-      setError(true); // Optional: Handle error state if needed
-    }
-  }, [fetchSubcategories, setError]);
+  const { 
+    handleChange, 
+    showAllProducts, 
+    setShowAllProducts 
+  } = useSearchHandlers(state, setState);
 
-  const handleShowProductsBySubcategory = useCallback(async (subcategoryId) => {
-    try {
-      const url = `http://localhost:3000/products?subcategories=${subcategoryId}`;
-      const response = await axios.get(url);
-      const data = response.data;
+  // Use useCallback to memoize handler functions
+  const memoizedHandleShowCategories = useCallback(() => handleShowCategories(fetchCategories, setError), [handleShowCategories, fetchCategories, setError]);
+  const memoizedHandleShowProducts = useCallback(() => handleShowProducts(fetchProducts, setError), [handleShowProducts,fetchProducts, setError]);
+  const memoizedHandleShowProductsBySubcategory = useCallback((subcategoryId) => handleShowProductsBySubcategory(subcategoryId, setError), [handleShowProductsBySubcategory, setError]);
+  const memoizedHandleShowSubcategoryByCategoryId = useCallback((categoryId) => handleShowSubcategoryByCategoryId(categoryId, setError), [handleShowSubcategoryByCategoryId, setError]);
+  const memoizedHandleSubCategoriesClick = useCallback(() => handleSubCategoriesClick(fetchSubcategories, setError), [handleSubCategoriesClick,fetchSubcategories, setError]);
 
-      setState((prevState) => ({
-        ...prevState,
-        products: data,
-        showCategories: false,
-        showProducts: true,
-        showSubcategories: false,
-        showFilteredProducts: false,
-      }));
-    } catch (error) {
-      console.error("Error fetching products by subcategory:", error);
-      setError(true); // Optional: Handle error state if needed
-    }
-  }, [setError]);
-
-  const handleShowSubcategoryByCategoryId = useCallback(async (categoryId) => {
-    try {
-      const url = `http://localhost:3000/subcategories?category_id=${categoryId}`;
-      const response = await axios.get(url);
-      const data = response.data;
-
-      setState((prevState) => ({
-        ...prevState,
-        subcategories: data,
-        showCategories: false,
-        showProducts: false,
-        showSubcategories: true,
-        showFilteredProducts: false,
-      }));
-    } catch (error) {
-      console.error("Error fetching subcategories by category:", error);
-      setError(true); // Optional: Handle error state if needed
-    }
-  }, [setError]);
-
-  const handleSearching = useCallback(
-    (query) => {
-      const formattedQuery = query.trim().toLowerCase();
-      const wantedProducts = state.products.filter((product) =>
-        product.product_name.toLowerCase().startsWith(formattedQuery)
-      );
-
-      setState((prev) => ({
-        ...prev,
-        searchQuery: query,
-        wantedProduct: wantedProducts,
-      }));
-
-     setShowAllProducts(false);
-    },
-    [state.products]
-  );
-
-  const handleChange = useCallback(
-    (event) => {
-      handleSearching(event.target.value);
-      console.log(event);
-    },
-    [handleSearching]
-  );
-
-  const contextValue = useMemo(
-    () => ({
-      state,
-      setState,
-      handleShowCategories,
-      handleShowProducts,
-      handleSubCategoriesClick,
-      handleShowProductsBySubcategory,
-      handleShowSubcategoryByCategoryId, 
-      loading,
-      error,
-      setError,
-      handleBarcodeChange,
-      handleChange,
-      showAllProducts,
-      setShowAllProducts,
-    }),
-    [
-      state,
-      loading,
-      error,
-      handleShowCategories,
-      handleShowProducts,
-      handleSubCategoriesClick,
-      handleShowProductsBySubcategory,
-      handleShowSubcategoryByCategoryId,
-      setError,
-      handleBarcodeChange,
-      handleChange,
-      showAllProducts,
-      setShowAllProducts,
-    ]
-  );
+  // Memoize context value for performance optimization
+  const contextValue = useMemo(() => ({
+    state,
+    setState,
+    handleShowCategories: memoizedHandleShowCategories,
+    handleShowProducts: memoizedHandleShowProducts,
+    handleShowProductsBySubcategory: memoizedHandleShowProductsBySubcategory,
+    handleShowSubcategoryByCategoryId: memoizedHandleShowSubcategoryByCategoryId,
+    loading,
+    error,
+    handleBarcodeChange,
+    handleChange,
+    showAllProducts,
+    setShowAllProducts,
+    handleSubCategoriesClick: memoizedHandleSubCategoriesClick,
+  }), [
+    state,
+    setState,
+    memoizedHandleShowCategories,
+    memoizedHandleShowProducts,
+    memoizedHandleShowProductsBySubcategory,
+    memoizedHandleShowSubcategoryByCategoryId,
+    loading,
+    error,
+    handleBarcodeChange,
+    handleChange,
+    showAllProducts,
+    setShowAllProducts,
+    memoizedHandleSubCategoriesClick,
+  ]);
 
   return <GlobalContext.Provider value={contextValue}>{children}</GlobalContext.Provider>;
 };
 
+// Custom hook for accessing the global context
 const useGlobalContext = () => {
   const context = useContext(GlobalContext);
   if (!context) {

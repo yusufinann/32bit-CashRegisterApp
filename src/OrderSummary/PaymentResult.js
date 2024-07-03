@@ -5,9 +5,7 @@ import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import PaymentIcon from '@mui/icons-material/Payment';
 
-const PaymentResult = ({t,paymentType, receivedMoney, Total, subTotal,changeGiven}) => {
-
-
+const PaymentResult = ({ t, paymentType, receivedMoney, Total, subTotal, changeGiven }) => {
   return (
     <div className="payment-result-card">
       <h2>{t('Payment Summary')}</h2>
@@ -24,11 +22,13 @@ const PaymentResult = ({t,paymentType, receivedMoney, Total, subTotal,changeGive
           <AttachMoneyIcon />
           <span>{t('Total Amount')}</span> {Total}
         </div>
-        <div>
-          <MonetizationOnIcon />
-          <span>{t('Total Received')}</span> {receivedMoney}
-        </div>
-        {changeGiven > 0 && (
+        {paymentType !== 'Kredi Kartı' && (
+          <div>
+            <MonetizationOnIcon />
+            <span>{t('Total Received')}</span> {receivedMoney}
+          </div>
+        )}
+        {changeGiven > 0 && paymentType !== 'Kredi Kartı' && (
           <div className="change">
             <AttachMoneyIcon />
             <span>{t('Change Given')}:</span> {changeGiven}

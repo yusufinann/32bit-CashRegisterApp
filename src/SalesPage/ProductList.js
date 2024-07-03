@@ -1,7 +1,7 @@
 import React from 'react';
 //import PropTypes from 'prop-types';
-import '../GlobalComponents/CardList.css';
-import GlobalCardList from '../GlobalComponents/GlobalCardList';
+import '../GlobalComponents/GlobalCardList/CardList.css';
+import GlobalCardList from '../GlobalComponents/GlobalCardList/GlobalCardList';
 
 
 const ProductList = ({ handleAddToCart,state }) => { 

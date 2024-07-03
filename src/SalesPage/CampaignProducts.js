@@ -1,7 +1,7 @@
 import React from "react";
 import "./styles.css";
 
-const CampaignProducts = ({ selectedCampaign, cart, handleAddToCart,theme,t }) => {
+const CampaignProducts = ({ selectedCampaign, cart, handleAddToCart, theme, t }) => {
   // Kampanyaya göre ürünleri filtreleyin
   const campaignProducts = selectedCampaign
     ? cart.filter((item) => item.campaignApplied === selectedCampaign)
@@ -24,16 +24,20 @@ const CampaignProducts = ({ selectedCampaign, cart, handleAddToCart,theme,t }) =
             }
             className="campaign-product-item"
           >
-            <img
-              src={item.product.image}
-              alt={item.product.name}
-              className="campaign-product-image"
-            />
+            {item.product.image ? (
+              <img
+                src={item.product.image}
+                alt={item.product.name}
+                className="campaign-product-image"
+              />
+            ) : (
+              <div className="placeholder">{t('No Image')}</div>
+            )}
             <div className="campaign-product-details">
               <h3>{item.product.name}</h3>
               <p>{t('Barcode')}: {item.product.barcode}</p>
               <p>{t('Campaign')}: {item.campaignApplied}</p>
-              <p>{t('Price')}: {item.totalPrice.toFixed(2)} TL</p>
+              <p>{t('Campaigned Price')}: {item.totalPrice.toFixed(2)} TL ({item.quantity} {t('Piece')})</p>
             </div>
           </div>
         ))

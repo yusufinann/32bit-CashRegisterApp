@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import GlobalCardList from '../GlobalComponents/GlobalCardList';
+import GlobalCardList from '../GlobalComponents/GlobalCardList/GlobalCardList';
 import { useCartContext } from '../contexts/CartContext';
 import './styles.css'; // Import the CSS file
 

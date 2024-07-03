@@ -28,7 +28,7 @@ const OrderSummaryButtons = ({
     saveReceipt();
     setOpen(false);
     navigate("/sales");
-    clearCart(); // Clear cart array using the function from GlobalContext
+    clearCart();
   };
 
   return (

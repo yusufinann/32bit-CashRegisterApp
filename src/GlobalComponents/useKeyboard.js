@@ -1,39 +1,53 @@
-
-import { useState, useCallback } from 'react';
-import { useKeyboardContext } from '../contexts/KeyboardContext';
-import { useGlobalContext } from '../contexts/GlobalContext';
-import { useCartContext } from '../contexts/CartContext';
-import { useStoreStatus } from '../contexts/StoreStatusContext';
+import { useState, useCallback} from "react";
+import { useKeyboardContext } from "../contexts/KeyboardContext";
+import { useCartContext } from "../contexts/CartContext";
+import { useStoreStatus } from "../contexts/StoreStatusContext";
+import { useGlobalContext } from "../contexts/GlobalContext";
 
 const useKeyboard = () => {
-  const { handlePress, setInputValues, activeInputId, handleClear } = useKeyboardContext();
-  const { handleBarcodeChange, handleChange, state } = useGlobalContext();
-  const { handleAddToCart,setEmail } = useCartContext();
+  const { handlePress, setInputValues, activeInputId, handleClear } =
+    useKeyboardContext();
+  const { state, handleChange, handleBarcodeChange } = useGlobalContext();
+  const { handleAddToCart, setEmail } = useCartContext();
   const { workingHours, setWorkingHours } = useStoreStatus();
   const [isShiftPressed, setIsShiftPressed] = useState(false);
 
   const handleInputManipulation = useCallback(
     (manipulation) => {
       const activeInput = document.getElementById(activeInputId);
-      if (activeInput && ['input', 'textarea'].includes(activeInput.tagName.toLowerCase())) {
+      if (
+        activeInput &&
+        ["input", "textarea"].includes(activeInput.tagName.toLowerCase())
+      ) {
         const caretPos = activeInput.selectionStart;
         const inputText = activeInput.value;
         let newValue;
 
-        if (manipulation === 'space') {
-          newValue = `${inputText.substring(0, caretPos)} ${inputText.substring(caretPos)}`;
+        if (manipulation === "space") {
+          newValue = `${inputText.substring(0, caretPos)} ${inputText.substring(
+            caretPos
+          )}`;
           activeInput.selectionStart = activeInput.selectionEnd = caretPos + 1;
-        } else if (manipulation === 'delete' && caretPos > 0) {
-          newValue = `${inputText.substring(0, caretPos - 1)}${inputText.substring(caretPos)}`;
+        } else if (manipulation === "delete" && caretPos > 0) {
+          newValue = `${inputText.substring(
+            0,
+            caretPos - 1
+          )}${inputText.substring(caretPos)}`;
           activeInput.selectionStart = activeInput.selectionEnd = caretPos - 1;
-        } else if (manipulation === 'tab') {
-          newValue = `${inputText.substring(0, caretPos)}\t${inputText.substring(caretPos)}`;
+        } else if (manipulation === "tab") {
+          newValue = `${inputText.substring(
+            0,
+            caretPos
+          )}\t${inputText.substring(caretPos)}`;
           activeInput.selectionStart = activeInput.selectionEnd = caretPos + 1;
         }
 
         if (newValue !== undefined) {
           activeInput.value = newValue;
-          setInputValues((prevValues) => ({ ...prevValues, [activeInputId]: newValue }));
+          setInputValues((prevValues) => ({
+            ...prevValues,
+            [activeInputId]: newValue,
+          }));
         }
       }
     },
@@ -41,46 +55,50 @@ const useKeyboard = () => {
   );
 
   const handleKeyPress = (key) => {
-    if (activeInputId === 'display-controls-input') {
+    if (activeInputId === "display-controls-input") {
       return; // Prevent keyboard actions for DisplayAndControls input
     }
-    if (key === 'clear') {
+    if (key === "clear") {
       handleClear();
-    } else if (key === 'backspace') {
-      handleInputManipulation('delete');
-    } else if (key === 'shift' || key === 'caps') {
+    } else if (key === "backspace") {
+      handleInputManipulation("delete");
+    } else if (key === "shift" || key === "caps") {
       setIsShiftPressed((prev) => !prev);
-    } else if (key === 'space') {
-      handleInputManipulation('space');
-    } else if (key === 'tab') {
-      handleInputManipulation('tab');
+    } else if (key === "space") {
+      handleInputManipulation("space");
+    } else if (key === "tab") {
+      handleInputManipulation("tab");
     } else {
       handlePress(key);
     }
 
     const inputValue = document.getElementById(activeInputId)?.value;
 
-    if (activeInputId === 'barcode') {
+    if (activeInputId === "barcode") {
       handleBarcodeChange({ target: { value: inputValue } });
-      const matchedProduct = state.products.find((product) => product.barcode === inputValue);
+      
+      const matchedProduct = state.products.find(
+        (product) => product.barcode === inputValue
+      );
       if (matchedProduct) {
         handleAddToCart(matchedProduct);
       }
     }
 
-    if (activeInputId === 'searching') {
+    if (activeInputId === "searching") {
       handleChange({ target: { value: inputValue } });
     }
-    if (activeInputId === 'start-time') {
+    if (activeInputId === "start-time") {
       setWorkingHours({ ...workingHours, start: inputValue });
     }
 
-    if (activeInputId === 'end-time') {
+    if (activeInputId === "end-time") {
       setWorkingHours({ ...workingHours, end: inputValue });
     }
-    if (activeInputId === 'email') {
+    if (activeInputId === "email") {
       setEmail(inputValue);
     }
+    
   };
 
   return { handleKeyPress, isShiftPressed };

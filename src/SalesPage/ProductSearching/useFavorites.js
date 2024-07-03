@@ -1,10 +1,7 @@
-// useFavorites.js (Custom Hooks Özel hook'lar kullanarak durumu ve yan etkileri yönetelim.)
-import { useState, useEffect } from "react";
-import { useGlobalContext } from "../../contexts/GlobalContext";
+import { useState } from "react";
 
 const useFavorites = () => {
   const [favorites, setFavorites] = useState([]);
-  const { setState } = useGlobalContext();
 
   const addToFavorites = (product) => {
     setFavorites((prevFavorites) => {
@@ -15,14 +12,6 @@ const useFavorites = () => {
       }
     });
   };
-
-  useEffect(() => {
-    const favoriteIds = favorites.map((fav) => fav.product_id);
-    setState((prevState) => ({
-      ...prevState,
-      favoriteIds: favoriteIds,
-    }));
-  }, [favorites, setState]);
 
   return [favorites, addToFavorites];
 };

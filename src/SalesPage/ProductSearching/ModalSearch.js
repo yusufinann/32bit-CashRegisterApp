@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Button,
   Paper,
 } from "@mui/material";
-import GlobalCardList from "../../GlobalComponents/GlobalCardList";
+import GlobalCardList from "../../GlobalComponents/GlobalCardList/GlobalCardList";
 import FavoritesList from "../FavoritesList";
 import LetterButtons from "./LetterButtons";
 import Pagination from "./Pagination";
@@ -13,12 +13,19 @@ import useFavorites from "./useFavorites";
 import { getPageNumbers, getCurrentProducts, filterProductsByLetter } from "./utils";
 import '../styles.css';
 
-const ModalSearch = ({ open, handleClose, theme,t,handleAddToCart,setState, state, handleChange, showAllProducts, setShowAllProducts ,handleShowProducts }) => {
-  
+const ModalSearch = ({ open, handleClose, theme, t, handleAddToCart, setState, state, handleChange, showAllProducts, setShowAllProducts, handleShowProducts }) => {
   const [currentPage, setCurrentPage] = useState(0);
   const [showFavorites, setShowFavorites] = useState(false);
   const [favorites, addToFavorites] = useFavorites();
   const productsPerPage = 10;
+
+  useEffect(() => {
+    const favoriteIds = favorites.map((fav) => fav.product_id);
+    setState((prevState) => ({
+      ...prevState,
+      favoriteIds: favoriteIds,
+    }));
+  }, [favorites, setState]);
 
   const handleLetterClick = (letter) => {
     const filteredProducts = filterProductsByLetter(state.products, letter);
@@ -87,16 +94,14 @@ const ModalSearch = ({ open, handleClose, theme,t,handleAddToCart,setState, stat
         <ModalHeader
           handleShowFavorites={handleShowFavorites}
           handleShowAllProducts={handleShowAllProducts}
-          letterButtons={<LetterButtons handleLetterClick={handleLetterClick} 
-          />}
+          letterButtons={<LetterButtons handleLetterClick={handleLetterClick} />}
           t={t}
         />
 
-        <SearchBar handleSearchingChange={handleSearchingChange} 
-          setShowFavorites={setShowFavorites}/>
+        <SearchBar handleSearchingChange={handleSearchingChange} setShowFavorites={setShowFavorites} />
 
         <div className="modal-actions">
-          <Button onClick={handleClose} sx={{ color: theme === 'dark' ? 'white' : 'black' ,backgroundColor: theme === 'dark' ? 'purple' : '#FF6E7F',margin:2 }} variant="outlined">
+          <Button onClick={handleClose} sx={{ color: theme === 'dark' ? 'white' : 'black', backgroundColor: theme === 'dark' ? 'purple' : '#FF6E7F', margin: 2 }} variant="outlined">
             {t('Cancel')}
           </Button>
         </div>

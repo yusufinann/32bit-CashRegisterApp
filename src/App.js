@@ -4,7 +4,6 @@ import Home from "./HomePage/Home";
 import LoginPage from "./LoginPage/Login";
 import { LoginProvider } from "./contexts/LoginContext";
 import Sales from "./HomePage/Sales";
-import { GlobalContextProvider } from "./contexts/GlobalContext";
 import OrderSummary from "./OrderSummary/OrderSummary";
 import Receipts from "./HomePage/Receipts";
 import { KeyboardProvider } from "./contexts/KeyboardContext";
@@ -13,38 +12,57 @@ import { CartContextProvider } from "./contexts/CartContext";
 import Reports from "./HomePage/Reports";
 import { StoreStatusProvider } from "./contexts/StoreStatusContext";
 import Settings from "./HomePage/Settings";
-import { ThemeProvider } from '../src/contexts/ThemeContext';
+import { ThemeProvider } from "../src/contexts/ThemeContext";
 import ThemedApp from "./GlobalComponents/themedApp";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import PrivateRoute from "./LoginPage/PrivateRoute";
+import { GlobalContextProvider } from "./contexts/GlobalContext";
 
 function App() {
   return (
     <ThemeProvider>
-      <ThemedApp>
-        <KeyboardProvider>
-          <LanguageProvider>
-            <StoreStatusProvider>
-              <GlobalContextProvider>
-                <CartContextProvider>
+      <LanguageProvider>
+        <StoreStatusProvider>
+          <CartContextProvider>
+            <GlobalContextProvider>
+            <KeyboardProvider>
+              <LoginProvider>
+                <ThemedApp>
                   <VirtualKeyboard />
-                  <LoginProvider>
-                    <Routes>
-                      <Route path="/" element={<LoginPage />} />
-                      <Route path="/home" element={<PrivateRoute element={Home} />} />
-                      <Route path="/sales" element={<PrivateRoute element={Sales} />} />
-                      <Route path="/price" element={<PrivateRoute element={OrderSummary} />} />
-                      <Route path="/receipts" element={<PrivateRoute element={Receipts} />} />
-                      <Route path="/reports" element={<PrivateRoute element={Reports} />} />
-                      <Route path="/settings" element={<PrivateRoute element={Settings} />} />
-                    </Routes>
-                  </LoginProvider>
-                </CartContextProvider>
-              </GlobalContextProvider>
-            </StoreStatusProvider>
-          </LanguageProvider>
-        </KeyboardProvider>
-      </ThemedApp>
+                  <Routes>
+                    <Route path="/" element={<LoginPage />} />
+                    <Route
+                      path="/home"
+                      element={<PrivateRoute element={Home} />}
+                    />
+                    <Route
+                      path="/sales"
+                      element={<PrivateRoute element={Sales} />}
+                    />
+                    <Route
+                      path="/price"
+                      element={<PrivateRoute element={OrderSummary} />}
+                    />
+                    <Route
+                      path="/receipts"
+                      element={<PrivateRoute element={Receipts} />}
+                    />
+                    <Route
+                      path="/reports"
+                      element={<PrivateRoute element={Reports} />}
+                    />
+                    <Route
+                      path="/settings"
+                      element={<PrivateRoute element={Settings} />}
+                    />
+                  </Routes>
+                </ThemedApp>
+              </LoginProvider>
+            </KeyboardProvider>
+            </GlobalContextProvider>
+          </CartContextProvider>
+        </StoreStatusProvider>
+      </LanguageProvider>
     </ThemeProvider>
   );
 }

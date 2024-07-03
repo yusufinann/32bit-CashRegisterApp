@@ -2,7 +2,6 @@ import React, { useCallback, useEffect } from 'react';
 import { Button, TextField, IconButton, CircularProgress } from '@mui/material';
 import ClearIcon from '@mui/icons-material/Clear';
 import './styles.css';
-import { useGlobalContext } from '../contexts/GlobalContext';
 import CategoryList from './CategoryList';
 import ProductList from './ProductList';
 import FilteredProductList from './FilteredProductList';
@@ -11,14 +10,24 @@ import { useKeyboardContext } from '../contexts/KeyboardContext';
 import ErrorPage from '../GlobalComponents/ErrorPage';
 import { useCartContext } from '../contexts/CartContext';
 
-const ProductCatalog = ({ theme, t }) => {
-  const { state, setState, handleShowCategories, handleShowProducts, handleBarcodeChange, handleSubCategoriesClick, handleShowSubcategoryByCategoryId, handleShowProductsBySubcategory,loading,error } = useGlobalContext();
+const ProductCatalog = ({ theme, t, state,
+  setState,
+  handleShowCategories,
+  handleShowProducts,
+  handleSubCategoriesClick,
+  handleShowProductsBySubcategory,
+  handleShowSubcategoryByCategoryId,
+  loading, 
+  error,handleBarcodeChange, 
+}) => {
+  
   const { handleClear } = useKeyboardContext();
   const { handleAddToCart } = useCartContext();
- 
   useEffect(() => {
-    handleShowProducts(); // Load products when the component mounts
-  }, []); // Added handleShowProducts to the dependency array
+    if (state.showProducts && !state.products.length) {
+      handleShowProducts(); // Load products when the component mounts if products are not already loaded
+    }
+  }, [handleShowProducts, state.showProducts, state.products.length]);
 
   const handleBarcodeInputChange = (event) => {
     const value = event.target.value;
@@ -97,10 +106,10 @@ const ProductCatalog = ({ theme, t }) => {
             <CircularProgress />
           ) : (
             <>
-              {state.showFilteredProducts && state.barcode && <FilteredProductList state={state} handleAddToCart={handleAddToCart}/>}
-              {state.showCategories && <CategoryList isOpen={state.showCategories} toggle={toggleCategories} handleShowSubcategoryByCategoryId={handleShowSubcategoryByCategoryId} state={state} />}
+              {state.showFilteredProducts && <FilteredProductList state={state} handleAddToCart={handleAddToCart}/>}
+              {state.showCategories && <CategoryList isOpen={state.showCategories} toggle={toggleCategories} handleShowSubcategoryByCategoryId={handleShowSubcategoryByCategoryId} state={state} theme={theme} />}
               {state.showProducts && <ProductList isOpen={state.showProducts} toggle={toggleProducts} handleAddToCart={handleAddToCart} state={state} />}
-              {state.showSubcategories && <SubcategoryList isOpen={state.showSubcategories} toggle={toggleSubcategories} handleShowProductsBySubcategory={handleShowProductsBySubcategory} state={state} />}
+              {state.showSubcategories && <SubcategoryList isOpen={state.showSubcategories} toggle={toggleSubcategories} handleShowProductsBySubcategory={handleShowProductsBySubcategory} state={state} theme={theme}/>}
             </>
           )}
         </>

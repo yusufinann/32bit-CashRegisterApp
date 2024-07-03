@@ -236,6 +236,18 @@
   margin-right: 15px;
 }
 
+
+.placeholder{
+  width: 80px;
+  margin-right: 15px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e0e0e0;
+  color: #757575;
+  font-size: 1rem;
+}
 .campaign-product-details {
   flex: 1;
 }

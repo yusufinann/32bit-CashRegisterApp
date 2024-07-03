@@ -1,7 +1,7 @@
 import React from 'react';
 import { Typography } from '@mui/material'; // Import Material-U
 import './styles.css';
-import GlobalCardList from '../GlobalComponents/GlobalCardList';
+import GlobalCardList from '../GlobalComponents/GlobalCardList/GlobalCardList';
 
 const FilteredProductList = ({state,handleAddToCart}) => {
     return (

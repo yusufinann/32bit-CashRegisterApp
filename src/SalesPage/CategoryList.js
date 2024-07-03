@@ -1,28 +1,21 @@
 import React from 'react';
-import '../GlobalComponents/CardList.css'
-const CategoryList = ( { handleShowSubcategoryByCategoryId, state } ) => {
+import CardList from '../GlobalComponents/CardList';
+
+const CategoryList = ({ handleShowSubcategoryByCategoryId, state, theme }) => {
+  const items = state.categories.map(category => ({
+    id: category.id,
+    name: category.category_name,
+    image_url: category.image_url,
+    category_id: category.category_id, // include the category_id for the handleClick function
+  }));
 
   return (
-    <div className="card-container">
-      {state.categories.map((category) => (
-        <div
-          key={category.id} // Assuming 'id' is a unique identifier for category data
-          className="custom-card draw" // Apply the custom card style
-          onClick={() => handleShowSubcategoryByCategoryId(category.category_id)} // Handle click event to show subcategory
-        >
-          <div className="product-image-container">
-            <img
-              src={category.image_url}
-              alt={category.category_name}
-              className="product-image"
-            />
-          </div>
-          <div className="card-content">
-            <p className="product-name">{category.category_name}</p>
-          </div>
-        </div>
-      ))}
-    </div>
+    <CardList 
+      items={items}
+      handleClick={(item) => handleShowSubcategoryByCategoryId(item.category_id)}
+      theme={theme}
+    />
   );
 };
+
 export default CategoryList;

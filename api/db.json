@@ -124,7 +124,7 @@
     {
       "category_id": 11,
       "category_name": "Ev Gereçleri",
-      "image_url": "https://example.com/ev_gerecleri.jpg",
+      "image_url": "",
       "subcategories": [
         {
           "id": "11a"
@@ -138,7 +138,7 @@
     {
       "category_id": 12,
       "category_name": "Oyuncaklar",
-      "image_url": "https://example.com/oyuncaklar.jpg",
+      "image_url": "",
       "subcategories": [
         {
           "id": "12a"
@@ -155,7 +155,7 @@
     {
       "category_id": 13,
       "category_name": "Ofis Malzemeleri",
-      "image_url": "https://example.com/ofis_malzemeleri.jpg",
+      "image_url": "",
       "subcategories": [
         {
           "id": "13a"
@@ -172,7 +172,7 @@
     {
       "category_id": 14,
       "category_name": "Ev Elektroniği",
-      "image_url": "https://example.com/ev_elektronigi.jpg",
+      "image_url": "",
       "subcategories": [
         {
           "id": "14a"
@@ -186,7 +186,7 @@
     {
       "category_id": 15,
       "category_name": "Spor Malzemeleri",
-      "image_url": "https://example.com/spor_malzemeleri.jpg",
+      "image_url": "",
       "subcategories": [
         {
           "id": "15a"
@@ -203,7 +203,7 @@
     {
       "category_id": 16,
       "category_name": "Kitaplar",
-      "image_url": "https://example.com/kitaplar.jpg",
+      "image_url": "",
       "subcategories": [
         {
           "id": "16a"
@@ -217,7 +217,7 @@
     {
       "category_id": 17,
       "category_name": "Bahçe Ürünleri",
-      "image_url": "https://example.com/bahce_urunleri.jpg",
+      "image_url": "",
       "subcategories": [
         {
           "id": "17a"
@@ -231,7 +231,7 @@
     {
       "category_id": 18,
       "category_name": "Mutfak Eşyaları",
-      "image_url": "https://example.com/mutfak_esyalari.jpg",
+      "image_url": "",
       "subcategories": [
         {
           "id": "18a"
@@ -245,7 +245,7 @@
     {
       "category_id": 19,
       "category_name": "Ofis Malzemeleri",
-      "image_url": "https://example.com/ofis_malzemeleri.jpg",
+      "image_url": "",
       "subcategories": [
         {
           "id": "19a"
@@ -640,7 +640,7 @@
       "stock_quantity": 100,
       "supplier": "CutleryMart",
       "is_active": 1,
-      "image_url": "https://example.com/meyve_bicagi.jpg",
+      "image_url": "",
       "campaign_state": 0,
       "campaign_id": null,
       "vat_rate": 8,
@@ -663,7 +663,7 @@
       "stock_quantity": 150,
       "supplier": "CutleryMart",
       "is_active": 1,
-      "image_url": "https://example.com/sebze_soyacagi.jpg",
+      "image_url": "",
       "campaign_state": 0,
       "campaign_id": null,
       "vat_rate": 8,
@@ -686,7 +686,7 @@
       "stock_quantity": 50,
       "supplier": "ToyEmporium",
       "is_active": 1,
-      "image_url": "https://example.com/pamuk_oyuncak_ayi.jpg",
+      "image_url": "",
       "campaign_state": 1,
       "campaign_id": "C002",
       "vat_rate": 8,
@@ -1445,7 +1445,7 @@
       "stock_quantity": 200,
       "supplier": "OilProducers",
       "is_active": 1,
-      "image_url": "https://example.com/sivi_yag.jpg",
+      "image_url": "",
       "campaign_state": 0,
       "campaign_id": null,
       "vat_rate": 8,
@@ -1468,7 +1468,7 @@
       "stock_quantity": 100,
       "supplier": "FreshMeats",
       "is_active": 1,
-      "image_url": "https://example.com/dana_kavurma.jpg",
+      "image_url": "",
       "campaign_state": 1,
       "campaign_id": "C003",
       "vat_rate": 8,
@@ -1491,7 +1491,7 @@
       "stock_quantity": 120,
       "supplier": "CoffeeRoasters",
       "is_active": 1,
-      "image_url": "https://example.com/kahve.jpg",
+      "image_url": "",
       "campaign_state": 0,
       "campaign_id": null,
       "vat_rate": 8,
@@ -1514,7 +1514,7 @@
       "stock_quantity": 150,
       "supplier": "FarmFreshCo",
       "is_active": 1,
-      "image_url": "https://example.com/mantar.jpg",
+      "image_url": "",
       "campaign_state": 1,
       "campaign_id": "C001",
       "vat_rate": 8,
@@ -1537,7 +1537,7 @@
       "stock_quantity": 200,
       "supplier": "DessertMakers",
       "is_active": 1,
-      "image_url": "https://example.com/cikolatali_puding.jpg",
+      "image_url": "",
       "campaign_state": 0,
       "campaign_id": null,
       "vat_rate": 8,
@@ -1560,7 +1560,7 @@
       "stock_quantity": 200,
       "supplier": "BakeryHub",
       "is_active": 1,
-      "image_url": "https://example.com/elmali_kurabiye.jpg",
+      "image_url": "",
       "campaign_state": 1,
       "campaign_id": "C003",
       "vat_rate": 8,
@@ -1583,7 +1583,7 @@
       "stock_quantity": 150,
       "supplier": "NutFarmers",
       "is_active": 1,
-      "image_url": "https://example.com/antep_fistigi.jpg",
+      "image_url": "",
       "campaign_state": 0,
       "campaign_id": null,
       "vat_rate": 8,
@@ -1606,7 +1606,7 @@
       "stock_quantity": 200,
       "supplier": "JuiceMakers",
       "is_active": 1,
-      "image_url": "https://example.com/portakal_suyu.jpg",
+      "image_url": "",
       "campaign_state": 1,
       "campaign_id": "C002",
       "vat_rate": 8,
@@ -1629,7 +1629,7 @@
       "stock_quantity": 150,
       "supplier": "OlivePress",
       "is_active": 1,
-      "image_url": "https://example.com/zeytin_yagi.jpg",
+      "image_url": "",
       "campaign_state": 0,
       "campaign_id": null,
       "vat_rate": 8,
@@ -1652,7 +1652,7 @@
       "stock_quantity": 100,
       "supplier": "GreensFarm",
       "is_active": 1,
-      "image_url": "https://example.com/yesil_salata.jpg",
+      "image_url": "",
       "campaign_state": 1,
       "campaign_id": "C001",
       "vat_rate": 8,
@@ -1675,7 +1675,7 @@
       "stock_quantity": 80,
       "supplier": "FreshMeats",
       "is_active": 1,
-      "image_url": "https://example.com/kusbası_et.jpg",
+      "image_url": "",
       "campaign_state": 0,
       "campaign_id": null,
       "vat_rate": 8,
@@ -1698,7 +1698,7 @@
       "stock_quantity": 150,
       "supplier": "NutFarmers",
       "is_active": 1,
-      "image_url": "https://example.com/findik.jpg",
+      "image_url": "",
       "campaign_state": 1,
       "campaign_id": "C002",
       "vat_rate": 8,
@@ -1721,7 +1721,7 @@
       "stock_quantity": 120,
       "supplier": "FarmFreshCo",
       "is_active": 1,
-      "image_url": "https://example.com/beyaz_lahana.jpg",
+      "image_url": "",
       "campaign_state": 0,
       "campaign_id": null,
       "vat_rate": 8,
@@ -1744,7 +1744,7 @@
       "stock_quantity": 200,
       "supplier": "SweetTreats",
       "is_active": 1,
-      "image_url": "https://example.com/bitter_cikolata.jpg",
+      "image_url": "",
       "campaign_state": 1,
       "campaign_id": "C003",
       "vat_rate": 8,
@@ -1767,7 +1767,7 @@
       "stock_quantity": 150,
       "supplier": "MarineCatch",
       "is_active": 1,
-      "image_url": "https://example.com/ton_baligi.jpg",
+      "image_url": "",
       "campaign_state": 0,
       "campaign_id": null,
       "vat_rate": 8,
@@ -1790,7 +1790,7 @@
       "stock_quantity": 100,
       "supplier": "GreensFarm",
       "is_active": 1,
-      "image_url": "https://example.com/yogurtlu_kabak_salatasi.jpg",
+      "image_url": "",
       "campaign_state": 1,
       "campaign_id": "C001",
       "vat_rate": 8,
@@ -1813,7 +1813,7 @@
       "stock_quantity": 150,
       "supplier": "FarmFreshCo",
       "is_active": 1,
-      "image_url": "https://example.com/limon.jpg",
+      "image_url": "",
       "campaign_state": 0,
       "campaign_id": null,
       "vat_rate": 8,
@@ -1836,7 +1836,7 @@
       "stock_quantity": 100,
       "supplier": "MilkyWaySup",
       "is_active": 1,
-      "image_url": "https://example.com/beyaz_peynir.jpg",
+      "image_url": "",
       "campaign_state": 1,
       "campaign_id": "C002",
       "vat_rate": 8,
@@ -1859,7 +1859,7 @@
       "stock_quantity": 80,
       "supplier": "GreensFarm",
       "is_active": 1,
-      "image_url": "https://example.com/kuskonmaz.jpg",
+      "image_url": "",
       "campaign_state": 1,
       "campaign_id": "C003",
       "vat_rate": 8,
@@ -1882,7 +1882,7 @@
       "stock_quantity": 120,
       "supplier": "GreensFarm",
       "is_active": 1,
-      "image_url": "https://example.com/kirmizi_pancar.jpg",
+      "image_url": "",
       "campaign_state": 0,
       "campaign_id": null,
       "vat_rate": 8,
@@ -1905,7 +1905,7 @@
       "stock_quantity": 200,
       "supplier": "BeverageInc",
       "is_active": 1,
-      "image_url": "https://example.com/sade_soda.jpg",
+      "image_url": "",
       "campaign_state": 1,
       "campaign_id": "C001",
       "vat_rate": 8,
@@ -1928,7 +1928,7 @@
       "stock_quantity": 150,
       "supplier": "SpiceHub",
       "is_active": 1,
-      "image_url": "https://example.com/corek_otu.jpg",
+      "image_url": "",
       "campaign_state": 1,
       "campaign_id": "C002",
       "vat_rate": 8,
@@ -1951,7 +1951,7 @@
       "stock_quantity": 100,
       "supplier": "GrainHub",
       "is_active": 1,
-      "image_url": "https://example.com/bulgur.jpg",
+      "image_url": "",
       "campaign_state": 0,
       "campaign_id": null,
       "vat_rate": 8,
@@ -1974,7 +1974,7 @@
       "stock_quantity": 80,
       "supplier": "DairyDelights",
       "is_active": 1,
-      "image_url": "https://example.com/subye.jpg",
+      "image_url": "",
       "campaign_state": 1,
       "campaign_id": "C003",
       "vat_rate": 8,
@@ -1997,7 +1997,7 @@
       "stock_quantity": 150,
       "supplier": "GreensFarm",
       "is_active": 1,
-      "image_url": "https://example.com/ispanak.jpg",
+      "image_url": "",
       "campaign_state": 0,
       "campaign_id": null,
       "vat_rate": 8,
@@ -2020,7 +2020,7 @@
       "stock_quantity": 100,
       "supplier": "NutFarmers",
       "is_active": 1,
-      "image_url": "https://example.com/fistik_ezmesi.jpg",
+      "image_url": "",
       "campaign_state": 1,
       "campaign_id": "C001",
       "vat_rate": 8,
@@ -2204,7 +2204,7 @@
       "stock_quantity": 150,
       "supplier": "GreensFarm",
       "is_active": 1,
-      "image_url": "https://example.com/kabak.jpg",
+      "image_url": "",
       "campaign_state": 0,
       "campaign_id": null,
       "vat_rate": 8,
@@ -2572,7 +2572,7 @@
       "stock_quantity": 150,
       "supplier": "GreensFarm",
       "is_active": 1,
-      "image_url": "https://example.com/kabak.jpg",
+      "image_url": "",
       "campaign_state": 1,
       "campaign_id": "C003",
       "vat_rate": 8,
@@ -2756,7 +2756,7 @@
       "stock_quantity": 150,
       "supplier": "GreensFarm",
       "is_active": 1,
-      "image_url": "https://example.com/karnabahar.jpg",
+      "image_url": "",
       "campaign_state": 1,
       "campaign_id": "C001",
       "vat_rate": 8,
@@ -2779,7 +2779,7 @@
       "stock_quantity": 150,
       "supplier": "GreensFarm",
       "is_active": 1,
-      "image_url": "https://example.com/kirmizi_biber.jpg",
+      "image_url": "",
       "campaign_state": 1,
       "campaign_id": "C002",
       "vat_rate": 8,
@@ -2802,7 +2802,7 @@
       "stock_quantity": 150,
       "supplier": "GreensFarm",
       "is_active": 1,
-      "image_url": "https://example.com/marul.jpg",
+      "image_url": "",
       "campaign_state": 0,
       "campaign_id": null,
       "vat_rate": 8,
@@ -2825,7 +2825,7 @@
       "stock_quantity": 150,
       "supplier": "GreensFarm",
       "is_active": 1,
-      "image_url": "https://example.com/pirasa.jpg",
+      "image_url": "",
       "campaign_state": 1,
       "campaign_id": "C001",
       "vat_rate": 8,
@@ -2848,7 +2848,7 @@
       "stock_quantity": 150,
       "supplier": "GreensFarm",
       "is_active": 1,
-      "image_url": "https://example.com/ispanak.jpg",
+      "image_url": "",
       "campaign_state": 1,
       "campaign_id": "C002",
       "vat_rate": 8,
@@ -2871,7 +2871,7 @@
       "stock_quantity": 150,
       "supplier": "GreensFarm",
       "is_active": 1,
-      "image_url": "https://example.com/enginar.jpg",
+      "image_url": "",
       "campaign_state": 0,
       "campaign_id": null,
       "vat_rate": 8,
@@ -2894,7 +2894,7 @@
       "stock_quantity": 150,
       "supplier": "GreensFarm",
       "is_active": 1,
-      "image_url": "https://example.com/frenk_sogan.jpg",
+      "image_url": "",
       "campaign_state": 1,
       "campaign_id": "C003",
       "vat_rate": 8,
@@ -2917,7 +2917,7 @@
       "stock_quantity": 150,
       "supplier": "GreensFarm",
       "is_active": 1,
-      "image_url": "https://example.com/brokoli.jpg",
+      "image_url": "",
       "campaign_state": 1,
       "campaign_id": "C001",
       "vat_rate": 8,
@@ -2940,7 +2940,7 @@
       "stock_quantity": 150,
       "supplier": "GreensFarm",
       "is_active": 1,
-      "image_url": "https://example.com/kirmizi_biber.jpg",
+      "image_url": "",
       "campaign_state": 0,
       "campaign_id": null,
       "vat_rate": 8,
@@ -2963,7 +2963,7 @@
       "stock_quantity": 150,
       "supplier": "GreensFarm",
       "is_active": 1,
-      "image_url": "https://example.com/kuskonmaz.jpg",
+      "image_url": "",
       "campaign_state": 1,
       "campaign_id": "C002",
       "vat_rate": 8,
@@ -2986,7 +2986,7 @@
       "stock_quantity": 150,
       "supplier": "GreensFarm",
       "is_active": 1,
-      "image_url": "https://example.com/roka.jpg",
+      "image_url": "",
       "campaign_state": 1,
       "campaign_id": "C003",
       "vat_rate": 8,
@@ -3009,7 +3009,7 @@
       "stock_quantity": 150,
       "supplier": "GreensFarm",
       "is_active": 1,
-      "image_url": "https://example.com/taze_sogan.jpg",
+      "image_url": "",
       "campaign_state": 0,
       "campaign_id": null,
       "vat_rate": 8,
@@ -3032,7 +3032,7 @@
       "stock_quantity": 150,
       "supplier": "GreensFarm",
       "is_active": 1,
-      "image_url": "https://example.com/patlican.jpg",
+      "image_url": "",
       "campaign_state": 1,
       "campaign_id": "C001",
       "vat_rate": 8,
@@ -3055,7 +3055,7 @@
       "stock_quantity": 150,
       "supplier": "GreensFarm",
       "is_active": 1,
-      "image_url": "https://example.com/kabak.jpg",
+      "image_url": "",
       "campaign_state": 1,
       "campaign_id": "C002",
       "vat_rate": 8,
@@ -3078,7 +3078,7 @@
       "stock_quantity": 150,
       "supplier": "GreensFarm",
       "is_active": 1,
-      "image_url": "https://example.com/havuc.jpg",
+      "image_url": "",
       "campaign_state": 0,
       "campaign_id": null,
       "vat_rate": 8,
@@ -3101,7 +3101,7 @@
       "stock_quantity": 150,
       "supplier": "GreensFarm",
       "is_active": 1,
-      "image_url": "https://example.com/turp.jpg",
+      "image_url": "",
       "campaign_state": 1,
       "campaign_id": "C003",
       "vat_rate": 8,
@@ -3124,7 +3124,7 @@
       "stock_quantity": 150,
       "supplier": "GreensFarm",
       "is_active": 1,
-      "image_url": "https://example.com/bezelye.jpg",
+      "image_url": "",
       "campaign_state": 1,
       "campaign_id": "C001",
       "vat_rate": 8,
@@ -3147,7 +3147,7 @@
       "stock_quantity": 150,
       "supplier": "GreensFarm",
       "is_active": 1,
-      "image_url": "https://example.com/karnabahar.jpg",
+      "image_url": "",
       "campaign_state": 1,
       "campaign_id": "C002",
       "vat_rate": 8,
@@ -3170,7 +3170,7 @@
       "stock_quantity": 150,
       "supplier": "GreensFarm",
       "is_active": 1,
-      "image_url": "https://example.com/pirasa.jpg",
+      "image_url": "",
       "campaign_state": 1,
       "campaign_id": "C003",
       "vat_rate": 8,
@@ -3193,7 +3193,7 @@
       "stock_quantity": 150,
       "supplier": "GreensFarm",
       "is_active": 1,
-      "image_url": "https://example.com/lahana.jpg",
+      "image_url": "",
       "campaign_state": 0,
       "campaign_id": null,
       "vat_rate": 8,
@@ -3216,7 +3216,7 @@
       "stock_quantity": 150,
       "supplier": "GreensFarm",
       "is_active": 1,
-      "image_url": "https://example.com/roka.jpg",
+      "image_url": "",
       "campaign_state": 1,
       "campaign_id": "C003",
       "vat_rate": 8,
@@ -3239,7 +3239,7 @@
       "stock_quantity": 150,
       "supplier": "GreensFarm",
       "is_active": 1,
-      "image_url": "https://example.com/taze_sogan.jpg",
+      "image_url": "",
       "campaign_state": 0,
       "campaign_id": null,
       "vat_rate": 8,
@@ -22401,131 +22401,365 @@
     {
       "id": "11a",
       "name": "Mutfak Gereçleri",
-      "image_url": "https://example.com/mutfak_gerecleri.jpg",
+      "image_url": "",
       "category_id": 11
     },
     {
       "id": "11b",
       "name": "Ev Dekorasyonu",
-      "image_url": "https://example.com/ev_dekorasyonu.jpg",
+      "image_url": "",
       "category_id": 11
     },
     {
       "id": "12a",
       "name": "Yumuşak Oyuncaklar",
-      "image_url": "https://example.com/yumusak_oyuncaklar.jpg",
+      "image_url": "",
       "category_id": 12
     },
     {
       "id": "12b",
       "name": "Ahşap Oyuncaklar",
-      "image_url": "https://example.com/ahsap_oyuncaklar.jpg",
+      "image_url": "",
       "category_id": 12
     },
     {
       "id": "12c",
       "name": "Eğitici Oyuncaklar",
-      "image_url": "https://example.com/egitici_oyuncaklar.jpg",
+      "image_url": "",
       "category_id": 12
     },
     {
       "id": "13a",
       "name": "Kalem",
-      "image_url": "https://example.com/kalem.jpg",
+      "image_url": "",
       "category_id": 13
     },
     {
       "id": "13b",
       "name": "Defter",
-      "image_url": "https://example.com/defter.jpg",
+      "image_url": "",
       "category_id": 13
     },
     {
       "id": "13c",
       "name": "Dosya",
-      "image_url": "https://example.com/dosya.jpg",
+      "image_url": "",
       "category_id": 13
     },
     {
       "id": "14a",
       "name": "Küçük Ev Aletleri",
-      "image_url": "https://example.com/kucuk_ev_aletleri.jpg",
+      "image_url": "",
       "category_id": 14
     },
     {
       "id": "14b",
       "name": "Büyük Ev Aletleri",
-      "image_url": "https://example.com/buyuk_ev_aletleri.jpg",
+      "image_url": "",
       "category_id": 14
     },
     {
       "id": "15a",
       "name": "Fitness Ekipmanları",
-      "image_url": "https://example.com/fitness_ekipmanlari.jpg",
+      "image_url": "",
       "category_id": 15
     },
     {
       "id": "15b",
       "name": "Outdoor Malzemeler",
-      "image_url": "https://example.com/outdoor_malzemeler.jpg",
+      "image_url": "",
       "category_id": 15
     },
     {
       "id": "15c",
       "name": "Spor Giyim",
-      "image_url": "https://example.com/spor_giyim.jpg",
+      "image_url": "",
       "category_id": 15
     },
     {
       "id": "16a",
       "name": "Roman",
-      "image_url": "https://example.com/roman.jpg",
+      "image_url": "",
       "category_id": 16
     },
     {
       "id": "16b",
       "name": "Kurgu",
-      "image_url": "https://example.com/kurgu.jpg",
+      "image_url": "",
       "category_id": 16
     },
     {
       "id": "17a",
       "name": "Bahçe Aletleri",
-      "image_url": "https://example.com/bahce_aletleri.jpg",
+      "image_url": "",
       "category_id": 17
     },
     {
       "id": "17b",
       "name": "Bahçe Mobilyaları",
-      "image_url": "https://example.com/bahce_mobilyalari.jpg",
+      "image_url": "",
       "category_id": 17
     },
     {
       "id": "18a",
       "name": "Mutfak Gereçleri",
-      "image_url": "https://example.com/mutfak_gerecleri.jpg",
+      "image_url": "",
       "category_id": 18
     },
     {
       "id": "18b",
       "name": "Mutfak Elektroniği",
-      "image_url": "https://example.com/mutfak_elektronigi.jpg",
+      "image_url": "",
       "category_id": 18
     },
     {
       "id": "19a",
       "name": "Ofis Mobilyaları",
-      "image_url": "https://example.com/ofis_mobilyalari.jpg",
+      "image_url": "",
       "category_id": 19
     },
     {
       "id": "19b",
       "name": "Ofis Elektroniği",
-      "image_url": "https://example.com/ofis_elektronigi.jpg",
+      "image_url": "",
       "category_id": 19
     }
   ],
-  "receipts": [],
+  "receipts": [
+    {
+      "id": "9088",
+      "timestamp": "30.06.2024 19:48",
+      "items": [
+        {
+          "productId": 6,
+          "productName": "Elma",
+          "quantity": 2,
+          "unitPrice": 2,
+          "totalPrice": 4,
+          "barcode": "6789012345678",
+          "vat_rate": 8
+        },
+        {
+          "productId": 5,
+          "productName": "Bisküvi",
+          "quantity": 2,
+          "unitPrice": 2,
+          "totalPrice": 2,
+          "barcode": "5678901234567",
+          "vat_rate": 8
+        },
+        {
+          "productId": 3,
+          "productName": "Beyaz Ekmek",
+          "quantity": 2,
+          "unitPrice": 1.75,
+          "totalPrice": 3.5,
+          "barcode": "3456789012345",
+          "vat_rate": 8
+        },
+        {
+          "productId": 9,
+          "productName": "Tavuk Göğsü",
+          "quantity": 3,
+          "unitPrice": 15,
+          "totalPrice": 45,
+          "barcode": "9012345678901",
+          "vat_rate": 8
+        },
+        {
+          "productId": 2,
+          "productName": "Süt",
+          "quantity": 1,
+          "unitPrice": 2.5,
+          "totalPrice": 2.5,
+          "barcode": "2345678901234",
+          "vat_rate": 8
+        },
+        {
+          "productId": 4,
+          "productName": "Kırmızı Et",
+          "quantity": 1,
+          "unitPrice": 25,
+          "totalPrice": 25,
+          "barcode": "4567890123456",
+          "vat_rate": 8
+        },
+        {
+          "productId": 7,
+          "productName": "Yoğurt",
+          "quantity": 1,
+          "unitPrice": 3,
+          "totalPrice": 3,
+          "barcode": "7890123456789",
+          "vat_rate": 8
+        }
+      ],
+      "subTotal": "87.00",
+      "total": "85.00",
+      "receivedMoney": "5",
+      "changeGiven": "-80.00",
+      "paymentType": "Card&Cash"
+    },
+    {
+      "id": "2326",
+      "timestamp": "30.06.2024 19:54",
+      "items": [
+        {
+          "productId": 3,
+          "productName": "Beyaz Ekmek",
+          "quantity": 1,
+          "unitPrice": 1.75,
+          "totalPrice": 1.75,
+          "barcode": "3456789012345",
+          "vat_rate": 8
+        },
+        {
+          "productId": 2,
+          "productName": "Süt",
+          "quantity": 1,
+          "unitPrice": 2.5,
+          "totalPrice": 2.5,
+          "barcode": "2345678901234",
+          "vat_rate": 8
+        },
+        {
+          "productId": 6,
+          "productName": "Elma",
+          "quantity": 6,
+          "unitPrice": 2,
+          "totalPrice": 12,
+          "barcode": "6789012345678",
+          "vat_rate": 8
+        },
+        {
+          "productId": 5,
+          "productName": "Bisküvi",
+          "quantity": 2,
+          "unitPrice": 2,
+          "totalPrice": 4,
+          "barcode": "5678901234567",
+          "vat_rate": 8
+        },
+        {
+          "productId": 4,
+          "productName": "Kırmızı Et",
+          "quantity": 1,
+          "unitPrice": 25,
+          "totalPrice": 25,
+          "barcode": "4567890123456",
+          "vat_rate": 8
+        },
+        {
+          "productId": 132,
+          "productName": "Mutfak Bıçağı",
+          "quantity": 1,
+          "unitPrice": 30,
+          "totalPrice": 30,
+          "barcode": "1234567890",
+          "vat_rate": 18
+        }
+      ],
+      "subTotal": "75.25",
+      "total": "75.25",
+      "receivedMoney": "76",
+      "changeGiven": "0.75",
+      "paymentType": "Nakit"
+    },
+    {
+      "id": "6226",
+      "timestamp": "30.06.2024 19:57",
+      "items": [
+        {
+          "productId": 7,
+          "productName": "Yoğurt",
+          "quantity": 1,
+          "unitPrice": 3,
+          "totalPrice": 3,
+          "barcode": "7890123456789",
+          "vat_rate": 8
+        },
+        {
+          "productId": 378,
+          "productName": "Q0IrQ",
+          "quantity": 1,
+          "unitPrice": 335.83,
+          "totalPrice": 335.83,
+          "barcode": "26753696379132",
+          "vat_rate": 8
+        },
+        {
+          "productId": 253,
+          "productName": "Quod",
+          "quantity": 1,
+          "unitPrice": 74,
+          "totalPrice": 74,
+          "barcode": "1923456789121",
+          "vat_rate": 8
+        },
+        {
+          "productId": 409,
+          "productName": "Q",
+          "quantity": 1,
+          "unitPrice": 194.14,
+          "totalPrice": 194.14,
+          "barcode": "29902925068191",
+          "vat_rate": 8
+        },
+        {
+          "productId": 512,
+          "productName": "QgJJEq",
+          "quantity": 1,
+          "unitPrice": 464.01,
+          "totalPrice": 464.01,
+          "barcode": "67929621975687",
+          "vat_rate": 8
+        }
+      ],
+      "subTotal": "1070.98",
+      "total": "1070.98",
+      "receivedMoney": "1200",
+      "changeGiven": "129.02",
+      "paymentType": "Nakit"
+    },
+    {
+      "id": "8343",
+      "timestamp": "02.07.2024 13:51",
+      "items": [
+        {
+          "productId": 132,
+          "productName": "Mutfak Bıçağı",
+          "quantity": 1,
+          "unitPrice": 30,
+          "totalPrice": 30,
+          "barcode": "1234567890",
+          "vat_rate": 18
+        },
+        {
+          "productId": 4,
+          "productName": "Kırmızı Et",
+          "quantity": 1,
+          "unitPrice": 25,
+          "totalPrice": 25,
+          "barcode": "4567890123456",
+          "vat_rate": 8
+        },
+        {
+          "productId": 3,
+          "productName": "Beyaz Ekmek",
+          "quantity": 1,
+          "unitPrice": 1.75,
+          "totalPrice": 1.75,
+          "barcode": "3456789012345",
+          "vat_rate": 8
+        }
+      ],
+      "subTotal": "56.75",
+      "total": "56.75",
+      "receivedMoney": null,
+      "changeGiven": null,
+      "paymentType": "Kredi Kartı"
+    }
+  ],
   "users": [
     {
       "id": "1",
