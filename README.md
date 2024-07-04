@@ -35,10 +35,11 @@ Uygulamam mağaza yönetimi, ürün satışı ve raporlama gibi birçok işlemi 
 ### 🎉 Kampanyalar ve İndirimler
 - Mağaza ürünlerinde çeşitli kampanyalar (3 al 2 öde, %10 indirim ve etiketin yarısı) uygulanmakta ve bu fiyatlar sepete yansıtılmaktadır.
 - Kampanyalar, sepette kampanya seçenekleri ikonuna tıklanarak uygulanabilir.
+- Uygulanan Kampanyalar hepsi bir arada gösterilebilir veya kampanya adına göre filtrelenebilir.
 
 ### 💳 Ödeme ve Fiş Yönetimi
 - Çeşitli ödeme yöntemleri desteklenmektedir.
-- Fişlerde alınan ürünlerin listesi, alınan para, para üstü, kasiyerin ad-soyad bilgileri yer almaktadır.
+- Fişlerde alınan ürünlerin isim ve fiyat listesi, alınan para, para üstü, kasiyerin ad-soyad bilgileri ödeme yöntemi gibi pek çok bilgi yer almaktadır.
 - Fişler API'ye JSON formatında post edilmekte, print edilebilir veya doküman şeklinde indirilebilir.
 - E-fatura seçilmesi durumunda müşteri mail bilgisi için pop up ekranı gelmektedir.
 - Fişlere menüden "receipts" kısmından ulaşılabilir.
@@ -101,15 +102,24 @@ export default i18n;
 
 
 ## 🚀 Kullanım
-1. Öncelikle, verileri API'den almak için JSON Server'ı başlatın. API verileri `http://localhost:3000` adresinden erişilebilir olacak şekilde ayarlanmıştır.
-   
+
+1. **API'yi Başlatma:**
+
+   Öncelikle proje dizininde aşağıdaki komutu çalıştırarak verileri API'den almak için JSON Server'ı başlatın.API verileri [http://localhost:3001](http://localhost:3001) adresinden 
+   erişilebilir olacak şekilde ayarlanmıştır
+
    ```bash
-   cd api
-   json-server --watch db.json
-2.Daha sonra, uygulamayı başlatmak için aşağıdaki komutu kullanın:
+   npm run server
+2. **Uygulamayı Başlatma:**
+   Daha sonra, uygulamayı başlatmak için proje dizinine gidin ve aşağıdaki komutu kullanın:
 ### `npm start`
 Uygulamayı geliştirme modunda çalıştırır.\
-Tarayıcınızda http://localhost:3001 adresine gidin.api dosyasının(db.json) içindeki users alanından herhangi bir kullanıcının giriş bilgilerini görebilirsiniz. Kullanıcı bilgileri ile giriş yapın ve uygulamanın tüm özelliklerini kullanın.
+Tarayıcınızda [http://localhost:3001/users](http://localhost:3001/users) adresine gidin.api dosyasının(db.json) içindeki users alanından herhangi bir kullanıcının giriş bilgilerini görebilirsiniz. Kullanıcı bilgileri ile giriş yapın ve uygulamanın tüm özelliklerini kullanın.
+3. **API Adresini Değiştirme:**
+`İsteğe bağlı olarak`, .env dosyası içinde API adresini dinamik olarak değiştirebilirsiniz. Varsayılan olarak REACT_APP_API_URL değeri http://localhost:3001 olarak ayarlanmıştır. Farklı bir ortamda çalıştırmak isterseniz, .env dosyasını düzenleyebilirsiniz.
+
+`REACT_APP_API_URL=http://yeni-api-adresi`
+
 
 ## 📦 Bağımlılıklar
 Projenizde kullanılan bağımlılıkların listesi `package.json` dosyasındadır. İşte başlıca bağımlılıklar:
@@ -138,6 +148,7 @@ Projenizde kullanılan bağımlılıkların listesi `package.json` dosyasındad�
 - **Kullanıcı Arayüzü**: Responsive tasarım, sanal klavye, Material UI
 - **Routing**: React Router DOM
 - **Çoklu Dil Desteği**: i18next
+  HTML 5 & CSS3 kullanılarak temel yapı ve stil oluşturuluyor.
 
 ## 📝 Özet
 Daha pek çok özelliği de bulunduran uygulamam, mağaza yönetimini kolaylaştıran, kullanıcı dostu bir çözüm sunmaktadır. Gelişmiş özellikleri ve kullanımı kolay arayüzü ile mağaza operasyonlarını optimize eder ve müşteri memnuniyetini artırır.
