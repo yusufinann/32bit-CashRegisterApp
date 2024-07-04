@@ -13,10 +13,12 @@ export const LoginProvider = ({ children }) => {
     return storedUser ? JSON.parse(storedUser) : null;
   });
 
+  const baseURL = process.env.REACT_APP_API_BASE_URL;
+
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/users');
+        const response = await axios.get(`${baseURL}/users`);
         setUser(response.data);
         localStorage.setItem('user', JSON.stringify(response.data));
       } catch (error) {
@@ -27,7 +29,7 @@ export const LoginProvider = ({ children }) => {
     if (!user) {
       fetchUserData();
     }
-  }, [user]);
+  }, [user,baseURL]);
 
   const login = (username, password) => {
     const foundUser = user.find(user => user.username === username && user.password === password);

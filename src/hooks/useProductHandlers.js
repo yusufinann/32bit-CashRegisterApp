@@ -18,9 +18,11 @@ const useProductHandlers = (setState) => {
     }
   }, [setState]);
 
+  const baseURL = process.env.REACT_APP_API_BASE_URL;
+
   const handleShowProductsBySubcategory = useCallback(async (subcategoryId, setError) => {
     try {
-      const url = `http://localhost:3000/products?subcategories=${subcategoryId}`;
+      const url =  `${baseURL}/products?subcategories=${subcategoryId}`;
       const response = await axios.get(url);
       const data = response.data;
 
@@ -35,7 +37,7 @@ const useProductHandlers = (setState) => {
     } catch (error) {
       setError(true);
     }
-  }, [setState]);
+  }, [setState,baseURL]);
 
   
 

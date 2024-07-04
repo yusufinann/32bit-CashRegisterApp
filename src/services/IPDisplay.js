@@ -35,7 +35,6 @@ const IPDisplay = () => {
     const fetchDetails = (ip) => {
         axios.get(`https://ipinfo.io/${ip}/json?token=55448e1353a742`)
             .then(response => {
-                console.log("Fetch details response:", response.data); // Debug
                 setDetails(response.data);
                 setError(false); // Reset error state on successful fetch
             })

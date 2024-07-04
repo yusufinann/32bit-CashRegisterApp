@@ -8,6 +8,8 @@ const useReceipt = (cart, subTotal, calculateCartTotal) => {
   const [receivedMoney, setReceivedMoney] = useState(null);
   const [input, setInput] = useState("");
 
+  const baseURL = process.env.REACT_APP_API_BASE_URL;
+
   const saveReceivedMoney = useCallback(() => {
     setReceivedMoney(input);
   }, [input]);
@@ -42,8 +44,10 @@ const useReceipt = (cart, subTotal, calculateCartTotal) => {
       paymentType: partialPayment ? "Card&Cash" : paymentType,
     };
 
+
+  
     try {
-      const response = await fetch("http://localhost:3000/receipts", {
+      const response = await fetch(`${baseURL}/receipts`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -60,7 +64,7 @@ const useReceipt = (cart, subTotal, calculateCartTotal) => {
     } catch (error) {
       console.error("Fiş kaydedilirken hata oluştu:", error);
     }
-  }, [cart, receivedMoney, subTotal, partialPayment, paymentType, receipts]);
+  }, [cart, receivedMoney, subTotal, partialPayment, paymentType, receipts,baseURL]);
 
   return {
     receipts,

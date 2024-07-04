@@ -9,11 +9,12 @@ const useFetchApi = (setState) => {
     products: null,
     subcategories: null,
   });
+  const baseURL = process.env.REACT_APP_API_BASE_URL;
 
   const fetchFromAPI = useCallback(async (endpoint) => {
     setLoading(true);
     try {
-      const response = await axios.get(`http://localhost:3000/${endpoint}`);
+      const response = await axios.get(`${baseURL}/${endpoint}`);
       const data = response.data;
       return data;
     } catch (error) {
@@ -24,7 +25,7 @@ const useFetchApi = (setState) => {
         setLoading(false);
       }, 1000);
     }
-  }, []);
+  }, [baseURL]);
 
   const fetchCategories = useCallback(async () => {
     if (cachedData.categories) {
@@ -86,7 +87,7 @@ const useFetchApi = (setState) => {
     }
 
     try {
-      const response = await axios.get(`http://localhost:3000/products?barcode=${newBarcode}`);
+      const response = await axios.get(`${baseURL}/products?barcode=${newBarcode}`);
       const filteredProducts = response.data;
       setState((prevState) => ({
         ...prevState,
@@ -109,7 +110,7 @@ const useFetchApi = (setState) => {
       }));
       setError(true); // Hata durumunu belirt
     }
-  }, [setState]);
+  }, [setState,baseURL]);
 
   return {
     loading,
