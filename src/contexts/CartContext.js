@@ -17,7 +17,7 @@ const CartContextProvider = ({ children }) => {
     setActiveCampaign,
     handleCampaignSelect,
     checkedProducts,
-    setCheckedProducts,handleAddToCart,email,setEmail
+    setCheckedProducts,handleAddToCart,email,setEmail,setPersistingCampaignItems,persistingCampaignItems,selectedCampaign, setSelectedCampaign
   } = useCart();
 
   const {
@@ -64,7 +64,7 @@ const CartContextProvider = ({ children }) => {
     changeGiven,
     Total,handleAddToCart, calculateTotalPrice, 
     saleId:generateUniqueId(),
-    email,setEmail
+    email,setEmail,setPersistingCampaignItems,persistingCampaignItems,selectedCampaign, setSelectedCampaign
   };
 
   return <CartContext.Provider value={contextValue}>{children}</CartContext.Provider>;

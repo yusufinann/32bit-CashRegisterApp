@@ -3,7 +3,7 @@ import { useCartContext } from "../../contexts/CartContext";
 import "../styles.css";
 
 const CampaignChoices = ({ productId, onClose, t }) => {
-  const { setCart, cart, calculateTotalPrice, checkedProducts } = useCartContext();
+  const { setCart, cart, calculateTotalPrice, setPersistingCampaignItems } = useCartContext();
 
   const product = cart.find(item => item.product.id === productId);
   const activeCampaign = product?.campaignApplied || "";
@@ -18,11 +18,20 @@ const CampaignChoices = ({ productId, onClose, t }) => {
               totalPrice: calculateTotalPrice({
                 ...item, 
                 campaignApplied: item.campaignApplied === campaign ? null : campaign 
-              }, checkedProducts) // Pass checkedProducts here
+              }) 
             }
           : item
       )
     );
+
+    // Remove from removedItemsCampaigns if campaign is deselected
+    if (product && product.campaignApplied === campaign) {
+      setPersistingCampaignItems(prev => {
+        const { [productId]: _, ...rest } = prev;
+        return rest;
+      });
+    }
+
     onClose();
   };
 
@@ -47,12 +56,12 @@ const CampaignChoices = ({ productId, onClose, t }) => {
         {t('10 percent discount')}
       </button>
       {activeCampaign && (
-    <div className="active-campaign">
-      {t('Active Campaign')}: {activeCampaign === '3al2' ? t('Buy 3 Pay 2') :
-                                   activeCampaign === 'etiketinYarisi' ? t('Half of the Label') :
-                                   activeCampaign === 'yuzde10' ? t('10% discount') : ''}
-    </div>
-  )}
+        <div className="active-campaign">
+          {t('Active Campaign')}: {activeCampaign === '3al2' ? t('Buy 3 Pay 2') :
+                                      activeCampaign === 'etiketinYarisi' ? t('Half of the Label') :
+                                      activeCampaign === 'yuzde10' ? t('10% discount') : ''}
+        </div>
+      )}
     </div>
   );
 };

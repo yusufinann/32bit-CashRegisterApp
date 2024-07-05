@@ -7,7 +7,8 @@ const useCart = () => {
   const [activeCampaign, setActiveCampaign] = useState(null);
   const [checkedProducts, setCheckedProducts] = useState([]);
   const [email, setEmail] = useState(""); 
-
+  const [persistingCampaignItems, setPersistingCampaignItems] = useState({});
+  const [selectedCampaign, setSelectedCampaign] = useState(null);
   const addToCart = useCallback((product, activeCampaign) => {
     setCart((prevCart) => {
       const existingItemIndex = prevCart.findIndex((item) => item.product.id === product.product_id);
@@ -15,7 +16,10 @@ const useCart = () => {
       if (existingItemIndex !== -1) {
         const updatedCart = [...prevCart];
         updatedCart[existingItemIndex].quantity += 1;
-        updatedCart[existingItemIndex].campaignApplied = activeCampaign || updatedCart[existingItemIndex].campaignApplied;
+        // Eğer kaldırılmış bir ürünün kampanyası varsa, onu kullan
+        updatedCart[existingItemIndex].campaignApplied = activeCampaign || 
+          (persistingCampaignItems[product.product_id] && persistingCampaignItems[product.product_id].campaignApplied) || 
+          updatedCart[existingItemIndex].campaignApplied;
         updatedCart[existingItemIndex].totalPrice = calculateTotalPrice(updatedCart[existingItemIndex]);
         return updatedCart;
       } else {
@@ -30,7 +34,9 @@ const useCart = () => {
             vat_rate: product.vat_rate,
           },
           quantity: 1,
-          campaignApplied: activeCampaign || null,
+          campaignApplied: activeCampaign || 
+            (persistingCampaignItems[product.product_id] && persistingCampaignItems[product.product_id].campaignApplied) || 
+            null,
           totalPrice: 0,
         };
 
@@ -38,7 +44,13 @@ const useCart = () => {
         return [...prevCart, newItem];
       }
     });
-  }, []);
+
+    // Ürün eklendiğinde, kaldırılmış ürünler listesinden bu ürünü çıkar
+    setPersistingCampaignItems(prev => {
+      const { [product.productid]:_, ...rest } = prev;
+      return rest;
+    });
+  }, [persistingCampaignItems]);
 
   useEffect(() => {
     const newSubTotal = cart.reduce((total, item) => total + item.product.price * item.quantity, 0);
@@ -46,8 +58,35 @@ const useCart = () => {
   }, [cart]);
 
   const clearCart = useCallback(() => {
-    setCart([]);
-  }, []);
+    setCart((prevCart) => {
+      // Mevcut kampanya bilgilerini sakla
+      const campaignInfo = {};
+      prevCart.forEach(item => {
+        if (item.campaignApplied) {
+          campaignInfo[item.product.id] = {
+            product_id:item.product.id,
+            productName: item.product.name,
+            quantity:item.quantity,
+            image:item.product.image,
+            campaignApplied: item.campaignApplied,
+            barcode: item.product.barcode ,
+            totalPrice:(item.totalPrice).toFixed(2),
+            price:item.product.price,
+            vat_rate:item.product.vat_rate
+          };
+        }
+      });
+
+      // Kampanya bilgilerini removedItemsCampaigns'e ekle
+      setPersistingCampaignItems(prev => ({
+        ...prev,
+        ...campaignInfo
+      }));
+
+      // Sepeti temizle
+      return [];
+    });
+  }, [setPersistingCampaignItems]);
 
   const calculateCartTotal = useCallback(() => {
     return cart.reduce((total, item) => total + calculateTotalPrice(item), 0);
@@ -56,10 +95,9 @@ const useCart = () => {
   const handleCampaignSelect = useCallback((campaignType) => {
     setActiveCampaign(campaignType);
   }, []);
-  const handleAddToCart = (product,activeCampaign) => {
-    //Card veya Button click olunca addtocart çalışcak
 
-    addToCart(product,activeCampaign);
+  const handleAddToCart = (product, activeCampaign) => {
+    addToCart(product, activeCampaign);
   };
 
   return {
@@ -75,7 +113,9 @@ const useCart = () => {
     checkedProducts,
     setCheckedProducts,
     handleAddToCart,
-    email,setEmail
+    email,
+    setEmail,
+    setPersistingCampaignItems,persistingCampaignItems,selectedCampaign, setSelectedCampaign
   };
 };
 

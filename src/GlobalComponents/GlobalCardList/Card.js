@@ -4,10 +4,52 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { useTranslation } from "react-i18next";
 import "./CardList.css";
-const Card = ({ item,cartItem,isDiscounted, discountedPrice, quantity, handleFavoriteClick, handleAddToCart, isFavorite,theme, handleFavorites,
-  favoriteIds, }) => {
- 
+const Card = ({ 
+  item, 
+  cartItem, 
+  isDiscounted, 
+  campaignApplied,
+  discountedPrice, 
+  quantity, 
+  handleFavoriteClick, 
+  handleAddToCart, 
+  isFavorite, 
+  theme, 
+  handleFavorites,
+  favoriteIds 
+}) => {
   const { t } = useTranslation();
+
+  const renderPriceInfo = () => {
+    if (isDiscounted) {
+      if (campaignApplied === "3al2") {
+        const priceFor3 = (item.price * 2).toFixed(2);
+        return (
+          <div className="price-container">
+            <span className="original-price">
+              <del>{item.price.toFixed(2)} TL</del>
+            </span>
+            <span className="discounted-price">
+              <strong>{priceFor3} TL</strong> {t("for 3")}
+            </span>
+          </div>
+        );
+      } else {
+        return (
+          <div className="price-container">
+            <span className="original-price">
+              <del>{item.price.toFixed(2)} TL</del>
+            </span>
+            <span className="discounted-price">
+              <strong>{discountedPrice.toFixed(2)} TL</strong>
+            </span>
+          </div>
+        );
+      }
+    } else {
+      return <span>{item.price.toFixed(2)} TL</span>;
+    }
+  };
 
   return (
     <div
@@ -17,9 +59,9 @@ const Card = ({ item,cartItem,isDiscounted, discountedPrice, quantity, handleFav
     >
       {isDiscounted && (
         <div className="special-offer-ribbon">
-          {cartItem.campaignApplied === "etiketinYarisi" && `%50 ${t("Sale")}`}
-          {cartItem.campaignApplied === "3al2" && `${t("Buy 3 Pay 2")}`}
-          {cartItem.campaignApplied === "yuzde10" && `%10 ${t("Sale")}`}
+          {campaignApplied === "etiketinYarisi" && `%50 ${t("Sale")}`}
+          {campaignApplied === "3al2" && `${t("Buy 3 Pay 2")}`}
+          {campaignApplied === "yuzde10" && `%10 ${t("Sale")}`}
         </div>
       )}
 
@@ -32,21 +74,7 @@ const Card = ({ item,cartItem,isDiscounted, discountedPrice, quantity, handleFav
       <div className="card-content">
         <div className={`product-name ${theme}`}>{item.product_name}</div>
         <div className={`product-price ${theme}`}>
-          {isDiscounted ? (
-            <div className="price-container">
-              <span className="original-price">
-                <del>{item.price.toFixed(2)} TL</del>
-              </span>
-              <span className="discounted-price">
-                <strong>{discountedPrice} TL</strong>{" "}
-              </span>
-              <span className="small-text">
-                ({quantity} x {item.price.toFixed(2)})
-              </span>
-            </div>
-          ) : (
-            <span>{item.price.toFixed(2)} TL</span>
-          )}
+          {renderPriceInfo()}
         </div>
         {(handleFavorites || favoriteIds) && (
         <IconButton
@@ -63,5 +91,4 @@ const Card = ({ item,cartItem,isDiscounted, discountedPrice, quantity, handleFav
     </div>
   );
 };
-
 export default Card;

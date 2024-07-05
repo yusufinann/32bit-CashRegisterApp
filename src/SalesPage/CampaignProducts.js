@@ -1,11 +1,12 @@
-import React from "react";
+import React from "react"; // Assuming this is the path to your RemovedItemsCampaigns component
 import "./styles.css";
+import PersistingCampaignItems from "./PersistingCampaignItems";
 
-const CampaignProducts = ({ selectedCampaign, cart, handleAddToCart, theme, t }) => {
-  // Kampanyaya göre ürünleri filtreleyin
-  const campaignProducts = selectedCampaign
-    ? cart.filter((item) => item.campaignApplied === selectedCampaign)
-    : cart.filter((item) => item.campaignApplied);
+const CampaignProducts = ({ selectedCampaign, cart, handleAddToCart,persistingCampaignItems, theme, t}) => {
+  // Filter products based on the selected campaign
+  const campaignProducts = selectedCampaign === 'all'
+    ? cart.filter((item) => item.campaignApplied)
+    : cart.filter((item) => item.campaignApplied === selectedCampaign);
 
   return (
     <div className={`campaign-products-container ${theme}`}>
@@ -42,7 +43,9 @@ const CampaignProducts = ({ selectedCampaign, cart, handleAddToCart, theme, t })
           </div>
         ))
       ) : (
-        <p>{t('There are no promotional products at the moment')}.</p>
+        <>
+         <PersistingCampaignItems handleAddToCart ={handleAddToCart } selectedCampaign={selectedCampaign} persistingCampaignItems={persistingCampaignItems}/> 
+        </>
       )}
     </div>
   );

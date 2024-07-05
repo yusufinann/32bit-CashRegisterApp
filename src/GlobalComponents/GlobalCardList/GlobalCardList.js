@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 import { useTheme } from "../../contexts/ThemeContext";
 
 const GlobalCardList = ({ array, AddToCartFunction, handleFavorites, favoriteIds }) => {
-  const { cart } = useCartContext();
+  const { cart,persistingCampaignItems } = useCartContext();
   const [cartAlertOpen, setCartAlertOpen] = useState(false);
   const [favoritesAlertOpen, setFavoritesAlertOpen] = useState(false);
   const [favoriteItem, setFavoriteItem] = useState(null);
@@ -26,12 +26,12 @@ const GlobalCardList = ({ array, AddToCartFunction, handleFavorites, favoriteIds
     setCartAlertOpen(true);
   }, [AddToCartFunction]);
 
-  const handleCloseCartAlert = useCallback((event, reason) => {
+  const handleCloseCartAlert = useCallback((reason) => {
     if (reason === "clickaway") return;
     setCartAlertOpen(false);
   }, []);
 
-  const handleCloseFavoritesAlert = useCallback((event, reason) => {
+  const handleCloseFavoritesAlert = useCallback((reason) => {
     if (reason === "clickaway") return;
     setFavoritesAlertOpen(false);
   }, []);
@@ -39,17 +39,20 @@ const GlobalCardList = ({ array, AddToCartFunction, handleFavorites, favoriteIds
   const cardItems = useMemo(() => (
     array.map((item) => {
       const cartItem = cart.find((cartItem) => cartItem.product.id === item.product_id);
-      const isDiscounted = cartItem && cartItem.campaignApplied !== null;
-      const discountedPrice = cartItem ? cartItem.totalPrice.toFixed(2) : null;
+      const persistingItem = persistingCampaignItems[item.product_id];
+      const isDiscounted = (cartItem && cartItem.campaignApplied !== null) || (persistingItem && persistingItem.campaignApplied !== null);
+      const campaignApplied = cartItem?.campaignApplied || persistingItem?.campaignApplied;
       const quantity = cartItem ? cartItem.quantity : 0;
+      const discountedPrice = cartItem ? cartItem.totalPrice / cartItem.quantity : (persistingItem ? persistingItem.totalPrice / persistingItem.quantity : null);
       const isFavorite = favoriteIds && favoriteIds.includes(item.product_id);
-
+  
       return (
         <Card
           key={item.product_id}
           item={item}
           cartItem={cartItem}
           isDiscounted={isDiscounted}
+          campaignApplied={campaignApplied}
           discountedPrice={discountedPrice}
           quantity={quantity}
           handleFavoriteClick={handleFavoriteClick}
@@ -61,8 +64,7 @@ const GlobalCardList = ({ array, AddToCartFunction, handleFavorites, favoriteIds
         />
       );
     })
-  ), [array, cart, favoriteIds, handleAddToCart, handleFavoriteClick,handleFavorites,theme]);
-
+  ), [array, cart, persistingCampaignItems, favoriteIds, handleAddToCart, handleFavoriteClick, handleFavorites, theme]);
   return (
     <div className={`card-container ${theme}`}>
       {cardItems}

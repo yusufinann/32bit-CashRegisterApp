@@ -124,7 +124,11 @@
   "Campaigned Price":"Kampanyalı Fiyat",
   "Piece":"Adet",
   "No Image":"Görsel Yok",
-  "Sale":"İndirim"
+  "Sale":"İndirim",
+  "Remove from Cart":"Sepetten Kaldır",
+  "Increase":"Arttır",
+  "Decrease":"Azalt",
+  "for 3":"3'ü için"
 
 
 }

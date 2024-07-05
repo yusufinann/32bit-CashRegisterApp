@@ -11,9 +11,8 @@ import CampaignModal from "./CampaignModal";
 import { useTranslation } from "react-i18next";
 
 const CartItem = ({ item, setRemoveAlertOpen, setRemovedProduct }) => {
-  const { setCart, calculateTotalPrice } = useCartContext();
-  const {t}=useTranslation();
-  const [selectedProductForCampaign, setSelectedProductForCampaign] = useState(null);
+  const { setCart, calculateTotalPrice ,setPersistingCampaignItems} = useCartContext();
+  const { t } = useTranslation();
   const [campaignModalOpen, setCampaignModalOpen] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
   const [tooltipContent, setTooltipContent] = useState("");
@@ -29,9 +28,6 @@ const CartItem = ({ item, setRemoveAlertOpen, setRemovedProduct }) => {
 
   const open = Boolean(anchorEl);
 
-  const removeFromCart = (product) => {
-    setCart((prevCart) => prevCart.filter((cartItem) => cartItem.product.id !== product.id));
-  };
 
   const increaseQuantity = (product) => {
     setCart((prevCart) =>
@@ -42,7 +38,6 @@ const CartItem = ({ item, setRemoveAlertOpen, setRemovedProduct }) => {
       )
     );
   };
-
   const decreaseQuantity = (product) => {
     setCart((prevCart) => {
       const updatedCart = prevCart
@@ -65,19 +60,35 @@ const CartItem = ({ item, setRemoveAlertOpen, setRemovedProduct }) => {
   };
 
   const handleRemoveFromCart = (product) => {
-    removeFromCart(product);
+    setCart((prevCart) => {
+      const removedItem = prevCart.find(item => item.product.id === product.id);
+      if (removedItem && removedItem.campaignApplied) {
+        setPersistingCampaignItems(prev => ({
+          ...prev,
+          [product.id]: {
+            product_id:product.id,
+            productName: product.name,
+            image:product.image,
+            campaignApplied: removedItem.campaignApplied,
+            quantity:removedItem.quantity,
+            barcode: product.barcode,
+            totalPrice:(removedItem.totalPrice).toFixed(2),
+            price:product.price,
+            vat_rate:product.vat_rate
+          }
+        }));
+      }
+      return prevCart.filter((cartItem) => cartItem.product.id !== product.id);
+    });
     setRemovedProduct(product);
     setRemoveAlertOpen(true);
   };
-
   const handleCampaignIconClick = (productId) => {
-    setSelectedProductForCampaign((prevSelected) => (prevSelected === productId ? null : productId));
-    setCampaignModalOpen(true); // Modal açıldığında
+    setCampaignModalOpen(true);
   };
 
   const handleCloseCampaignModal = () => {
     setCampaignModalOpen(false);
-    setSelectedProductForCampaign(null); // Modal kapatıldığında
   };
 
   const normalTotal = item.quantity * item.product.price;
@@ -86,7 +97,7 @@ const CartItem = ({ item, setRemoveAlertOpen, setRemovedProduct }) => {
 
   return (
     <div className="cart-item" style={{ '--background-color': isDiscounted ? '#ffebee' : '#FFD467' }}>
-      <div   className="cart-item-title">
+      <div className="cart-item-title">
         {item.product.name}
       </div>
       <div className="cart-item-info">
@@ -97,7 +108,7 @@ const CartItem = ({ item, setRemoveAlertOpen, setRemovedProduct }) => {
           size="small"
           color="primary"
           onClick={() => decreaseQuantity(item.product)}
-          onMouseEnter={(e) => handlePopperOpen(e, "Azalt")}
+          onMouseEnter={(e) => handlePopperOpen(e, t("Decrease"))}
           onMouseLeave={handlePopperClose}
           className="cart-item-button cart-item-button-decrease"
         >
@@ -110,7 +121,7 @@ const CartItem = ({ item, setRemoveAlertOpen, setRemovedProduct }) => {
           size="small"
           color="primary"
           onClick={() => increaseQuantity(item.product)}
-          onMouseEnter={(e) => handlePopperOpen(e, "Arttır")}
+          onMouseEnter={(e) => handlePopperOpen(e, t("Increase"))}
           onMouseLeave={handlePopperClose}
           className="cart-item-button cart-item-button-increase"
         >
@@ -118,28 +129,28 @@ const CartItem = ({ item, setRemoveAlertOpen, setRemovedProduct }) => {
         </IconButton>
         
         {isDiscounted && (
-  <span className="cart-item-discount">
-    {item.campaignApplied === '3al2' ? t('Buy 3 Pay 2') :
-     item.campaignApplied === 'etiketinYarisi' ? t('Half of the Label') :
-     item.campaignApplied === 'yuzde10' ? t('10 percent discount') : ''}
-  </span>
-)}
+          <span className="cart-item-discount">
+            {item.campaignApplied === '3al2' ? t('Buy 3 Pay 2') :
+             item.campaignApplied === 'etiketinYarisi' ? t('Half of the Label') :
+             item.campaignApplied === 'yuzde10' ? t('10 percent discount') : ''}
+          </span>
+        )}
 
-        <div  className="cart-item-price">
+        <div className="cart-item-price">
           {discountedTotal.toFixed(2)} TL
         </div>
         <IconButton
           onClick={() => handleCampaignIconClick(item.product.id)}
-          onMouseEnter={(e) => handlePopperOpen(e, "Kampanya Seçenekleri")}
+          onMouseEnter={(e) => handlePopperOpen(e, t("Campaign Options"))}
           onMouseLeave={handlePopperClose}
           className="cart-item-button cart-item-button-campaign"
         >
-          <CampaignIcon  sx={{ fontSize: '2rem' }} className={item.campaignApplied ? " campaign-icon-active" : "campaign-icon"} />
+          <CampaignIcon sx={{ fontSize: '2rem' }} className={item.campaignApplied ? " campaign-icon-active" : "campaign-icon"} />
         </IconButton>
         <IconButton
           color="error"
           onClick={() => handleRemoveFromCart(item.product)}
-          onMouseEnter={(e) => handlePopperOpen(e, "Sepetten Çıkar")}
+          onMouseEnter={(e) => handlePopperOpen(e, t("Remove from Cart"))}
           onMouseLeave={handlePopperClose}
           className="cart-item-button cart-item-button-remove"
         >
