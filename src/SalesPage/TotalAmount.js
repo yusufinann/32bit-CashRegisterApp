@@ -24,7 +24,7 @@ const TotalAmount = ({ subTotal, t,Total }) => {
         }}
       >
         <span>{t("Subtotal")}</span>
-        <span>{subTotal} TL</span>
+        <span>{((subTotal)).toFixed(2)} TL</span>
       </Typography>
 
       <Divider sx={{ backgroundColor: "white" }} />
