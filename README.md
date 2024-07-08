@@ -18,28 +18,31 @@ Uygulamam mağaza yönetimi, ürün satışı ve raporlama gibi birçok işlemi 
 - Mağazanın açık/kapalı durumu mağaza saatlerine göre belirlenir.
 - Giriş yaptıktan sonra anasayfada sol üstte, giriş yapan mağaza çalışanının bilgileri, IP adresi ve lokasyonu görüntülenir.
 - Mağaza çalışma saatleri "settings" alanından değiştirilebilir.
-- Mağaza offline olduğunda satış işlemi gerçekleştirilemez.
+- Mağaza offline olduğunda satış işlemi gerçekleştirilemez.Bunun için ana sayfadaki satış sayfası butonu etkisiz olacaktır.
 - Settings alanında dark tema, aydınlık tema, dil seçenekleri (Türkçe/İngilizce) ve yazıcı testi bulunmaktadır.
 
 ### 🛒 Ürün Yönetimi
-- Satış sayfasında minimum 1000 ürün listelenmektedir.
+- Satış sayfasında 2000 den fazla  ürün listelenmektedir.
 - Ürünler kategoriler ve alt kategoriler şeklinde düzenlenmiştir. Sepete eklenebilir ve adet bilgileri güncellenebilir.
 - Ürünler API'den çekilmektedir ve veri çekme işlemlerinde Axios kütüphanesi kullanılmaktadır.
 - Sepete ürün ekleme, sepetten ürünü kaldırma, miktarını artırma veya azaltma, barkod değerine göre ürün arama gibi özellikler mevcuttur.
 - İsimden ürün arama, filtreleme ve favorilere ekleme özellikleri mevcuttur.
+- Sepete ve favorilere ürün ekleme, ürün kaldırma ve sonraki adıma geçmeyi engelleme gibi alanlarda kullanıcıya bilgi amaçlı alertler gösterilmektedir.
 
 ### 📱 Responsive Tasarım ve Sanal Klavye
 - Uygulama, responsive tasarım prensiplerine uygun olarak geliştirilmiştir.
-- Çoklu dili destekleyen sanal bir klavye entegre edilmiştir.
+- Çoklu dili destekleyen ve farklı tema seçenekleriyle sanal bir klavye entegre edilmiştir.
 
 ### 🎉 Kampanyalar ve İndirimler
-- Mağaza ürünlerinde çeşitli kampanyalar (3 al 2 öde, %10 indirim ve etiketin yarısı) uygulanmakta ve bu fiyatlar sepete yansıtılmaktadır.
-- Kampanyalar, sepette kampanya seçenekleri ikonuna tıklanarak uygulanabilir.
-- Uygulanan Kampanyalar hepsi bir arada gösterilebilir veya kampanya adına göre filtrelenebilir.
+- Mağazamızda çeşitli kampanyalar (3 al 2 öde, %10 indirim ve etiketin yarısı) uygulanmakta ve bu fiyatlar doğrudan sepete yansıtılmaktadır.
+- Kampanyalar, sepetteki kampanya seçenekleri ikonuna tıklanarak kolayca uygulanabilir veya istenirse kaldırılabilir.
+- Uygulanan kampanyalar, kaldırılmadığı sürece etkin ve kalıcıdır, böylece satışlar pratik ve esnek bir şekilde yürütülebilir.
+- Kampanyaların uygulanması ve gösterimi, kullanıcı dostu olacak şekilde optimize edilmiştir.
+- Uygulanan kampanyalar,kampanya listesi alanından toplu olarak gösterilebilir veya kampanya adına göre filtrelenebilir. Bu alandan kampanyalı ürünleri görebilir ve sepete ekleyebilirsiniz.
 
 ### 💳 Ödeme ve Fiş Yönetimi
 - Çeşitli ödeme yöntemleri desteklenmektedir.
-- Fişlerde alınan ürünlerin isim ve fiyat listesi, alınan para, para üstü, kasiyerin ad-soyad bilgileri ödeme yöntemi gibi pek çok bilgi yer almaktadır.
+- Fişlerde alınan ürünlerin isim ve fiyat listesi, alınan para,ara toplam ve toplam, para üstü, kasiyerin ad-soyad bilgileri ödeme yöntemi gibi pek çok bilgi yer almaktadır.
 - Fişler API'ye JSON formatında post edilmekte, print edilebilir veya doküman şeklinde indirilebilir.
 - E-fatura seçilmesi durumunda müşteri mail bilgisi için pop up ekranı gelmektedir.
 - Fişlere menüden "receipts" kısmından ulaşılabilir.
