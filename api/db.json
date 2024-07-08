@@ -124,7 +124,7 @@
     {
       "category_id": 11,
       "category_name": "Ev Gereçleri",
-      "image_url": "",
+      "image_url": "https://cdn.pixabay.com/photo/2023/08/19/10/40/house-8200248_1280.jpg",
       "subcategories": [
         {
           "id": "11a"
@@ -138,7 +138,7 @@
     {
       "category_id": 12,
       "category_name": "Oyuncaklar",
-      "image_url": "",
+      "image_url": "https://cdn.pixabay.com/photo/2022/05/07/02/36/childrens-toys-7179337_1280.jpg",
       "subcategories": [
         {
           "id": "12a"
@@ -154,8 +154,8 @@
     },
     {
       "category_id": 13,
-      "category_name": "Ofis Malzemeleri",
-      "image_url": "",
+      "category_name": "Kırtasiye",
+      "image_url": "https://cdn.pixabay.com/photo/2015/01/15/16/16/desk-600482_1280.jpg",
       "subcategories": [
         {
           "id": "13a"
@@ -172,7 +172,7 @@
     {
       "category_id": 14,
       "category_name": "Ev Elektroniği",
-      "image_url": "",
+      "image_url": "https://cdn.pixabay.com/photo/2020/06/02/06/34/home-studios-5249651_1280.jpg",
       "subcategories": [
         {
           "id": "14a"
@@ -186,7 +186,7 @@
     {
       "category_id": 15,
       "category_name": "Spor Malzemeleri",
-      "image_url": "",
+      "image_url": "https://cdn.pixabay.com/photo/2016/08/31/22/20/weights-1634747_1280.jpg",
       "subcategories": [
         {
           "id": "15a"
@@ -203,7 +203,7 @@
     {
       "category_id": 16,
       "category_name": "Kitaplar",
-      "image_url": "",
+      "image_url": "https://cdn.pixabay.com/photo/2018/04/24/11/32/book-3346785_1280.png",
       "subcategories": [
         {
           "id": "16a"
@@ -217,7 +217,7 @@
     {
       "category_id": 17,
       "category_name": "Bahçe Ürünleri",
-      "image_url": "",
+      "image_url": "https://cdn.pixabay.com/photo/2022/01/06/16/49/bench-6919896_1280.jpg",
       "subcategories": [
         {
           "id": "17a"
@@ -231,7 +231,7 @@
     {
       "category_id": 18,
       "category_name": "Mutfak Eşyaları",
-      "image_url": "",
+      "image_url": "https://cdn.pixabay.com/photo/2018/01/15/03/19/cooking-utensils-3083125_960_720.jpg",
       "subcategories": [
         {
           "id": "18a"
@@ -245,7 +245,7 @@
     {
       "category_id": 19,
       "category_name": "Ofis Malzemeleri",
-      "image_url": "",
+      "image_url": "https://cdn.pixabay.com/photo/2016/11/18/12/55/office-1834294_1280.jpg",
       "subcategories": [
         {
           "id": "19a"
@@ -255,6 +255,138 @@
         }
       ],
       "id": "89c6"
+    },
+    {
+      "category_id": 20,
+      "category_name": "El Aletleri",
+      "image_url": "",
+      "subcategories": [
+        {
+          "id": "20a",
+          "name": "Çekiçler",
+          "image_url": ""
+        },
+        {
+          "id": "20b",
+          "name": "Tornavidalar",
+          "image_url": ""
+        },
+        {
+          "id": "20c",
+          "name": "Anahtar Takımları",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "category_id": 21,
+      "category_name": "Otomotiv",
+      "image_url": "",
+      "subcategories": [
+        {
+          "id": "21a",
+          "name": "Motor Yağı",
+          "image_url": ""
+        },
+        {
+          "id": "21b",
+          "name": "Lastikler",
+          "image_url": ""
+        },
+        {
+          "id": "21c",
+          "name": "Oto Aksesuarları",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "category_id": 22,
+      "category_name": "Evcil Hayvan Ürünleri",
+      "image_url": "",
+      "subcategories": [
+        {
+          "id": "22a",
+          "name": "Kedi Mamaları",
+          "image_url": ""
+        },
+        {
+          "id": "22b",
+          "name": "Köpek Mamaları",
+          "image_url": ""
+        },
+        {
+          "id": "22c",
+          "name": "Evcil Hayvan Aksesuarları",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "category_id": 23,
+      "category_name": "Bebek Ürünleri",
+      "image_url": "",
+      "subcategories": [
+        {
+          "id": "23a",
+          "name": "Bebek Bezi",
+          "image_url": ""
+        },
+        {
+          "id": "23b",
+          "name": "Bebek Mamaları",
+          "image_url": ""
+        },
+        {
+          "id": "23c",
+          "name": "Bebek Giyim",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "category_id": 24,
+      "category_name": "Sağlık Ürünleri",
+      "image_url": "",
+      "subcategories": [
+        {
+          "id": "24a",
+          "name": "Vitaminler",
+          "image_url": ""
+        },
+        {
+          "id": "24b",
+          "name": "Takviye Edici Gıdalar",
+          "image_url": ""
+        },
+        {
+          "id": "24c",
+          "name": "Medikal Cihazlar",
+          "image_url": ""
+        }
+      ]
+    },
+    {
+      "category_id": 25,
+      "category_name": "Elektronik Cihazlar",
+      "image_url": "",
+      "subcategories": [
+        {
+          "id": "25a",
+          "name": "Akıllı Telefonlar",
+          "image_url": ""
+        },
+        {
+          "id": "25b",
+          "name": "Tabletler",
+          "image_url": ""
+        },
+        {
+          "id": "25c",
+          "name": "Bilgisayarlar",
+          "image_url": ""
+        }
+      ]
     }
   ],
   "products": [
@@ -273,8 +405,6 @@
       "supplier": "FarmFreshCo",
       "is_active": 1,
       "image_url": "https://cdn.pixabay.com/photo/2014/10/04/17/32/tomato-473764_1280.jpg",
-      "campaign_state": 1,
-      "campaign_id": "C001",
       "vat_rate": 8,
       "subcategories": [
         "1b"
@@ -319,8 +449,6 @@
       "supplier": "BakeryHub",
       "is_active": 1,
       "image_url": "https://cdn.pixabay.com/photo/2018/06/10/20/30/bread-3467243_1280.jpg",
-      "campaign_state": 1,
-      "campaign_id": "C001",
       "vat_rate": 8,
       "subcategories": [
         "3a"
@@ -342,8 +470,6 @@
       "supplier": "FreshMeats",
       "is_active": 1,
       "image_url": "https://cdn.pixabay.com/photo/2018/02/08/15/02/meat-3139641_1280.jpg",
-      "campaign_state": 1,
-      "campaign_id": "C003",
       "vat_rate": 8,
       "subcategories": [
         "4a"
@@ -365,8 +491,6 @@
       "supplier": "CrunchyBites",
       "is_active": 1,
       "image_url": "https://cdn.pixabay.com/photo/2018/03/11/09/08/cookie-3216243_960_720.jpg",
-      "campaign_state": 0,
-      "campaign_id": null,
       "vat_rate": 8,
       "subcategories": [
         "5a"
@@ -388,8 +512,6 @@
       "supplier": "FarmFreshCo",
       "is_active": 1,
       "image_url": "https://cdn.pixabay.com/photo/2023/09/02/03/14/fuji-apple-8228073_1280.jpg",
-      "campaign_state": 0,
-      "campaign_id": null,
       "vat_rate": 8,
       "subcategories": [
         "1a"
@@ -411,8 +533,6 @@
       "supplier": "MilkyWaySup",
       "is_active": 1,
       "image_url": "https://cdn.pixabay.com/photo/2017/02/03/15/15/yogurt-2035323_960_720.jpg",
-      "campaign_state": 1,
-      "campaign_id": "C003",
       "vat_rate": 8,
       "subcategories": [
         "2c"
@@ -434,8 +554,6 @@
       "supplier": "BakeryHub",
       "is_active": 1,
       "image_url": "https://cdn.pixabay.com/photo/2021/06/26/06/59/rye-bread-6365472_1280.jpg",
-      "campaign_state": 0,
-      "campaign_id": null,
       "vat_rate": 8,
       "subcategories": [
         "3a"
@@ -457,8 +575,6 @@
       "supplier": "FreshMeats",
       "is_active": 1,
       "image_url": "https://cdn.pixabay.com/photo/2014/03/05/01/20/chicken-breast-279847_1280.jpg",
-      "campaign_state": 1,
-      "campaign_id": "C003",
       "vat_rate": 8,
       "subcategories": [
         "4c"
@@ -480,8 +596,6 @@
       "supplier": "CrunchyBites",
       "is_active": 1,
       "image_url": "https://cdn.pixabay.com/photo/2017/09/17/22/01/pretzels-2759994_1280.jpg",
-      "campaign_state": 1,
-      "campaign_id": "C002",
       "vat_rate": 8,
       "subcategories": [
         "5a"
@@ -503,8 +617,6 @@
       "supplier": "BeverageInc",
       "is_active": 1,
       "image_url": "https://cdn.pixabay.com/photo/2015/08/03/00/07/drink-872576_1280.jpg",
-      "campaign_state": 0,
-      "campaign_id": null,
       "vat_rate": 8,
       "subcategories": [
         "6a"
@@ -526,8 +638,6 @@
       "supplier": "SpiceHub",
       "is_active": 1,
       "image_url": "https://cdn.pixabay.com/photo/2016/12/06/17/32/pepper-1887028_1280.jpg",
-      "campaign_id": null,
-      "campaign_state": 0,
       "vat_rate": 8,
       "subcategories": [
         "7a"
@@ -549,8 +659,6 @@
       "supplier": "LegumeLogistics",
       "is_active": 1,
       "image_url": "https://cdn.pixabay.com/photo/2023/02/06/17/34/lentils-7772450_1280.jpg",
-      "campaign_state": 1,
-      "campaign_id": "C003",
       "vat_rate": 8,
       "subcategories": [
         "8a"
@@ -572,8 +680,6 @@
       "supplier": "CleanSupplyCo",
       "is_active": 1,
       "image_url": "https://cdn.pixabay.com/photo/2016/10/31/21/18/dishwasher-1786821_1280.jpg",
-      "campaign_state": 1,
-      "campaign_id": "C002",
       "vat_rate": 8,
       "subcategories": [
         "9a"
@@ -595,8 +701,6 @@
       "supplier": "BeautySupplies",
       "is_active": 1,
       "image_url": "https://cdn.pixabay.com/photo/2019/02/01/19/12/plastic-3969638_1280.jpg",
-      "campaign_state": 1,
-      "campaign_id": "C003",
       "vat_rate": 8,
       "subcategories": [
         "10a"
@@ -618,8 +722,6 @@
       "supplier": "MilkyWayfish",
       "is_active": 1,
       "image_url": "https://cdn.pixabay.com/photo/2017/09/16/21/44/food-2756948_1280.jpg",
-      "campaign_state": 1,
-      "campaign_id": "C001",
       "vat_rate": 8,
       "subcategories": [
         "4b"
@@ -640,9 +742,7 @@
       "stock_quantity": 100,
       "supplier": "CutleryMart",
       "is_active": 1,
-      "image_url": "",
-      "campaign_state": 0,
-      "campaign_id": null,
+      "image_url": "https://images.pexels.com/photos/3296392/pexels-photo-3296392.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "vat_rate": 8,
       "subcategories": [
         "11a"
@@ -663,9 +763,7 @@
       "stock_quantity": 150,
       "supplier": "CutleryMart",
       "is_active": 1,
-      "image_url": "",
-      "campaign_state": 0,
-      "campaign_id": null,
+      "image_url": "https://cdn.pixabay.com/photo/2015/03/07/07/43/vegetable-peeler-662885_1280.jpg",
       "vat_rate": 8,
       "subcategories": [
         "11a"
@@ -686,9 +784,7 @@
       "stock_quantity": 50,
       "supplier": "ToyEmporium",
       "is_active": 1,
-      "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C002",
+      "image_url": "https://cdn.pixabay.com/photo/2015/11/20/17/51/stuffed-animal-1053580_1280.jpg",
       "vat_rate": 8,
       "subcategories": [
         "12a"
@@ -709,9 +805,7 @@
       "stock_quantity": 30,
       "supplier": "ToyEmporium",
       "is_active": 1,
-      "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C003",
+      "image_url": "https://cdn.pixabay.com/photo/2019/02/14/20/20/pads-3997345_1280.jpg",
       "vat_rate": 8,
       "subcategories": [
         "12b"
@@ -732,9 +826,7 @@
       "stock_quantity": 20,
       "supplier": "SmartToys",
       "is_active": 1,
-      "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C001",
+      "image_url": "https://cdn.pixabay.com/photo/2022/01/18/13/11/educational-toy-6946991_960_720.jpg",
       "vat_rate": 8,
       "subcategories": [
         "12c"
@@ -755,9 +847,7 @@
       "stock_quantity": 500,
       "supplier": "StationeryWorld",
       "is_active": 1,
-      "image_url": "",
-      "campaign_state": 0,
-      "campaign_id": null,
+      "image_url": "https://cdn.pixabay.com/photo/2015/03/11/22/12/pencil-sharpener-669361_1280.jpg",
       "vat_rate": 8,
       "subcategories": [
         "13a"
@@ -778,9 +868,7 @@
       "stock_quantity": 300,
       "supplier": "StationeryWorld",
       "is_active": 1,
-      "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C002",
+      "image_url": "https://cdn.pixabay.com/photo/2017/04/18/07/44/notebook-2238099_1280.jpg",
       "vat_rate": 8,
       "subcategories": [
         "13b"
@@ -801,9 +889,7 @@
       "stock_quantity": 200,
       "supplier": "StationeryWorld",
       "is_active": 1,
-      "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C003",
+      "image_url": "https://cdn.pixabay.com/photo/2015/02/06/18/39/folder-626334_1280.jpg",
       "vat_rate": 8,
       "subcategories": [
         "13c"
@@ -824,9 +910,7 @@
       "stock_quantity": 100,
       "supplier": "ApplianceEmporium",
       "is_active": 1,
-      "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C002",
+      "image_url": "https://cdn.pixabay.com/photo/2020/05/07/11/59/audio-5141249_1280.jpg",
       "vat_rate": 8,
       "subcategories": [
         "14a"
@@ -840,16 +924,14 @@
       "category_id": 14,
       "brand": "WashMaster",
       "unit": "adet",
-      "price": 500,
+      "price": 15000,
       "discount": 0.2,
       "manufacturing_date": "2024-01-20",
       "expiry_date": "2030-01-20",
       "stock_quantity": 20,
       "supplier": "ApplianceEmporium",
       "is_active": 1,
-      "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C002",
+      "image_url": "https://cdn.pixabay.com/photo/2014/12/03/08/33/tableware-555203_1280.jpg",
       "vat_rate": 8,
       "subcategories": [
         "14b"
@@ -863,16 +945,14 @@
       "category_id": 15,
       "brand": "FitLife",
       "unit": "set",
-      "price": 100,
+      "price": 750,
       "discount": 0.1,
       "manufacturing_date": "2024-02-05",
       "expiry_date": "2030-02-05",
       "stock_quantity": 50,
       "supplier": "FitnessEmporium",
       "is_active": 1,
-      "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C003",
+      "image_url": "https://cdn.pixabay.com/photo/2020/05/29/23/54/dumbell-5237133_1280.jpg",
       "vat_rate": 8,
       "subcategories": [
         "15a"
@@ -893,9 +973,7 @@
       "stock_quantity": 30,
       "supplier": "OutdoorEmporium",
       "is_active": 1,
-      "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C001",
+      "image_url": "https://cdn.pixabay.com/photo/2014/11/27/18/36/tent-548022_1280.jpg",
       "vat_rate": 8,
       "subcategories": [
         "15b"
@@ -916,9 +994,7 @@
       "stock_quantity": 100,
       "supplier": "SportsEmporium",
       "is_active": 1,
-      "image_url": "",
-      "campaign_state": 0,
-      "campaign_id": null,
+      "image_url": "https://cdn.pixabay.com/photo/2016/11/18/22/29/footwear-1837170_1280.jpg",
       "vat_rate": 8,
       "subcategories": [
         "15c"
@@ -939,9 +1015,7 @@
       "stock_quantity": 200,
       "supplier": "BookEmporium",
       "is_active": 1,
-      "image_url": "",
-      "campaign_state": 0,
-      "campaign_id": null,
+      "image_url": "https://cdn.pixabay.com/photo/2024/05/30/21/22/book-8799331_1280.jpg",
       "vat_rate": 8,
       "subcategories": [
         "16a"
@@ -962,9 +1036,7 @@
       "stock_quantity": 150,
       "supplier": "BookEmporium",
       "is_active": 1,
-      "image_url": "",
-      "campaign_state": 0,
-      "campaign_id": null,
+      "image_url": "https://cdn.pixabay.com/photo/2020/06/09/17/57/scifi-5279460_1280.jpg",
       "vat_rate": 8,
       "subcategories": [
         "16b"
@@ -985,9 +1057,7 @@
       "stock_quantity": 100,
       "supplier": "BookEmporium",
       "is_active": 1,
-      "image_url": "",
-      "campaign_state": 0,
-      "campaign_id": null,
+      "image_url": "https://cdn.pixabay.com/photo/2015/11/19/21/10/glasses-1052010_1280.jpg",
       "vat_rate": 8,
       "subcategories": [
         "16c"
@@ -1008,9 +1078,7 @@
       "stock_quantity": 300,
       "supplier": "FreshDrinksCo",
       "is_active": 1,
-      "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C001",
+      "image_url": "https://cdn.pixabay.com/photo/2019/03/19/18/39/orange-4066535_960_720.jpg",
       "vat_rate": 8,
       "subcategories": [
         "6a"
@@ -1031,9 +1099,7 @@
       "stock_quantity": 200,
       "supplier": "LegumeLogistics",
       "is_active": 1,
-      "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C002",
+      "image_url": "https://cdn.pixabay.com/photo/2020/01/18/13/14/krupa-4775249_960_720.jpg",
       "vat_rate": 8,
       "subcategories": [
         "8a"
@@ -1054,9 +1120,7 @@
       "stock_quantity": 150,
       "supplier": "JamMakers",
       "is_active": 1,
-      "image_url": "",
-      "campaign_state": 0,
-      "campaign_id": null,
+      "image_url": "https://cdn.pixabay.com/photo/2015/06/24/10/09/strawberry-819690_1280.jpg",
       "vat_rate": 8,
       "subcategories": [
         "3a"
@@ -1077,9 +1141,7 @@
       "stock_quantity": 100,
       "supplier": "OrganicFarms",
       "is_active": 1,
-      "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C003",
+      "image_url": "https://cdn.pixabay.com/photo/2022/07/26/13/55/egg-7345934_1280.jpg",
       "vat_rate": 8,
       "subcategories": [
         "4b"
@@ -1101,8 +1163,6 @@
       "supplier": "BabyEmporium",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 0,
-      "campaign_id": null,
       "vat_rate": 8,
       "subcategories": [
         "9a"
@@ -1124,8 +1184,6 @@
       "supplier": "SauceMasters",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C001",
       "vat_rate": 8,
       "subcategories": [
         "7a"
@@ -1147,8 +1205,6 @@
       "supplier": "FreshMeats",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 0,
-      "campaign_id": null,
       "vat_rate": 8,
       "subcategories": [
         "4a"
@@ -1170,8 +1226,6 @@
       "supplier": "FreshDrinksCo",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C002",
       "vat_rate": 8,
       "subcategories": [
         "6a"
@@ -1193,8 +1247,6 @@
       "supplier": "MilkyWaySup",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 0,
-      "campaign_id": null,
       "vat_rate": 8,
       "subcategories": [
         "2b"
@@ -1216,8 +1268,6 @@
       "supplier": "ChocoMasters",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C003",
       "vat_rate": 8,
       "subcategories": [
         "5a"
@@ -1239,8 +1289,6 @@
       "supplier": "FreshDrinksCo",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 0,
-      "campaign_id": null,
       "vat_rate": 8,
       "subcategories": [
         "6b"
@@ -1262,8 +1310,6 @@
       "supplier": "NuttySup",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C001",
       "vat_rate": 8,
       "subcategories": [
         "1a"
@@ -1285,8 +1331,6 @@
       "supplier": "SauceMasters",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C002",
       "vat_rate": 8,
       "subcategories": [
         "7a"
@@ -1308,8 +1352,6 @@
       "supplier": "ChocoMasters",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 0,
-      "campaign_id": null,
       "vat_rate": 8,
       "subcategories": [
         "5b"
@@ -1331,8 +1373,6 @@
       "supplier": "PastaMakers",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C003",
       "vat_rate": 8,
       "subcategories": [
         "3a"
@@ -1354,8 +1394,6 @@
       "supplier": "FlourMills",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 0,
-      "campaign_id": null,
       "vat_rate": 8,
       "subcategories": [
         "3b"
@@ -1377,8 +1415,6 @@
       "supplier": "FarmFreshCo",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C001",
       "vat_rate": 8,
       "subcategories": [
         "1a"
@@ -1400,8 +1436,6 @@
       "supplier": "FarmFreshCo",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 0,
-      "campaign_id": null,
       "vat_rate": 8,
       "subcategories": [
         "1b"
@@ -1423,8 +1457,6 @@
       "supplier": "MilkyWaySup",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C002",
       "vat_rate": 8,
       "subcategories": [
         "2b"
@@ -1446,8 +1478,6 @@
       "supplier": "OilProducers",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 0,
-      "campaign_id": null,
       "vat_rate": 8,
       "subcategories": [
         "8a"
@@ -1469,8 +1499,6 @@
       "supplier": "FreshMeats",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C003",
       "vat_rate": 8,
       "subcategories": [
         "4a"
@@ -1492,8 +1520,6 @@
       "supplier": "CoffeeRoasters",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 0,
-      "campaign_id": null,
       "vat_rate": 8,
       "subcategories": [
         "6b"
@@ -1515,8 +1541,6 @@
       "supplier": "FarmFreshCo",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C001",
       "vat_rate": 8,
       "subcategories": [
         "1b"
@@ -1538,8 +1562,6 @@
       "supplier": "DessertMakers",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 0,
-      "campaign_id": null,
       "vat_rate": 8,
       "subcategories": [
         "5a"
@@ -1561,8 +1583,6 @@
       "supplier": "BakeryHub",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C003",
       "vat_rate": 8,
       "subcategories": [
         "5b"
@@ -1584,8 +1604,6 @@
       "supplier": "NutFarmers",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 0,
-      "campaign_id": null,
       "vat_rate": 8,
       "subcategories": [
         "5a"
@@ -1607,8 +1625,6 @@
       "supplier": "JuiceMakers",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C002",
       "vat_rate": 8,
       "subcategories": [
         "6a"
@@ -1630,8 +1646,6 @@
       "supplier": "OlivePress",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 0,
-      "campaign_id": null,
       "vat_rate": 8,
       "subcategories": [
         "8a"
@@ -1653,8 +1667,6 @@
       "supplier": "GreensFarm",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C001",
       "vat_rate": 8,
       "subcategories": [
         "1b"
@@ -1676,8 +1688,6 @@
       "supplier": "FreshMeats",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 0,
-      "campaign_id": null,
       "vat_rate": 8,
       "subcategories": [
         "4a"
@@ -1699,8 +1709,6 @@
       "supplier": "NutFarmers",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C002",
       "vat_rate": 8,
       "subcategories": [
         "5a"
@@ -1722,8 +1730,6 @@
       "supplier": "FarmFreshCo",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 0,
-      "campaign_id": null,
       "vat_rate": 8,
       "subcategories": [
         "1b"
@@ -1745,8 +1751,6 @@
       "supplier": "SweetTreats",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C003",
       "vat_rate": 8,
       "subcategories": [
         "5a"
@@ -1768,8 +1772,6 @@
       "supplier": "MarineCatch",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 0,
-      "campaign_id": null,
       "vat_rate": 8,
       "subcategories": [
         "4b"
@@ -1791,8 +1793,6 @@
       "supplier": "GreensFarm",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C001",
       "vat_rate": 8,
       "subcategories": [
         "1b"
@@ -1814,8 +1814,6 @@
       "supplier": "FarmFreshCo",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 0,
-      "campaign_id": null,
       "vat_rate": 8,
       "subcategories": [
         "1a"
@@ -1837,8 +1835,6 @@
       "supplier": "MilkyWaySup",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C002",
       "vat_rate": 8,
       "subcategories": [
         "2b"
@@ -1860,8 +1856,6 @@
       "supplier": "GreensFarm",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C003",
       "vat_rate": 8,
       "subcategories": [
         "1b"
@@ -1883,8 +1877,6 @@
       "supplier": "GreensFarm",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 0,
-      "campaign_id": null,
       "vat_rate": 8,
       "subcategories": [
         "1b"
@@ -1906,8 +1898,6 @@
       "supplier": "BeverageInc",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C001",
       "vat_rate": 8,
       "subcategories": [
         "6a"
@@ -1929,8 +1919,6 @@
       "supplier": "SpiceHub",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C002",
       "vat_rate": 8,
       "subcategories": [
         "7a"
@@ -1952,8 +1940,6 @@
       "supplier": "GrainHub",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 0,
-      "campaign_id": null,
       "vat_rate": 8,
       "subcategories": [
         "8a"
@@ -1975,8 +1961,6 @@
       "supplier": "DairyDelights",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C003",
       "vat_rate": 8,
       "subcategories": [
         "9a"
@@ -1998,8 +1982,6 @@
       "supplier": "GreensFarm",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 0,
-      "campaign_id": null,
       "vat_rate": 8,
       "subcategories": [
         "1b"
@@ -2021,8 +2003,6 @@
       "supplier": "NutFarmers",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C001",
       "vat_rate": 8,
       "subcategories": [
         "5a"
@@ -2044,8 +2024,6 @@
       "supplier": "GrainHub",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C002",
       "vat_rate": 8,
       "subcategories": [
         "8a"
@@ -2067,8 +2045,6 @@
       "supplier": "SpiceHub",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 0,
-      "campaign_id": null,
       "vat_rate": 8,
       "subcategories": [
         "7a"
@@ -2090,8 +2066,6 @@
       "supplier": "GreensFarm",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C003",
       "vat_rate": 8,
       "subcategories": [
         "1b"
@@ -2113,8 +2087,6 @@
       "supplier": "BeverageInc",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C001",
       "vat_rate": 8,
       "subcategories": [
         "6b"
@@ -2136,8 +2108,6 @@
       "supplier": "SpiceHub",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 0,
-      "campaign_id": null,
       "vat_rate": 8,
       "subcategories": [
         "7a"
@@ -2159,8 +2129,6 @@
       "supplier": "LegumeLogistics",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C002",
       "vat_rate": 8,
       "subcategories": [
         "8a"
@@ -2182,8 +2150,6 @@
       "supplier": "NutFarmers",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C003",
       "vat_rate": 8,
       "subcategories": [
         "5a"
@@ -2205,8 +2171,6 @@
       "supplier": "GreensFarm",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 0,
-      "campaign_id": null,
       "vat_rate": 8,
       "subcategories": [
         "1b"
@@ -2228,8 +2192,6 @@
       "supplier": "SweetTreats",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C001",
       "vat_rate": 8,
       "subcategories": [
         "5a"
@@ -2251,8 +2213,6 @@
       "supplier": "GreensFarm",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C002",
       "vat_rate": 8,
       "subcategories": [
         "1a"
@@ -2274,8 +2234,6 @@
       "supplier": "JuiceHub",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 0,
-      "campaign_id": null,
       "vat_rate": 8,
       "subcategories": [
         "6a"
@@ -2297,8 +2255,6 @@
       "supplier": "HerbHarvest",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C003",
       "vat_rate": 8,
       "subcategories": [
         "7a"
@@ -2320,8 +2276,6 @@
       "supplier": "LegumeLogistics",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C001",
       "vat_rate": 8,
       "subcategories": [
         "8a"
@@ -2343,8 +2297,6 @@
       "supplier": "GreensFarm",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 0,
-      "campaign_id": null,
       "vat_rate": 8,
       "subcategories": [
         "1a"
@@ -2366,8 +2318,6 @@
       "supplier": "CitrusFarmers",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C002",
       "vat_rate": 8,
       "subcategories": [
         "1a"
@@ -2389,8 +2339,6 @@
       "supplier": "HomemadeGoodies",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 0,
-      "campaign_id": null,
       "vat_rate": 8,
       "subcategories": [
         "5a"
@@ -2412,8 +2360,6 @@
       "supplier": "FruitCo",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C001",
       "vat_rate": 8,
       "subcategories": [
         "6a"
@@ -2435,8 +2381,6 @@
       "supplier": "SpiceHub",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C002",
       "vat_rate": 8,
       "subcategories": [
         "7a"
@@ -2458,8 +2402,6 @@
       "supplier": "GrainHarvest",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 0,
-      "campaign_id": null,
       "vat_rate": 8,
       "subcategories": [
         "8a"
@@ -2481,8 +2423,6 @@
       "supplier": "NutFarmers",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C003",
       "vat_rate": 8,
       "subcategories": [
         "1a"
@@ -2504,8 +2444,6 @@
       "supplier": "GreensFarm",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C001",
       "vat_rate": 8,
       "subcategories": [
         "1b"
@@ -2527,8 +2465,6 @@
       "supplier": "FruitCo",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C002",
       "vat_rate": 8,
       "subcategories": [
         "1a"
@@ -2573,8 +2509,6 @@
       "supplier": "GreensFarm",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C003",
       "vat_rate": 8,
       "subcategories": [
         "1b"
@@ -2596,8 +2530,6 @@
       "supplier": "GreensFarm",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C001",
       "vat_rate": 8,
       "subcategories": [
         "1b"
@@ -2619,8 +2551,6 @@
       "supplier": "FruitCo",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C002",
       "vat_rate": 8,
       "subcategories": [
         "1a"
@@ -2642,8 +2572,6 @@
       "supplier": "FruitCo",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 0,
-      "campaign_id": null,
       "vat_rate": 8,
       "subcategories": [
         "1a"
@@ -2665,8 +2593,6 @@
       "supplier": "FruitCo",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C001",
       "vat_rate": 8,
       "subcategories": [
         "1a"
@@ -2688,8 +2614,6 @@
       "supplier": "GreensFarm",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C002",
       "vat_rate": 8,
       "subcategories": [
         "1b"
@@ -2711,8 +2635,6 @@
       "supplier": "GreensFarm",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 0,
-      "campaign_id": null,
       "vat_rate": 8,
       "subcategories": [
         "1b"
@@ -2734,8 +2656,6 @@
       "supplier": "GreensFarm",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C003",
       "vat_rate": 8,
       "subcategories": [
         "1b"
@@ -2757,8 +2677,6 @@
       "supplier": "GreensFarm",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C001",
       "vat_rate": 8,
       "subcategories": [
         "1b"
@@ -2780,8 +2698,6 @@
       "supplier": "GreensFarm",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C002",
       "vat_rate": 8,
       "subcategories": [
         "1b"
@@ -2803,8 +2719,6 @@
       "supplier": "GreensFarm",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 0,
-      "campaign_id": null,
       "vat_rate": 8,
       "subcategories": [
         "1b"
@@ -2826,8 +2740,6 @@
       "supplier": "GreensFarm",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C001",
       "vat_rate": 8,
       "subcategories": [
         "1b"
@@ -2849,8 +2761,6 @@
       "supplier": "GreensFarm",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C002",
       "vat_rate": 8,
       "subcategories": [
         "1b"
@@ -2872,8 +2782,6 @@
       "supplier": "GreensFarm",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 0,
-      "campaign_id": null,
       "vat_rate": 8,
       "subcategories": [
         "1b"
@@ -2895,8 +2803,6 @@
       "supplier": "GreensFarm",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C003",
       "vat_rate": 8,
       "subcategories": [
         "1b"
@@ -2918,8 +2824,6 @@
       "supplier": "GreensFarm",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C001",
       "vat_rate": 8,
       "subcategories": [
         "1b"
@@ -2941,8 +2845,6 @@
       "supplier": "GreensFarm",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 0,
-      "campaign_id": null,
       "vat_rate": 8,
       "subcategories": [
         "1b"
@@ -2964,8 +2866,6 @@
       "supplier": "GreensFarm",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C002",
       "vat_rate": 8,
       "subcategories": [
         "1b"
@@ -2987,8 +2887,6 @@
       "supplier": "GreensFarm",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C003",
       "vat_rate": 8,
       "subcategories": [
         "1b"
@@ -3010,8 +2908,6 @@
       "supplier": "GreensFarm",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 0,
-      "campaign_id": null,
       "vat_rate": 8,
       "subcategories": [
         "1b"
@@ -3033,8 +2929,6 @@
       "supplier": "GreensFarm",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C001",
       "vat_rate": 8,
       "subcategories": [
         "1b"
@@ -3056,8 +2950,6 @@
       "supplier": "GreensFarm",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C002",
       "vat_rate": 8,
       "subcategories": [
         "1b"
@@ -3079,8 +2971,6 @@
       "supplier": "GreensFarm",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 0,
-      "campaign_id": null,
       "vat_rate": 8,
       "subcategories": [
         "1b"
@@ -3102,8 +2992,6 @@
       "supplier": "GreensFarm",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C003",
       "vat_rate": 8,
       "subcategories": [
         "1b"
@@ -3125,8 +3013,6 @@
       "supplier": "GreensFarm",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C001",
       "vat_rate": 8,
       "subcategories": [
         "1b"
@@ -3148,8 +3034,6 @@
       "supplier": "GreensFarm",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C002",
       "vat_rate": 8,
       "subcategories": [
         "1b"
@@ -3171,8 +3055,6 @@
       "supplier": "GreensFarm",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C003",
       "vat_rate": 8,
       "subcategories": [
         "1b"
@@ -3194,8 +3076,6 @@
       "supplier": "GreensFarm",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 0,
-      "campaign_id": null,
       "vat_rate": 8,
       "subcategories": [
         "1b"
@@ -3217,8 +3097,6 @@
       "supplier": "GreensFarm",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 1,
-      "campaign_id": "C003",
       "vat_rate": 8,
       "subcategories": [
         "1b"
@@ -3240,8 +3118,6 @@
       "supplier": "GreensFarm",
       "is_active": 1,
       "image_url": "",
-      "campaign_state": 0,
-      "campaign_id": null,
       "vat_rate": 8,
       "subcategories": [
         "1b"
@@ -3262,7 +3138,7 @@
       "supplier": "GreenTech",
       "is_active": 1,
       "image_url": "",
-      "vat_rate": 18,
+      "vat_rate": 8,
       "subcategories": [
         "17a"
       ],
@@ -3281,8 +3157,8 @@
       "stock_quantity": 200,
       "supplier": "KitchenWorld",
       "is_active": 1,
-      "image_url": "",
-      "vat_rate": 18,
+      "image_url": "https://images.pexels.com/photos/952478/pexels-photo-952478.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "vat_rate": 8,
       "subcategories": [
         "18a"
       ],
@@ -41267,7 +41143,1052 @@
         "subcategories": [
             "7a"
         ]
-    }
+    },
+    {
+      "product_id": 2082,
+      "barcode": "8574208394939012",
+      "product_name": "GüvenlikKiti",
+      "category_id": 15,
+      "brand": "BrandA3Bk",
+      "unit": "adet",
+      "price": 124.5,
+      "manufacturing_date": "2023-06-20",
+      "expiry_date": "2025-06-19",
+      "stock_quantity": 20,
+      "supplier": "Supplier1ZXoP3AB",
+      "is_active": 1,
+      "image_url": "",
+      "vat_rate": 8,
+      "subcategories": [
+          "15a"
+      ]
+  },
+  {
+      "product_id": 2083,
+      "barcode": "6574208394939023",
+      "product_name": "DersKitabı",
+      "category_id": 13,
+      "brand": "BrandE4Tk",
+      "unit": "adet",
+      "price": 34.9,
+      "manufacturing_date": "2024-09-10",
+      "expiry_date": "2028-09-09",
+      "stock_quantity": 150,
+      "supplier": "Supplier9Ui2N3KW",
+      "is_active": 1,
+      "image_url": "",
+      "vat_rate": 8,
+      "subcategories": [
+          "13b"
+      ]
+  },
+  {
+      "product_id": 2084,
+      "barcode": "3574208394939036",
+      "product_name": "BebekOyuncakları",
+      "category_id": 14,
+      "brand": "BrandD5Gm",
+      "unit": "adet",
+      "price": 89.5,
+      "manufacturing_date": "2025-02-05",
+      "expiry_date": "2028-02-04",
+      "stock_quantity": 75,
+      "supplier": "Supplier3Jk5M1PQ",
+      "is_active": 1,
+      "image_url": "",
+      "vat_rate": 8,
+      "subcategories": [
+          "14c"
+      ]
+  },
+  {
+      "product_id": 2085,
+      "barcode": "1574208394939048",
+      "product_name": "KampÇadırı",
+      "category_id": 17,
+      "brand": "BrandG2Wx",
+      "unit": "adet",
+      "price": 450.0,
+      "manufacturing_date": "2023-03-15",
+      "expiry_date": "2026-03-14",
+      "stock_quantity": 30,
+      "supplier": "Supplier2Lk8V3XZ",
+      "is_active": 1,
+      "image_url": "",
+      "vat_rate": 8,
+      "subcategories": [
+          "17a"
+      ]
+  },
+  {
+      "product_id": 2086,
+      "barcode": "7574208394939059",
+      "product_name": "ÇekiçSeti",
+      "category_id": 20,
+      "brand": "BrandK4Bp",
+      "unit": "adet",
+      "price": 99.0,
+      "manufacturing_date": "2024-12-01",
+      "expiry_date": "2028-11-30",
+      "stock_quantity": 45,
+      "supplier": "Supplier5Sm2K4Wx",
+      "is_active": 1,
+      "image_url": "",
+      "vat_rate": 8,
+      "subcategories": [
+          "20a"
+      ]
+  },
+  {
+    "product_id": 2087,
+    "barcode": "6574208394939060",
+    "product_name": "OfisSandalyeleri",
+    "category_id": 19,
+    "brand": "BrandL2Xn",
+    "unit": "adet",
+    "price": 350.0,
+    "manufacturing_date": "2023-08-25",
+    "expiry_date": "2027-08-24",
+    "stock_quantity": 60,
+    "supplier": "Supplier4Nk7V5YZ",
+    "is_active": 1,
+    "image_url": "",
+    "vat_rate": 18,
+    "subcategories": [
+        "19a"
+    ]
+},
+{
+    "product_id": 2088,
+    "barcode": "8574208394939071",
+    "product_name": "BeyazÇikolata",
+    "category_id": 5,
+    "brand": "BrandP3Yk",
+    "unit": "adet",
+    "price": 25.5,
+    "manufacturing_date": "2023-11-10",
+    "expiry_date": "2024-11-09",
+    "stock_quantity": 200,
+    "supplier": "Supplier7Pq9V1LK",
+    "is_active": 1,
+    "image_url": "",
+    "vat_rate": 8,
+    "subcategories": [
+        "5a"
+    ]
+},
+{
+    "product_id": 2089,
+    "barcode": "3574208394939082",
+    "product_name": "DoğalYoğurt",
+    "category_id": 2,
+    "brand": "BrandN4Wm",
+    "unit": "adet",
+    "price": 18.9,
+    "manufacturing_date": "2024-01-15",
+    "expiry_date": "2024-03-14",
+    "stock_quantity": 300,
+    "supplier": "Supplier6Ui1L2MN",
+    "is_active": 1,
+    "image_url": "",
+    "vat_rate": 8,
+    "subcategories": [
+        "2c"
+    ]
+},
+{
+    "product_id": 2090,
+    "barcode": "1574208394939093",
+    "product_name": "ZeytinYağı",
+    "category_id": 7,
+    "brand": "BrandT5Zl",
+    "unit": "adet",
+    "price": 45.0,
+    "manufacturing_date": "2024-05-01",
+    "expiry_date": "2026-04-30",
+    "stock_quantity": 120,
+    "supplier": "Supplier2Zm8T4KJ",
+    "is_active": 1,
+    "image_url": "",
+    "vat_rate": 8,
+    "subcategories": [
+        "7a"
+    ]
+},
+{
+    "product_id": 2091,
+    "barcode": "7574208394939104",
+    "product_name": "Defter",
+    "category_id": 13,
+    "brand": "BrandF3Pl",
+    "unit": "adet",
+    "price": 12.0,
+    "manufacturing_date": "2023-03-20",
+    "expiry_date": "2027-03-19",
+    "stock_quantity": 400,
+    "supplier": "Supplier3Qp2L5MR",
+    "is_active": 1,
+    "image_url": "",
+    "vat_rate": 8,
+    "subcategories": [
+        "13b"
+    ]
+},
+{
+  "product_id": 2092,
+  "barcode": "9574208394939115",
+  "product_name": "ÇilekReçeli",
+  "category_id": 1,
+  "brand": "BrandG2Yk",
+  "unit": "adet",
+  "price": 20.5,
+  "manufacturing_date": "2024-02-10",
+  "expiry_date": "2026-02-09",
+  "stock_quantity": 150,
+  "supplier": "Supplier1Aq9W4TN",
+  "is_active": 1,
+  "image_url": "",
+  "vat_rate": 8,
+  "subcategories": [
+      "1a"
+  ]
+},
+{
+  "product_id": 2093,
+  "barcode": "8574208394939126",
+  "product_name": "Makarna",
+  "category_id": 8,
+  "brand": "BrandD4Wm",
+  "unit": "adet",
+  "price": 12.0,
+  "manufacturing_date": "2024-03-15",
+  "expiry_date": "2025-03-14",
+  "stock_quantity": 250,
+  "supplier": "Supplier9Ui3N2KL",
+  "is_active": 1,
+  "image_url": "",
+  "vat_rate": 8,
+  "subcategories": [
+      "8a"
+  ]
+},
+{
+  "product_id": 2094,
+  "barcode": "3574208394939137",
+  "product_name": "Deterjan",
+  "category_id": 9,
+  "brand": "BrandK5Zl",
+  "unit": "adet",
+  "price": 35.0,
+  "manufacturing_date": "2024-04-20",
+  "expiry_date": "2027-04-19",
+  "stock_quantity": 100,
+  "supplier": "Supplier8Zm1T3KJ",
+  "is_active": 1,
+  "image_url": "",
+  "vat_rate": 8,
+  "subcategories": [
+      "9a"
+  ]
+},
+{
+  "product_id": 2095,
+  "barcode": "1574208394939148",
+  "product_name": "Şampuan",
+  "category_id": 10,
+  "brand": "BrandS6Pl",
+  "unit": "adet",
+  "price": 28.0,
+  "manufacturing_date": "2024-06-01",
+  "expiry_date": "2026-05-31",
+  "stock_quantity": 200,
+  "supplier": "Supplier5Qp1L4MR",
+  "is_active": 1,
+  "image_url": "",
+  "vat_rate": 8,
+  "subcategories": [
+      "10a"
+  ]
+},
+{
+  "product_id": 2096,
+  "barcode": "7574208394939159",
+  "product_name": "DüdüklüTencere",
+  "category_id": 11,
+  "brand": "BrandT3Xn",
+  "unit": "adet",
+  "price": 150.0,
+  "manufacturing_date": "2024-01-20",
+  "expiry_date": "2028-01-19",
+  "stock_quantity": 50,
+  "supplier": "Supplier2Nk8V6YZ",
+  "is_active": 1,
+  "image_url": "",
+  "vat_rate": 8,
+  "subcategories": [
+      "11a"
+  ]
+},
+{
+  "product_id": 2097,
+  "barcode": "9574208394939160",
+  "product_name": "Halı",
+  "category_id": 11,
+  "brand": "BrandU4Yk",
+  "unit": "adet",
+  "price": 300.0,
+  "manufacturing_date": "2024-02-25",
+  "expiry_date": "2029-02-24",
+  "stock_quantity": 30,
+  "supplier": "Supplier7Aq5W9TN",
+  "is_active": 1,
+  "image_url": "",
+  "vat_rate": 8,
+  "subcategories": [
+      "11b"
+  ]
+},
+{
+  "product_id": 2098,
+  "barcode": "8574208394939171",
+  "product_name": "Yastık",
+  "category_id": 11,
+  "brand": "BrandH6Wm",
+  "unit": "adet",
+  "price": 60.0,
+  "manufacturing_date": "2024-03-10",
+  "expiry_date": "2028-03-09",
+  "stock_quantity": 70,
+  "supplier": "Supplier4Ui9N1KL",
+  "is_active": 1,
+  "image_url": "",
+  "vat_rate": 8,
+  "subcategories": [
+      "11b"
+  ]
+},
+{
+  "product_id": 2099,
+  "barcode": "3574208394939182",
+  "product_name": "Masa",
+  "category_id": 19,
+  "brand": "BrandJ7Zl",
+  "unit": "adet",
+  "price": 500.0,
+  "manufacturing_date": "2024-04-01",
+  "expiry_date": "2028-03-31",
+  "stock_quantity": 40,
+  "supplier": "Supplier8Zm2T7KJ",
+  "is_active": 1,
+  "image_url": "",
+  "vat_rate": 8,
+  "subcategories": [
+      "19a"
+  ]
+},
+{
+  "product_id": 2100,
+  "barcode": "1574208394939193",
+  "product_name": "Klavye",
+  "category_id": 19,
+  "brand": "BrandK8Pl",
+  "unit": "adet",
+  "price": 100.0,
+  "manufacturing_date": "2024-05-15",
+  "expiry_date": "2028-05-14",
+  "stock_quantity": 80,
+  "supplier": "Supplier9Qp3L6MR",
+  "is_active": 1,
+  "image_url": "",
+  "vat_rate": 8,
+  "subcategories": [
+      "19b"
+  ]
+},
+{
+  "product_id": 2101,
+  "barcode": "1574208394939204",
+  "product_name": "DemirÇekiç",
+  "category_id": 20,
+  "brand": "BrandM9Pl",
+  "unit": "adet",
+  "price": 45.0,
+  "manufacturing_date": "2024-06-15",
+  "expiry_date": "2028-06-14",
+  "stock_quantity": 60,
+  "supplier": "Supplier0Qp4L7MR",
+  "is_active": 1,
+  "image_url": "",
+  "vat_rate": 8,
+  "subcategories": [
+      "20a"
+  ]
+},
+{
+  "product_id": 2102,
+  "barcode": "2574208394939215",
+  "product_name": "YıldırımTornavida",
+  "category_id": 20,
+  "brand": "BrandN1Ql",
+  "unit": "adet",
+  "price": 30.0,
+  "manufacturing_date": "2024-07-01",
+  "expiry_date": "2028-06-30",
+  "stock_quantity": 80,
+  "supplier": "Supplier1Wm5N8KL",
+  "is_active": 1,
+  "image_url": "",
+  "vat_rate": 8,
+  "subcategories": [
+      "20b"
+  ]
+},
+{
+  "product_id": 2103,
+  "barcode": "4574208394939226",
+  "product_name": "TitanAnahtarSeti",
+  "category_id": 20,
+  "brand": "BrandP2Zl",
+  "unit": "adet",
+  "price": 65.0,
+  "manufacturing_date": "2024-08-10",
+  "expiry_date": "2028-08-09",
+  "stock_quantity": 40,
+  "supplier": "Supplier2Rn6O3KP",
+  "is_active": 1,
+  "image_url": "",
+  "vat_rate": 8,
+  "subcategories": [
+      "20c"
+  ]
+},
+{
+  "product_id": 2104,
+  "barcode": "6574208394939237",
+  "product_name": "OtomatikMotorYağı",
+  "category_id": 21,
+  "brand": "BrandQ3Pl",
+  "unit": "adet",
+  "price": 85.0,
+  "manufacturing_date": "2024-09-20",
+  "expiry_date": "2028-09-19",
+  "stock_quantity": 120,
+  "supplier": "Supplier3En7P4KQ",
+  "is_active": 1,
+  "image_url": "",
+  "vat_rate": 8,
+  "subcategories": [
+      "21a"
+  ]
+},
+{
+  "product_id": 2105,
+  "barcode": "8574208394939248",
+  "product_name": "YazLastiği",
+  "category_id": 21,
+  "brand": "BrandR4Wm",
+  "unit": "adet",
+  "price": 150.0,
+  "manufacturing_date": "2024-10-05",
+  "expiry_date": "2028-10-04",
+  "stock_quantity": 90,
+  "supplier": "Supplier4Fo8M1LK",
+  "is_active": 1,
+  "image_url": "",
+  "vat_rate": 8,
+  "subcategories": [
+      "21b"
+  ]
+},
+{
+  "product_id": 2106,
+  "barcode": "0574208394939259",
+  "product_name": "OtoAksesuarSeti",
+  "category_id": 21,
+  "brand": "BrandS5Zl",
+  "unit": "adet",
+  "price": 120.0,
+  "manufacturing_date": "2024-11-15",
+  "expiry_date": "2028-11-14",
+  "stock_quantity": 70,
+  "supplier": "Supplier5Gp9N2L1",
+  "is_active": 1,
+  "image_url": "",
+  "vat_rate": 8,
+  "subcategories": [
+      "21c"
+  ]
+},
+{
+  "product_id": 2107,
+  "barcode": "2574208394939260",
+  "product_name": "KuşbaşıKediMaması",
+  "category_id": 22,
+  "brand": "BrandT6Pl",
+  "unit": "adet",
+  "price": 25.0,
+  "manufacturing_date": "2024-12-01",
+  "expiry_date": "2026-11-30",
+  "stock_quantity": 200,
+  "supplier": "Supplier6Hp0L3MQ",
+  "is_active": 1,
+  "image_url": "",
+  "vat_rate": 8,
+  "subcategories": [
+      "22a"
+  ]
+},
+{
+  "product_id": 2108,
+  "barcode": "4574208394939271",
+  "product_name": "PirinçKöpekMaması",
+  "category_id": 22,
+  "brand": "BrandU7Wm",
+  "unit": "adet",
+  "price": 30.0,
+  "manufacturing_date": "2025-01-10",
+  "expiry_date": "2026-01-09",
+  "stock_quantity": 180,
+  "supplier": "Supplier7Iq1N4TK",
+  "is_active": 1,
+  "image_url": "",
+  "vat_rate": 8,
+  "subcategories": [
+      "22b"
+  ]
+},
+{
+  "product_id": 2109,
+  "barcode": "6574208394939282",
+  "product_name": "EvcilKöpekTasma",
+  "category_id": 22,
+  "brand": "BrandV8Zl",
+  "unit": "adet",
+  "price": 15.0,
+  "manufacturing_date": "2025-02-20",
+  "expiry_date": "2027-02-19",
+  "stock_quantity": 300,
+  "supplier": "Supplier8Jm2N7LK",
+  "is_active": 1,
+  "image_url": "",
+  "vat_rate": 8,
+  "subcategories": [
+      "22c"
+  ]
+},
+{
+  "product_id": 2110,
+  "barcode": "8574208394939293",
+  "product_name": "BebekBebekBezi",
+  "category_id": 23,
+  "brand": "BrandW9Pl",
+  "unit": "adet",
+  "price": 40.0,
+  "manufacturing_date": "2025-03-05",
+  "expiry_date": "2027-03-04",
+  "stock_quantity": 150,
+  "supplier": "Supplier9Kn3L8MR",
+  "is_active": 1,
+  "image_url": "",
+  "vat_rate": 8,
+  "subcategories": [
+      "23a"
+  ]
+},
+{
+  "product_id": 2111,
+  "barcode": "0574208394939304",
+  "product_name": "ElmaBebekMaması",
+  "category_id": 23,
+  "brand": "BrandX0Ql",
+  "unit": "adet",
+  "price": 10.0,
+  "manufacturing_date": "2025-04-15",
+  "expiry_date": "2026-04-14",
+  "stock_quantity": 200,
+  "supplier": "Supplier0Zo4N9PK",
+  "is_active": 1,
+  "image_url": "",
+  "vat_rate": 8,
+  "subcategories": [
+      "23b"
+  ]
+},
+{
+  "product_id": 2112,
+  "barcode": "2574208394939315",
+  "product_name": "PijamaBebekGiyim",
+  "category_id": 23,
+  "brand": "BrandY1Zl",
+  "unit": "adet",
+  "price": 20.0,
+  "manufacturing_date": "2025-05-20",
+  "expiry_date": "2027-05-19",
+  "stock_quantity": 100,
+  "supplier": "Supplier1Hp5L2MQ",
+  "is_active": 1,
+  "image_url": "",
+  "vat_rate": 8,
+  "subcategories": [
+      "23c"
+  ]
+},
+{
+  "product_id": 2113,
+  "barcode": "4574208394939326",
+  "product_name": "Multivitamin",
+  "category_id": 24,
+  "brand": "BrandZ2Pl",
+  "unit": "adet",
+  "price": 50.0,
+  "manufacturing_date": "2025-06-01",
+  "expiry_date": "2026-05-31",
+  "stock_quantity": 300,
+  "supplier": "Supplier2Wq6N7TK",
+  "is_active": 1,
+  "image_url": "",
+  "vat_rate": 8,
+  "subcategories": [
+      "24a"
+  ]
+},
+{
+  "product_id": 2114,
+  "barcode": "6574208394939337",
+  "product_name": "ProteinBar",
+  "category_id": 24,
+  "brand": "BrandA3Wm",
+  "unit": "adet",
+  "price": 15.0,
+  "manufacturing_date": "2025-07-10",
+  "expiry_date": "2026-07-09",
+  "stock_quantity": 200,
+  "supplier": "Supplier3Qp7N4TK",
+  "is_active": 1,
+  "image_url": "",
+  "vat_rate": 8,
+  "subcategories": [
+      "24b"
+  ]
+},
+{
+  "product_id": 2115,
+  "barcode": "8574208394939348",
+  "product_name": "TansiyonAleti",
+  "category_id": 24,
+  "brand": "BrandB4Zl",
+  "unit": "adet",
+  "price": 120.0,
+  "manufacturing_date": "2025-08-20",
+  "expiry_date": "2028-08-19",
+  "stock_quantity": 50,
+  "supplier": "Supplier4Rm8N1LK",
+  "is_active": 1,
+  "image_url": "",
+  "vat_rate": 8,
+  "subcategories": [
+      "24c"
+  ]
+},
+{
+  "product_id": 2116,
+  "barcode": "0574208394939359",
+  "product_name": "AkıllıTelefonX",
+  "category_id": 25,
+  "brand": "BrandC5Pl",
+  "unit": "adet",
+  "price": 1200.0,
+  "manufacturing_date": "2025-09-01",
+  "expiry_date": "2028-08-31",
+  "stock_quantity": 100,
+  "supplier": "Supplier5Sn9L2MQ",
+  "is_active": 1,
+  "image_url": "",
+  "vat_rate": 8,
+  "subcategories": [
+      "25a"
+  ]
+},
+{
+  "product_id": 2117,
+  "barcode": "2574208394939360",
+  "product_name": "TabletY",
+  "category_id": 25,
+  "brand": "BrandD6Wm",
+  "unit": "adet",
+  "price": 800.0,
+  "manufacturing_date": "2025-10-15",
+  "expiry_date": "2028-10-14",
+  "stock_quantity": 150,
+  "supplier": "Supplier6Tp0N7TK",
+  "is_active": 1,
+  "image_url": "",
+  "vat_rate": 8,
+  "subcategories": [
+      "25b"
+  ]
+},
+{
+  "product_id": 2118,
+  "barcode": "4574208394939371",
+  "product_name": "GamingBilgisayar",
+  "category_id": 25,
+  "brand": "BrandE7Zl",
+  "unit": "adet",
+  "price": 2500.0,
+  "manufacturing_date": "2025-11-20",
+  "expiry_date": "2028-11-19",
+  "stock_quantity": 80,
+  "supplier": "Supplier7Wq1N4TK",
+  "is_active": 1,
+  "image_url": "",
+  "vat_rate": 8,
+  "subcategories": [
+      "25c"
+  ]
+},
+{
+  "product_id": 2119,
+  "barcode": "6574208394939382",
+  "product_name": "ÇekiçliPlastik",
+  "category_id": 20,
+  "brand": "BrandF8Pl",
+  "unit": "adet",
+  "price": 20.0,
+  "manufacturing_date": "2025-12-01",
+  "expiry_date": "2029-11-30",
+  "stock_quantity": 100,
+  "supplier": "Supplier8Xm2N8MR",
+  "is_active": 1,
+  "image_url": "",
+  "vat_rate": 8,
+  "subcategories": [
+      "20a"
+  ]
+},
+{
+  "product_id": 2120,
+  "barcode": "8574208394939393",
+  "product_name": "MiniTornavidaSeti",
+  "category_id": 20,
+  "brand": "BrandG9Wm",
+  "unit": "adet",
+  "price": 15.0,
+  "manufacturing_date": "2026-01-10",
+  "expiry_date": "2030-01-09",
+  "stock_quantity": 120,
+  "supplier": "Supplier9Yq3N5LK",
+  "is_active": 1,
+  "image_url": "",
+  "vat_rate": 8,
+  "subcategories": [
+      "20b"
+  ]
+},
+{
+  "product_id": 2121,
+  "barcode": "0574208394939404",
+  "product_name": "ÇelikAnahtarSeti",
+  "category_id": 20,
+  "brand": "BrandH0Pl",
+  "unit": "adet",
+  "price": 60.0,
+  "manufacturing_date": "2026-02-20",
+  "expiry_date": "2030-02-19",
+  "stock_quantity": 80,
+  "supplier": "Supplier0Zp4N9PK",
+  "is_active": 1,
+  "image_url": "",
+  "vat_rate": 8,
+  "subcategories": [
+      "20c"
+  ]
+},
+{
+  "product_id": 2122,
+  "barcode": "2574208394939415",
+  "product_name": "MotosikletMotorYağı",
+  "category_id": 21,
+  "brand": "BrandI1Zl",
+  "unit": "adet",
+  "price": 100.0,
+  "manufacturing_date": "2026-03-05",
+  "expiry_date": "2030-03-04",
+  "stock_quantity": 150,
+  "supplier": "Supplier1Wq5N2L1",
+  "is_active": 1,
+  "image_url": "",
+  "vat_rate": 8,
+  "subcategories": [
+      "21a"
+  ]
+},
+{
+  "product_id": 2123,
+  "barcode": "4574208394939426",
+  "product_name": "KışLastiği",
+  "category_id": 21,
+  "brand": "BrandJ2Pl",
+  "unit": "adet",
+  "price": 200.0,
+  "manufacturing_date": "2026-04-15",
+  "expiry_date": "2030-04-14",
+  "stock_quantity": 100,
+  "supplier": "Supplier2Xq6N7TK",
+  "is_active": 1,
+  "image_url": "",
+  "vat_rate": 8,
+  "subcategories": [
+      "21b"
+  ]
+},
+{
+  "product_id": 2124,
+  "barcode": "6574208394939437",
+  "product_name": "OtoPedalKapak",
+  "category_id": 21,
+  "brand": "BrandK3Wm",
+  "unit": "adet",
+  "price": 50.0,
+  "manufacturing_date": "2026-05-01",
+  "expiry_date": "2028-04-30",
+  "stock_quantity": 200,
+  "supplier": "Supplier3Yp7N4TK",
+  "is_active": 1,
+  "image_url": "",
+  "vat_rate": 8,
+  "subcategories": [
+      "21c"
+  ]
+},
+{
+  "product_id": 2125,
+  "barcode": "8574208394939448",
+  "product_name": "KöpekMamaKabı",
+  "category_id": 22,
+  "brand": "BrandL4Zl",
+  "unit": "adet",
+  "price": 35.0,
+  "manufacturing_date": "2026-06-15",
+  "expiry_date": "2028-06-14",
+  "stock_quantity": 150,
+  "supplier": "Supplier4Zq8N1LK",
+  "is_active": 1,
+  "image_url": "",
+  "vat_rate": 8,
+  "subcategories": [
+      "22a"
+  ]
+},
+{
+  "product_id": 2126,
+  "barcode": "0574208394939459",
+  "product_name": "KöpekKemikMaması",
+  "category_id": 22,
+  "brand": "BrandM5Pl",
+  "unit": "adet",
+  "price": 25.0,
+  "manufacturing_date": "2026-07-01",
+  "expiry_date": "2028-06-30",
+  "stock_quantity": 180,
+  "supplier": "Supplier5Wm9N2L1",
+  "is_active": 1,
+  "image_url": "",
+  "vat_rate": 8,
+  "subcategories": [
+      "22b"
+  ]
+},
+{
+  "product_id": 2127,
+  "barcode": "2574208394939460",
+  "product_name": "EvcilKöpekYatağı",
+  "category_id": 22,
+  "brand": "BrandN6Zl",
+  "unit": "adet",
+  "price": 50.0,
+  "manufacturing_date": "2026-08-10",
+  "expiry_date": "2028-08-09",
+  "stock_quantity": 120,
+  "supplier": "Supplier6Xp0N7TK",
+  "is_active": 1,
+  "image_url": "",
+  "vat_rate": 8,
+  "subcategories": [
+      "22c"
+  ]
+},
+{
+  "product_id": 2128,
+  "barcode": "4574208394939471",
+  "product_name": "BeşikBebekBezi",
+  "category_id": 23,
+  "brand": "BrandO7Pl",
+  "unit": "adet",
+  "price": 30.0,
+  "manufacturing_date": "2026-09-20",
+  "expiry_date": "2028-09-19",
+  "stock_quantity": 180,
+  "supplier": "Supplier7Yq1N4TK",
+  "is_active": 1,
+  "image_url": "",
+  "vat_rate": 8,
+  "subcategories": [
+      "23a"
+  ]
+},
+{
+  "product_id": 2129,
+  "barcode": "6574208394939482",
+  "product_name": "ArmutBebekMaması",
+  "category_id": 23,
+  "brand": "BrandP8Wm",
+  "unit": "adet",
+  "price": 12.0,
+  "manufacturing_date": "2026-10-05",
+  "expiry_date": "2027-10-04",
+  "stock_quantity": 250,
+  "supplier": "Supplier8Zr2N5LK",
+  "is_active": 1,
+  "image_url": "",
+  "vat_rate": 8,
+  "subcategories": [
+      "23b"
+  ]
+},
+{
+  "product_id": 2130,
+  "barcode": "8574208394939493",
+  "product_name": "PijamaBebekElbisesi",
+  "category_id": 23,
+  "brand": "BrandQ9Zl",
+  "unit": "adet",
+  "price": 18.0,
+  "manufacturing_date": "2026-11-15",
+  "expiry_date": "2028-11-14",
+  "stock_quantity": 120,
+  "supplier": "Supplier9Xs3N6MR",
+  "is_active": 1,
+  "image_url": "",
+  "vat_rate": 8,
+  "subcategories": [
+      "23c"
+  ]
+},
+{
+  "product_id": 2131,
+  "barcode": "0574208394939504",
+  "product_name": "KalsiyumVitamin",
+  "category_id": 24,
+  "brand": "BrandR0Pl",
+  "unit": "adet",
+  "price": 35.0,
+  "manufacturing_date": "2026-12-01",
+  "expiry_date": "2027-11-30",
+  "stock_quantity": 150,
+  "supplier": "Supplier0Yt4N7PK",
+  "is_active": 1,
+  "image_url": "",
+  "vat_rate": 8,
+  "subcategories": [
+      "24a"
+  ]
+},
+{
+  "product_id": 2132,
+  "barcode": "2574208394939515",
+  "product_name": "ProteinTozu",
+  "category_id": 24,
+  "brand": "BrandS1Wm",
+  "unit": "adet",
+  "price": 50.0,
+  "manufacturing_date": "2027-01-10",
+  "expiry_date": "2028-01-09",
+  "stock_quantity": 100,
+  "supplier": "Supplier1Yu5N2L1",
+  "is_active": 1,
+  "image_url": "",
+  "vat_rate": 8,
+  "subcategories": [
+      "24b"
+  ]
+},
+{
+  "product_id": 2133,
+  "barcode": "4574208394939526",
+  "product_name": "TansiyonBilekliği",
+  "category_id": 24,
+  "brand": "BrandT2Pl",
+  "unit": "adet",
+  "price": 80.0,
+  "manufacturing_date": "2027-02-20",
+  "expiry_date": "2030-02-19",
+  "stock_quantity": 80,
+  "supplier": "Supplier2Wr6N7TK",
+  "is_active": 1,
+  "image_url": "",
+  "vat_rate": 8,
+  "subcategories": [
+      "24c"
+  ]
+},
+{
+  "product_id": 2134,
+  "barcode": "6574208394939537",
+  "product_name": "AkıllıTelefonY",
+  "category_id": 25,
+  "brand": "BrandU3Zl",
+  "unit": "adet",
+  "price": 1500.0,
+  "manufacturing_date": "2027-03-05",
+  "expiry_date": "2030-03-04",
+  "stock_quantity": 120,
+  "supplier": "Supplier3Xs7N4TK",
+  "is_active": 1,
+  "image_url": "",
+  "vat_rate": 8,
+  "subcategories": [
+      "25a"
+  ]
+},
+{
+  "product_id": 2135,
+  "barcode": "8574208394939548",
+  "product_name": "TabletZ",
+  "category_id": 25,
+  "brand": "BrandV4Wm",
+  "unit": "adet",
+  "price": 1000.0,
+  "manufacturing_date": "2027-04-15",
+  "expiry_date": "2030-04-14",
+  "stock_quantity": 150,
+  "supplier": "Supplier4Yt8N1LK",
+  "is_active": 1,
+  "image_url": "",
+  "vat_rate": 8,
+  "subcategories": [
+      "25b"
+  ]
+},
+{
+  "product_id": 2136,
+  "barcode": "0574208394939559",
+  "product_name": "GamingBilgisayarY",
+  "category_id": 25,
+  "brand": "BrandW5Pl",
+  "unit": "adet",
+  "price": 3000.0,
+  "manufacturing_date": "2027-05-01",
+  "expiry_date": "2030-04-30",
+  "stock_quantity": 100,
+  "supplier": "Supplier5Zu9N2L1",
+  "is_active": 1,
+  "image_url": "",
+  "vat_rate": 8,
+  "subcategories": [
+      "25c"
+  ]
+}
 ],
   "subcategories": [
     {
@@ -41381,49 +42302,49 @@
     {
       "id": "11a",
       "name": "Mutfak Gereçleri",
-      "image_url": "",
+      "image_url": "https://cdn.pixabay.com/photo/2017/08/01/12/43/kitchen-2565105_1280.jpg",
       "category_id": 11
     },
     {
       "id": "11b",
       "name": "Ev Dekorasyonu",
-      "image_url": "",
+      "image_url": "https://cdn.pixabay.com/photo/2015/10/20/18/57/furniture-998265_1280.jpg",
       "category_id": 11
     },
     {
       "id": "12a",
       "name": "Yumuşak Oyuncaklar",
-      "image_url": "",
+      "image_url": "https://cdn.pixabay.com/photo/2017/08/27/23/29/kermit-2687975_1280.jpg",
       "category_id": 12
     },
     {
       "id": "12b",
       "name": "Ahşap Oyuncaklar",
-      "image_url": "",
+      "image_url": "https://cdn.pixabay.com/photo/2017/02/07/09/02/wood-2045379_1280.jpg",
       "category_id": 12
     },
     {
       "id": "12c",
       "name": "Eğitici Oyuncaklar",
-      "image_url": "",
+      "image_url": "https://cdn.pixabay.com/photo/2022/03/02/03/03/letters-7042344_1280.jpg",
       "category_id": 12
     },
     {
       "id": "13a",
       "name": "Kalem",
-      "image_url": "",
+      "image_url": "https://cdn.pixabay.com/photo/2021/08/07/05/49/ballpoint-pen-6527860_960_720.jpg",
       "category_id": 13
     },
     {
       "id": "13b",
       "name": "Defter",
-      "image_url": "",
+      "image_url": "https://cdn.pixabay.com/photo/2015/02/09/22/05/issue-630296_1280.jpg",
       "category_id": 13
     },
     {
       "id": "13c",
       "name": "Dosya",
-      "image_url": "",
+      "image_url": "https://cdn.pixabay.com/photo/2015/02/06/18/39/folder-626334_1280.jpg",
       "category_id": 13
     },
     {
@@ -41441,68 +42362,176 @@
     {
       "id": "15a",
       "name": "Fitness Ekipmanları",
-      "image_url": "",
+      "image_url": "https://cdn.pixabay.com/photo/2016/03/27/23/00/weight-lifting-1284616_1280.jpg",
       "category_id": 15
     },
     {
       "id": "15b",
       "name": "Outdoor Malzemeler",
-      "image_url": "",
+      "image_url": "https://cdn.pixabay.com/photo/2021/10/09/23/40/people-6695318_1280.jpg",
       "category_id": 15
     },
     {
       "id": "15c",
       "name": "Spor Giyim",
-      "image_url": "",
+      "image_url": "https://cdn.pixabay.com/photo/2018/06/06/00/40/denim-3456783_1280.jpg",
       "category_id": 15
     },
     {
       "id": "16a",
       "name": "Roman",
-      "image_url": "",
+      "image_url": "https://cdn.pixabay.com/photo/2015/11/19/21/14/glasses-1052023_960_720.jpg",
       "category_id": 16
     },
     {
       "id": "16b",
       "name": "Kurgu",
-      "image_url": "",
+      "image_url": "https://cdn.pixabay.com/photo/2023/03/03/20/15/science-fiction-7828391_1280.jpg",
       "category_id": 16
     },
     {
       "id": "17a",
       "name": "Bahçe Aletleri",
-      "image_url": "",
+      "image_url": "https://cdn.pixabay.com/photo/2021/11/17/15/26/gardening-6803876_960_720.jpg",
       "category_id": 17
     },
     {
       "id": "17b",
       "name": "Bahçe Mobilyaları",
-      "image_url": "",
+      "image_url": "https://cdn.pixabay.com/photo/2021/11/26/21/45/garden-furniture-6826787_1280.jpg",
       "category_id": 17
     },
     {
       "id": "18a",
       "name": "Mutfak Gereçleri",
-      "image_url": "",
+      "image_url": "https://cdn.pixabay.com/photo/2015/10/30/09/34/wooden-spoon-1013566_1280.jpg",
       "category_id": 18
     },
     {
       "id": "18b",
       "name": "Mutfak Elektroniği",
-      "image_url": "",
+      "image_url": "https://cdn.pixabay.com/photo/2018/10/22/10/59/food-processor-3765024_1280.jpg",
       "category_id": 18
     },
     {
       "id": "19a",
       "name": "Ofis Mobilyaları",
-      "image_url": "",
+      "image_url": "https://cdn.pixabay.com/photo/2015/04/20/06/46/office-730681_1280.jpg",
       "category_id": 19
     },
     {
       "id": "19b",
       "name": "Ofis Elektroniği",
-      "image_url": "",
+      "image_url": "https://cdn.pixabay.com/photo/2015/07/28/22/01/office-865091_1280.jpg",
       "category_id": 19
+    },
+    {
+      "id": "20a",
+      "name": "Çekiçler",
+      "image_url": "",
+      "category_id": 20
+    },
+    {
+      "id": "20b",
+      "name": "Tornavidalar",
+      "image_url": "",
+      "category_id": 20
+    },
+    {
+      "id": "20c",
+      "name": "Anahtar Takımları",
+      "image_url": "",
+      "category_id": 20
+    },
+    {
+      "id": "21a",
+      "name": "Motor Yağı",
+      "image_url": "",
+      "category_id": 21
+    },
+    {
+      "id": "21b",
+      "name": "Lastikler",
+      "image_url": "",
+      "category_id": 21
+    },
+    {
+      "id": "21c",
+      "name": "Oto Aksesuarları",
+      "image_url": "",
+      "category_id": 21
+    },
+    {
+      "id": "22a",
+      "name": "Kedi Mamaları",
+      "image_url": "",
+      "category_id": 22
+    },
+    {
+      "id": "22b",
+      "name": "Köpek Mamaları",
+      "image_url": "",
+      "category_id": 22
+    },
+    {
+      "id": "22c",
+      "name": "Evcil Hayvan Aksesuarları",
+      "image_url": "",
+      "category_id": 22
+    },
+    {
+      "id": "23a",
+      "name": "Bebek Bezi",
+      "image_url": "",
+      "category_id": 23
+    },
+    {
+      "id": "23b",
+      "name": "Bebek Mamaları",
+      "image_url": "",
+      "category_id": 23
+    },
+    {
+      "id": "23c",
+      "name": "Bebek Giyim",
+      "image_url": "",
+      "category_id": 23
+    },
+    {
+      "id": "24a",
+      "name": "Vitaminler",
+      "image_url": "",
+      "category_id": 24
+    },
+    {
+      "id": "24b",
+      "name": "Takviye Edici Gıdalar",
+      "image_url": "",
+      "category_id": 24
+    },
+    {
+      "id": "24c",
+      "name": "Medikal Cihazlar",
+      "image_url": "",
+      "category_id": 24
+    },
+    {
+      "id": "25a",
+      "name": "Akıllı Telefonlar",
+      "image_url": "",
+      "category_id": 25
+    },
+    {
+      "id": "25b",
+      "name": "Tabletler",
+      "image_url": "",
+      "category_id": 25
+    },
+    {
+      "id": "25c",
+      "name": "Bilgisayarlar",
+      "image_url": "",
+      "category_id": 25
     }
   ],
   "receipts": [

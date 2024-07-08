@@ -32,7 +32,7 @@ const ModalSearch = ({ open, handleClose, theme, t, handleAddToCart, setState, s
     setState((prevState) => ({
       ...prevState,
       wantedProduct: filteredProducts,
-      showFilteredProducts: true,
+      showFilteredProducts: false,
     }));
     setShowAllProducts(false);
     setShowFavorites(false);
