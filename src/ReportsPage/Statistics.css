@@ -1,63 +1,43 @@
-/* Statistics.css */
+.code-font {
+  font-family: 'Courier New', Courier, monospace; 
+  font-size: 1em; 
+  color: #333; 
+  background-color: #f0f0f0; 
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  display: inline-block; 
+}
+
+
 .statistics-container {
-    margin-top: 20px;
-  }
-  
-  .statistics-paper {
-    padding: 20px;
-    background-color: white;
-  }
-  
-  .statistics-paper.dark {
-    background-color: black;
-  }
-  
-  .statistics-title {
-    font-weight: bold;   
-    font-size: 24px;
-  }
-  .statistics-title.dark { 
-    color: white;
-  }
-  .statistics-table {
-    width: 100%;
-    margin-top: 20px;
-  }
-  
-  .statistics-table-head {
-    background-color: #f2f2f2;
-    color: red;
-    font-weight: bold;
-    font-size: 16px;
-  }
-  
-  .statistics-table-row {
-    border-bottom: 1px solid #ccc;
-  }
-  
-  .statistics-table-cell {
-    padding: 12px;
-  }
-  .statistics-table-cell.dark {
-    color: red;
-  }
-  
-  .statistics-list {
-    margin-top: 10px;
-    
-  }
-  
-  .statistics-list-item {
-    padding: 6px 0;
-  }
-  
-  .statistics-list-item.primary {
-    font-weight: bold;
-  }
-  
-  .statistics-list-item.secondary {
-    font-size: 14px;
-    
-    color: purple;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+  min-height: 70vh; 
+  padding: 20px;
+  text-align: center;
+}
+
+.statistics-title {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.statistics-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; 
+}
+
+.statistics-container.dark {
+  background-color: #121212;
+  color: white;
+}
+
+.statistics-container.light {
+  background-color: #e4e2e7;
+  color: black;
+}

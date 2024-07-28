@@ -59,30 +59,4 @@ body {
     margin-bottom: 20px;
   }
   
-  /* @media print {
-    body * {
-      display: none;
-    }
   
-    .receipt-container, .receipt-container * {
-      display: block;
-      
-    }
-  
-    .receipt-container {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      margin: 0;
-      padding: 0;
-      box-shadow: none;
-      border: none;
-      
-    }
-  
-    button {
-      display: none;
-    }
-  }
-   */

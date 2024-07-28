@@ -1,0 +1,24 @@
+.statistic-item {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    animation: fadeIn 1s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    background-color: white;
+  }
+  
+  .statistic-label {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  
+  .statistic-value {
+    font-size: 2em;
+    font-weight: bold;
+  }
+  
+  .dark .statistic-item {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
