@@ -25,40 +25,40 @@ function App() {
         <StoreStatusProvider>
           <CartContextProvider>
             <GlobalContextProvider>
-            <KeyboardProvider>
-              <LoginProvider>
-                <ThemedApp>
-                  <VirtualKeyboard />
-                  <Routes>
-                    <Route path="/" element={<LoginPage />} />
-                    <Route
-                      path="/home"
-                      element={<PrivateRoute element={Home} />}
-                    />
-                    <Route
-                      path="/sales"
-                      element={<PrivateRoute element={Sales} />}
-                    />
-                    <Route
-                      path="/price"
-                      element={<PrivateRoute element={OrderSummary} />}
-                    />
-                    <Route
-                      path="/receipts"
-                      element={<PrivateRoute element={Receipts} />}
-                    />
-                    <Route
-                      path="/reports"
-                      element={<PrivateRoute element={Reports} />}
-                    />
-                    <Route
-                      path="/settings"
-                      element={<PrivateRoute element={Settings} />}
-                    />
-                  </Routes>
-                </ThemedApp>
-              </LoginProvider>
-            </KeyboardProvider>
+              <KeyboardProvider>
+                <LoginProvider>
+                  <ThemedApp>
+                    <VirtualKeyboard />
+                    <Routes>
+                      <Route path="/" element={<LoginPage />} />
+                      <Route
+                        path="/home"
+                        element={<PrivateRoute element={Home} path="/home" />}
+                      />
+                      <Route
+                        path="/sales"
+                        element={<PrivateRoute element={Sales} path="/sales" />}
+                      />
+                      <Route
+                        path="/price"
+                        element={<PrivateRoute element={OrderSummary} path="/price" />}
+                      />
+                      <Route
+                        path="/receipts"
+                        element={<PrivateRoute element={Receipts} path="/receipts" />}
+                      />
+                      <Route
+                        path="/reports"
+                        element={<PrivateRoute element={Reports} path="/reports" />}
+                      />
+                      <Route
+                        path="/settings"
+                        element={<PrivateRoute element={Settings} path="/settings" />}
+                      />
+                    </Routes>
+                  </ThemedApp>
+                </LoginProvider>
+              </KeyboardProvider>
             </GlobalContextProvider>
           </CartContextProvider>
         </StoreStatusProvider>

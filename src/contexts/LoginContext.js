@@ -5,13 +5,14 @@ const LoginContext = createContext();
 
 export const LoginProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(() => {
-    return localStorage.getItem('isLoggedIn') === 'true';
+    return sessionStorage.getItem('isLoggedIn') === 'true';
   });
   const [showError, setShowError] = useState(false);
   const [user, setUser] = useState(() => {
-    const storedUser = localStorage.getItem('user');
+    const storedUser = sessionStorage.getItem('user');
     return storedUser ? JSON.parse(storedUser) : null;
   });
+  const [allUsers, setAllUsers] = useState(null);
 
   const baseURL = process.env.REACT_APP_API_BASE_URL;
 
@@ -19,27 +20,27 @@ export const LoginProvider = ({ children }) => {
     const fetchUserData = async () => {
       try {
         const response = await axios.get(`${baseURL}/users`);
-        setUser(response.data);
-        localStorage.setItem('user', JSON.stringify(response.data));
+        setAllUsers(response.data);
       } catch (error) {
-        console.error('Kullanıcı verileri alınırken hata oluştu:', error);
+        console.error('Error fetching user data:', error);
       }
     };
 
-    if (!user) {
+    if (!allUsers) {
       fetchUserData();
     }
-  }, [user,baseURL]);
+  }, [allUsers, baseURL]);
 
   const login = (username, password) => {
-    const foundUser = user.find(user => user.username === username && user.password === password);
+    const foundUser = allUsers.find(user => user.username === username && user.password === password);
 
     if (foundUser) {
+      const { password, username, ...userWithoutSensitiveInfo } = foundUser;
       setIsLoggedIn(true);
       setShowError(false);
-      setUser(foundUser);
-      localStorage.setItem('user', JSON.stringify(foundUser));
-      localStorage.setItem('isLoggedIn', true);
+      setUser(userWithoutSensitiveInfo);
+      sessionStorage.setItem('user', JSON.stringify(userWithoutSensitiveInfo));
+      sessionStorage.setItem('isLoggedIn', 'true');
     } else {
       setIsLoggedIn(false);
       setShowError(true);
@@ -50,8 +51,8 @@ export const LoginProvider = ({ children }) => {
     setIsLoggedIn(false);
     setShowError(false);
     setUser(null);
-    localStorage.removeItem('user');
-    localStorage.removeItem('isLoggedIn');
+    sessionStorage.removeItem('user');
+    sessionStorage.removeItem('isLoggedIn');
   };
 
   const contextValue = {
@@ -68,7 +69,7 @@ export const LoginProvider = ({ children }) => {
 export const useLogin = () => {
   const context = useContext(LoginContext);
   if (!context) {
-    throw new Error('useLogin, LoginProvider içinde kullanılmalıdır');
+    throw new Error('useLogin must be used within a LoginProvider');
   }
   return context;
 };

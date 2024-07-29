@@ -1,16 +1,13 @@
-// Inside the Home component
 import React, { useEffect, useState } from 'react';
-import { Container, Typography, Grid, Paper, Box, Avatar } from '@mui/material';
+import { Container, Typography, Grid, Paper} from '@mui/material';
 import { LocalGroceryStore, Assignment, MonetizationOn, CollectionsBookmark, AlarmOn, Settings } from '@mui/icons-material';
 import MenuButtons from '../GlobalComponents/MenuButtons';
 import { useLogin } from '../contexts/LoginContext';
-import LogoutButton from '../LoginPage/LogoutButton';
-import ShopStatus from '../ShopStatus';
-import IPDisplay from '../services/IPDisplay';
 import './styles.css'; // Import the CSS file
 import { useTheme } from '../contexts/ThemeContext';
 import { useTranslation } from 'react-i18next';
 import { useStoreStatus } from '../contexts/StoreStatusContext';
+import PersonnelInfo from './PersonelInfo';
 
 const Home = () => {
     const { isLoggedIn, user } = useLogin();
@@ -28,46 +25,21 @@ const Home = () => {
     }, []);
 
     const formattedTime = currentTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-
-    return (
+    if (!user) {
+        return <Typography>Loading...</Typography>;
+      }
+    return  (
         <div className={`HomeContainer ${theme === 'dark' ? 'dark' : 'light'}`}>
-            <Paper className={`CustomPaper ${theme === 'dark' ? 'dark' : 'light'}`}>
-                {isLoggedIn ? (
-                    <Box className="CustomBox">
-                        <ShopStatus t={t} />
-                        <Box className="AvatarContainer">
-                            {user && user.personelInfo && (
-                                <Avatar
-                                    alt={user.personelInfo.name}
-                                    src="/static/images/avatar/1.jpg"
-                                    sx={{ width: 100, height: 100, margin: '0 auto' }}
-                                />
-                            )}
-                            <LogoutButton />
-                        </Box>
-                        <Typography variant="h6" gutterBottom mt={2}>
-                            {t('welcome')}, {user.username}!
-                        </Typography>
-                        {user && user.personelInfo && (
-                            <Typography variant="subtitle1" gutterBottom>
-                                {t('Personel')}: {user.personelInfo.name}
-                            </Typography>
-                        )}
-                        <Typography variant="subtitle1" gutterBottom>
-                            {t('Sales location')}: {user && user.kasaInfo ? user.kasaInfo.location : ''}
-                        </Typography>
-                        <Typography variant="subtitle1" gutterBottom>
-                            {t('System Time')}: {formattedTime}
-                        </Typography>
-                        <IPDisplay />
-                    </Box>
-                ) : (
-                    <Typography variant="body1" gutterBottom>
-                        {t('Please Log In')}
-                    </Typography>
-                )}
-            </Paper>
-
+          <Paper className={`CustomPaper ${theme === 'dark' ? 'dark' : 'light'}`}>
+            {isLoggedIn ? (
+              <PersonnelInfo formattedTime={formattedTime} />
+            ) : (
+              <Typography variant="body1" gutterBottom>
+                {t('Please Log In')}
+              </Typography>
+            )}
+          </Paper>
+    
             <Container className={`MainContainer ${theme === 'dark' ? 'dark' : 'light'}`} component="main" maxWidth="md">
                 <Typography className="TitleTypography" sx={{ marginTop: '10vh' }} variant="h4" gutterBottom>
                     {t('Welcome To Home Page')}

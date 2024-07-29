@@ -2,7 +2,7 @@ import React from "react";
 import { Grid, Paper, Typography } from "@mui/material";
 import TravelExploreTwoToneIcon from '@mui/icons-material/TravelExploreTwoTone';
 import GlobalNavi from "../GlobalComponents/GlobalNavi";
-import ProductCatalog from "../SalesPage/ProductCatalog";
+import ProductCatalog from "../SalesPage/ProductCatalog/ProductCatalog";
 import CartManagement from "../SalesPage/CartComponent/CartManagement";
 import TransactionButtons from "../SalesPage/TransactionArea/TransactionButtons";
 import './styles.css';
