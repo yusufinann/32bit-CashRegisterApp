@@ -33,17 +33,10 @@ const OrderSummaryButtons = ({
 
   return (
     <Container>
-      <Button variant="contained" color="primary" onClick={() => setOpen(true)}>
+      <Button variant="contained" color="secondary"   className="custom-button" onClick={() => setOpen(true)}>
         {t("Finish Document")}
       </Button>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-between",
-          margin: 20,
-        }}
-      >
+      <div>
         <Dialog
           open={open}
           onClose={handleClose}
@@ -72,10 +65,10 @@ const OrderSummaryButtons = ({
           style={{
             display: "flex",
             justifyContent: "space-between",
-            margin: 20,
+            margin: "auto",
           }}
         >
-          <ReceivedProducts cart={cart}/>
+          <ReceivedProducts cart={cart} t={t}/>
         </div>
       </div>
     </Container>

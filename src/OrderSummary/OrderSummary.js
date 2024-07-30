@@ -8,7 +8,6 @@ import OrderSummaryButtons from "./OrderSummaryButtons";
 import { Button } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { useCartContext } from "../contexts/CartContext";
-
 const OrderSummary = () => {
   const {
     cart,
@@ -71,6 +70,7 @@ const OrderSummary = () => {
         <div className={`paper-container ${themeClass}`}>
           <div className={`panel ${themeClass}`}>
             <Button
+             className="custom-button"
               variant="contained"
               color="primary"
               onClick={handleOpenEreceipt}

@@ -69,7 +69,7 @@ const ReceiptArea = ({ t,cart, paymentType, receivedMoney, partialPayment, saleI
   return (
     <>
       {/* Yazdırma düğmesi */}
-      <Button variant="outlined" onClick={handlePrint}>
+      <Button variant="outlined" onClick={handlePrint}  className="custom-button">
         {t("Print Receipt")}
       </Button>
 

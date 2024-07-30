@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     height: calc(100vh - 30px);
-  box-sizing: border-box;
+   box-sizing: border-box;
   }
   
   .Main-container.dark {
@@ -40,4 +40,20 @@
     color: white;
   }
   
+  .MuiButton-root.custom-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60vh;
+    margin: auto;
+    padding: 15px;
+    margin-top: 10px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Yumuşak geçişler için transition ekleyin */
+  }
   
+  .MuiButton-root.custom-button:hover {
+    background-color: #dbfa2c; /* Hover sırasında arka plan rengini değiştirin */
+    color: black;
+    transform: scale(1.05); /* Hover sırasında butonu biraz büyütün */
+  }
