@@ -1,5 +1,6 @@
 import { useState, useCallback } from "react";
 import { generateUniqueId } from "../utils/CartHelpers";
+import { useTranslation } from "react-i18next";
 
 const useReceipt = (cart, subTotal, calculateCartTotal) => {
   const [receipts, setReceipts] = useState([]);
@@ -7,7 +8,7 @@ const useReceipt = (cart, subTotal, calculateCartTotal) => {
   const [partialPayment, setPartialPayment] = useState(false);
   const [receivedMoney, setReceivedMoney] = useState(null);
   const [input, setInput] = useState("");
-
+  const{t}=useTranslation();
   const baseURL = process.env.REACT_APP_API_BASE_URL;
 
   const saveReceivedMoney = useCallback(() => {
@@ -41,7 +42,7 @@ const useReceipt = (cart, subTotal, calculateCartTotal) => {
       total: totalCost.toFixed(2),
       receivedMoney: receivedMoney,
       changeGiven: change,
-      paymentType: partialPayment ? "Card&Cash" : paymentType,
+      paymentType: partialPayment ? t("Cash&Card") : paymentType,
     };
 
 
@@ -64,7 +65,9 @@ const useReceipt = (cart, subTotal, calculateCartTotal) => {
     } catch (error) {
       console.error("Fiş kaydedilirken hata oluştu:", error);
     }
-  }, [cart, receivedMoney, subTotal, partialPayment, paymentType, receipts,baseURL]);
+  }, [cart, receivedMoney, subTotal, partialPayment, paymentType, receipts,baseURL,t]);
+
+  
 
   return {
     receipts,

@@ -5,7 +5,7 @@ const StoreStatusContext = createContext();
 
 // StoreStatusProvider bileşenini oluştur
 export const StoreStatusProvider = ({ children }) => {
-  const [isOnline, setIsOnline] = useState(false);
+  const [isOnline, setIsOnline] = useState(true);
   const [workingHours, setWorkingHours] = useState({ start: '09:00', end: '18:00' });
 
   // Mağaza durumunu kontrol eden işlev
@@ -26,14 +26,14 @@ export const StoreStatusProvider = ({ children }) => {
   }, [workingHours]);
 
   
-
-  // Bileşen yüklendiğinde `localStorage`'dan çalışma saatlerini al
+ // Bileşen yüklendiğinde `localStorage`'dan çalışma saatlerini al
   useEffect(() => {
     const storedWorkingHours = localStorage.getItem('workingHours');
     if (storedWorkingHours) {
       setWorkingHours(JSON.parse(storedWorkingHours));
     }
   }, []);
+  
 
   // Çalışma saatleri değiştiğinde veya bileşen yüklendiğinde mağaza durumunu güncelle
   useEffect(() => {
@@ -41,7 +41,7 @@ export const StoreStatusProvider = ({ children }) => {
   }, [isStoreOnline]);
 
   return (
-    <StoreStatusContext.Provider value={{ isOnline, setIsOnline, workingHours, setWorkingHours }}>
+    <StoreStatusContext.Provider value={{ isOnline, setIsOnline, workingHours, setWorkingHours ,isStoreOnline}}>
       {children}
     </StoreStatusContext.Provider>
   );

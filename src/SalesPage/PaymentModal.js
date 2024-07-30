@@ -8,7 +8,7 @@ const PaymentModal = ({ open, handleClose, remaining, handlePayment }) => {
     <Dialog open={open} onClose={handleClose}>
       <DialogTitle style={{ backgroundColor: "#0E3F57", color: "white" }}>{t('Insufficient Balance')}!</DialogTitle>
       <DialogContent>
-        <Typography variant="body1" style={{ marginBottom: "10px" }}>{t('Remaining Balance')}: {remaining}</Typography>
+        <Typography variant="body1" style={{ marginBottom: "10px" }}>{t('Remaining Balance')}: {remaining.toFixed(2)}</Typography>
         <Typography variant="body1" style={{ marginBottom: "20px" }}>{t('Would you like to pay by Credit Card')}?</Typography>
       </DialogContent>
       <DialogActions>

@@ -42,7 +42,7 @@ const TransactionPanel = ({ theme, t, saveReceivedMoney, Total, input, setPaymen
   const handlePayment = () => {
     saveReceivedMoney();
     setPartialPayment(true);
-    setPaymentType("Cash&Card");
+    setPaymentType(t("Cash&Card"));
     navigate('/price');
     setInput("");
   };

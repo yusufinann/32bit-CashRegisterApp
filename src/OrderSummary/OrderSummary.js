@@ -49,7 +49,7 @@ const OrderSummary = () => {
   return (
     <div className={`Main-container ${maincontainer}`}>
       <div>
-        <GlobalNavi title="See Price" linkTo="/sales" />
+        <GlobalNavi title="See Price"/>
       </div>
       <div className="grid-container">
         <div className={`paper-container ${themeClass}`}>

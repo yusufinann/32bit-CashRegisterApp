@@ -21,11 +21,10 @@ const Divider = styled("div")`
 `;
 
 const ReceiptList = () => {
-  const { receipts,partialPayment,setPaymentType } = useCartContext();
+  const { receipts,partialPayment} = useCartContext();
   const { user } = useLogin();
-  if (partialPayment) {
-    setPaymentType("Card&Cash");
-  } 
+  
+  
   if (receipts.length === 0) {
     return <p>Fiş listesi boş.</p>;
   }

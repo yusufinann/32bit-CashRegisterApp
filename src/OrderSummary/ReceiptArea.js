@@ -34,7 +34,7 @@ const ReceiptArea = ({ t,cart, paymentType, receivedMoney, partialPayment, saleI
       0
     )
     .toFixed(2);
-  const tax = (subTotal * 0.08).toFixed(2); // KDV oranı %18 olarak varsayalım
+  const tax = (subTotal * 0.08).toFixed(2); // KDV oranı %8 olarak varsayalım
 
   const handlePrint = () => {
     const printContents = PrintedReceipt({

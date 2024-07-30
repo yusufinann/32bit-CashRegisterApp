@@ -43817,6 +43817,80 @@
       "receivedMoney": null,
       "changeGiven": null,
       "paymentType": "Kredi Kartı"
+    },
+    {
+      "id": "5986",
+      "timestamp": "30.07.2024 18:33",
+      "items": [
+        {
+          "productId": 3,
+          "productName": "Beyaz Ekmek",
+          "quantity": 3,
+          "unitPrice": 1.75,
+          "totalPrice": 5.25,
+          "barcode": "3456789012345",
+          "vat_rate": 8
+        },
+        {
+          "productId": 2,
+          "productName": "Süt",
+          "quantity": 1,
+          "unitPrice": 2.5,
+          "totalPrice": 2.5,
+          "barcode": "2345678901234",
+          "vat_rate": 8
+        },
+        {
+          "productId": 20,
+          "productName": "Ahşap Blok Seti",
+          "quantity": 5,
+          "unitPrice": 25,
+          "totalPrice": 112.5,
+          "barcode": "6789012345671",
+          "vat_rate": 8
+        },
+        {
+          "productId": 22,
+          "productName": "Kurşun Kalem",
+          "quantity": 7,
+          "unitPrice": 0.5,
+          "totalPrice": 3.5,
+          "barcode": "2345123456780",
+          "vat_rate": 8
+        },
+        {
+          "productId": 19,
+          "productName": "Pamuk Oyuncak Ayı",
+          "quantity": 6,
+          "unitPrice": 15,
+          "totalPrice": 90,
+          "barcode": "5678901234562",
+          "vat_rate": 8
+        },
+        {
+          "productId": 16,
+          "productName": "istavrit",
+          "quantity": 2,
+          "unitPrice": 10,
+          "totalPrice": 20,
+          "barcode": "2345678901235",
+          "vat_rate": 8
+        },
+        {
+          "productId": 1047,
+          "productName": "zp",
+          "quantity": 5,
+          "unitPrice": 27.24,
+          "totalPrice": 108.96,
+          "barcode": "98002831759091",
+          "vat_rate": 8
+        }
+      ],
+      "subTotal": "382.45",
+      "total": "342.71",
+      "receivedMoney": "350",
+      "changeGiven": "7.29",
+      "paymentType": "Nakit"
     }
   ],
   "users": [
